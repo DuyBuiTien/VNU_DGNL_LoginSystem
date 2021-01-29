@@ -1,4 +1,5 @@
 export default {
+  GLOBAL_Header: '#325095',
   transparent: 'rgba(0,0,0,0)',
   white: '#ffffff',
   text: '#212529',

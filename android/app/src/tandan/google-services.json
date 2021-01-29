@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "26999401209",
+    "project_id": "tdsmartcity",
+    "storage_bucket": "tdsmartcity.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:26999401209:android:f597eddca66b65e8fa5028",
+        "android_client_info": {
+          "package_name": "com.tandan.tdsmartcity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "26999401209-h2ah2a08g9qtdph0ho6sqidr45h76k7r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB40SgehFGc_iByHOlP_cKNlnPPfoyKWWw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "26999401209-h2ah2a08g9qtdph0ho6sqidr45h76k7r.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "26999401209-gte7tfgthjcjv1qfqgq3d2iopifgdo1g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tandan.tdsmartcity"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
