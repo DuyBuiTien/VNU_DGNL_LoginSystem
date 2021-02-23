@@ -34,7 +34,7 @@ const Item = ({leftComponent, isStack, title, showRight, RightComponent}) => {
 export default Item;
 
 const styles = StyleSheet.create({
-  icon: {paddingStart: 0, marginHorizontal: 20},
+  icon: {paddingStart: 0, marginHorizontal: 10},
   container: {
     backgroundColor: '#FFF',
     justifyContent: 'space-around',

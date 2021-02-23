@@ -27,7 +27,7 @@ const Screen = () => {
         />
         <ItemMenu
           onPress={() => navigation.navigate('SettingScreen')}
-          title={'Câu hỏi thường gặp'}
+          title={'Liên hệ'}
           iconLeft="headset"
           colorIconLeft="#5C7F63"
         />

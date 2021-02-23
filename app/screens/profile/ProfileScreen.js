@@ -82,7 +82,7 @@ const ProfileScreen = () => {
         />
 
         <ItemMenu
-          onPress={() => navigation.navigate('SettingScreen')}
+          onPress={() => navigation.navigate('TrungTamTroGiupScreen')}
           title={'Trung tâm trợ giúp'}
           iconLeft="life-ring"
           colorIconLeft="#00B843"
