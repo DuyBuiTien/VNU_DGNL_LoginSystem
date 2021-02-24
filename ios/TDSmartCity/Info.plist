@@ -38,7 +38,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string/>
+	<string>Vị trí của bạn được yêu cầu để lấy thông tin thời tiết, chỉ số AQI chính xác</string>
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>Sử dụng Bluetooth để tham gia họp trực tuyến</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
@@ -52,8 +52,6 @@
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Vị trí của bạn được yêu cầu để lấy thông tin thời tiết, chỉ số AQI chính xác</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Vị trí của bạn được yêu cầu để lấy thông tin thời tiết, chỉ số AQI chính xác</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Vị trí của bạn được yêu cầu để lấy thông tin thời tiết, chỉ số AQI chính xác</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Sử dụng microphone để tham gia họp trực tuyến, quay video tải lên</string>

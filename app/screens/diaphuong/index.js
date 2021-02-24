@@ -1,3 +1,4 @@
 import DiaPhuongScreen from './DiaPhuongScreen';
-
-export {DiaPhuongScreen};
+import BDHC_UnitScreen from './BDHC_UnitScreen';
+import BDHC_UnitChildScreen from './BDHC_UnitChildScreen';
+export {DiaPhuongScreen, BDHC_UnitScreen, BDHC_UnitChildScreen};

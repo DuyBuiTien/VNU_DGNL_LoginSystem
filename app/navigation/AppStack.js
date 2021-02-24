@@ -9,6 +9,9 @@ import {SettingScreen, TrungTamTroGiupScreen} from '../screens/profile';
 import AuthStack from './AuthStack';
 import AppBottomTab from './AppBottomTab';
 
+import {BDHC_UnitScreen, BDHC_UnitChildScreen} from '../screens/diaphuong';
+import {GalleryScreen} from '../screens/common';
+
 const AppStack = () => {
   const navigation = useNavigation();
 
@@ -31,6 +34,9 @@ const AppStack = () => {
       <Stack.Screen name="AuthStack" component={AuthStack} />
       <Stack.Screen name="SettingScreen" component={SettingScreen} />
       <Stack.Screen name="TrungTamTroGiupScreen" component={TrungTamTroGiupScreen} />
+      <Stack.Screen name="BDHC_UnitScreen" component={BDHC_UnitScreen} />
+      <Stack.Screen name="BDHC_UnitChildScreen" component={BDHC_UnitChildScreen} />
+      <Stack.Screen name="GalleryScreen" component={GalleryScreen} />
     </Stack.Navigator>
   );
 };

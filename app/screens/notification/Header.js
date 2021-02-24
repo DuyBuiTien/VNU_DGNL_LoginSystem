@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import Add from './assets/svg/Add';
@@ -12,6 +13,8 @@ const Header = (props) => {
         style={[
           styles.subHeader,
           {
+            marginTop: 64,
+            backgroundColor: 'red',
             height: headerHeight / 2,
           },
         ]}>
