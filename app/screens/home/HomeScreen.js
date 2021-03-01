@@ -17,59 +17,17 @@ import {useNavigation, useRoute} from '@react-navigation/native';
 import {Text, Button, Icon, Divider, Badge} from 'react-native-elements';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5';
 
-import axios from 'axios';
-var moment = require('moment');
-moment.locale('vi');
-
-import {getLunarDate, getDayName} from '../../utils/amlich';
-
 import {TT_URL} from '../../config/server';
 import {requestPOST} from '../../services/Api';
+
+import {ThoiTietHome} from '../../components/lichaqi';
+import {CovidItem} from '../../components/covid';
+import {HeaderList} from '../../components/common';
 
 import images from '../../themes/Images';
 const _w = Dimensions.get('screen').width < 500 ? 60 : 70;
 const _h = Dimensions.get('screen').width < 500 ? 60 : 70;
 const _b = Dimensions.get('screen').width < 500 ? 25 : 30;
-
-const RenderAQI = (aqi) => {
-  if (aqi > 200) {
-    return (
-      <View style={{alignItems: 'center', flexDirection: 'row', backgroundColor: '#b283c5', borderRadius: 10}}>
-        <View style={{padding: 10, backgroundColor: '#a97abc', borderRadius: 10}}>
-          <Image resizeMode="cover" style={{width: 40, height: 40}} source={images.background.facepurple} />
-        </View>
-        <View style={{padding: 10}}>
-          <Text style={{color: '#634675', fontSize: 14, fontWeight: 'bold', padding: 5}}>{aqi}</Text>
-          <Text style={{fontSize: 10, textAlign: 'center'}}>AQI</Text>
-        </View>
-      </View>
-    );
-  } else if (aqi > 99 && aqi < 201) {
-    return (
-      <View style={{alignItems: 'center', flexDirection: 'row', backgroundColor: '#ff7978', borderRadius: 10}}>
-        <View style={{padding: 10, backgroundColor: '#fe6a69', borderRadius: 10}}>
-          <Image resizeMode="cover" style={{width: 40, height: 40}} source={images.background.facered} />
-        </View>
-        <View style={{padding: 10}}>
-          <Text style={{color: '#af2c3b', fontSize: 14, fontWeight: 'bold', padding: 5}}>{aqi}</Text>
-          <Text style={{fontSize: 10, textAlign: 'center'}}>AQI</Text>
-        </View>
-      </View>
-    );
-  } else if (aqi > 0 && aqi < 100) {
-    return (
-      <View style={{alignItems: 'center', flexDirection: 'row', backgroundColor: '#ffdf58', borderRadius: 10}}>
-        <View style={{padding: 10, backgroundColor: '#fdd74b', borderRadius: 10}}>
-          <Image resizeMode="cover" style={{width: 40, height: 40}} source={images.background.faceyellow} />
-        </View>
-        <View style={{padding: 10}}>
-          <Text style={{color: '#a57f23', fontSize: 14, fontWeight: 'bold', padding: 5}}>{aqi}</Text>
-          <Text style={{fontSize: 10, textAlign: 'center'}}>AQI</Text>
-        </View>
-      </View>
-    );
-  }
-};
 
 const _renderItem6 = (props) => {
   const {item, navigation} = props;
@@ -273,11 +231,6 @@ const HomeScreen = () => {
     },
   ];
 
-  const ld = getLunarDate(new Date().getDate(), new Date().getMonth() + 1, new Date().getFullYear());
-  const al = getDayName(ld);
-
-  var ngayAm = `${al}`;
-
   useEffect(() => {
     const fetchData = async () => {
       var body = {
@@ -330,37 +283,8 @@ const HomeScreen = () => {
       </ImageBackground>
       <View style={{marginTop: -50, backgroundColor: 'transparent', flex: 1}}>
         <View style={{flex: 1}}>
-          <View
-            style={{
-              margin: 10,
-              marginBottom: 5,
-              borderRadius: 10,
-              backgroundColor: '#fff',
-              padding: 10,
-              shadowColor: 'rgba(171, 180, 189, 0.35)',
-              shadowOffset: {width: 0, height: 1},
-              shadowOpacity: 1,
-              elevation: 5,
-            }}>
-            <View style={{flexDirection: 'row', padding: 5}}>
-              <TouchableOpacity
-                onPress={() => navigation.navigate('WebViewScreen', {})}
-                style={{flex: 1 / 2, alignItems: 'center', justifyContent: 'center'}}>
-                <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-                  <FontAwesome name="calendar-alt" size={16} color="#f44336" />
-                  <Text style={{fontWeight: '600', color: '#9E9E9E'}}> {moment().format('dddd').toUpperCase()}</Text>
-                </View>
-                <Text style={{fontWeight: '600', padding: 5}}>{moment().format('L')}</Text>
-                <Text style={{fontWeight: '600', fontSize: 12}}>{ngayAm}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => navigation.navigate('WebViewScreen', {})}
-                style={{flex: 1 / 2, alignItems: 'center', justifyContent: 'center'}}>
-                {RenderAQI(50)}
-              </TouchableOpacity>
-            </View>
-          </View>
-          <ScrollView style={{flexGrow: 1}}>
+          <ThoiTietHome />
+          <ScrollView showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false} style={{flexGrow: 1}}>
             <FlatList
               data={dataMenuMainFavor}
               renderItem={({item, index}) => <_renderItem7 item={item} index={index} navigation={navigation} />}
@@ -369,6 +293,17 @@ const HomeScreen = () => {
               numColumns={4}
               extraData={dataMenuMainFavor}
             />
+
+            <HeaderList title="Thống kê COVID" onPress={() => {}} />
+            <View style={styles.viewHeader}>
+              <Text style={styles.textHeaderTitle}> Thống kê COVID</Text>
+              <TouchableOpacity style={{flexDirection: 'row'}} activeOpacity={0.8} onPress={() => {}}>
+                <Text style={styles.textHeaderAll}> </Text>
+                <Icon name="chevron-down" type="font-awesome" size={16} color="#f44336" />
+              </TouchableOpacity>
+            </View>
+            <CovidItem />
+
             <View style={{padding: 10, paddingRight: 0}}>
               <View style={styles.viewHeader}>
                 <Text style={styles.textHeaderTitle}> Tin tức</Text>

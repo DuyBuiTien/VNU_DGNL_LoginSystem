@@ -10,7 +10,7 @@ import AuthStack from './AuthStack';
 import AppBottomTab from './AppBottomTab';
 
 import {BDHC_UnitScreen, BDHC_UnitChildScreen} from '../screens/diaphuong';
-import {GalleryScreen} from '../screens/common';
+import {GalleryScreen, WebViewScreen} from '../screens/common';
 
 const AppStack = () => {
   const navigation = useNavigation();
@@ -37,6 +37,7 @@ const AppStack = () => {
       <Stack.Screen name="BDHC_UnitScreen" component={BDHC_UnitScreen} />
       <Stack.Screen name="BDHC_UnitChildScreen" component={BDHC_UnitChildScreen} />
       <Stack.Screen name="GalleryScreen" component={GalleryScreen} />
+      <Stack.Screen name="WebViewScreen" component={WebViewScreen} />
     </Stack.Navigator>
   );
 };
