@@ -294,14 +294,19 @@ const HomeScreen = () => {
               extraData={dataMenuMainFavor}
             />
 
-            <HeaderList title="Thống kê COVID" onPress={() => {}} />
-            <View style={styles.viewHeader}>
-              <Text style={styles.textHeaderTitle}> Thống kê COVID</Text>
-              <TouchableOpacity style={{flexDirection: 'row'}} activeOpacity={0.8} onPress={() => {}}>
-                <Text style={styles.textHeaderAll}> </Text>
-                <Icon name="chevron-down" type="font-awesome" size={16} color="#f44336" />
-              </TouchableOpacity>
-            </View>
+            <HeaderList
+              title="Thống kê COVID"
+              onPress={() =>
+                navigation.navigate('WebViewScreen', {
+                  title: 'Tình hình dịch Covid',
+                  url: 'https://ncov.moh.gov.vn',
+                  colorHeader: '#252C68',
+                  hideBackForward: false,
+                  textColor: 'white',
+                })
+              }
+            />
+
             <CovidItem />
 
             <View style={{padding: 10, paddingRight: 0}}>

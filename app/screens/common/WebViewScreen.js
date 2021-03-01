@@ -9,7 +9,7 @@ import {Header, Icon} from 'react-native-elements';
 const Main_Screen = (props) => {
   const navigation = useNavigation();
   const route = useRoute();
-  const {title, url, colorHeader, hideBackForward} = route.params;
+  const {title, url, colorHeader, hideBackForward, textColor} = route.params;
   const AccessToken = useSelector((state) => state.global.AccessToken);
 
   const [canGoBack, setCanGoBack] = useState(false);
@@ -19,14 +19,16 @@ const Main_Screen = (props) => {
   const webViewRef = useRef();
 
   const backButtonHandler = () => {
-    if (webViewRef.current) webViewRef.current.goBack();
+    webViewRef.current && webViewRef.current.goBack();
   };
 
   const frontButtonHandler = () => {
-    if (webViewRef.current) webViewRef.current.goForward();
+    webViewRef.current && webViewRef.current.goForward();
   };
 
-  console.log(hideBackForward);
+  const reloadButtonHandler = () => {
+    webViewRef.current && webViewRef.current.reload();
+  };
 
   return (
     <View
@@ -39,13 +41,13 @@ const Main_Screen = (props) => {
         barStyle="light-content" // or directly
         centerComponent={{
           text: title,
-          style: {color: '#fff', fontSize: 20, fontWeight: 'bold'},
+          style: {color: textColor ? textColor : '#0A0A0A', fontSize: 20, fontWeight: 'bold'},
         }}
         leftComponent={
           <Icon
             onPress={() => navigation.goBack()}
             name="close"
-            color={'#0A0A0A'}
+            color={textColor ? textColor : '#0A0A0A'}
             underlayColor="#00000000"
             containerStyle={{paddingStart: 0}}
           />
@@ -54,7 +56,7 @@ const Main_Screen = (props) => {
           <View style={{flexDirection: 'row'}}>
             {!hideBackForward && (
               <Icon
-                onPress={() => webViewRef.current.goBack()}
+                onPress={() => backButtonHandler()}
                 name="arrow-back"
                 color={canGoBack ? '#0A0A0A' : '#8F9396'}
                 underlayColor="#00000000"
@@ -63,17 +65,17 @@ const Main_Screen = (props) => {
             )}
             {!hideBackForward && (
               <Icon
-                onPress={() => webViewRef.current.goForward()}
+                onPress={() => frontButtonHandler()}
                 name="arrow-forward"
-                color={canGoForward ? '#0A0A0A' : '#8F9396'}
+                color={canGoForward ? (textColor ? textColor : '#0A0A0A') : '#8F9396'}
                 underlayColor="#00000000"
                 containerStyle={{paddingStart: 0, marginEnd: 5}}
               />
             )}
             <Icon
-              onPress={() => webViewRef.current.reload()}
+              onPress={() => reloadButtonHandler()}
               name="sync"
-              color={'black'}
+              color={textColor ? textColor : '#0A0A0A'}
               underlayColor="#00000000"
               containerStyle={{paddingStart: 0, marginEnd: 5}}
             />

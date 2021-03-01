@@ -51,16 +51,16 @@ const ThongKeCovid = () => {
   useEffect(() => {
     const fetchData = async () => {
       var data2 = await requestGET(`${url}/CovidVietNam`);
-      var dataVN = data2.Data ? data2.Data : [];
+      var dataVN_ = data2.Data ? data2.Data : [];
       var data3 = await requestGET(`${url}/CovidWorld`);
       var dataTG = data3.Data ? data3.Data : [];
 
       console.log('aaa');
 
-      let dataND = dataVN.find((i) => i.City == 'Nam Định');
-      CasesNd = parseInt(dataND.Cases);
-      RecoveredNd = parseInt(dataND.Cured);
-      DeadNd = parseInt(dataND.Deaths);
+      let dataND_ = dataVN_.find((i) => i.City === 'Nam Định');
+      let CasesNd = parseInt(dataND_.Cases, 10);
+      let RecoveredNd = parseInt(dataND_.Cured, 10);
+      let DeadNd = parseInt(dataND_.Deaths, 10);
       let Ndddt = CasesNd - RecoveredNd - DeadNd;
 
       setDataND({
@@ -72,12 +72,12 @@ const ThongKeCovid = () => {
 
       if (dataTG.length > 2) {
         let dataAll = dataTG[1];
-        CasesVn = parseInt(dataAll.CasesVn);
-        CasesWorld = parseInt(dataAll.CasesWorld);
-        RecoveredVn = parseInt(dataAll.RecoveredVn);
-        RecoveredWorld = parseInt(dataAll.RecoveredWorld);
-        DeadVn = parseInt(dataAll.DeadVn);
-        DeadWorld = parseInt(dataAll.DeadWorld);
+        let CasesVn = parseInt(dataAll.CasesVn);
+        let CasesWorld = parseInt(dataAll.CasesWorld);
+        let RecoveredVn = parseInt(dataAll.RecoveredVn);
+        let RecoveredWorld = parseInt(dataAll.RecoveredWorld);
+        let DeadVn = parseInt(dataAll.DeadVn);
+        let DeadWorld = parseInt(dataAll.DeadWorld);
 
         let tgddt = CasesWorld - RecoveredWorld - DeadWorld;
         let vnddt = CasesVn - RecoveredVn - DeadVn;
