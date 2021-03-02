@@ -34,6 +34,12 @@ const DVC_TKHS_SearchScreen = () => {
         barcodeFinderBorderColor="red"
         barcodeFinderBorderWidth={2}
         onBarCodeRead={barcodeReceived}
+        androidCameraPermissionOptions={{
+          title: 'Quyền sử dụng Camera',
+          message: 'Sử dụng Camera để quét hồ sơ',
+          buttonPositive: 'Chấp nhận',
+          buttonNegative: 'Huỷ',
+        }}
         captureAudio={false}>
         <View
           style={{
