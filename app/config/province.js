@@ -1,0 +1,10 @@
+const areaCode = 36;
+const areaName = 'Tân Dân';
+const areaID = 'tandan';
+const areaLat = 21.0239734;
+const areaLon = 105.8306705;
+const keyAQI = '9079b85b-379c-45a5-8815-a7164f048635';
+const keyMap = 'AIzaSyDS875fQaHDZUcmAkYqzrsj9IG-SfBScVM';
+const appURL = '';
+const serviceURL = 'https://us-central1-tdservice.cloudfunctions.net';
+export {areaCode, areaName, areaLat, areaLon, keyAQI, keyMap, appURL, areaID, serviceURL};
