@@ -33,7 +33,11 @@ const DVC_TKHS_SearchScreen = () => {
           style={{padding: 10, marginBottom: 10, borderColor: '#D1D1D1', borderWidth: 0.5, borderRadius: 8}}
         />
 
-        <View style={{flexDirection: 'row', alignItems: 'center', alignContent: 'center'}}>
+        <TouchableOpacity
+          style={{flexDirection: 'row', alignItems: 'center', alignContent: 'center'}}
+          onPress={() => {
+            navigation.navigate('DVC_TKHS_ScanCameraScreen');
+          }}>
           <Text
             style={{
               color: '#343F46',
@@ -45,9 +49,11 @@ const DVC_TKHS_SearchScreen = () => {
             Hoặc quét mã hồ sơ
           </Text>
           <FontAwesome name={'barcode-read'} size={20} onPress={() => {}} />
-        </View>
+        </TouchableOpacity>
 
-        <TouchableOpacity style={{width: '100%', backgroundColor: '#F23A27', padding: 10, marginTop: 10, borderRadius: 10}} onPress={()=>TimKiemHoSo()}>
+        <TouchableOpacity
+          style={{width: '100%', backgroundColor: '#F23A27', padding: 10, marginTop: 10, borderRadius: 10}}
+          onPress={() => TimKiemHoSo()}>
           <Text style={{textAlign: 'center', fontWeight: 'bold', color: '#FFF'}}>Tìm kiếm hồ sơ</Text>
         </TouchableOpacity>
       </ScrollView>
