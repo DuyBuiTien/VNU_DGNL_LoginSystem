@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import messaging from '@react-native-firebase/messaging';
-import {useNavigation} from '@react-navigation/native';
 
 import {createStackNavigator} from '@react-navigation/stack';
 const Stack = createStackNavigator();
@@ -11,10 +10,10 @@ import AppBottomTab from './AppBottomTab';
 
 import {BDHC_UnitScreen, BDHC_UnitChildScreen} from '../screens/diaphuong';
 import {GalleryScreen, WebViewScreen} from '../screens/common';
+import {MenuScreen} from '../screens/home';
+import {DVC_MainScreen, DVC_TKHS_SearchScreen} from '../screens/dvc';
 
 const AppStack = () => {
-  const navigation = useNavigation();
-
   useEffect(() => {
     messaging().onNotificationOpenedApp((remoteMessage) => {});
 
@@ -38,6 +37,10 @@ const AppStack = () => {
       <Stack.Screen name="BDHC_UnitChildScreen" component={BDHC_UnitChildScreen} />
       <Stack.Screen name="GalleryScreen" component={GalleryScreen} />
       <Stack.Screen name="WebViewScreen" component={WebViewScreen} />
+      <Stack.Screen name="MenuScreen" component={MenuScreen} />
+
+      <Stack.Screen name="DVC_MainScreen" component={DVC_MainScreen} />
+      <Stack.Screen name="DVC_TKHS_SearchScreen" component={DVC_TKHS_SearchScreen} />
     </Stack.Navigator>
   );
 };

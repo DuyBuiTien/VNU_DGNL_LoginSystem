@@ -3,7 +3,8 @@ import {Base64} from 'js-base64';
 import * as requestFromServer from './Crud';
 import {globalSlice, callTypes} from './Slice';
 import store from '../store';
-import {createNextState} from '@reduxjs/toolkit';
+
+import MockData from '../../data/MockData.json';
 
 const {actions} = globalSlice;
 
@@ -26,6 +27,14 @@ export const fetchDataDonVi = (URL) => (dispatch) => {
       error.clientMessage = "Can't find datadonvi";
       dispatch(actions.catchErrorDonVi({error, callType: callTypes.action}));
     });
+};
+
+export const fetchDataDonVi_Demo = (URL) => (dispatch) => {
+  let dataApp = MockData.dataApp ?? null;
+  let dataService = MockData?.dataService ?? null;
+  let dataMenu = MockData?.dataMenu ?? null;
+
+  dispatch(actions.dataDonViFetched({dataApp: dataApp, dataService: dataService, dataMenu: dataMenu}));
 };
 
 export const login = (username, password) => (dispatch) => {
@@ -164,4 +173,8 @@ export const uploadAvatar = (body) => (dispatch) => {
       error.clientMessage = "Can't find friends";
       dispatch(actions.catchError({error, callType: callTypes.action}));
     });
+};
+
+export const setMenuFavor = (menus) => (dispatch) => {
+  return dispatch(actions.setMenuCaNhan(menus));
 };

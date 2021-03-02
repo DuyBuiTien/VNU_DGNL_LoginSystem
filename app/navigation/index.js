@@ -37,6 +37,10 @@ const RootContainerScreen = () => {
     };
   }, []);
 
+  useEffect(() => {
+    dispatch(actions.fetchDataDonVi_Demo(''));
+  }, [dispatch]);
+
   async function checkApplicationPermission() {
     const authorizationStatus = await messaging().requestPermission();
     if (authorizationStatus === messaging.AuthorizationStatus.AUTHORIZED) {

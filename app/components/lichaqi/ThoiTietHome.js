@@ -87,10 +87,12 @@ const ThoiTietHome = () => {
         <TouchableOpacity
           onPress={() =>
             navigation.navigate('WebViewScreen', {
-              title: 'Lịch',
-              url: 'https://misc.zaloapp.com/calendar/v2/index.html',
-              colorHeader: '#FFFAF3',
-              hideBackForward: true,
+              data: {
+                title: 'Lịch',
+                url: 'https://misc.zaloapp.com/calendar/v2/index.html',
+                colorHeader: '#FFFAF3',
+                hideBackForward: true,
+              },
             })
           }
           style={{flex: 1 / 2, alignItems: 'center', justifyContent: 'center'}}>
