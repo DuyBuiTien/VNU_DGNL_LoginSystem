@@ -1,3 +1,4 @@
 import GalleryScreen from './GalleryScreen';
+import WebViewScreen from './WebViewScreen';
 
-export {GalleryScreen};
+export {GalleryScreen, WebViewScreen};
