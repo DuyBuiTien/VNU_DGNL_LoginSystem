@@ -7,24 +7,7 @@ const HEADER_MIN_HEIGHT = 120;
 const HEADER_SCROLL_DISTANCE = HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT;
 
 const TinNoiBat = () => {
-  return (
-    <View>
-      {/* <Header title="Tài khoản" leftComponent={false} /> */}
-      <View
-        style={{
-          margin: 10,
-          borderColor: 'black',
-          borderWidth: 1,
-          borderRadius: 4,
-
-          height: 50,
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-        <Text style={{margin: 10}}>Tim kiem</Text>
-      </View>
-    </View>
-  );
+  return <View style={{height: 60, backgroundColor: 'blue'}} />;
 };
 
 const DATA = Array(10)
@@ -52,13 +35,13 @@ const NotificationScreen = () => {
   });
 
   const imageOpacity = scrollY.interpolate({
-    inputRange: [0, HEADER_SCROLL_DISTANCE / 2, HEADER_SCROLL_DISTANCE],
-    outputRange: [1, 1, 0],
+    inputRange: [HEADER_SCROLL_DISTANCE / 2, HEADER_SCROLL_DISTANCE],
+    outputRange: [1, 0],
     extrapolate: 'clamp',
   });
   const imageTranslateY = scrollY.interpolate({
-    inputRange: [100, 140],
-    outputRange: [200, 260],
+    inputRange: [0, HEADER_SCROLL_DISTANCE],
+    outputRange: [0, -HEADER_SCROLL_DISTANCE],
     extrapolate: 'clamp',
   });
 
@@ -88,7 +71,7 @@ const NotificationScreen = () => {
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
         scrollEventThrottle={16}
-        contentContainerStyle={{paddingTop: HEADER_MAX_HEIGHT - 40}}
+        contentContainerStyle={{paddingTop: HEADER_MAX_HEIGHT}}
         onScroll={Animated.event([{nativeEvent: {contentOffset: {y: scrollY}}}], {useNativeDriver: true})}
         ref={ref}
         data={DATA}
@@ -147,7 +130,7 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
-    backgroundColor: 'white',
+    backgroundColor: 'red',
     overflow: 'hidden',
     height: HEADER_MAX_HEIGHT,
   },
