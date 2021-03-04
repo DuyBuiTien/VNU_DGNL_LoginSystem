@@ -36,10 +36,13 @@ const RootContainerScreen = () => {
       unsubscribe();
     };
   }, []);
+  console.log('VVVVVVVV');
 
   useEffect(() => {
+    console.log('vaoday');
     dispatch(actions.fetchDataDonVi_Demo(''));
-  }, [dispatch]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   async function checkApplicationPermission() {
     const authorizationStatus = await messaging().requestPermission();

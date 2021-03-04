@@ -92,13 +92,20 @@ const MenuScreen = () => {
     let datamenusFavor = [];
     let datamenusOther = [];
     if (menuCaNhanTMP && menuCaNhanTMP.length > 0) {
+      menuCaNhanTMP.map((j) => {
+        dataMenu.map((i) => {
+          if (i.appid === j) {
+            datamenusFavor.push(i);
+          }
+        });
+      });
+
       dataMenu.map((i) => {
         let check = false;
 
         menuCaNhanTMP.map((j) => {
           if (i.appid === j) {
             check = true;
-            datamenusFavor.push(i);
           }
         });
 
@@ -135,6 +142,7 @@ const MenuScreen = () => {
         {cancelable: false},
       );
     } else {
+      setisEditing(false);
     }
   };
 
@@ -170,6 +178,10 @@ const MenuScreen = () => {
         type: 'danger',
       });
     }
+  };
+
+  const OpenScreen = (item) => {
+    navigation.navigate(item.navigate);
   };
 
   const Save = () => {
@@ -226,7 +238,7 @@ const MenuScreen = () => {
                 navigation={navigation}
                 favor={true}
                 editing={isEditing}
-                onPress={RemoveItem}
+                onPress={isEditing ? RemoveItem : OpenScreen}
               />
             )}
             keyExtractor={(item, index) => index.toString()}
@@ -246,7 +258,7 @@ const MenuScreen = () => {
                 navigation={navigation}
                 favor={false}
                 editing={isEditing}
-                onPress={AddItem}
+                onPress={isEditing ? AddItem : OpenScreen}
               />
             )}
             keyExtractor={(item, index) => index.toString()}
