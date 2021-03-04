@@ -35,7 +35,7 @@
     {
       "appid": "1",
       "menumain": 1,
-      "name": "Dịch vụ hành chính công",
+      "name": "Dịch vụ công",
       "navigate": "DVC_MainScreen",
       "count": 0,
       "icon": "university",

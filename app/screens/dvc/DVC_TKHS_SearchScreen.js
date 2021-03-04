@@ -1,17 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState} from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  ScrollView,
-  TouchableOpacity,
-  ImageBackground,
-  Image,
-  TextInput,
-  Keyboard,
-  FlatList,
-} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, TextInput, Keyboard, FlatList} from 'react-native';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {useSelector, useDispatch} from 'react-redux';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
@@ -152,13 +141,19 @@ const DVC_TKHS_SearchScreen = () => {
           <Text style={{textAlign: 'center', fontWeight: 'bold', color: '#FFF'}}>Tìm kiếm hồ sơ</Text>
         </TouchableOpacity>
         <View style={{flex: 1, marginTop: 10}}>
-          <FlatList
-            contentContainerStyle={{flexGrow: 1}}
-            data={listHS}
-            renderItem={({item, index}) => <RenderItem item={item} index={index} navigation={navigation} histories={[]} />}
-            keyExtractor={(item, index) => index.toString()}
-            ListEmptyComponent={() => <Text>Không có kết quả</Text>}
-          />
+          {isLoading ? (
+            <ActivityIndicator size="large" color="#fb8c00" style={{flex: 1, justifyContent: 'center'}} />
+          ) : (
+            <FlatList
+              contentContainerStyle={{flexGrow: 1}}
+              data={listHS}
+              renderItem={({item, index}) => <RenderItem item={item} index={index} navigation={navigation} histories={[]} />}
+              keyExtractor={(item, index) => index.toString()}
+              ListEmptyComponent={() => (
+                <Text style={{textAlign: 'center', color: '#50565B', marginTop: 10}}>Không có kết quả</Text>
+              )}
+            />
+          )}
         </View>
       </View>
     </View>

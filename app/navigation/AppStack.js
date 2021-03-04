@@ -11,7 +11,7 @@ import AppBottomTab from './AppBottomTab';
 import {BDHC_UnitScreen, BDHC_UnitChildScreen} from '../screens/diaphuong';
 import {GalleryScreen, WebViewScreen} from '../screens/common';
 import {MenuScreen} from '../screens/home';
-import {DVC_MainScreen, DVC_TKHS_SearchScreen, DVC_TKHS_ScanCameraScreen} from '../screens/dvc';
+import {DVC_MainScreen, DVC_TKHS_SearchScreen, DVC_TKHS_ScanCameraScreen, DVC_TKHS_DetailScreen} from '../screens/dvc';
 
 const AppStack = () => {
   useEffect(() => {
@@ -42,6 +42,7 @@ const AppStack = () => {
       <Stack.Screen name="DVC_MainScreen" component={DVC_MainScreen} />
       <Stack.Screen name="DVC_TKHS_SearchScreen" component={DVC_TKHS_SearchScreen} />
       <Stack.Screen name="DVC_TKHS_ScanCameraScreen" component={DVC_TKHS_ScanCameraScreen} />
+      <Stack.Screen name="DVC_TKHS_DetailScreen" component={DVC_TKHS_DetailScreen} />
     </Stack.Navigator>
   );
 };

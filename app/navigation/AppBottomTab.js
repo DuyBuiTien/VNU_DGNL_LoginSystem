@@ -27,8 +27,8 @@ const AppBottomTab = () => {
         activeTintColor: '#D6002C',
         inactiveTintColor: '#757E83',
         labelStyle: {
-          fontSize: 11,
-          fontWeight: '600',
+          fontSize: 10,
+          fontWeight: '400',
         },
         indicatorStyle: {
           backgroundColor: 'transparent',

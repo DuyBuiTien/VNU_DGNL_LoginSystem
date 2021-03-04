@@ -25,7 +25,17 @@ const ItemMenuImage = (props) => {
           marginHorizontal: 20,
         }}>
         <ImageBackground imageStyle={{borderRadius: 10}} source={item.background} style={{width: '100%', height: 80}} />
-        <Image source={item.icon} style={{width: 40, height: 40, margin: 20}} />
+        <View
+          style={{
+            height: 20,
+            borderTopEndRadius: 200,
+            borderTopStartRadius: 200,
+            top: -20,
+            backgroundColor: '#FFF',
+            width: '100%',
+          }}
+        />
+        <Image source={item.icon} style={{width: 40, height: 40, margin: 20, marginTop: 0}} />
         <Text style={{height: 60, textAlign: 'center', marginHorizontal: 10, color: '#3B484E', fontWeight: '600'}}>
           {item.name}
         </Text>

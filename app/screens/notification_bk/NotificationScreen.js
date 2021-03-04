@@ -2,6 +2,8 @@
 import React, {useRef} from 'react';
 import {SafeAreaView, StyleSheet, Image, View, Text, Animated} from 'react-native';
 
+import {Header} from '../../components';
+
 const HEADER_MAX_HEIGHT = 260;
 const HEADER_MIN_HEIGHT = 120;
 const HEADER_SCROLL_DISTANCE = HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT;
@@ -21,7 +23,7 @@ const TinNoiBat = () => {
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-        <Text style={{margin: 10}}>Tim kiem</Text>
+        <Text style={{margin: 10}}>Thông tin từ chính quyền</Text>
       </View>
     </View>
   );
@@ -83,7 +85,7 @@ const NotificationScreen = () => {
   const ref = useRef(null);
 
   return (
-    <View style={{flex: 1}}>
+    <SafeAreaView style={styles.saveArea}>
       <Animated.FlatList
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
@@ -110,12 +112,12 @@ const NotificationScreen = () => {
         style={[
           styles.topBar,
           {
-            opacity: imageOpacity,
+            transform: [{scale: titleScale}, {translateY: titleTranslateY}],
           },
         ]}>
         <Text style={styles.title}>Thông tin từ chính quyền</Text>
       </Animated.View>
-    </View>
+    </SafeAreaView>
   );
 };
 
