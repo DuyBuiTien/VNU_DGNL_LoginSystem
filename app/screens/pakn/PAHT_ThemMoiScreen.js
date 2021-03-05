@@ -2,7 +2,19 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 
-import {StyleSheet, Text, View, ScrollView, PermissionsAndroid, Platform, TextInput, Image, Video} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  PermissionsAndroid,
+  Platform,
+  TextInput,
+  Image,
+  Video,
+  FlatList,
+  Dimensions,
+} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 import {showMessage} from 'react-native-flash-message';
 import {useNavigation, useRoute} from '@react-navigation/native';
@@ -13,47 +25,62 @@ import ImagePicker from 'react-native-image-crop-picker';
 
 import ActionSheet from '../../modules/react-native-actions-sheet';
 import {Header} from '../../components';
+import {ModelPicker} from '../../components/pakn';
 import * as actions from '../../redux/global/Actions';
 
-const RenderImage = (props) => {
-  const {image, cleanupSingleImage} = props;
-  const uri = image.uri;
+const SCREEN_HEIGHT = Dimensions.get('screen').height;
+
+const ItemLinhVuc = (props) => {
+  const {data, key, onPress} = props;
   return (
-    <View style={{margin: 10}}>
-      <Image style={{height: 100, width: 100, resizeMode: 'cover'}} source={image} />
-      <FontAwesome
-        name="times"
-        onPress={() => cleanupSingleImage(uri)}
-        size={15}
-        color="#f44336"
-        containerStyle={styles.iconImage}
-      />
-    </View>
+    <FlatList
+      contentContainerStyle={{flexGrow: 1}}
+      data={data?.ThanhPhanHoSo ?? []}
+      renderItem={({item, index}) => <RenderItem item={item} index={index} />}
+      keyExtractor={(i, index) => index.toString()}
+      ListEmptyComponent={() => <Text style={{textAlign: 'center', color: '#50565B', marginTop: 10}}>Không có kết quả</Text>}
+    />
   );
 };
 
-const RenderVideo = (props) => {
-  const {video, cleanupSingleImage} = props;
+const RenderAsset = (props) => {
+  const {image, cleanupSingleImage, key} = props;
+
+  if (image.type && image.type.toLowerCase().indexOf('video/') !== -1) {
+    return (
+      <View key={key} style={{}}>
+        <Video
+          source={{uri: image.uri, type: image.mime}}
+          resizeMode="cover"
+          style={{height: 175, width: 350, margin: 10}}
+          rate={1}
+          paused={false}
+          volume={1}
+          muted={false}
+          onError={(e) => console.log(e)}
+          onLoad={(load) => console.log(load)}
+          repeat={true}
+        />
+        <FontAwesome
+          name="times"
+          onPress={() => cleanupSingleImage(image.uri)}
+          size={28}
+          color="#E53935"
+          containerStyle={{position: 'absolute', right: 1, top: 1}}
+        />
+      </View>
+    );
+  }
+
   return (
-    <View style={styles.viewVideo}>
-      <Video
-        source={{uri: video.uri, type: video.mime}}
-        resizeMode="cover"
-        style={{position: 'absolute', top: 0, left: 0, bottom: 0, right: 0}}
-        rate={1}
-        paused={false}
-        volume={1}
-        muted={false}
-        onError={(e) => console.log(e)}
-        onLoad={(load) => console.log(load)}
-        repeat={true}
-      />
+    <View style={{margin: 10}} key={key}>
+      <Image style={{height: 100, width: 100, resizeMode: 'cover', borderRadius: 6}} source={image} />
       <FontAwesome
         name="times"
-        onPress={() => cleanupSingleImage(video.uri)}
-        size={28}
-        color="#E53935"
-        containerStyle={styles.iconVideo}
+        onPress={() => cleanupSingleImage(image.uri)}
+        size={18}
+        color="#f44336"
+        style={{position: 'absolute', right: 1, top: 1, backgroundColor: 'transparent', padding: 4}}
       />
     </View>
   );
@@ -78,6 +105,31 @@ const MainScreen = () => {
   const [images, setimages] = useState([]);
 
   const [viTri, setViTri] = useState(CurrentLocation);
+
+  const [typeDialog, setTypeDialog] = useState('');
+
+  const [ListLinhVuc, setListLinhVuc] = useState([
+    {
+      id: 0,
+      name: 'Xây dựng',
+    },
+    {
+      id: 1,
+      name: 'Môi trường',
+    },
+    {
+      id: 2,
+      name: 'An ninh trật tự',
+    },
+    {
+      id: 3,
+      name: 'Giao thông',
+    },
+    {
+      id: 4,
+      name: 'Phản ánh/góp ý về ứng dụng người dân',
+    },
+  ]);
 
   const hasLocationPermission = async () => {
     if (Platform.OS === 'ios' || (Platform.OS === 'android' && Platform.Version < 23)) {
@@ -164,8 +216,35 @@ const MainScreen = () => {
       })
       .catch((e) => console.log(e))
       .finally(() => {
-        refRBSheet.current.setModalVisible(false);
+        ModalHide();
       });
+  };
+
+  const ThemAnh = () => {
+    refRBSheet.current.setModalVisible(true);
+    setTypeDialog('ThemAnh');
+  };
+
+  const ChonLinhVuc = () => {
+    refRBSheet.current.setModalVisible(true);
+    setTypeDialog('ChonLinhVuc');
+  };
+
+  const ModalHide = () => {
+    refRBSheet.current.setModalVisible(false);
+    setTypeDialog('');
+  };
+
+  const handleLinhVuc = (list) => {
+    ModalHide();
+    let tmpName = [];
+    list.map((item) => {
+      if (item.checked) {
+        tmpName.push(item.name);
+      }
+    });
+    setLinhVuc(tmpName.join(';'));
+    setListLinhVuc(list);
   };
 
   useEffect(() => {
@@ -185,23 +264,26 @@ const MainScreen = () => {
           style={{backgroundColor: 'transparent', flex: 1}}>
           <View style={styles.content1}>
             <Text style={styles.title}>Hình ảnh</Text>
-            <TouchableOpacity
-              style={{
-                justifyContent: 'center',
-                alignItems: 'center',
-                width: 100,
-                height: 100,
-                borderRadius: 6,
-                borderWidth: 0.5,
-                borderColor: 'gray',
-                marginTop: 10,
-              }}
-              onPress={() => {
-                refRBSheet.current.setModalVisible(true);
-              }}>
-              <FontAwesome name="plus" size={35} color="#F1462E" />
-              <Text style={{color: '#B0B0B0', fontSize: 12}}>Thêm ảnh</Text>
-            </TouchableOpacity>
+            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+              <TouchableOpacity
+                style={{
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  width: 100,
+                  height: 100,
+                  borderRadius: 6,
+                  borderWidth: 0.5,
+                  borderColor: 'gray',
+                  marginTop: 10,
+                }}
+                onPress={() => {
+                  ThemAnh();
+                }}>
+                <FontAwesome name="plus" size={35} color="#F1462E" />
+                <Text style={{color: '#B0B0B0', fontSize: 12}}>Thêm ảnh</Text>
+              </TouchableOpacity>
+              {images && images.map((i) => <RenderAsset image={i} key={i.uri} />)}
+            </ScrollView>
           </View>
 
           <View
@@ -230,7 +312,7 @@ const MainScreen = () => {
           <View style={styles.content1}>
             <Text style={styles.title}>Lĩnh vực:</Text>
             <TouchableOpacity
-              onPress={() => {}}
+              onPress={ChonLinhVuc}
               style={{
                 marginTop: 10,
                 padding: 10,
@@ -440,24 +522,39 @@ const MainScreen = () => {
         }}
         containerStyle={{margin: 20}}
         defaultOverlayOpacity={0.3}>
-        <View style={{padding: 15}}>
-          <TouchableOpacity
-            style={{flexDirection: 'row', padding: 10, alignItems: 'center'}}
-            onPress={() => {
-              pickMultiple();
-            }}>
-            <FontAwesome name="images" size={20} color="#EF6C00" />
-            <Text style={{fontWeight: 'bold', marginStart: 15, color: '#5B6062'}}>Chọn từ thư viện</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={{flexDirection: 'row', padding: 10, alignItems: 'center'}}>
-            <FontAwesome name="camera" size={20} color="#EF6C00" />
-            <Text style={{fontWeight: 'bold', marginStart: 15, color: '#5B6062'}}>Chụp ảnh</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={{flexDirection: 'row', padding: 10, alignItems: 'center'}}>
-            <FontAwesome name="video" size={20} color="#EF6C00" />
-            <Text style={{fontWeight: 'bold', marginStart: 15, color: '#5B6062'}}>Quay video</Text>
-          </TouchableOpacity>
-        </View>
+        <ScrollView style={{padding: 15, marginBottom: 20, maxHeight: SCREEN_HEIGHT / 2}}>
+          {typeDialog === 'ThemAnh' ? (
+            <>
+              <TouchableOpacity
+                style={{flexDirection: 'row', padding: 10, alignItems: 'center'}}
+                onPress={() => {
+                  pickMultiple();
+                }}>
+                <FontAwesome name="images" size={20} color="#EF6C00" />
+                <Text style={{fontWeight: 'bold', marginStart: 15, color: '#5B6062'}}>Chọn từ thư viện</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={{flexDirection: 'row', padding: 10, alignItems: 'center'}}>
+                <FontAwesome name="camera" size={20} color="#EF6C00" />
+                <Text style={{fontWeight: 'bold', marginStart: 15, color: '#5B6062'}}>Chụp ảnh</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={{flexDirection: 'row', padding: 10, alignItems: 'center'}}>
+                <FontAwesome name="video" size={20} color="#EF6C00" />
+                <Text style={{fontWeight: 'bold', marginStart: 15, color: '#5B6062'}}>Quay video</Text>
+              </TouchableOpacity>
+            </>
+          ) : typeDialog === 'ChonLinhVuc' ? (
+            <ModelPicker
+              isMultiChoice={false}
+              handleDongY={handleLinhVuc}
+              listdata={ListLinhVuc}
+              handleModal={ModalHide}
+              title={'Chọn lĩnh vực'}
+              height={SCREEN_HEIGHT / 2}
+            />
+          ) : (
+            <></>
+          )}
+        </ScrollView>
       </ActionSheet>
     </View>
   );
