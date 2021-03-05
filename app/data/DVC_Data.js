@@ -1,4 +1,4 @@
-export const DVC_DANHMUC = [
+export const DANHMUC = [
   {
     id: 0,
     name: 'Tra cứu hồ sơ',

@@ -12,6 +12,7 @@ import {BDHC_UnitScreen, BDHC_UnitChildScreen} from '../screens/diaphuong';
 import {GalleryScreen, WebViewScreen} from '../screens/common';
 import {MenuScreen} from '../screens/home';
 import {DVC_MainScreen, DVC_TKHS_SearchScreen, DVC_TKHS_ScanCameraScreen, DVC_TKHS_DetailScreen} from '../screens/dvc';
+import {PAHT_MainScreen, PAHT_ThongKeScreen, PAHT_TongHopScreen, PAHT_ThemMoiScreen} from '../screens/pakn';
 
 const AppStack = () => {
   useEffect(() => {
@@ -43,6 +44,11 @@ const AppStack = () => {
       <Stack.Screen name="DVC_TKHS_SearchScreen" component={DVC_TKHS_SearchScreen} />
       <Stack.Screen name="DVC_TKHS_ScanCameraScreen" component={DVC_TKHS_ScanCameraScreen} />
       <Stack.Screen name="DVC_TKHS_DetailScreen" component={DVC_TKHS_DetailScreen} />
+
+      <Stack.Screen name="PAHT_MainScreen" component={PAHT_MainScreen} />
+      <Stack.Screen name="PAHT_TongHopScreen" component={PAHT_TongHopScreen} />
+      <Stack.Screen name="PAHT_ThemMoiScreen" component={PAHT_ThemMoiScreen} />
+      <Stack.Screen name="PAHT_ThongKeScreen" component={PAHT_ThongKeScreen} />
     </Stack.Navigator>
   );
 };

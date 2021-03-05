@@ -22,7 +22,7 @@ const Item = ({leftComponent, isStack, title, showRight, RightComponent}) => {
       }
       centerComponent={{
         text: title,
-        style: {color: '#2E2E2E', fontSize: 20, fontWeight: 'bold'},
+        style: {color: '#2E2E2E', fontSize: 18, fontWeight: 'bold'},
       }}
       rightComponent={RightComponent && <RightComponent />}
       containerStyle={styles.container}

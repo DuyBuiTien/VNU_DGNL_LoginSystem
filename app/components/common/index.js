@@ -1,4 +1,4 @@
 import HeaderList from './HeaderList';
 import ItemMenuImage from './ItemMenuImage';
-
-export {HeaderList, ItemMenuImage};
+import BlockLogin from './BlockLogin';
+export {HeaderList, ItemMenuImage, BlockLogin};
