@@ -35,7 +35,7 @@ const ItemMenuImage = (props) => {
             width: '100%',
           }}
         />
-        <Image source={item.icon} style={{width: 40, height: 40, margin: 20, marginTop: 0}} />
+        <Image source={item.icon} style={{width: 50, height: 50, margin: 15, marginTop: 0}} />
         <Text style={{height: 60, textAlign: 'center', marginHorizontal: 10, color: '#3B484E', fontWeight: '600'}}>
           {item.name}
         </Text>

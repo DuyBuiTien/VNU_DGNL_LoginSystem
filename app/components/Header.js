@@ -8,8 +8,8 @@ const Item = ({leftComponent, isStack, title, showRight, RightComponent}) => {
 
   return (
     <Header
-      statusBarProps={{barStyle: 'light-content', backgroundColor: 'transparent', translucent: true}}
-      barStyle="light-content"
+      statusBarProps={{barStyle: 'dark-content', backgroundColor: 'transparent', translucent: true}}
+      barStyle="dark-content"
       placement="left"
       leftComponent={
         leftComponent || isStack ? (

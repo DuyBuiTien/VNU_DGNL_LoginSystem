@@ -31,6 +31,9 @@ const DVC_ThongKe_MainScreen = () => {
           ],
         },
       ],
+      credits: {
+        enabled: false,
+      },
     });
     return () => {};
   }, []);

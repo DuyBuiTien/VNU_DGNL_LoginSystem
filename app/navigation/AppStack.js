@@ -18,7 +18,22 @@ import {
   DVC_TKHS_DetailScreen,
   DVC_ThongKe_MainScreen,
 } from '../screens/dvc';
-import {PAHT_MainScreen, PAHT_ThongKeScreen, PAHT_TongHopScreen, PAHT_ThemMoiScreen, PAHT_DetailScreen} from '../screens/pakn';
+import {
+  PAHT_MainScreen,
+  PAHT_ThongKeScreen,
+  PAHT_TongHopScreen,
+  PAHT_ThemMoiScreen,
+  PAHT_DetailScreen,
+  PAHT_CaNhanScreen,
+} from '../screens/pakn';
+
+import {GT_MainScreen, GT_VEXEVEMB_MainScreen} from '../screens/giaothong';
+
+import {DL_MainScreen} from '../screens/dulich';
+
+import {TDTM_MainScreen, TDTM_DanhSachScreen} from '../screens/tongdaithongminh';
+
+import {GD_MainScreen, GD_DiemDanhScreen, GD_SLLDTScreen} from '../screens/giaoduc';
 
 const AppStack = () => {
   useEffect(() => {
@@ -59,6 +74,19 @@ const AppStack = () => {
       <Stack.Screen name="PAHT_ThemMoiScreen" component={PAHT_ThemMoiScreen} />
       <Stack.Screen name="PAHT_ThongKeScreen" component={PAHT_ThongKeScreen} />
       <Stack.Screen name="PAHT_DetailScreen" component={PAHT_DetailScreen} />
+      <Stack.Screen name="PAHT_CaNhanScreen" component={PAHT_CaNhanScreen} />
+
+      <Stack.Screen name="GD_MainScreen" component={GD_MainScreen} />
+      <Stack.Screen name="GD_DiemDanhScreen" component={GD_DiemDanhScreen} />
+      <Stack.Screen name="GD_SLLDTScreen" component={GD_SLLDTScreen} />
+
+      <Stack.Screen name="TDTM_MainScreen" component={TDTM_MainScreen} />
+      <Stack.Screen name="TDTM_DanhSachScreen" component={TDTM_DanhSachScreen} />
+
+      <Stack.Screen name="GT_MainScreen" component={GT_MainScreen} />
+      <Stack.Screen name="GT_VEXEVEMB_MainScreen" component={GT_VEXEVEMB_MainScreen} />
+
+      <Stack.Screen name="DL_MainScreen" component={DL_MainScreen} />
     </Stack.Navigator>
   );
 };

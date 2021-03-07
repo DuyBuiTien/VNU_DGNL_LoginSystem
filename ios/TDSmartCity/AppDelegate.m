@@ -4,7 +4,7 @@
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 #import <Firebase.h>
-
+#import <GoogleMaps/GoogleMaps.h>
 #import <UMCore/UMModuleRegistry.h>
 #import <UMReactNativeAdapter/UMNativeModulesProxy.h>
 #import <UMReactNativeAdapter/UMModuleRegistryAdapter.h>
@@ -43,6 +43,8 @@ static void InitializeFlipper(UIApplication *application) {
 #endif
 
   self.moduleRegistryAdapter = [[UMModuleRegistryAdapter alloc] initWithModuleRegistryProvider:[[UMModuleRegistryProvider alloc] init]];
+
+  [GMSServices provideAPIKey:@"AIzaSyBn1IozTpJvuyeHVimDWzwa4VykXpjWCNo"];
 
   if ([FIRApp defaultApp] == nil) {
     [FIRApp configure];
