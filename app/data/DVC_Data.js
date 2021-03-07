@@ -22,6 +22,13 @@ export const DANHMUC = [
   },
   {
     id: 3,
+    name: 'Thống kê dịch vụ công',
+    navigate: 'DVC_ThongKe_MainScreen',
+    icon: require('../Images/chart.png'),
+    background: require('../Images/dvc3.jpg'),
+  },
+  {
+    id: 4,
     name: 'Cổng dịch vụ công Bộ KH & Đầu tư',
     navigate: 'WebViewScreen',
     icon: require('../Images/mail.png'),

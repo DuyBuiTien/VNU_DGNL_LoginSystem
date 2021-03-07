@@ -1,4 +1,6 @@
 apply plugin: "com.android.application"
+apply from: '../../node_modules/react-native-unimodules/gradle.groovy'
+
 
 project.ext.envConfigFiles = [
     tandan: ".env",
@@ -116,6 +118,8 @@ dependencies {
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+
+    addUnimodulesDependencies()
 
     implementation 'androidx.multidex:multidex:2.0.1'
 
