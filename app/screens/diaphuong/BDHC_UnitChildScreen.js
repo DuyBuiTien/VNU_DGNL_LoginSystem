@@ -16,7 +16,6 @@ import {Text, Button, Icon} from 'react-native-elements';
 import {useNavigation, useRoute} from '@react-navigation/native';
 
 import {QLDB_URL, HOST_YT} from '../../config/server';
-import {areaCode} from '../../config/province';
 import {requestGET} from '../../services/Api';
 
 const HEADER_MAX_HEIGHT = 250;
@@ -37,7 +36,7 @@ const BDHC_UnitChildScreen = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      var data2 = await requestGET(`${QLDB_URL}/DiaBanApi/mGetChildByCode?AreaCode=${areaCode}`);
+      var data2 = await requestGET(`${QLDB_URL}/DiaBanApi/mGetChildByCode?AreaCode=${dataInfo.AreaCode}`);
 
       var dataChild_ = data2.data ? data2.data : [];
       var data1 = dataInfo.UrlAnhLienQuan ? dataInfo.UrlAnhLienQuan.split('\n') : [];
@@ -61,12 +60,12 @@ const BDHC_UnitChildScreen = () => {
       setdataChild([]);
       setLoading(true);
     };
-  }, [dataInfo.UrlAnhLienQuan]);
+  }, [dataInfo]);
 
   const _renderScrollViewContent = (dataInfo_, dataChild_) => {
     var dt = dataInfo_.TuNhien_DiaHinh_DienTich ? `${dataInfo_.TuNhien_DiaHinh_DienTich}` : 'Không có số liệu';
     var ds = dataInfo_.TongQuan_DanSo_Tong ? `${dataInfo_.TongQuan_DanSo_Tong}` : 'Không có số liệu';
-    var top = Platform.OS !== 'ios' ? HEADER_MAX_HEIGHT : 0;
+    var top = Platform.OS !== 'ios' ? HEADER_MAX_HEIGHT : HEADER_MAX_HEIGHT;
     return (
       <View style={{padding: 15, paddingTop: top}}>
         <Text style={{color: '#FF9800'}} />
@@ -207,12 +206,12 @@ const BDHC_UnitChildScreen = () => {
 
   const titleScale = scrollY.interpolate({
     inputRange: [0, HEADER_SCROLL_DISTANCE / 2, HEADER_SCROLL_DISTANCE],
-    outputRange: [1, 1, 0.9],
+    outputRange: [1, 1, 1],
     extrapolate: 'clamp',
   });
   const titleTranslate = scrollY.interpolate({
     inputRange: [0, HEADER_SCROLL_DISTANCE / 2, HEADER_SCROLL_DISTANCE],
-    outputRange: [0, 0, -8],
+    outputRange: [0, 0, 0],
     extrapolate: 'clamp',
   });
 
@@ -231,14 +230,9 @@ const BDHC_UnitChildScreen = () => {
         <View style={{flex: 1}}>
           <Animated.ScrollView
             style={styles.fill}
-            scrollEventThrottle={1}
+            scrollEventThrottle={16}
             onScroll={Animated.event([{nativeEvent: {contentOffset: {y: scrollY}}}], {useNativeDriver: true})}
-            contentInset={{
-              top: HEADER_MAX_HEIGHT,
-            }}
-            contentOffset={{
-              y: -HEADER_MAX_HEIGHT,
-            }}>
+            >
             {_renderScrollViewContent(dataInfo, dataChild)}
           </Animated.ScrollView>
           <Animated.View pointerEvents="none" style={[styles.header, {transform: [{translateY: headerTranslate}]}]}>
