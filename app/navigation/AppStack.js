@@ -35,6 +35,20 @@ import {TDTM_MainScreen, TDTM_DanhSachScreen} from '../screens/tongdaithongminh'
 
 import {GD_MainScreen, GD_DiemDanhScreen, GD_SLLDTScreen} from '../screens/giaoduc';
 
+import {NN_MainScreen} from '../screens/nongnghiep';
+
+import {
+  YT_MainScreen,
+  YT_TramYTeScreen,
+  YT_QuayThuocScreen,
+  YT_DichBenhScreen,
+  YT_DanhBaScreen,
+  YT_BanDoScreen,
+  YT_DatLichKhamScreen,
+  YT_DatLichKham_TrucTiepScreen,
+  YT_DatLichKham_TrucTuyenScreen,
+} from '../screens/yte';
+
 const AppStack = () => {
   useEffect(() => {
     messaging().onNotificationOpenedApp((remoteMessage) => {});
@@ -87,6 +101,18 @@ const AppStack = () => {
       <Stack.Screen name="GT_VEXEVEMB_MainScreen" component={GT_VEXEVEMB_MainScreen} />
 
       <Stack.Screen name="DL_MainScreen" component={DL_MainScreen} />
+
+      <Stack.Screen name="YT_MainScreen" component={YT_MainScreen} />
+      <Stack.Screen name="YT_TramYTeScreen" component={YT_TramYTeScreen} />
+      <Stack.Screen name="YT_QuayThuocScreen" component={YT_QuayThuocScreen} />
+      <Stack.Screen name="YT_DichBenhScreen" component={YT_DichBenhScreen} />
+      <Stack.Screen name="YT_DanhBaScreen" component={YT_DanhBaScreen} />
+      <Stack.Screen name="YT_BanDoScreen" component={YT_BanDoScreen} />
+      <Stack.Screen name="YT_DatLichKhamScreen" component={YT_DatLichKhamScreen} />
+      <Stack.Screen name="YT_DatLichKham_TrucTiepScreen" component={YT_DatLichKham_TrucTiepScreen} />
+      <Stack.Screen name="YT_DatLichKham_TrucTuyenScreen" component={YT_DatLichKham_TrucTuyenScreen} />
+
+      <Stack.Screen name="NN_MainScreen" component={NN_MainScreen} />
     </Stack.Navigator>
   );
 };
