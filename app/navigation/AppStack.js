@@ -4,6 +4,8 @@ import messaging from '@react-native-firebase/messaging';
 import {createStackNavigator} from '@react-navigation/stack';
 const Stack = createStackNavigator();
 
+import {LoginScreen, ForgotScreen, RegisterScreen} from '../screens/auth';
+
 import {SettingScreen, TrungTamTroGiupScreen} from '../screens/profile';
 import AuthStack from './AuthStack';
 import AppBottomTab from './AppBottomTab';
@@ -80,6 +82,10 @@ const AppStack = () => {
 
       <Stack.Screen name="WebViewScreen" component={WebViewScreen} />
       <Stack.Screen name="MenuScreen" component={MenuScreen} />
+
+      <Stack.Screen name="LoginScreen" component={LoginScreen} />
+      <Stack.Screen name="ForgotScreen" component={ForgotScreen} />
+      <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
 
       <Stack.Screen name="DVC_MainScreen" component={DVC_MainScreen} />
       <Stack.Screen name="DVC_TKHS_SearchScreen" component={DVC_TKHS_SearchScreen} />

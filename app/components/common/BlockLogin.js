@@ -19,14 +19,18 @@ const BlockLogin = (props) => {
         Bạn cần đăng nhập để sử dụng các tiện ích của chức năng <Text style={{fontWeight: 'bold'}}>{props.name}</Text>
       </Text>
 
-      <RectButton style={{width: '100%', backgroundColor: '#F23A27', padding: 8, marginTop: 10, borderRadius: 10}} onPress={()=>{
-        navigation.navigate('LoginScreen')
-      }}>
+      <RectButton
+        style={{width: '100%', backgroundColor: '#F23A27', padding: 8, marginTop: 10, borderRadius: 10}}
+        onPress={() => {
+          navigation.navigate('LoginScreen');
+        }}>
         <Text style={{textAlign: 'center', fontWeight: 'bold', color: '#FFF'}}>Đăng nhập</Text>
       </RectButton>
-      <RectButton style={{width: '100%', backgroundColor: '#FFF', padding: 8, marginTop: 10, borderRadius: 10}} onPress={()=>{
-        navigation.navigate('RegisterScreen')
-      }}>
+      <RectButton
+        style={{width: '100%', backgroundColor: '#FFF', padding: 8, marginTop: 10, borderRadius: 10}}
+        onPress={() => {
+          navigation.navigate('RegisterScreen');
+        }}>
         <Text style={{textAlign: 'center', fontWeight: 'bold', color: '#F23A27'}}>Đăng ký</Text>
       </RectButton>
     </View>

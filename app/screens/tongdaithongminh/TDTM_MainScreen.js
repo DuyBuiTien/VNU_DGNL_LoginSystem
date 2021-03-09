@@ -3,7 +3,6 @@ import React, {useState, useEffect} from 'react';
 import {StyleSheet, Text, View, ScrollView, TouchableOpacity, ImageBackground, Image} from 'react-native';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {useSelector, useDispatch} from 'react-redux';
-import FontAwesome from 'react-native-vector-icons/FontAwesome5';
 
 import {Header} from '../../components';
 import {ItemMenuImage, BlockLogin} from '../../components/common';
