@@ -197,8 +197,8 @@ const DVC_TKHS_SearchScreen = () => {
         </View>
       </View>
       <View>
-        <ScrollView horizontal style={{marginBottom: 10, flexDirection: 'row'}}>
-          <TouchableOpacity onPress={ChonDonVi} style={[styles.contentChon, {backgroundColor: '#F7F7F7'}]}>
+        <ScrollView horizontal style={{marginBottom: 10, flexDirection: 'row'}} showsHorizontalScrollIndicator>
+          <RectButton onPress={ChonDonVi} style={[styles.contentChon, {backgroundColor: '#F7F7F7'}]}>
             <Text style={{color: 'gray', marginEnd: 10}} numberOfLines={1}>
               {donvi.name !== '' ? donvi.name : 'Đơn vị'}
             </Text>
@@ -206,8 +206,8 @@ const DVC_TKHS_SearchScreen = () => {
               name={donvi.name === '' ? 'chevron-down' : 'times-circle'}
               color={donvi.name === '' ? 'gray' : '#F26946'}
             />
-          </TouchableOpacity>
-          <TouchableOpacity
+          </RectButton>
+          <RectButton
             onPress={ChonLinhVuc}
             style={[styles.contentChon, {backgroundColor: donvi.name !== '' ? '#F7F7F7' : '#FCFBFC'}]}>
             <Text
@@ -220,13 +220,13 @@ const DVC_TKHS_SearchScreen = () => {
               {linhvuc !== '' ? linhvuc : 'Lĩnh vực'}
             </Text>
             <FontAwesome name={linhvuc === '' ? 'chevron-down' : 'times-circle'} color={linhvuc === '' ? 'gray' : '#F26946'} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={ChonMucDo} style={[styles.contentChon, {backgroundColor: '#F7F7F7'}]}>
+          </RectButton>
+          <RectButton onPress={ChonMucDo} style={[styles.contentChon, {backgroundColor: '#F7F7F7'}]}>
             <Text style={{color: 'gray', marginEnd: 10, fontWeight: mucdo !== '' ? 'bold' : 'normal'}} numberOfLines={1}>
               {mucdo !== '' ? mucdo : 'Tất cả'}
             </Text>
             <FontAwesome name={mucdo === '' ? 'chevron-down' : 'times-circle'} color={mucdo === '' ? 'gray' : '#F26946'} />
-          </TouchableOpacity>
+          </RectButton>
         </ScrollView>
       </View>
       <View style={{flex: 1}}>
@@ -250,7 +250,7 @@ const DVC_TKHS_SearchScreen = () => {
       </View>
       <ActionSheet
         // initialOffsetFromBottom={0.5}
-
+        initialOffsetFromBottom={1}
         ref={refRBSheet}
         bounceOnOpen={true}
         bounciness={8}
@@ -265,6 +265,8 @@ const DVC_TKHS_SearchScreen = () => {
           dataQuanHuyen={DSDonViQuanHuyen}
           dataPhuongXa={DSDonViPhuongXa}
           handleDongY={handleDonVi}
+          actionSheetRef={refRBSheet}
+          ModalHide={ModalHide}
         />
       </ActionSheet>
     </View>
