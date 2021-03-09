@@ -130,8 +130,8 @@
     },
     {
       "appid": "14",
-      "name": "An toàn thực phẩm",
-      "navigate": "ATTP_MainScreen",
+      "name": "Thông tin từ chính quyền",
+      "navigate": "TTCQ_MainScreen",
       "count": 0,
       "icon": "user-shield",
       "color": "#FC7D2E",

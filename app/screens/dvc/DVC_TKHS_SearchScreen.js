@@ -77,7 +77,6 @@ const DVC_TKHS_SearchScreen = () => {
 
   const TimKiemHoSo = async () => {
     Keyboard.dismiss();
-    setIsLoading(true);
     setListHS([]);
 
     if (inputValue.length < 5) {
@@ -88,6 +87,8 @@ const DVC_TKHS_SearchScreen = () => {
         duration: 3000,
       });
     } else {
+      setIsLoading(true);
+
       var res = await requestGET(`${dataService.DVC_URL}/SearchDocByKey/${inputValue}`);
       setIsLoading(false);
 

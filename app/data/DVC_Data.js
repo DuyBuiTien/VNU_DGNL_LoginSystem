@@ -16,7 +16,7 @@ export const DANHMUC = [
   {
     id: 2,
     name: 'Tra cứu thủ tục',
-    navigate: 'DVC_TCTT_MainScreen',
+    navigate: 'DVC_THUTUC_SearchScreen',
     icon: require('../Images/tctt.png'),
     background: require('../Images/dvc3.jpg'),
   },

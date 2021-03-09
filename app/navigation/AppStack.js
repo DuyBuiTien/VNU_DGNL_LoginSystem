@@ -19,6 +19,7 @@ import {
   DVC_TKHS_ScanCameraScreen,
   DVC_TKHS_DetailScreen,
   DVC_ThongKe_MainScreen,
+  DVC_THUTUC_SearchScreen,
 } from '../screens/dvc';
 import {
   PAHT_MainScreen,
@@ -92,6 +93,7 @@ const AppStack = () => {
       <Stack.Screen name="DVC_TKHS_ScanCameraScreen" component={DVC_TKHS_ScanCameraScreen} />
       <Stack.Screen name="DVC_TKHS_DetailScreen" component={DVC_TKHS_DetailScreen} />
       <Stack.Screen name="DVC_ThongKe_MainScreen" component={DVC_ThongKe_MainScreen} />
+      <Stack.Screen name="DVC_THUTUC_SearchScreen" component={DVC_THUTUC_SearchScreen} />
 
       <Stack.Screen name="PAHT_MainScreen" component={PAHT_MainScreen} />
       <Stack.Screen name="PAHT_TongHopScreen" component={PAHT_TongHopScreen} />
