@@ -37,6 +37,10 @@ import {GD_MainScreen, GD_DiemDanhScreen, GD_SLLDTScreen} from '../screens/giaod
 
 import {NN_MainScreen} from '../screens/nongnghiep';
 
+import {TMDT_DanhMucScreen, TMDT_CSKDScreen, TMDT_MainScreen} from '../screens/giacathitruong';
+
+import {KNCC_MainScreen} from '../screens/ketnoicungcau';
+
 import {
   YT_MainScreen,
   YT_TramYTeScreen,

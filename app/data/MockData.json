@@ -100,16 +100,7 @@
       "color": "#FFC815",
       "datamenu": []
     },
-    {
-      "appid": "6",
-      "menumain": 1,
-      "name": "Điện nước",
-      "navigate": "DN_MainScreen",
-      "count": 0,
-      "icon": "clipboard-list",
-      "color": "#29AAE1",
-      "datamenu": []
-    },
+
     {
       "appid": "10",
       "name": "Nông nghiệp",
@@ -122,7 +113,7 @@
     {
       "appid": "12",
       "name": "Giá cả thị trường",
-      "navigate": "GCTT_MainScreen",
+      "navigate": "TMDT_MainScreen",
       "count": 0,
       "icon": "chart-line",
       "color": "#2856C6",

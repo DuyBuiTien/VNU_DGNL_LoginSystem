@@ -7,7 +7,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome5';
 
 import {Header} from '../../components';
 import {ItemMenuImage, BlockLogin} from '../../components/common';
-import {DANHMUC} from '../../data/TDTM_Data';
+import {DANHMUC} from '../../data/TMDT_Data';
 
 const MainScreen = () => {
   const navigation = useNavigation();

@@ -36,12 +36,10 @@ const RootContainerScreen = () => {
       unsubscribe();
     };
   }, []);
-  console.log('VVVVVVVV');
 
   useEffect(() => {
-    console.log('vaoday');
     dispatch(actions.fetchDataDonVi_Demo(''));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   async function checkApplicationPermission() {

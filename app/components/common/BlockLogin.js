@@ -2,8 +2,13 @@
 import React from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5';
+import {RectButton} from 'react-native-gesture-handler';
+import {useNavigation, useRoute} from '@react-navigation/native';
 
+//
 const BlockLogin = (props) => {
+  const navigation = useNavigation();
+
   return (
     <View style={{backgroundColor: '#F4E7D5', marginHorizontal: 20, borderRadius: 10, padding: 10}}>
       <View style={{flexDirection: 'row', alignItems: 'center', marginBottom: 10}}>
@@ -14,12 +19,16 @@ const BlockLogin = (props) => {
         Bạn cần đăng nhập để sử dụng các tiện ích của chức năng <Text style={{fontWeight: 'bold'}}>{props.name}</Text>
       </Text>
 
-      <TouchableOpacity style={{width: '100%', backgroundColor: '#F23A27', padding: 8, marginTop: 10, borderRadius: 10}}>
+      <RectButton style={{width: '100%', backgroundColor: '#F23A27', padding: 8, marginTop: 10, borderRadius: 10}} onPress={()=>{
+        navigation.navigate('LoginScreen')
+      }}>
         <Text style={{textAlign: 'center', fontWeight: 'bold', color: '#FFF'}}>Đăng nhập</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={{width: '100%', backgroundColor: '#FFF', padding: 8, marginTop: 10, borderRadius: 10}}>
+      </RectButton>
+      <RectButton style={{width: '100%', backgroundColor: '#FFF', padding: 8, marginTop: 10, borderRadius: 10}} onPress={()=>{
+        navigation.navigate('RegisterScreen')
+      }}>
         <Text style={{textAlign: 'center', fontWeight: 'bold', color: '#F23A27'}}>Đăng ký</Text>
-      </TouchableOpacity>
+      </RectButton>
     </View>
   );
 };

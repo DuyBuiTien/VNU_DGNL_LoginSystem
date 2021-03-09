@@ -1,4 +1,6 @@
 import HeaderList from './HeaderList';
 import ItemMenuImage from './ItemMenuImage';
 import BlockLogin from './BlockLogin';
-export {HeaderList, ItemMenuImage, BlockLogin};
+import SwipeableGmail from './SwipeableGmail';
+
+export {HeaderList, ItemMenuImage, BlockLogin, SwipeableGmail};

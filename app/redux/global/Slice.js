@@ -79,7 +79,7 @@ export const globalSlice = createSlice({
 
       let dataMenuCaNhan = [];
 
-      if (state.dataMenuCaNhan && state.dataMenuCaNhan.length < 100) {
+      if (state.dataMenuCaNhan && state.dataMenuCaNhan.length < 1) {
         dataMenu.map((item) => {
           if (item.menumain && dataMenuCaNhan.length < 8) {
             dataMenuCaNhan.push(item.appid);
