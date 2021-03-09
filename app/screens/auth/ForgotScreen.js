@@ -2,24 +2,19 @@
 import React, {useState, useEffect} from 'react';
 import {shallowEqual, useSelector, useDispatch} from 'react-redux';
 import {
-  StatusBar,
   View,
   StyleSheet,
   TouchableOpacity,
-  ImageBackground,
   Keyboard,
   TouchableWithoutFeedback,
   KeyboardAvoidingView,
-  ScrollView,
   Platform,
   TextInput,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5Pro';
-import TouchID from 'react-native-touch-id';
 import {Text, Button, Input} from 'react-native-elements';
 import {showMessage} from 'react-native-flash-message';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
-import {SocialIcon} from 'react-native-elements';
 import {Header} from 'react-native-elements';
 import {useNavigation, useRoute} from '@react-navigation/native';
 
@@ -44,93 +39,26 @@ const LoginScreen = () => {
     if (error) {
       showMessage({
         message: 'Thất bại',
-        description: 'Xác thực thất bại',
+        description: 'Gửi thông tin khôi phục mật khẩu thất bại',
         type: 'danger',
       });
     }
     return () => {};
   }, [error]);
 
-  //  const user = useSelector(state => state.global.user);
+  const [textInput, setTextInput] = useState('');
 
-  const username_tmp = useSelector((state) => state.global.username_tmp);
-  const password_tmp = useSelector((state) => state.global.password_tmp);
-
-  const [username, setUsername] = useState(username_tmp);
-  const [password, setPassword] = useState('');
-  const [hide, isHide] = useState(false);
-  const checkXacThucVanTay = useSelector((state) => state.global.XacThucVanTay);
-
-  let fcmToken = useSelector((state) => state.global.fcmToken);
-  if (fcmToken == null) {
-    fcmToken = '';
-  }
-
-  const eyepass = () => {
-    if (hide) {
-      return <Icon name="eye" type="font-awesome" size={18} color="#EEEEEE" onPress={() => isHide(!hide)} />;
-    } else {
-      return <Icon name="eye-slash" type="font-awesome" size={18} color="#BDBDBD" onPress={() => isHide(!hide)} />;
-    }
-  };
-
-  const DangNhapBangVanTay = () => {
-    TouchID.isSupported()
-      .then(authenticate())
-      .catch(() => {
-        showMessage({
-          message: 'Thất bại',
-          description: 'Điện thoại của bạn không hỗ trợ xác thực sinh trắc học!',
-          type: 'danger',
-        });
-      });
-  };
-
-  const authenticate = () => {
-    return TouchID.authenticate('Xác thực dấu vân tay của bạn để tiếp tục', {
-      title: 'Authentication Required', // Android
-      imageColor: '#e00606', // Android
-      imageErrorColor: '#ff0000', // Android
-      sensorDescription: 'Touch sensor', // Android
-      sensorErrorDescription: 'Failed', // Android
-      cancelText: 'Cancel', // Android
-      fallbackLabel: 'Show Passcode', // iOS (if empty, then label is hidden)
-      unifiedErrors: false, // use unified error messages (default false)
-      passcodeFallback: true, // iOS - allows the device to fall back to using the passcode, if faceid/touch is not available. this does not mean that if touchid/faceid fails the first few times it will revert to passcode, rather that if the former are not enrolled, then it will use the passcode.
-    })
-      .then((success) => {
-        handleLogin(username_tmp, password_tmp);
-      })
-      .catch((errorr) => {
-        console.log(errorr);
-
-        showMessage({
-          message: 'Thất bại',
-          description: 'Xác thực thất bại',
-          type: 'danger',
-        });
-      });
-  };
-
-  const handleLogin = async (username_, password_) => {
+  const handleOnpress = async () => {
     Keyboard.dismiss();
-    if (!username_ || !password_) {
-      showMessage({
-        message: 'Thất bại',
-        description: 'Chưa nhập đầy đủ trường thông tin!',
-        type: 'danger',
-      });
-      return;
-    }
-
-    dispatch(actions.login(username_, password_)).then(() => {
-      dispatch(actions.GetUserInfo());
+    showMessage({
+      message: 'Thành công',
+      description: 'Thông tin về tài khoản được gửi về địa chỉ thư điện tử của bạn!',
+      type: 'success',
     });
   };
 
   return (
     <View style={{flex: 1, backgroundColor: '#FFF'}}>
-      {/* <StatusBar backgroundColor="#00000000" barStyle="light-content" translucent={true} /> */}
       <Header
         statusBarProps={{barStyle: 'light-content', backgroundColor: 'transparent', translucent: true}}
         barStyle="light-content"
@@ -161,9 +89,7 @@ const LoginScreen = () => {
           enabled
           keyboardVerticalOffset={150}>
           <View style={styles.container}>
-            <Text style={styles.header_1}>{dataApp?.title ?? 'ĐĂNG NHẬP'}</Text>
-
-            <Text style={styles.header_2}>{dataApp.name}</Text>
+            <Text style={styles.header_1}>{'QUÊN MẬT KHẨU'}</Text>
 
             <View style={{padding: 10, margin: 10, width: '100%'}}>
               <View
@@ -178,14 +104,14 @@ const LoginScreen = () => {
                   shadowOffset: {width: 0, height: 2},
                   shadowOpacity: 0.2,
                 }}>
-                <FontAwesome name="user" color="#787C7E" size={20} style={{marginHorizontal: 5}} />
+                <FontAwesome name="at" color="#787C7E" size={20} style={{marginHorizontal: 5}} />
                 <TextInput
-                  placeholder={'Tài khoản'}
+                  placeholder={'Địa chỉ email'}
                   multiline={false}
                   onChangeText={(text) => {
-                    setUsername(text);
+                    setTextInput(text);
                   }}
-                  value={username}
+                  value={textInput}
                   selectionColor={'gray'}
                   clearButtonMode="always"
                   style={{flex: 1, margin: 10, fontSize: 15}}
@@ -193,7 +119,7 @@ const LoginScreen = () => {
               </View>
 
               <Button
-                onPress={() => handleLogin(username, password)}
+                onPress={() => handleOnpress()}
                 title={'QUÊN MẬT KHẨU'}
                 loading={actionsLoading}
                 titleStyle={{fontSize: 14, fontWeight: 'bold'}}

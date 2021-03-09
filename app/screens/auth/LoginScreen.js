@@ -256,8 +256,18 @@ const LoginScreen = () => {
                 <SocialIcon style={{backgroundColor: 'black', marginHorizontal: 20}} type="apple" />
               </View>
 
-                <Text style={{textAlign: 'center', color: '#2E529F', marginTop: 30, fontWeight: 'bold'}} onPress={()=>navigation.navigate('RegisterScreen')}>- Đăng ký -</Text>
-              
+              <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: 40}}>
+                <Text
+                  style={{textAlign: 'center', color: '#2E529F', fontWeight: 'bold'}}
+                  onPress={() => navigation.navigate('RegisterScreen')}>
+                  Đăng ký
+                </Text>
+                <Text
+                  style={{textAlign: 'center', color: '#2E529F', fontWeight: 'bold', marginStart: 10}}
+                  onPress={() => navigation.navigate('ForgotScreen')}>
+                  Quên mật khẩu
+                </Text>
+              </View>
             </View>
           </View>
 
