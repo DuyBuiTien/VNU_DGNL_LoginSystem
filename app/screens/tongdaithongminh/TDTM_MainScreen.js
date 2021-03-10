@@ -40,6 +40,7 @@ const MainScreen = () => {
           name: item.Title,
           navigate: 'TDTM_DanhSachScreen',
           data: {
+            name: item.Title,
             type: item.ID,
           },
           icon: item.Icon,

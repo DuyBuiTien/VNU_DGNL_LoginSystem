@@ -16,11 +16,9 @@ import {
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {useSelector, useDispatch} from 'react-redux';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
-import {showMessage} from 'react-native-flash-message';
 import ScrollableTabView, {ScrollableTabBar} from 'react-native-scrollable-tab-view';
 import {Divider} from 'react-native-elements';
-import Timeline from 'react-native-timeline-flatlist';
-import HTML, {IGNORED_TAGS} from 'react-native-render-html';
+
 import HTMLView from 'react-native-htmlview';
 const {htmlToText} = require('html-to-text');
 

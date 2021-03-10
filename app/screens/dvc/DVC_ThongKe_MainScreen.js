@@ -41,6 +41,8 @@ const DVC_ThongKe_MainScreen = () => {
     <View style={styles.container}>
       <Header title="Thống kê dịch vụ công" isStack={true} />
       <HighchartsReactNative styles={styles.container} options={chartOption} />
+      <Text style={{textAlign: 'center'}}>Tình hình xử lý hồ sơ năm 2021</Text>
+      <View style={styles.container} />
       <View style={styles.container} />
     </View>
   );

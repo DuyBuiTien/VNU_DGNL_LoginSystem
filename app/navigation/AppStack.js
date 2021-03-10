@@ -46,6 +46,8 @@ import {TMDT_DanhMucScreen, TMDT_CSKDScreen, TMDT_MainScreen} from '../screens/g
 
 import {KNCC_MainScreen} from '../screens/ketnoicungcau';
 
+import {TT_MainScreen} from '../screens/tintuc';
+
 import {
   YT_MainScreen,
   YT_TramYTeScreen,
@@ -85,6 +87,8 @@ const AppStack = () => {
 
       <Stack.Screen name="WebViewScreen" component={WebViewScreen} />
       <Stack.Screen name="MenuScreen" component={MenuScreen} />
+
+      <Stack.Screen name="TT_MainScreen" component={TT_MainScreen} />
 
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="ForgotScreen" component={ForgotScreen} />

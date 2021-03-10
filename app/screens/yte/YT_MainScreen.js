@@ -16,8 +16,8 @@ const MainScreen = () => {
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
       <Header
-        statusBarProps={{barStyle: 'light-content', backgroundColor: 'transparent', translucent: true}}
-        barStyle="light-content"
+        statusBarProps={{barStyle: 'dark-content', backgroundColor: 'transparent', translucent: true}}
+        barStyle="dark-content"
         placement="left"
         leftComponent={
           <TouchableOpacity onPress={() => navigation.goBack()}>

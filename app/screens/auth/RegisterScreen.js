@@ -133,8 +133,8 @@ const LoginScreen = () => {
     <View style={{flex: 1, backgroundColor: '#FFF'}}>
       {/* <StatusBar backgroundColor="#00000000" barStyle="light-content" translucent={true} /> */}
       <Header
-        statusBarProps={{barStyle: 'light-content', backgroundColor: 'transparent', translucent: true}}
-        barStyle="light-content"
+        statusBarProps={{barStyle: 'dark-content', backgroundColor: 'transparent', translucent: true}}
+        barStyle="dark-content"
         placement="left"
         leftComponent={
           <TouchableOpacity onPress={() => navigation.goBack()}>

@@ -5,7 +5,6 @@ import {
   View,
   ImageBackground,
   ScrollView,
-  TouchableOpacity,
   RefreshControl,
   FlatList,
   Image,
@@ -16,6 +15,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {Text, Button, Icon, Divider, Badge} from 'react-native-elements';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 import {TT_URL} from '../../config/server';
 import {requestPOST} from '../../services/Api';
@@ -180,8 +180,8 @@ const HomeScreen = () => {
               <View style={styles.viewHeader}>
                 <Text style={styles.textHeaderTitle}> Tin tức</Text>
                 <TouchableOpacity style={{flexDirection: 'row'}} activeOpacity={0.8} onPress={() => {}}>
-                  <Text style={styles.textHeaderAll}> </Text>
-                  <Icon name="chevron-down" type="font-awesome" size={16} color="#f44336" />
+                  <Text style={styles.textHeaderAll}>Tất cả</Text>
+                  <Icon name="chevron-right" type="font-awesome" size={16} color="#f44336" />
                 </TouchableOpacity>
               </View>
               <FlatList
@@ -236,7 +236,7 @@ const styles = StyleSheet.create({
     borderLeftColor: '#f44336',
   },
   textHeaderTitle: {fontSize: 18, color: '#3D4458', fontWeight: '500'},
-  textHeaderAll: {color: '#90caf9', fontStyle: 'italic'},
+  textHeaderAll: {color: '#90caf9', fontStyle: 'italic', marginHorizontal: 10},
   viewIcon: {
     marginHorizontal: 10,
     padding: 15,

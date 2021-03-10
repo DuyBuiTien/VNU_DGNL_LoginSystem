@@ -37,8 +37,8 @@ const Main_Screen = (props) => {
         flex: 1,
       }}>
       <Header
-        statusBarProps={{barStyle: 'light-content', backgroundColor: 'transparent', translucent: true}}
-        barStyle="light-content" // or directly
+        statusBarProps={{barStyle: 'dark-content', backgroundColor: 'transparent', translucent: true}}
+        barStyle="dark-content" // or directly
         centerComponent={{
           text: title,
           style: {color: textColor ? textColor : '#0A0A0A', fontSize: 20, fontWeight: 'bold'},

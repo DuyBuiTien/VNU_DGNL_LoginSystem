@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import {StyleSheet, Text, View, ScrollView, TouchableOpacity, ImageBackground, Image, TextInput, FlatList} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
@@ -7,6 +7,9 @@ import ScrollableTabView, {ScrollableTabBar} from 'react-native-scrollable-tab-v
 import {useNavigation, useRoute} from '@react-navigation/native';
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import {Header, Icon} from 'react-native-elements';
+import {RectButton} from 'react-native-gesture-handler';
+
+import ActionSheet from '../../modules/react-native-actions-sheet';
 
 //import {Header} from '../../components';
 import {requestGET} from '../../services/Api';
@@ -108,6 +111,7 @@ const RenderKetQuaXuLy = (props) => {
 const PAHT_DetailScreen = () => {
   const navigation = useNavigation();
   const route = useRoute();
+  const refRBSheet = useRef();
 
   const {data} = route.params;
 
@@ -172,7 +176,9 @@ const PAHT_DetailScreen = () => {
     return () => {};
   }, []);
 
-  const sendComment = (input, id, parentId) => {};
+  const sendComment = (input, id, parentId) => {
+    refRBSheet.current.setModalVisible(false);
+  };
 
   if (!dataPA) {
     return <></>;
@@ -182,8 +188,8 @@ const PAHT_DetailScreen = () => {
     <View style={{flex: 1, backgroundColor: 'white'}}>
       {/* <Header title="Chi tiết phản ánh" isStack={true} /> */}
       <Header
-        statusBarProps={{barStyle: 'light-content', backgroundColor: 'transparent', translucent: true}}
-        barStyle="light-content"
+        statusBarProps={{barStyle: 'dark-content', backgroundColor: 'transparent', translucent: true}}
+        barStyle="dark-content"
         placement="left"
         leftComponent={
           <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -339,9 +345,12 @@ const PAHT_DetailScreen = () => {
               />
             </View>
           )}
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
-            <TextInput
-              autoCapitalize="none"
+          <RectButton
+            style={{flexDirection: 'row', alignItems: 'center'}}
+            onPress={() => {
+              refRBSheet.current.setModalVisible(true);
+            }}>
+            <Text
               style={{
                 borderRadius: 5,
                 borderWidth: 1,
@@ -349,19 +358,50 @@ const PAHT_DetailScreen = () => {
                 backgroundColor: '#FAFAFA',
                 margin: 10,
                 padding: 10,
-                height: 80,
+                color: 'gray',
                 flex: 1,
-              }}
-              multiline={true}
-              placeholder=" Nhập bình luận..."
-              onChangeText={(text) => setCommentinput(text)}
-              value={commentinput}
-              underlineColorAndroid={'transparent'}
-            />
-            <FontAwesome name="paper-plane" color="#fb8c00" size={25} onPress={() => sendComment(commentinput, data.id, null)} />
-          </View>
+              }}>
+              Nhập bình luận...
+            </Text>
+          </RectButton>
         </ScrollView>
       </View>
+      <ActionSheet
+        // initialOffsetFromBottom={0.5}
+        initialOffsetFromBottom={1}
+        ref={refRBSheet}
+        bounceOnOpen={true}
+        bounciness={8}
+        gestureEnabled={true}
+        onClose={() => {
+          //setTypeBottomSheet(0);
+        }}
+        containerStyle={{margin: 20}}
+        defaultOverlayOpacity={0.3}>
+        <View style={{flexDirection: 'row', alignItems: 'center', padding: 10}}>
+          <TextInput
+            autoCapitalize="none"
+            style={{
+              borderRadius: 5,
+              borderWidth: 1,
+              borderColor: '#eaeaea',
+              backgroundColor: '#FAFAFA',
+              margin: 10,
+              padding: 10,
+              height: 80,
+              flex: 1,
+            }}
+            multiline={true}
+            placeholder=" Nhập bình luận..."
+            onChangeText={(text) => setCommentinput(text)}
+            value={commentinput}
+            underlineColorAndroid={'transparent'}
+          />
+          <RectButton onPress={() => sendComment(commentinput, data.id, null)}>
+            <FontAwesome name="paper-plane" color="#fb8c00" size={25} />
+          </RectButton>
+        </View>
+      </ActionSheet>
     </View>
   );
 };
