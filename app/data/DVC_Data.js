@@ -15,8 +15,8 @@ export const DANHMUC = [
   },
   {
     id: 1,
-    name: 'Hồ sơ theo dõi',
-    navigate: 'DVC_TKHS_MainScreen',
+    name: 'Hồ sơ cá nhân',
+    navigate: 'DVC_TKHS_CaNhanScreen',
     icon: require('../Images/contract.png'),
     background: require('../Images/dvc2.jpg'),
   },

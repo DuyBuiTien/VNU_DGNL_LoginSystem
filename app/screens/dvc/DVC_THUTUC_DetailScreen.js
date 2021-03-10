@@ -22,6 +22,7 @@ import {Divider} from 'react-native-elements';
 import Timeline from 'react-native-timeline-flatlist';
 import HTML, {IGNORED_TAGS} from 'react-native-render-html';
 import HTMLView from 'react-native-htmlview';
+const {htmlToText} = require('html-to-text');
 
 import {requestGET, requestPOST} from '../../services/Api';
 
@@ -79,13 +80,6 @@ const DVC_TKHS_Detail = () => {
     return () => {};
   }, [data.code, dataService.DVC_URL]);
 
-  const htmlContent = `
-<h1>This HTML snippet is now rendered with native components !</h1>
-<h2>Enjoy a webview-free and blazing fast application</h2>
-<img src="https://i.imgur.com/dHLmxfO.jpg?2" />
-<em style="textAlign: center;">Look at how happy this native cat is</em>
-`;
-
   if (isLoading || !dataThuTuc) {
     return (
       <View style={{flex: 1, backgroundColor: '#FFF'}}>
@@ -108,7 +102,7 @@ const DVC_TKHS_Detail = () => {
           }}>
           {dataThuTuc.linhvuc}
         </Text>
-        <Text style={{color: '#757575', fontWeight: 'bold', marginVertical: 10, fontSize: 16}} numberOfLines={4}>
+        <Text style={{color: '#343F46', fontWeight: 'bold', marginVertical: 10, fontSize: 16, marginTop: 15}} numberOfLines={4}>
           {data.name}
         </Text>
       </View>
@@ -127,51 +121,87 @@ const DVC_TKHS_Detail = () => {
             tabLabel="THÔNG TIN CHUNG"
             style={{backgroundColor: 'transparent', flex: 1}}>
             <View style={{marginStart: 10, flex: 1}}>
-              <Text style={{color: '#343F46', fontSize: 16, marginTop: 10}}>Lĩnh vực</Text>
+              <Text style={styles.text1}>Lĩnh vực</Text>
               <Text style={{color: '#343F46', marginTop: 5}}>{dataThuTuc.linhvuc}</Text>
               <Divider style={{backgroundColor: '#e8e8e8', marginTop: 10}} />
 
-              <Text style={{color: '#343F46', fontSize: 16, marginTop: 10}}>Cơ quan thực hiện</Text>
-              <Text style={{color: '#343F46', marginTop: 5}}>
-                {dataThuTuc.coquanthuchien.replace(/<\/?("[^"]*"|'[^']*'|[^>])*(>|$)/g, '')}
-              </Text>
-              <View style={{marginVertical: 5}}>
-                <HTMLView value={dataThuTuc.coquanthuchien} />
-              </View>
+              <Text style={styles.text1}>Cơ quan thực hiện</Text>
+              <Text style={{color: '#343F46', marginTop: 5}}>{htmlToText(dataThuTuc.coquanthuchien)}</Text>
+
               <Divider style={{backgroundColor: '#e8e8e8', marginTop: 10}} />
 
-              <Text style={{color: '#343F46', fontSize: 16, marginTop: 10}}>Đơn vị thực hiện</Text>
+              <Text style={styles.text1}>Đơn vị thực hiện</Text>
               <Text style={{color: '#343F46', marginTop: 5}}>- Đơn vị: {dataThuTuc.donvithuchien}</Text>
               <Text style={{color: '#343F46', marginTop: 5}}>- Địa chỉ: {dataThuTuc.donvithuchien_diachi}</Text>
               <Text style={{color: '#343F46', marginTop: 5}}>- Điện thoại: {dataThuTuc.donvithuchien_dienthoai}</Text>
               <Text style={{color: '#343F46', marginTop: 5}}>- Email: {dataThuTuc.donvithuchien_email}</Text>
               <Divider style={{backgroundColor: '#e8e8e8', marginVertical: 10}} />
 
-              <Text style={{color: '#343F46', fontSize: 16, marginTop: 10}}>Cách thực hiện</Text>
-              <Text style={{color: '#343F46', marginTop: 5}}>
-                {dataThuTuc.cachthucthuchien.replace(/<\/?("[^"]*"|'[^']*'|[^>])*(>|$)/g, '')}
-              </Text>
+              <Text style={styles.text1}>Cách thực hiện</Text>
+              <Text style={{color: '#343F46', marginTop: 5}}>{htmlToText(dataThuTuc.cachthucthuchien)}</Text>
               <Divider style={{backgroundColor: '#e8e8e8', marginVertical: 10}} />
 
-              <Text style={{color: '#343F46', fontSize: 16, marginTop: 10}}>Đối tượng thực hiện</Text>
-              <Text style={{color: '#343F46', marginTop: 5}}>{dataThuTuc.doituongthuchien}</Text>
+              <Text style={styles.text1}>Đối tượng thực hiện</Text>
+              <Text style={{color: '#343F46', marginTop: 5}}>{htmlToText(dataThuTuc.doituongthuchien)}</Text>
               <Divider style={{backgroundColor: '#e8e8e8', marginVertical: 10}} />
 
-              <Text style={{color: '#343F46', fontSize: 16, marginTop: 10}}>Thời hạn giải quyết</Text>
-              <Text style={{color: '#343F46', marginTop: 5}}>{dataThuTuc.thoihangiaiquyet}</Text>
+              <Text style={styles.text1}>Thời hạn giải quyết</Text>
+              <Text style={{color: '#343F46', marginTop: 5}}>{htmlToText(dataThuTuc.thoihangiaiquyet)}</Text>
               <Divider style={{backgroundColor: '#e8e8e8', marginVertical: 10}} />
 
-              <Text style={{color: '#343F46', fontSize: 16, marginTop: 10}}>Phí, lệ phí</Text>
-              <Text style={{color: '#343F46', marginTop: 5}}>{dataThuTuc.lephithuchien}</Text>
+              <Text style={styles.text1}>Phí, lệ phí</Text>
+              <Text style={{color: '#343F46', marginTop: 5}}>{htmlToText(dataThuTuc.lephithuchien)}</Text>
               <Divider style={{backgroundColor: '#e8e8e8', marginVertical: 10}} />
 
-              <Text style={{color: '#343F46', fontSize: 16, marginTop: 10}}>Kết quả thực hiện</Text>
-              <Text style={{color: '#343F46', marginTop: 5}}>{dataThuTuc.ketquathuchien}</Text>
+              <Text style={styles.text1}>Kết quả thực hiện</Text>
+              <Text style={{color: '#343F46', marginTop: 5}}>{htmlToText(dataThuTuc.ketquathuchien)}</Text>
               <Divider style={{backgroundColor: '#e8e8e8', marginVertical: 10}} />
-
-              <Text style={{color: '#343F46', fontSize: 16, marginTop: 10}}>Yêu cầu điều kiện</Text>
-              <Text style={{color: '#343F46', marginTop: 5}}>{dataThuTuc.yeucaudieukien}</Text>
-              <Divider style={{backgroundColor: '#e8e8e8', marginVertical: 10}} />
+            </View>
+          </ScrollView>
+          <ScrollView
+            showsVerticalScrollIndicator={false}
+            showsHorizontalScrollIndicator={false}
+            tabLabel="TRÌNH TỰ THỰC HIỆN"
+            style={{backgroundColor: 'transparent', flex: 1}}>
+            <View style={{marginStart: 10, flex: 1}}>
+              <Text style={{color: '#343F46', marginTop: 5}}>{htmlToText(dataThuTuc.trinhtuthuchien)}</Text>
+            </View>
+          </ScrollView>
+          <ScrollView
+            showsVerticalScrollIndicator={false}
+            showsHorizontalScrollIndicator={false}
+            tabLabel="THÀNH PHẦN HỒ SƠ"
+            style={{backgroundColor: 'transparent', flex: 1}}>
+            <View style={{marginStart: 10, flex: 1}}>
+              {dataThuTuc.thanhphan &&
+                dataThuTuc.thanhphan.map((item) => <Text style={{color: '#343F46', margin: 5}}>{item.name}}</Text>)}
+            </View>
+          </ScrollView>
+          <ScrollView
+            showsVerticalScrollIndicator={false}
+            showsHorizontalScrollIndicator={false}
+            tabLabel="BIỂU MẪU HỒ SƠ"
+            style={{backgroundColor: 'transparent', flex: 1}}>
+            <View style={{marginStart: 10, flex: 1}}>
+              <Text style={{color: '#343F46', margin: 15, textAlign: 'center'}}>Không có nội dung tương ứng</Text>
+            </View>
+          </ScrollView>
+          <ScrollView
+            showsVerticalScrollIndicator={false}
+            showsHorizontalScrollIndicator={false}
+            tabLabel="YÊN CẦU ĐIỀU KIỆN"
+            style={{backgroundColor: 'transparent', flex: 1}}>
+            <View style={{marginStart: 10, flex: 1}}>
+              <HTMLView value={dataThuTuc.yeucaudieukien} style={{margin: 10}} />
+            </View>
+          </ScrollView>
+          <ScrollView
+            showsVerticalScrollIndicator={false}
+            showsHorizontalScrollIndicator={false}
+            tabLabel="CĂN CỨ PHÁP LÝ"
+            style={{backgroundColor: 'transparent', flex: 1}}>
+            <View style={{marginStart: 10, flex: 1}}>
+              <HTMLView value={dataThuTuc.cancuphaply} style={{margin: 10}} />
             </View>
           </ScrollView>
           {/* <View
@@ -228,5 +258,5 @@ const DVC_TKHS_Detail = () => {
 export default DVC_TKHS_Detail;
 
 const styles = StyleSheet.create({
-  div: {margin: 0, color: '#FF3366'},
+  text1: {color: '#757575', fontSize: 15, marginTop: 10, fontWeight: 'bold'},
 });

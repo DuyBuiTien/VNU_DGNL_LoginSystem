@@ -21,6 +21,7 @@ import {
   DVC_ThongKe_MainScreen,
   DVC_THUTUC_SearchScreen,
   DVC_THUTUC_DetailScreen,
+  DVC_TKHS_CaNhanScreen,
 } from '../screens/dvc';
 import {
   PAHT_MainScreen,
@@ -96,6 +97,7 @@ const AppStack = () => {
       <Stack.Screen name="DVC_ThongKe_MainScreen" component={DVC_ThongKe_MainScreen} />
       <Stack.Screen name="DVC_THUTUC_SearchScreen" component={DVC_THUTUC_SearchScreen} />
       <Stack.Screen name="DVC_THUTUC_DetailScreen" component={DVC_THUTUC_DetailScreen} />
+      <Stack.Screen name="DVC_TKHS_CaNhanScreen" component={DVC_TKHS_CaNhanScreen} />
 
       <Stack.Screen name="PAHT_MainScreen" component={PAHT_MainScreen} />
       <Stack.Screen name="PAHT_TongHopScreen" component={PAHT_TongHopScreen} />
@@ -127,6 +129,12 @@ const AppStack = () => {
       <Stack.Screen name="YT_DatLichKham_TrucTuyenScreen" component={YT_DatLichKham_TrucTuyenScreen} />
 
       <Stack.Screen name="NN_MainScreen" component={NN_MainScreen} />
+
+      <Stack.Screen name="TMDT_DanhMucScreen" component={TMDT_DanhMucScreen} />
+      <Stack.Screen name="TMDT_MainScreen" component={TMDT_MainScreen} />
+      <Stack.Screen name="TMDT_CSKDScreen" component={TMDT_CSKDScreen} />
+
+      <Stack.Screen name="KNCC_MainScreen" component={KNCC_MainScreen} />
     </Stack.Navigator>
   );
 };
