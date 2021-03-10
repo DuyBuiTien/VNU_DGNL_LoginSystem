@@ -1,5 +1,12 @@
 export const DANHMUC = [
   {
+    id: 2,
+    name: 'Tra cứu thủ tục',
+    navigate: 'DVC_THUTUC_SearchScreen',
+    icon: require('../Images/tctt.png'),
+    background: require('../Images/dvc3.jpg'),
+  },
+  {
     id: 0,
     name: 'Tra cứu hồ sơ',
     navigate: 'DVC_TKHS_SearchScreen',
@@ -12,13 +19,6 @@ export const DANHMUC = [
     navigate: 'DVC_TKHS_MainScreen',
     icon: require('../Images/contract.png'),
     background: require('../Images/dvc2.jpg'),
-  },
-  {
-    id: 2,
-    name: 'Tra cứu thủ tục',
-    navigate: 'DVC_THUTUC_SearchScreen',
-    icon: require('../Images/tctt.png'),
-    background: require('../Images/dvc3.jpg'),
   },
   {
     id: 3,

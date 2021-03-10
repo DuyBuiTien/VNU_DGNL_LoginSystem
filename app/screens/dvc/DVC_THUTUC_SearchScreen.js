@@ -25,15 +25,15 @@ const SCREEN_HEIGHT = Dimensions.get('screen').height;
 import {requestGET, requestPOST} from '../../services/Api';
 
 import {Header} from '../../components';
-import {RenderChonDonVi} from '../../components/dvc';
+import {RenderChonDonVi, RenderChonMucDo, RenderChonLinhVuc} from '../../components/dvc';
 
 const RenderItem = (props) => {
-  const {item, navigation, histories} = props;
+  const {data, navigation, histories} = props;
   return (
     <TouchableOpacity
       onPress={() => {
-        navigation.navigate('DVC_TKHS_DetailScreen', {
-          data: item,
+        navigation.navigate('DVC_THUTUC_DetailScreen', {
+          data: data,
         });
       }}
       style={{
@@ -58,23 +58,24 @@ const RenderItem = (props) => {
             flex: 1,
             paddingRight: 10,
             color: '#A6A8A7',
+            textTransform: 'uppercase',
           }}>
-          {item.LinhVuc}
+          {data.procedurefield}
         </Text>
 
         <Text style={{color: '#757575', fontWeight: 'bold', flex: 1, marginVertical: 10}} numberOfLines={2}>
-          {item.TenHoSo ? item.TenHoSo : item.ThuTuc ? item.ThuTuc : ''}
+          {data.name ? data.name : ''}
         </Text>
         <View
           style={{
             marginTop: 10,
             padding: 5,
-            backgroundColor: '#59A266',
+            backgroundColor: data.level === '4' ? '#d84315' : data.level === '3' ? '#fb8c00' : '#59A266',
             borderRadius: 10,
             width: 100,
             justifyContent: 'center',
           }}>
-          <Text style={{color: '#FFF', fontWeight: 'bold', textAlign: 'center'}}>{item.TrangThaiMobile}</Text>
+          <Text style={{color: '#FFF', fontWeight: 'bold', textAlign: 'center'}}>{`Mức độ ${data.level}`}</Text>
         </View>
       </View>
     </TouchableOpacity>
@@ -93,16 +94,34 @@ const DVC_TKHS_SearchScreen = () => {
   const [typeDialog, setTypeDialog] = useState('');
 
   const [DSLinhVuc, setDSLinhVuc] = useState([]);
-  const [DSDonVi, setDSDonVi] = useState([]);
-  const [DSMucDo, setDSMucDo] = useState([]);
+  const [DSMucDo, setDSMucDo] = useState([
+    {
+      name: 'Tất cả',
+      code: '',
+    },
+    {
+      name: 'Mức dộ 2',
+      code: 2,
+    },
+    {
+      name: 'Mức dộ 3',
+      code: 3,
+    },
+    {
+      name: 'Mức dộ 4',
+      code: 4,
+    },
+  ]);
 
   const [DSDonViSo, setDSDonViSo] = useState([]);
   const [DSDonViQuanHuyen, setDSDonViQuanHuyen] = useState([]);
   const [DSDonViPhuongXa, setDSDonViPhuongXa] = useState([]);
 
-  const [linhvuc, setLinhvuc] = useState('');
+  const [linhvuc, setLinhvuc] = useState({code: '', name: ''});
   const [donvi, setDonvi] = useState({code: '', name: ''});
-  const [mucdo, setMucdo] = useState('');
+  const [mucdo, setMucdo] = useState({code: '', name: ''});
+
+  const [page, setPage] = useState(1);
 
   const ChonLinhVuc = () => {
     refRBSheet.current.setModalVisible(true);
@@ -119,27 +138,47 @@ const DVC_TKHS_SearchScreen = () => {
 
   const TimKiem = async () => {
     Keyboard.dismiss();
-    setDataThuTuc([]);
-
-    if (inputValue.length < 5) {
-      showMessage({
-        message: 'Lỗi! Từ khoá quá ngắn',
-        description: 'Vui lòng nhập mã hồ sơ/số chứng minh thư trên 5 ký tự',
-        type: 'danger',
-        duration: 3000,
-      });
-    } else {
-      setIsLoading(true);
-
-      var res = await requestGET(`${dataService.DVC_URL}/SearchDocByKey/${inputValue}`);
-      setIsLoading(false);
-
-      if (res.data) {
-        setDataThuTuc(res.data.DSHoSo);
-      } else {
-      }
-    }
   };
+
+  const fetchThuTuc = async () => {
+    setIsLoading(true);
+
+    var res = await requestPOST(`${dataService.DVC_URL}/GetProcedureByUnit`, {
+      unitCode: donvi.code,
+      procedureFieldCode: linhvuc.code,
+      level: mucdo.code,
+      page: page,
+      perpage: 50,
+      //sort: 'desc',
+      keysearch: inputValue.length > 4 ? inputValue : '',
+    });
+
+    setDataThuTuc(res.data);
+
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    fetchThuTuc();
+    return () => {};
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [donvi, linhvuc, mucdo, page, inputValue]);
+
+  useEffect(() => {
+    const fetchLinhVuc = async () => {
+      var res = await requestPOST(`${dataService.DVC_URL}/GetProcedureFieldByUnit`, {
+        unitCode: donvi.code,
+      });
+
+      res.data && setDSLinhVuc(res.data);
+    };
+    if (donvi.code !== '') {
+      fetchLinhVuc();
+    } else {
+      setDSLinhVuc([]);
+    }
+    return () => {};
+  }, [dataService.DVC_URL, donvi]);
 
   const fetchDonVi = async (func, type) => {
     var res = await requestPOST(`${dataService.DVC_URL}/GetUnitByGroup`, {
@@ -167,6 +206,16 @@ const DVC_TKHS_SearchScreen = () => {
     setDonvi(item);
   };
 
+  const handleMucDo = (item) => {
+    ModalHide();
+    setMucdo(item);
+  };
+
+  const handleLinhVuc = (item) => {
+    ModalHide();
+    setLinhvuc(item);
+  };
+
   return (
     <View style={{flex: 1, backgroundColor: '#FFF'}}>
       <Header title="Tra cứu thủ tục" isStack={true} />
@@ -187,19 +236,20 @@ const DVC_TKHS_SearchScreen = () => {
             multiline={false}
             onChangeText={(text) => {
               setInputValue(text);
-              TimKiem(text);
             }}
             value={inputValue}
             selectionColor={'gray'}
+            onSubmitEditing={TimKiem}
             clearButtonMode="always"
             style={{flex: 1, margin: 10, fontSize: 15}}
+            keyboardType={'web-search'}
           />
         </View>
       </View>
       <View>
         <ScrollView horizontal style={{marginBottom: 10, flexDirection: 'row'}} showsHorizontalScrollIndicator>
           <RectButton onPress={ChonDonVi} style={[styles.contentChon, {backgroundColor: '#F7F7F7'}]}>
-            <Text style={{color: 'gray', marginEnd: 10}} numberOfLines={1}>
+            <Text style={{color: 'gray', marginEnd: 10, fontWeight: donvi.name !== '' ? 'bold' : 'normal'}} numberOfLines={1}>
               {donvi.name !== '' ? donvi.name : 'Đơn vị'}
             </Text>
             <FontAwesome
@@ -208,24 +258,34 @@ const DVC_TKHS_SearchScreen = () => {
             />
           </RectButton>
           <RectButton
-            onPress={ChonLinhVuc}
+            onPress={() => {
+              if (donvi.name !== '') {
+                ChonLinhVuc();
+              }
+            }}
             style={[styles.contentChon, {backgroundColor: donvi.name !== '' ? '#F7F7F7' : '#FCFBFC'}]}>
             <Text
               style={{
-                color: linhvuc !== '' ? '#596267' : '#596267',
+                color: linhvuc.name !== '' ? '#596267' : '#596267',
                 marginEnd: 10,
-                fontWeight: linhvuc !== '' ? 'bold' : 'normal',
+                fontWeight: linhvuc.name !== '' ? 'bold' : 'normal',
               }}
               numberOfLines={1}>
-              {linhvuc !== '' ? linhvuc : 'Lĩnh vực'}
+              {linhvuc.name !== '' ? linhvuc.name : 'Lĩnh vực'}
             </Text>
-            <FontAwesome name={linhvuc === '' ? 'chevron-down' : 'times-circle'} color={linhvuc === '' ? 'gray' : '#F26946'} />
+            <FontAwesome
+              name={linhvuc.name === '' ? 'chevron-down' : 'times-circle'}
+              color={linhvuc.name === '' ? 'gray' : '#F26946'}
+            />
           </RectButton>
           <RectButton onPress={ChonMucDo} style={[styles.contentChon, {backgroundColor: '#F7F7F7'}]}>
-            <Text style={{color: 'gray', marginEnd: 10, fontWeight: mucdo !== '' ? 'bold' : 'normal'}} numberOfLines={1}>
-              {mucdo !== '' ? mucdo : 'Tất cả'}
+            <Text style={{color: 'gray', marginEnd: 10, fontWeight: mucdo.name !== '' ? 'bold' : 'normal'}} numberOfLines={1}>
+              {mucdo.name !== '' ? mucdo.name : 'Tất cả'}
             </Text>
-            <FontAwesome name={mucdo === '' ? 'chevron-down' : 'times-circle'} color={mucdo === '' ? 'gray' : '#F26946'} />
+            <FontAwesome
+              name={mucdo.name === '' ? 'chevron-down' : 'times-circle'}
+              color={mucdo.name === '' ? 'gray' : '#F26946'}
+            />
           </RectButton>
         </ScrollView>
       </View>
@@ -260,14 +320,34 @@ const DVC_TKHS_SearchScreen = () => {
         }}
         containerStyle={{margin: 20}}
         defaultOverlayOpacity={0.3}>
-        <RenderChonDonVi
-          dataSo={DSDonViSo}
-          dataQuanHuyen={DSDonViQuanHuyen}
-          dataPhuongXa={DSDonViPhuongXa}
-          handleDongY={handleDonVi}
-          actionSheetRef={refRBSheet}
-          ModalHide={ModalHide}
-        />
+        {typeDialog === 'DonVi' ? (
+          <RenderChonDonVi
+            dataSo={DSDonViSo}
+            dataQuanHuyen={DSDonViQuanHuyen}
+            dataPhuongXa={DSDonViPhuongXa}
+            handleDongY={handleDonVi}
+            actionSheetRef={refRBSheet}
+            ModalHide={ModalHide}
+          />
+        ) : typeDialog === 'LinhVuc' ? (
+          <RenderChonMucDo
+            data={DSLinhVuc}
+            handleDongY={handleLinhVuc}
+            actionSheetRef={refRBSheet}
+            ModalHide={ModalHide}
+            title="Chọn lĩnh vực"
+          />
+        ) : typeDialog === 'MucDo' ? (
+          <RenderChonMucDo
+            data={DSMucDo}
+            handleDongY={handleMucDo}
+            actionSheetRef={refRBSheet}
+            ModalHide={ModalHide}
+            title="Chọn mức độ"
+          />
+        ) : (
+          <></>
+        )}
       </ActionSheet>
     </View>
   );
