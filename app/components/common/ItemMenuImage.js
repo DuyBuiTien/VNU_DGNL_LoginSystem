@@ -1,8 +1,10 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {StyleSheet, Text, View, ScrollView, TouchableOpacity, ImageBackground, Image} from 'react-native';
+import {StyleSheet, Text, View, ScrollView, ImageBackground, Image} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5';
+
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const ItemMenuImage = (props) => {
   const {item} = props;
