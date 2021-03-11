@@ -29,6 +29,8 @@ const _w = Dimensions.get('screen').width < 500 ? 50 : 70;
 const _h = Dimensions.get('screen').width < 500 ? 50 : 70;
 const _b = Dimensions.get('screen').width < 500 ? 25 : 30;
 
+const {height, width} = Dimensions.get('window');
+
 const _renderItem6 = (props) => {
   const {item, navigation} = props;
   return (
@@ -124,7 +126,7 @@ const HomeScreen = () => {
       <TouchableOpacity
         key={item.appid}
         onPress={() => navigation.navigate(item.navigate)}
-        style={{justifyContent: 'center', alignItems: 'center', padding: 5, width: '25%'}}>
+        style={{justifyContent: 'center', alignItems: 'center', width: width / 4 - 2, marginVertical: 5}}>
         <View
           style={{
             justifyContent: 'center',
@@ -157,7 +159,13 @@ const HomeScreen = () => {
               data={datamenus}
               renderItem={({item, index}) => <_renderItem7 item={item} index={index} navigation={navigation} />}
               keyExtractor={(item, index) => index.toString()}
-              contentContainerStyle={{padding: 10}}
+              //contentContainerStyle={{padding: 10}}
+              contentContainerStyle={{
+                marginTop: 10,
+                flexGrow: 1,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
               numColumns={4}
             />
 

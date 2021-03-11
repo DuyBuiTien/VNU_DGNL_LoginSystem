@@ -63,7 +63,7 @@ const DVC_MainScreen = () => {
     <View style={{flex: 1, backgroundColor: 'white'}}>
       <Header title="Hồ sơ cá nhân" isStack={true} />
       <ScrollView>
-        {user ? (
+        {!user ? (
           <BlockLogin name="Dịch vụ công" />
         ) : (
           <View style={{flex: 1}}>
