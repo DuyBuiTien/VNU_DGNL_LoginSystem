@@ -5,6 +5,7 @@ import GT_DICHUNGXE_MainScreen from './GT_DICHUNGXE_MainScreen';
 import GT_PHATNGUOI_MainScreen from './GT_PHATNGUOI_MainScreen';
 import GT_OTGPLX_MainScreen from './GT_OTGPLX_MainScreen';
 import GT_STLGT_MainScreen from './GT_STLGT_MainScreen';
+import GT_ChiTietDiaDiemScreen from './GT_ChiTietDiaDiemScreen';
 
 export {
   GT_MainScreen,
@@ -14,4 +15,5 @@ export {
   GT_PHATNGUOI_MainScreen,
   GT_STLGT_MainScreen,
   GT_OTGPLX_MainScreen,
+  GT_ChiTietDiaDiemScreen,
 };

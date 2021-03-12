@@ -21,7 +21,7 @@ export const DANHMUC = [
     background: require('../Images/gt2.jpg'),
   },
 
-  {
+  /* {
     id: 7,
     name: 'Tra cứu vi phạm giao thông',
     navigate: 'WebViewScreen',
@@ -33,7 +33,7 @@ export const DANHMUC = [
       colorHeader: '#FFFAF3',
       hideBackForward: false,
     },
-  },
+  }, */
   {
     id: 10,
     name: 'Phạt nguội',

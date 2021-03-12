@@ -18,18 +18,20 @@ const ItemBanDo = (props) => {
         source={{uri: item.imageUrl}}
       />
       <View style={{flex: 1, padding: 10}}>
-        <Text style={{fontSize: 12, color: '#bdbdbd'}}>Gara ô tô</Text>
+        <Text style={{fontSize: 12, color: '#bdbdbd'}}>{item.type}</Text>
         <Text style={{fontWeight: '600', marginTop: 5, color: '#455a64'}} numberOfLines={2}>
-          {item.title}
+          {item.name}
         </Text>
         <View style={{flexDirection: 'row', marginTop: 5, alignItems: 'center'}}>
           <FontAwesome name={'clock'} size={12} color={'#F26946'} />
-          <Text style={{marginStart: 5, fontSize: 12, color: '#F26946'}}>Đang cập nhật</Text>
+          <Text style={{marginStart: 5, fontSize: 12, color: '#F26946'}}>
+            {item.giomuacua} - {item.giodongcua}
+          </Text>
         </View>
         <View style={{flexDirection: 'row', marginTop: 5, alignItems: 'center'}}>
           <FontAwesome name={'map-marker-alt'} size={12} color={'#F26946'} />
           <Text style={{marginStart: 5, fontSize: 12, color: '#F26946'}} numberOfLines={1}>
-            146 Hào Nam, Đống Đa, Hà nội
+            {item.diachi}
           </Text>
         </View>
       </View>

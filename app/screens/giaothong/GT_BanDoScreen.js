@@ -10,41 +10,10 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import Carousel, {ParallaxImage} from 'react-native-snap-carousel';
 import {Header, Icon} from 'react-native-elements';
 
-import {DANHMUC} from '../../data/GT_Data';
+import {DANHMUC} from '../../data/DataGiaoThong';
 import {ItemBanDo, ItemFilterBanDo} from '../../components/common';
 
 const {width: screenWidth} = Dimensions.get('window');
-
-const ENTRIES1 = [
-  {
-    title: 'Beautiful and dramatic Antelope Canyon',
-    name: 'NDH.HCC.UBNDTinh.13',
-    imageUrl: 'https://i.imgur.com/UPrs1EWl.jpg',
-    latitude: 20.43423453,
-    longitude: 106.1771109,
-  },
-  {
-    title: 'Beautiful and dramatic Antelope Canyon',
-    name: 'NDH.HCC.UBNDTinh.13',
-    imageUrl: 'https://i.imgur.com/UPrs1EWl.jpg',
-    latitude: 20.42423465,
-    longitude: 106.1771109,
-  },
-  {
-    title: 'Beautiful and dramatic Antelope Canyon',
-    name: 'NDH.HCC.UBNDTinh.13',
-    imageUrl: 'https://i.imgur.com/UPrs1EWl.jpg',
-    longitude: 106.1,
-    latitude: 20.1,
-  },
-  {
-    title: 'Beautiful and dramatic Antelope Canyon',
-    name: 'NDH.HCC.UBNDTinh.13',
-    imageUrl: 'https://i.imgur.com/UPrs1EWl.jpg',
-    longitude: 106.1,
-    latitude: 20.2,
-  },
-];
 
 const MainScreen = () => {
   const navigation = useNavigation();
@@ -88,7 +57,7 @@ const MainScreen = () => {
   };
 
   useEffect(() => {
-    setEntries(ENTRIES1);
+    setEntries(DANHMUC);
   }, []);
 
   useEffect(() => {
@@ -105,7 +74,13 @@ const MainScreen = () => {
     };
   }, [entries, indexCamera]);
 
-  const openChiTiet = (item) => {};
+  const openChiTiet = (item) => {
+    console.log('openchitiet');
+    console.log(item);
+    navigation.navigate('GT_ChiTietDiaDiemScreen', {
+      data: item,
+    });
+  };
   const filterBanDo = (item) => {};
 
   return (
@@ -175,7 +150,7 @@ const MainScreen = () => {
             ))}
           </ScrollView>
         </View>
-        <View style={{position: 'absolute', bottom: 50}}>
+        <View style={{position: 'absolute', bottom: 50, zIndex: 9999}}>
           <Carousel
             ref={carouselRef}
             sliderWidth={screenWidth}

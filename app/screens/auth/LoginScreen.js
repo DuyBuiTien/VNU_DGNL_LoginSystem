@@ -5,7 +5,6 @@ import {
   StatusBar,
   View,
   StyleSheet,
-  TouchableOpacity,
   ImageBackground,
   Keyboard,
   TouchableWithoutFeedback,
@@ -22,7 +21,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 import {SocialIcon} from 'react-native-elements';
 import {Header} from 'react-native-elements';
 import {useNavigation, useRoute} from '@react-navigation/native';
-import {RectButton} from 'react-native-gesture-handler';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 //import Base64 from '../../utils/Base64';
 import * as actions from '../../redux/global/Actions';
@@ -257,21 +256,17 @@ const LoginScreen = () => {
               </View>
 
               <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: 40}}>
-                <Text
-                  style={{textAlign: 'center', color: '#2E529F', fontWeight: 'bold'}}
-                  onPress={() => navigation.navigate('RegisterScreen')}>
-                  Đăng ký
-                </Text>
-                <Text
-                  style={{textAlign: 'center', color: '#2E529F', fontWeight: 'bold', marginStart: 10}}
-                  onPress={() => navigation.navigate('ForgotScreen')}>
-                  Quên mật khẩu
-                </Text>
+                <TouchableOpacity onPress={() => navigation.navigate('RegisterScreen')}>
+                  <Text style={{textAlign: 'center', color: '#2E529F', fontWeight: 'bold'}}>Đăng ký</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('ForgotScreen')}>
+                  <Text style={{textAlign: 'center', color: '#2E529F', fontWeight: 'bold', marginStart: 10}}>Quên mật khẩu</Text>
+                </TouchableOpacity>
               </View>
             </View>
           </View>
 
-          {actionsLoading && <View style={styles.loading} />}
+          {/* {actionsLoading && <View style={styles.loading} />} */}
         </KeyboardAvoidingView>
       </TouchableWithoutFeedback>
     </View>

@@ -40,6 +40,7 @@ import {
   GT_PHATNGUOI_MainScreen,
   GT_STLGT_MainScreen,
   GT_OTGPLX_MainScreen,
+  GT_ChiTietDiaDiemScreen,
 } from '../screens/giaothong';
 
 import {DL_MainScreen} from '../screens/dulich';
@@ -132,6 +133,7 @@ const AppStack = () => {
       <Stack.Screen name="GT_PHATNGUOI_MainScreen" component={GT_PHATNGUOI_MainScreen} />
       <Stack.Screen name="GT_STLGT_MainScreen" component={GT_STLGT_MainScreen} />
       <Stack.Screen name="GT_OTGPLX_MainScreen" component={GT_OTGPLX_MainScreen} />
+      <Stack.Screen name="GT_ChiTietDiaDiemScreen" component={GT_ChiTietDiaDiemScreen} />
 
       <Stack.Screen name="DL_MainScreen" component={DL_MainScreen} />
 
