@@ -10,8 +10,11 @@ import {ItemMenu, Header} from '../../components';
 
 const ProfileScreen = () => {
   return (
-    <View style={{flex: 1, backgroundColor: '#F1F1F1'}}>
+    <View style={{flex: 1, backgroundColor: '#FFF'}}>
       <Header title="Thông báo" leftComponent={false} />
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <Text>Hiện tại bạn chưa có thông báo nào!</Text>
+      </View>
     </View>
   );
 };

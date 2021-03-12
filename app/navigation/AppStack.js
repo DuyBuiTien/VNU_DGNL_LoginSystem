@@ -43,7 +43,16 @@ import {
   GT_ChiTietDiaDiemScreen,
 } from '../screens/giaothong';
 
-import {DL_MainScreen} from '../screens/dulich';
+import {
+  DL_MainScreen,
+  DL_DDL_Screen,
+  DL_CSLT_Screen,
+  DL_DSD_Screen,
+  DL_SPDL_Screen,
+  DL_DetailSP_Screen,
+  DL_Detail_CSLT_Screen,
+  DL_DSD_ListScreen,
+} from '../screens/dulich';
 
 import {TDTM_MainScreen, TDTM_DanhSachScreen} from '../screens/tongdaithongminh';
 
@@ -68,6 +77,8 @@ import {
   YT_DatLichKham_TrucTiepScreen,
   YT_DatLichKham_TrucTuyenScreen,
 } from '../screens/yte';
+
+import {MT_MainScreen} from '../screens/moitruong';
 
 const AppStack = () => {
   useEffect(() => {
@@ -136,6 +147,13 @@ const AppStack = () => {
       <Stack.Screen name="GT_ChiTietDiaDiemScreen" component={GT_ChiTietDiaDiemScreen} />
 
       <Stack.Screen name="DL_MainScreen" component={DL_MainScreen} />
+      <Stack.Screen name="DL_DDL_Screen" component={DL_DDL_Screen} />
+      <Stack.Screen name="DL_CSLT_Screen" component={DL_CSLT_Screen} />
+      <Stack.Screen name="DL_DSD_Screen" component={DL_DSD_Screen} />
+      <Stack.Screen name="DL_SPDL_Screen" component={DL_SPDL_Screen} />
+      <Stack.Screen name="DL_DetailSP_Screen" component={DL_DetailSP_Screen} />
+      <Stack.Screen name="DL_Detail_CSLT_Screen" component={DL_Detail_CSLT_Screen} />
+      <Stack.Screen name="DL_DSD_ListScreen" component={DL_DSD_ListScreen} />
 
       <Stack.Screen name="YT_MainScreen" component={YT_MainScreen} />
       <Stack.Screen name="YT_TramYTeScreen" component={YT_TramYTeScreen} />
@@ -154,6 +172,8 @@ const AppStack = () => {
       <Stack.Screen name="TMDT_CSKDScreen" component={TMDT_CSKDScreen} />
 
       <Stack.Screen name="KNCC_MainScreen" component={KNCC_MainScreen} />
+
+      <Stack.Screen name="MT_MainScreen" component={MT_MainScreen} />
     </Stack.Navigator>
   );
 };

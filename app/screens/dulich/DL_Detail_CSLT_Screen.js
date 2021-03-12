@@ -8,7 +8,6 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {Header, Icon} from 'react-native-elements';
 import {Divider} from 'react-native-elements';
-import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 
 const MainScreen = () => {
   const navigation = useNavigation();
@@ -32,7 +31,7 @@ const MainScreen = () => {
           </TouchableOpacity>
         }
         centerComponent={{
-          text: `${data.name}`,
+          text: `${data.Ten}`,
           style: {color: '#2E2E2E', fontSize: 16, fontWeight: 'bold'},
         }}
         rightComponent={
@@ -45,38 +44,50 @@ const MainScreen = () => {
       />
       <View style={{flex: 1}}>
         <ScrollView showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
-          <Image style={{height: 240, width: '100%', resizeMode: 'stretch'}} source={{uri: data.imageUrl}} />
+          <Image
+            style={{height: 240, width: '100%', resizeMode: 'stretch'}}
+            source={{
+              uri:
+                data.AnhDaiDien && data.AnhDaiDien.length > 5
+                  ? data.AnhDaiDien
+                  : 'https://vnn-imgs-f.vgcloud.vn/2020/01/10/14/ninh-thuan-thi-truong-day-hua-hen-cua-gioi-dau-tu-bds.jpg',
+            }}
+          />
           <View style={{flex: 1, padding: 15}}>
             <Text style={{color: '#F23A27'}}>{data.type}</Text>
-            <Text style={{marginTop: 15, fontWeight: 'bold', color: '#424242', fontSize: 16}}>{data.name}</Text>
+            <Text style={{marginTop: 15, fontWeight: 'bold', color: '#424242', fontSize: 16}}>{data.Ten}</Text>
+
+            <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 15}}>
+              <FontAwesome name={'archive'} color="#F23A27" containerStyle={{paddingStart: 0}} onPress={() => {}} size={15} />
+              <Text style={{marginStart: 10, flex: 1, color: '#424242', fontWeight: '600'}}>Loại</Text>
+              <Text style={{marginHorizontal: 10, color: '#ff6e40'}}>
+                {data.DMLoaiCoSo && data?.DMLoaiCoSo.length > 2 ? data.DMLoaiCoSo : 'Đang cập nhật'}
+              </Text>
+            </View>
+
+            <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 15}}>
+              <FontAwesome name={'star'} color="#F23A27" containerStyle={{paddingStart: 0}} onPress={() => {}} size={15} />
+              <Text style={{marginStart: 10, flex: 1, color: '#424242', fontWeight: '600'}}>Xếp hạng</Text>
+              <Text style={{marginHorizontal: 10, color: '#ff6e40'}}>
+                {data.DMXepHang && data?.DMXepHang.length > 2 ? data.DMXepHang : 'Đang cập nhật'}
+              </Text>
+            </View>
+
             <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 15}}>
               <FontAwesome name={'clock'} color="#F23A27" containerStyle={{paddingStart: 0}} onPress={() => {}} size={15} />
-              <Text style={{marginStart: 10, flex: 1, color: '#424242', fontWeight: '600'}}>Giờ mở cửa</Text>
-              <Text style={{marginHorizontal: 10, color: '#ff6e40'}}>{data?.giomuacua ?? 'Đang cập nhật'}</Text>
+              <Text style={{marginStart: 10, flex: 1, color: '#424242', fontWeight: '600'}}>Giờ nhận phòng</Text>
+              <Text style={{marginHorizontal: 10, color: '#ff6e40'}}>
+                {data.GioNhanPhong && data?.GioNhanPhong.length > 2 ? data.GioNhanPhong : 'Đang cập nhật'}
+              </Text>
             </View>
             <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 15}}>
               <FontAwesome name={'clock'} color="#F23A27" containerStyle={{paddingStart: 0}} onPress={() => {}} size={15} />
-              <Text style={{marginStart: 10, flex: 1, color: '#424242', fontWeight: '600'}}>Đóng cửa</Text>
-              <Text style={{marginHorizontal: 10, color: '#ff6e40'}}>{data?.giodongcua ?? 'Đang cập nhật'}</Text>
+              <Text style={{marginStart: 10, flex: 1, color: '#424242', fontWeight: '600'}}>Giờ trả phòng</Text>
+              <Text style={{marginHorizontal: 10, color: '#ff6e40'}}>
+                {data.GioTraPhong && data?.GioTraPhong.length > 2 ? data.GioTraPhong : 'Đang cập nhật'}
+              </Text>
             </View>
             <Divider style={{backgroundColor: '#ff6e40', marginTop: 15}} />
-
-            <MapView
-              style={{height: 200, marginTop: 10}}
-              region={{
-                latitude: parseFloat(data.latitude),
-                longitude: parseFloat(data.longitude),
-                latitudeDelta: 0.001,
-                longitudeDelta: 0.001,
-              }}
-              showsUserLocation={true}>
-              <MapView.Marker
-                coordinate={{latitude: parseFloat(data.latitude), longitude: parseFloat(data.longitude)}}
-                draggable
-              />
-            </MapView>
-
-            <Divider style={{backgroundColor: '#ff6e40', marginTop: 10}} />
 
             <View style={{marginTop: 15}}>
               <View style={{flexDirection: 'row', alignItems: 'center'}}>
@@ -89,7 +100,7 @@ const MainScreen = () => {
                 />
                 <Text style={{marginStart: 10, flex: 1, color: '#424242', fontWeight: '600'}}>Địa chỉ</Text>
               </View>
-              <Text style={{marginStart: 20, marginTop: 10, flex: 1, color: '#424242'}}>{data.diachi}</Text>
+              <Text style={{marginStart: 20, marginTop: 10, flex: 1, color: '#424242'}}>{data.DiaChi}</Text>
             </View>
             <View style={{marginTop: 15}}>
               <View style={{flexDirection: 'row', alignItems: 'center'}}>
@@ -97,7 +108,7 @@ const MainScreen = () => {
                 <Text style={{marginStart: 10, flex: 1, color: '#424242', fontWeight: '600'}}>Điện thoại</Text>
               </View>
               <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 10}}>
-                <Text style={{marginStart: 20, flex: 1, color: '#424242'}}>{data.sodienthoai}</Text>
+                <Text style={{marginStart: 20, flex: 1, color: '#424242'}}>{data.DienThoai}</Text>
                 <View
                   style={{
                     flexDirection: 'row',
@@ -116,7 +127,7 @@ const MainScreen = () => {
                 <FontAwesome name={'globe'} color="#F23A27" containerStyle={{paddingStart: 0}} onPress={() => {}} size={15} />
                 <Text style={{marginStart: 10, flex: 1, color: '#424242', fontWeight: '600'}}>Website</Text>
               </View>
-              <Text style={{marginStart: 20, marginTop: 10, flex: 1, color: '#424242'}}>{data.website}</Text>
+              <Text style={{marginStart: 20, marginTop: 10, flex: 1, color: '#424242'}}>{data.Website}</Text>
             </View>
             <Divider style={{backgroundColor: '#ff6e40', marginTop: 15}} />
 
