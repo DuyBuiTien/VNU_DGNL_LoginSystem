@@ -4,6 +4,7 @@ import {StyleSheet, Text, View, Switch, ScrollView, TouchableOpacity} from 'reac
 import {Avatar, Divider} from 'react-native-elements';
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import VersionCheck from 'react-native-version-check';
 
 import {ItemMenu, Header} from '../../components';
 
@@ -109,6 +110,10 @@ const ProfileScreen = () => {
           iconLeft="sign-out-alt"
           colorIconLeft="#d50000"
         />
+
+        <Text style={{textAlign: 'center', margin: 10, color: '#818181'}}>
+          Phiên bản: {`${VersionCheck.getCurrentVersion()} (${VersionCheck.getCurrentBuildNumber()})`}
+        </Text>
       </ScrollView>
     </View>
   );

@@ -1,15 +1,16 @@
 import React from 'react';
-import {StyleSheet, TouchableOpacity} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {Header, Icon} from 'react-native-elements';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const Item = ({leftComponent, isStack, title, showRight, RightComponent}) => {
   const navigation = useNavigation();
 
   return (
     <Header
-      statusBarProps={{barStyle: 'light-content', backgroundColor: 'transparent', translucent: true}}
-      barStyle="light-content"
+      statusBarProps={{barStyle: 'dark-content', backgroundColor: 'transparent', translucent: true}}
+      barStyle="dark-content"
       placement="left"
       leftComponent={
         leftComponent || isStack ? (
@@ -22,7 +23,7 @@ const Item = ({leftComponent, isStack, title, showRight, RightComponent}) => {
       }
       centerComponent={{
         text: title,
-        style: {color: '#2E2E2E', fontSize: 20, fontWeight: 'bold'},
+        style: {color: '#2E2E2E', fontSize: 18, fontWeight: 'bold'},
       }}
       rightComponent={RightComponent && <RightComponent />}
       containerStyle={styles.container}

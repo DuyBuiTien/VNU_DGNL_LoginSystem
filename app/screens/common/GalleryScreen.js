@@ -4,6 +4,7 @@ import {StyleSheet, StatusBar, View, Text} from 'react-native';
 import {Icon} from 'react-native-elements';
 import ImageViewer from 'react-native-image-zoom-viewer';
 import {useNavigation, useRoute} from '@react-navigation/native';
+import {TouchableOpacity} from 'react-native';
 
 const GalleryScreen = () => {
   const navigation = useNavigation();
@@ -19,9 +20,9 @@ const GalleryScreen = () => {
       <StatusBar backgroundColor="transparent" barStyle="light-content" translucent={true} />
       <ImageViewer
         renderHeader={() => (
-          <View style={{position: 'absolute', top: 38, left: 10, zIndex: 14}}>
-            <Icon size={30} name="arrow-back" color="white" onPress={() => navigation.goBack()} />
-          </View>
+          <TouchableOpacity onPress={() => navigation.goBack()} style={{position: 'absolute', top: 38, left: 10, zIndex: 14}}>
+            <Icon size={30} name="arrow-back" color="white" />
+          </TouchableOpacity>
         )}
         imageUrls={images}
       />

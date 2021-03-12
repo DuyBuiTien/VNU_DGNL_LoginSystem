@@ -1,9 +1,12 @@
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+require_relative '../node_modules/react-native-unimodules/cocoapods.rb'
 
-platform :ios, '10.0'
+
+platform :ios, '11.0'
 
 target 'TDSmartCity' do
+  use_unimodules!
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
@@ -14,6 +17,10 @@ target 'TDSmartCity' do
   pod 'RNFS', :path => '../node_modules/react-native-fs'
   pod 'RNSound', :path => '../node_modules/react-native-sound'
 
+  rn_maps_path = '../node_modules/react-native-maps'
+  pod 'react-native-google-maps', :path => rn_maps_path
+  pod 'GoogleMaps'
+  pod 'Google-Maps-iOS-Utils'
 
 
 
@@ -21,7 +28,8 @@ target 'TDSmartCity' do
   #
   # Note that if you have use_frameworks! enabled, Flipper will not work and
   # you should disable these next few lines.
-  use_flipper!
+  #use_flipper!
+  use_flipper!({ 'Flipper' => '0.79.1' })
   post_install do |installer|
     flipper_post_install(installer)
   end

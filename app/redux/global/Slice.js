@@ -3,6 +3,9 @@ import {createSlice} from '@reduxjs/toolkit';
 const initialState = {
   dataApp: null,
   dataService: null,
+  dataMenu: null,
+  dataMenuCaNhan: [],
+
   XacThucVanTay: false,
   isLoadIntro: false,
 
@@ -66,12 +69,24 @@ export const globalSlice = createSlice({
 
     // dataDonViFetched
     dataDonViFetched: (state, action) => {
-      const {dataApp, dataService} = action.payload;
+      const {dataApp, dataService, dataMenu} = action.payload;
 
       state.actionsLoadingDonVi = false;
       state.error = null;
       state.dataApp = dataApp;
       state.dataService = dataService;
+      state.dataMenu = dataMenu;
+
+      let dataMenuCaNhan = [];
+
+      if (state.dataMenuCaNhan && state.dataMenuCaNhan.length < 1) {
+        dataMenu.map((item) => {
+          if (item.menumain && dataMenuCaNhan.length < 8) {
+            dataMenuCaNhan.push(item.appid);
+          }
+        });
+        state.dataMenuCaNhan = dataMenuCaNhan;
+      }
     },
     // loginSuccess
     loginSuccess: (state, action) => {
@@ -120,6 +135,10 @@ export const globalSlice = createSlice({
       if (!state.XacThucVanTay) {
         state.password_tmp = '';
       }
+    },
+
+    setMenuCaNhan: (state, action) => {
+      state.dataMenuCaNhan = action.payload;
     },
   },
 });

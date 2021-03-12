@@ -15,6 +15,8 @@ import {NotificationScreen} from '../screens/notification';
 import {ProfileScreen} from '../screens/profile';
 
 const AppBottomTab = () => {
+  const dataApp = useSelector((state) => state.global.dataApp);
+
   return (
     <Tab.Navigator
       initialRouteName="HomeScreen"
@@ -25,8 +27,8 @@ const AppBottomTab = () => {
         activeTintColor: '#D6002C',
         inactiveTintColor: '#757E83',
         labelStyle: {
-          fontSize: 11,
-          fontWeight: 'bold',
+          fontSize: 10,
+          fontWeight: '400',
         },
         indicatorStyle: {
           backgroundColor: 'transparent',
@@ -55,7 +57,7 @@ const AppBottomTab = () => {
         name="DiaPhuongScreen"
         component={DiaPhuongScreen}
         options={{
-          tabBarLabel: 'Địa phương',
+          tabBarLabel: dataApp?.name ?? 'Địa phương',
           tabBarBadge: null,
           tabBarIcon: ({focused, tintColor, size}) => (
             <View>

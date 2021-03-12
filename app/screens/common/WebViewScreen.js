@@ -9,7 +9,7 @@ import {Header, Icon} from 'react-native-elements';
 const Main_Screen = (props) => {
   const navigation = useNavigation();
   const route = useRoute();
-  const {title, url, colorHeader, hideBackForward, textColor} = route.params;
+  const {title, url, colorHeader, hideBackForward, textColor} = route.params.data;
   const AccessToken = useSelector((state) => state.global.AccessToken);
 
   const [canGoBack, setCanGoBack] = useState(false);
@@ -37,8 +37,8 @@ const Main_Screen = (props) => {
         flex: 1,
       }}>
       <Header
-        statusBarProps={{barStyle: 'light-content', backgroundColor: 'transparent', translucent: true}}
-        barStyle="light-content" // or directly
+        statusBarProps={{barStyle: 'dark-content', backgroundColor: 'transparent', translucent: true}}
+        barStyle="dark-content" // or directly
         centerComponent={{
           text: title,
           style: {color: textColor ? textColor : '#0A0A0A', fontSize: 20, fontWeight: 'bold'},
@@ -88,25 +88,23 @@ const Main_Screen = (props) => {
         centerContainerStyle={{}}
       />
 
-      <View style={{flex: 1}}>
-        <WebView
-          style={{flex: 1, backgroundColor: 'transparent'}}
-          ref={(ref) => (webViewRef.current = ref)}
-          thirdPartyCookiesEnabled={true}
-          sharedCookiesEnabled={true}
-          originWhitelist={['*']}
-          source={{
-            uri: url,
-          }}
-          onNavigationStateChange={(navState) => {
-            setCanGoBack(navState.canGoBack);
-            setCanGoForward(navState.canGoForward);
-            setCurrentUrl(navState.url);
-          }}
-          startInLoadingState={true}
-          renderLoading={() => <ActivityIndicator size="large" color="#fb8c00" style={{flex: 1, justifyContent: 'center'}} />}
-        />
-      </View>
+      <WebView
+        style={{flex: 1, backgroundColor: 'transparent'}}
+        ref={(ref) => (webViewRef.current = ref)}
+        thirdPartyCookiesEnabled={true}
+        sharedCookiesEnabled={true}
+        originWhitelist={['*']}
+        source={{
+          uri: url,
+        }}
+        onNavigationStateChange={(navState) => {
+          setCanGoBack(navState.canGoBack);
+          setCanGoForward(navState.canGoForward);
+          setCurrentUrl(navState.url);
+        }}
+        startInLoadingState={true}
+        renderLoading={() => <ActivityIndicator size="large" color="#fb8c00" style={{flex: 1, justifyContent: 'center'}} />}
+      />
     </View>
   );
 };

@@ -37,6 +37,11 @@ const RootContainerScreen = () => {
     };
   }, []);
 
+  useEffect(() => {
+    dispatch(actions.fetchDataDonVi_Demo(''));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   async function checkApplicationPermission() {
     const authorizationStatus = await messaging().requestPermission();
     if (authorizationStatus === messaging.AuthorizationStatus.AUTHORIZED) {

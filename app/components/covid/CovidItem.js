@@ -72,12 +72,12 @@ const ThongKeCovid = () => {
 
       if (dataTG.length > 2) {
         let dataAll = dataTG[1];
-        let CasesVn = parseInt(dataAll.CasesVn);
-        let CasesWorld = parseInt(dataAll.CasesWorld);
-        let RecoveredVn = parseInt(dataAll.RecoveredVn);
-        let RecoveredWorld = parseInt(dataAll.RecoveredWorld);
-        let DeadVn = parseInt(dataAll.DeadVn);
-        let DeadWorld = parseInt(dataAll.DeadWorld);
+        let CasesVn = parseInt(dataAll.CasesVn, 10);
+        let CasesWorld = parseInt(dataAll.CasesWorld, 10);
+        let RecoveredVn = parseInt(dataAll.RecoveredVn, 10);
+        let RecoveredWorld = parseInt(dataAll.RecoveredWorld, 10);
+        let DeadVn = parseInt(dataAll.DeadVn, 10);
+        let DeadWorld = parseInt(dataAll.DeadWorld, 10);
 
         let tgddt = CasesWorld - RecoveredWorld - DeadWorld;
         let vnddt = CasesVn - RecoveredVn - DeadVn;

@@ -5,7 +5,6 @@ import {
   View,
   ImageBackground,
   ScrollView,
-  TouchableOpacity,
   RefreshControl,
   FlatList,
   Image,
@@ -16,49 +15,58 @@ import {useSelector, useDispatch} from 'react-redux';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {Text, Button, Icon, Divider, Badge} from 'react-native-elements';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 import {TT_URL} from '../../config/server';
-import {requestPOST} from '../../services/Api';
+import {requestPOST, requestGET} from '../../services/Api';
 
 import {ThoiTietHome} from '../../components/lichaqi';
 import {CovidItem} from '../../components/covid';
 import {HeaderList} from '../../components/common';
 
 import images from '../../themes/Images';
-const _w = Dimensions.get('screen').width < 500 ? 60 : 70;
-const _h = Dimensions.get('screen').width < 500 ? 60 : 70;
+const _w = Dimensions.get('screen').width < 500 ? 50 : 70;
+const _h = Dimensions.get('screen').width < 500 ? 50 : 70;
 const _b = Dimensions.get('screen').width < 500 ? 25 : 30;
+
+const {height, width} = Dimensions.get('window');
+
+import moment from 'moment';
+moment.locale('vi');
 
 const _renderItem6 = (props) => {
   const {item, navigation} = props;
-  return (
-    <TouchableOpacity
-      onPress={() => navigation.navigate('WebViewScreen', {title: 'Tin tức', url: item.Link, color: '#f44336'})}
-      style={{
-        flex: 1,
-        flexDirection: 'column',
-        width: 300,
-        marginEnd: 10,
-        marginVertical: 10,
-        backgroundColor: '#FFFFFF',
-        borderRadius: 5,
-        borderWidth: 0.5,
-        borderColor: '#f44336',
-      }}>
-      <ImageBackground
-        resizeMode="cover"
+    return (
+      <TouchableOpacity
+      onPress={() => {navigation.navigate("TTCQ_DetailScreen", {data: item})}}
         style={{
-          height: 100,
-        }}
-        imageStyle={{borderRadius: 5}}
-        source={{uri: item.Image}}
-      />
-      <View style={{height: 80, padding: 10}}>
-        <Text style={{fontSize: 14}} numberOfLines={3}>
-          {item.Title}
-        </Text>
-      </View>
-    </TouchableOpacity>
+          flex: 1,
+          flexDirection: 'column',
+          width: 300,
+          marginEnd: 10,
+          marginVertical: 10,
+          backgroundColor: '#FFFFFF',
+          borderRadius: 5,
+          borderWidth: 0.5,
+          borderColor: '#f44336'
+  
+        }}>
+        <ImageBackground
+          resizeMode="cover"
+          style={{
+            height: 100,
+          }}
+          imageStyle={{borderRadius: 5}}
+          source={{uri: item.thumbnail?item.thumbnail:'https://file1.dangcongsan.vn/DATA/0/2018/07/thaibinh20-17_53_38_549.jpg'}}
+        />
+        <View style={{height: 80, padding: 10}}>
+          <Text style={{fontSize: 14}} numberOfLines={2}>{item.title}</Text>
+          <View style={{flexDirection: 'row', paddingTop: 10}}>
+            <FontAwesome name='clock' size={16} color='#9E9E9E' />
+            <Text style={{color: '#9E9E9E', fontSize: 12, paddingLeft: 10}}>{moment(item.created_at).format('L')}</Text>
+          </View>
+        </View>
+      </TouchableOpacity>
   );
 };
 
@@ -70,182 +78,42 @@ const HomeScreen = () => {
   const user = useSelector((state) => state.global.user);
   const fullName = user?.fullName ?? 'Khách';
 
+  const dataMenuCaNhan = useSelector((state) => state.global.dataMenuCaNhan);
+  const dataMenu = useSelector((state) => state.global.dataMenu);
+  const dataService = useSelector((state) => state.global.dataService);
+
+  let datamenus = [];
+
   const [dataNB, setDataNB] = useState([]);
-  const dataMenuMainFavor = [
-    {
-      appid: '1',
-      menumain: 1,
-      name: 'Dịch vụ hành chính công',
-      navigate: 'DVC_MainScreen',
-      count: 0,
-      icon: 'university',
-      color: '#0E2D7D',
-      datamenu: [],
-    },
-    {
-      appid: '5',
-      menumain: 1,
-      name: 'Tổng đài thông minh',
-      navigate: 'TĐTM_MainScreen',
-      count: 0,
-      icon: 'phone-volume',
-      color: '#DD0E2C',
-      datamenu: [],
-    },
-    {
-      appid: '8',
-      name: 'Giáo dục',
-      navigate: 'GD_MainScreen1',
-      count: 0,
-      icon: 'graduation-cap',
-      color: '#0271FE',
-      datamenu: [],
-    },
-    {
-      appid: '9',
-      name: 'Y tế',
-      navigate: 'YT_MainScreen',
-      count: 0,
-      icon: 'hospital-alt',
-      color: '#AF1A16',
-      datamenu: [],
-    },
-    {
-      appid: '2',
-      menumain: 1,
-      name: 'Phản ánh hiện trường',
-      navigate: 'PAHT_MainScreen',
-      count: 0,
-      icon: 'mail-bulk',
-      color: '#5B63EC',
-      datamenu: [],
-    },
-    {
-      appid: '3',
-      menumain: 1,
-      name: 'Du lịch',
-      navigate: 'DL_MainScreen',
-      count: 0,
-      icon: 'umbrella-beach',
-      color: '#FC7D2E',
-      datamenu: [],
-    },
-    {
-      appid: '4',
-      menumain: 1,
-      name: 'Thông tin cảnh báo',
-      navigate: 'TTCB_MainScreen',
-      count: 0,
-      icon: 'exclamation-triangle',
-      color: '#FFC815',
-      datamenu: [],
-    },
-    {
-      appid: '6',
-      menumain: 1,
-      name: 'Điện nước',
-      navigate: 'DN_MainScreen',
-      count: 0,
-      icon: 'clipboard-list',
-      color: '#29AAE1',
-      datamenu: [],
-    },
-    {
-      appid: '10',
-      name: 'Nông nghiệp',
-      navigate: 'NN_MainScreen',
-      count: 0,
-      icon: 'tractor',
-      color: '#45A659',
-      datamenu: [],
-    },
-    {
-      appid: '12',
-      name: 'Giá cả thị trường',
-      navigate: 'GCTT_MainScreen',
-      count: 0,
-      icon: 'chart-line',
-      color: '#2856C6',
-      datamenu: [],
-    },
-    {
-      appid: '13',
-      name: 'Môi trường',
-      navigate: 'MT_MainScreen',
-      count: 0,
-      icon: 'cannabis',
-      color: '#0271FE',
-      datamenu: [],
-    },
-    {
-      appid: '14',
-      name: 'An toàn thực phẩm',
-      navigate: 'ATTP_MainScreen',
-      count: 0,
-      icon: 'user-shield',
-      color: '#FC7D2E',
-      datamenu: [],
-    },
-    {
-      appid: '15',
-      name: 'Giao thông',
-      navigate: 'GT_MainScreen',
-      count: 0,
-      icon: 'traffic-light',
-      color: '#0271FE',
-      datamenu: [],
-    },
-    {
-      appid: '16',
-      name: 'Người yếu thế',
-      navigate: 'NYT_MainScreen',
-      count: 0,
-      icon: 'praying-hands',
-      color: '#0E2D7D',
-      datamenu: [],
-    },
-    {
-      appid: '17',
-      name: 'Tiện ích',
-      navigate: 'TI_MainScreen',
-      count: 0,
-      icon: 'tools',
-      color: '#45A659',
-      datamenu: [],
-    },
-    {
-      appid: '18',
-      name: 'Điểm tin',
-      navigate: 'DT_MainScreen',
-      count: 0,
-      icon: 'newspaper',
-      color: '#DD0E2C',
-      datamenu: [],
-    },
-    {
-      appid: 100,
-      name: 'Xem thêm',
-      navigate: 'MenuScreen',
-      icon: 'ellipsis-h',
-      color: '#DFE6EE',
-    },
-  ];
+
+  if (dataMenuCaNhan && dataMenuCaNhan.length > 0) {
+    dataMenuCaNhan.map((i) => {
+      dataMenu.map((j) => {
+        j.appid === i && datamenus.push(j);
+      });
+    });
+    //datamenus = dataMenuCaNhan;
+  } else {
+    dataMenu.map((i) => {
+      if (i.menumain) {
+        datamenus.push(i);
+      }
+    });
+  }
+
+  datamenus.push({
+    appid: 100,
+    name: 'Xem thêm',
+    navigate: 'MenuScreen',
+    icon: 'ellipsis-h',
+    color: '#DFE6EE',
+  });
 
   useEffect(() => {
     const fetchData = async () => {
-      var body = {
-        take: 10,
-        urlRoot: 'https://bacha.laocai.gov.vn/',
-        urlSpecific: 'Default.aspx?sname=huyenbacha&sid=1262&pageid=28621',
-        parentXpath: "//ul[contains(@class, 'ArticleList')]//li",
-        titleXpath: './/a',
-        descriptionXpath: './/a',
-        imageXpath: './/img',
-      };
-      var data1 = await requestPOST(TT_URL, body);
+      var data1 = await requestGET(`${dataService.TT_URL}/GetDuLieuTinBai?page=2&limit=20&sync_time=0`);
       var data2 = data1.data ? data1.data : [];
-      console.log(data2);
-      setDataNB(data2);
+      setDataNB(data2.slice(0,6));
     };
     fetchData();
     return () => {};
@@ -256,7 +124,7 @@ const HomeScreen = () => {
       <TouchableOpacity
         key={item.appid}
         onPress={() => navigation.navigate(item.navigate)}
-        style={{justifyContent: 'center', alignItems: 'center', padding: 5, width: '25%'}}>
+        style={{justifyContent: 'center', alignItems: 'center', width: width / 4 - 2, marginVertical: 5}}>
         <View
           style={{
             justifyContent: 'center',
@@ -264,7 +132,7 @@ const HomeScreen = () => {
             height: _h,
             width: _w,
             backgroundColor: item.color,
-            borderRadius: _b,
+            borderRadius: 20,
           }}>
           <FontAwesome name={item.icon} color="#fff" size={_b} containerStyle={styles.icon} />
         </View>
@@ -286,12 +154,17 @@ const HomeScreen = () => {
           <ThoiTietHome />
           <ScrollView showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false} style={{flexGrow: 1}}>
             <FlatList
-              data={dataMenuMainFavor}
+              data={datamenus}
               renderItem={({item, index}) => <_renderItem7 item={item} index={index} navigation={navigation} />}
               keyExtractor={(item, index) => index.toString()}
-              contentContainerStyle={{padding: 10}}
+              //contentContainerStyle={{padding: 10}}
+              contentContainerStyle={{
+                marginTop: 10,
+                flexGrow: 1,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
               numColumns={4}
-              extraData={dataMenuMainFavor}
             />
 
             <HeaderList
@@ -312,9 +185,9 @@ const HomeScreen = () => {
             <View style={{padding: 10, paddingRight: 0}}>
               <View style={styles.viewHeader}>
                 <Text style={styles.textHeaderTitle}> Tin tức</Text>
-                <TouchableOpacity style={{flexDirection: 'row'}} activeOpacity={0.8} onPress={() => {}}>
-                  <Text style={styles.textHeaderAll}> </Text>
-                  <Icon name="chevron-down" type="font-awesome" size={16} color="#f44336" />
+                <TouchableOpacity style={{flexDirection: 'row'}} activeOpacity={0.8} onPress={() => {navigation.navigate("TTCQ_MainScreen")}}>
+                  <Text style={styles.textHeaderAll}>Tất cả</Text>
+                  <Icon name="chevron-right" type="font-awesome" size={16} color="#f44336" />
                 </TouchableOpacity>
               </View>
               <FlatList
@@ -369,7 +242,7 @@ const styles = StyleSheet.create({
     borderLeftColor: '#f44336',
   },
   textHeaderTitle: {fontSize: 18, color: '#3D4458', fontWeight: '500'},
-  textHeaderAll: {color: '#90caf9', fontStyle: 'italic'},
+  textHeaderAll: {color: '#90caf9', fontStyle: 'italic', marginHorizontal: 10},
   viewIcon: {
     marginHorizontal: 10,
     padding: 15,
