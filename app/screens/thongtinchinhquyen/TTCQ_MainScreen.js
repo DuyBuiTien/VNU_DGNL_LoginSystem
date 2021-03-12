@@ -108,7 +108,7 @@ const TTCQ_MainScreen = () => {
   const fetchData = async () => {
     setIsLoading(true);
 
-    var data1 = await requestGET(`${dataService.TT_URL}/GetDuLieuTinBai?page=1&limit=20&sync_time=0`);
+    var data1 = await requestGET(`${dataService.TT_URL}/GetDuLieuTinBai?page=2&limit=20&sync_time=0`);
     var data2 = data1.data ? data1.data : [];
     setDataNB(data2.slice(0,6))
     setDataTM(data2)
@@ -117,7 +117,7 @@ const TTCQ_MainScreen = () => {
     var data4 = data3.data ? data3.data : [];
     setDataVB(data4)
 
-    var data5 = await requestGET(`${dataService.TT_URL}/GetDuLieuTinBai?page=2&limit=20&sync_time=0`);
+    var data5 = await requestGET(`${dataService.TT_URL}/GetDuLieuTinBai?page=3&limit=20&sync_time=0`);
     var data6 = data5.data ? data5.data : [];
     setDataTT(data6)
 
