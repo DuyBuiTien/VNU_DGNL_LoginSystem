@@ -32,7 +32,15 @@ import {
   PAHT_CaNhanScreen,
 } from '../screens/pakn';
 
-import {GT_MainScreen, GT_VEXEVEMB_MainScreen} from '../screens/giaothong';
+import {
+  GT_MainScreen,
+  GT_VEXEVEMB_MainScreen,
+  GT_BanDoScreen,
+  GT_DICHUNGXE_MainScreen,
+  GT_PHATNGUOI_MainScreen,
+  GT_STLGT_MainScreen,
+  GT_OTGPLX_MainScreen,
+} from '../screens/giaothong';
 
 import {DL_MainScreen} from '../screens/dulich';
 
@@ -119,6 +127,11 @@ const AppStack = () => {
 
       <Stack.Screen name="GT_MainScreen" component={GT_MainScreen} />
       <Stack.Screen name="GT_VEXEVEMB_MainScreen" component={GT_VEXEVEMB_MainScreen} />
+      <Stack.Screen name="GT_BanDoScreen" component={GT_BanDoScreen} />
+      <Stack.Screen name="GT_DICHUNGXE_MainScreen" component={GT_DICHUNGXE_MainScreen} />
+      <Stack.Screen name="GT_PHATNGUOI_MainScreen" component={GT_PHATNGUOI_MainScreen} />
+      <Stack.Screen name="GT_STLGT_MainScreen" component={GT_STLGT_MainScreen} />
+      <Stack.Screen name="GT_OTGPLX_MainScreen" component={GT_OTGPLX_MainScreen} />
 
       <Stack.Screen name="DL_MainScreen" component={DL_MainScreen} />
 
