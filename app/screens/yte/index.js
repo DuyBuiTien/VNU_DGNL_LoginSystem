@@ -7,6 +7,7 @@ import YT_BanDoScreen from './YT_BanDoScreen';
 import YT_DatLichKhamScreen from './YT_DatLichKhamScreen';
 import YT_DatLichKham_TrucTuyenScreen from './YT_DatLichKham_TrucTuyenScreen';
 import YT_DatLichKham_TrucTiepScreen from './YT_DatLichKham_TrucTiepScreen';
+import YT_TraCuuChiSoScreen from './YT_TraCuuChiSoScreen';
 
 export {
   YT_MainScreen,
@@ -18,4 +19,5 @@ export {
   YT_DatLichKhamScreen,
   YT_DatLichKham_TrucTuyenScreen,
   YT_DatLichKham_TrucTiepScreen,
+  YT_TraCuuChiSoScreen,
 };

@@ -1,17 +1,18 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {StyleSheet, Text, View, ScrollView, ImageBackground, Image} from 'react-native';
+import {StyleSheet, Text, View, Dimensions, ImageBackground, Image} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5';
+const SCREEN_WIDTH = Dimensions.get('window').width;
 
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const ItemMenuImage = (props) => {
-  const {item} = props;
+  const {item, index} = props;
   const navigation = useNavigation();
 
   return (
-    <View key={item.id} style={{width: '50%'}}>
+    <View key={index} style={{width: SCREEN_WIDTH / 2 - 10, margin: 5}}>
       <TouchableOpacity
         onPress={() => {
           navigation.navigate(item.navigate, {data: item.data, title: item.name});

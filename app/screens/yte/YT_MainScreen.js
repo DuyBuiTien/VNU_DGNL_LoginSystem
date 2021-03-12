@@ -53,8 +53,8 @@ const MainScreen = () => {
             justifyContent: 'space-around',
             flexWrap: 'wrap',
           }}>
-          {DANHMUC.map((item) => (
-            <ItemMenuImage item={item} />
+          {DANHMUC.map((item, index) => (
+            <ItemMenuImage item={item} index={index} />
           ))}
         </View>
       </ScrollView>

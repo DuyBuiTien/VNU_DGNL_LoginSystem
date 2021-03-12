@@ -17,6 +17,7 @@ const MainScreen = () => {
 
   const [isLoading, setIsLoading] = useState(false);
   const [inputValue, setInputValue] = useState('');
+  const [chieucao, setChieucao] = useState('');
 
   const [noidung, setNoidung] = useState('');
 
@@ -53,7 +54,7 @@ const MainScreen = () => {
           </TouchableOpacity>
         }
         centerComponent={{
-          text: 'Kiểm tra phạt nguội',
+          text: 'Tra cứu chỉ số sức khoẻ',
           style: {color: '#2E2E2E', fontSize: 16, fontWeight: 'bold'},
         }}
         rightComponent={
@@ -71,36 +72,54 @@ const MainScreen = () => {
               backgroundColor: '#FFF',
               flexDirection: 'row',
               borderRadius: 4,
-              padding: 8,
+              padding: 4,
               margin: 10,
               alignItems: 'center',
               flex: 1,
               borderColor: '#eeeeee',
               borderWidth: 0.5,
             }}>
-            <FontAwesome name="search" color="#787C7E" size={20} style={{marginHorizontal: 5}} />
             <TextInput
-              placeholder={'Nhập biển, VD: 30A38931, 29C11771...'}
+              placeholder={'Cân nặng'}
               multiline={false}
               onChangeText={(text) => {
                 setInputValue(text);
               }}
               value={inputValue}
               selectionColor={'gray'}
-              onSubmitEditing={TimKiem}
               clearButtonMode="always"
-              style={{flex: 1, margin: 10, fontSize: 15}}
-              keyboardType={'web-search'}
+              style={{flex: 1, margin: 10, fontSize: 14}}
+            />
+          </View>
+          <View
+            style={{
+              backgroundColor: '#FFF',
+              flexDirection: 'row',
+              borderRadius: 4,
+              padding: 4,
+              margin: 10,
+              alignItems: 'center',
+              flex: 1,
+              borderColor: '#eeeeee',
+              borderWidth: 0.5,
+            }}>
+            <TextInput
+              placeholder={'Chiều cao'}
+              multiline={false}
+              onChangeText={(text) => {
+                setChieucao(text);
+              }}
+              value={chieucao}
+              selectionColor={'gray'}
+              clearButtonMode="always"
+              style={{flex: 1, margin: 10, fontSize: 14}}
             />
           </View>
           <Text style={{marginHorizontal: 10, fontStyle: 'italic', color: '#bf360c', fontSize: 12, fontWeight: '200'}}>
-            Ghi chú: Nhập biển số xe không dấu "-" hoặc ".". VD 30A38931, 29C11771...
+            Ghi chú: Chỉ số sức khoẻ là chỉ số khối cơ thể được dùng để đánh giá mức độ gầy hay béo của một người, áp dụng cho
+            người trên 19 tuổi.
           </Text>
 
-          <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', padding: 10}}>
-            <FontAwesome name={'info-circle'} color={'#2196f3'} />
-            <Text style={{color: '#2196f3', marginStart: 5}}>LÝ DO KHÔNG TRA ĐƯỢC PHẠT NGUỘI</Text>
-          </View>
           {noidung.length > 5 ? (
             <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', marginTop: 200}}>
               <Text style={{fontSize: 18, fontWeight: '600', color: '#37474f'}}>Chúc mừng bạn</Text>

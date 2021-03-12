@@ -76,6 +76,7 @@ import {
   YT_DatLichKhamScreen,
   YT_DatLichKham_TrucTiepScreen,
   YT_DatLichKham_TrucTuyenScreen,
+  YT_TraCuuChiSoScreen,
 } from '../screens/yte';
 
 import {MT_MainScreen} from '../screens/moitruong';
@@ -164,6 +165,7 @@ const AppStack = () => {
       <Stack.Screen name="YT_DatLichKhamScreen" component={YT_DatLichKhamScreen} />
       <Stack.Screen name="YT_DatLichKham_TrucTiepScreen" component={YT_DatLichKham_TrucTiepScreen} />
       <Stack.Screen name="YT_DatLichKham_TrucTuyenScreen" component={YT_DatLichKham_TrucTuyenScreen} />
+      <Stack.Screen name="YT_TraCuuChiSoScreen" component={YT_TraCuuChiSoScreen} />
 
       <Stack.Screen name="NN_MainScreen" component={NN_MainScreen} />
 
