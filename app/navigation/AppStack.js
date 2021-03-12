@@ -59,6 +59,8 @@ import {TT_MainScreen} from '../screens/tintuc';
 
 import {TTCQ_MainScreen, TTCQ_DetailScreen, TTCQ_DetailVBScreen} from '../screens/thongtinchinhquyen';
 
+import {TTCB_MainScreen, TTCB_DetailScreen} from '../screens/thongtincanhbao';
+
 import {
   YT_MainScreen,
   YT_TramYTeScreen,
@@ -163,6 +165,9 @@ const AppStack = () => {
       <Stack.Screen name="TTCQ_MainScreen" component={TTCQ_MainScreen} />
       <Stack.Screen name="TTCQ_DetailScreen" component={TTCQ_DetailScreen} />
       <Stack.Screen name="TTCQ_DetailVBScreen" component={TTCQ_DetailVBScreen} />
+
+      <Stack.Screen name="TTCB_MainScreen" component={TTCB_MainScreen} />
+      <Stack.Screen name="TTCB_DetailScreen" component={TTCB_DetailScreen} />
 
     </Stack.Navigator>
   );
