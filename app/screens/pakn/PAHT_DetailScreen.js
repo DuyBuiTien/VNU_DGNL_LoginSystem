@@ -304,7 +304,6 @@ const PAHT_DetailScreen = () => {
             <View style={{paddingTop: 20, borderBottomColor: '#e8e8e8', borderBottomWidth: 0.8, minHeight: 60}}>
               <Text style={{fontSize: 18, color: '#212121', fontWeight: 'bold'}}>Vị trí</Text>
               <MapView
-                provider={PROVIDER_GOOGLE}
                 style={{height: 200, marginVertical: 10}}
                 region={{
                   latitude: parseFloat(dataPA.latitude),

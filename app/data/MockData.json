@@ -125,7 +125,7 @@
       "navigate": "MT_MainScreen",
       "count": 0,
       "icon": "cannabis",
-      "color": "#0271FE",
+      "color": "#4caf50",
       "datamenu": []
     },
     {
@@ -143,7 +143,7 @@
       "navigate": "GT_MainScreen",
       "count": 0,
       "icon": "traffic-light",
-      "color": "#0271FE",
+      "color": "#00796b",
       "datamenu": []
     },
     {

@@ -1,7 +1,8 @@
 import React from 'react';
-import {StyleSheet, TouchableOpacity} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {Header, Icon} from 'react-native-elements';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const Item = ({leftComponent, isStack, title, showRight, RightComponent}) => {
   const navigation = useNavigation();

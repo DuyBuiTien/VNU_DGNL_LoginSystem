@@ -20,8 +20,42 @@ export const DANHMUC = [
     icon: require('../Images/map.png'),
     background: require('../Images/gt2.jpg'),
   },
-
-  /* {
+  {
+    id: 2,
+    name: 'Trạm xăng',
+    navigate: 'GT_TX_MainScreen',
+    icon: require('../Images/station.png'),
+    background: require('../Images/gt3.jpg'),
+  },
+  {
+    id: 3,
+    name: 'Điểm đỗ xe',
+    navigate: 'GT_DDX_MainScreen',
+    icon: require('../Images/parking.png'),
+    background: require('../Images/gt4.jpg'),
+  },
+  {
+    id: 4,
+    name: 'Trạm thu phí',
+    navigate: 'GT_TTP_MainScreen',
+    icon: require('../Images/toll.png'),
+    background: require('../Images/gt5.jpg'),
+  },
+  {
+    id: 5,
+    name: 'Gara ô tô',
+    navigate: 'GT_GROT_MainScreen',
+    icon: require('../Images/gara.png'),
+    background: require('../Images/gt6.jpg'),
+  },
+  {
+    id: 6,
+    name: 'Điểm đen giao thông',
+    navigate: 'GT_DDGT_MainScreen',
+    icon: require('../Images/traffic.png'),
+    background: require('../Images/gt7.jpg'),
+  },
+  {
     id: 7,
     name: 'Tra cứu vi phạm giao thông',
     navigate: 'WebViewScreen',
@@ -33,7 +67,7 @@ export const DANHMUC = [
       colorHeader: '#FFFAF3',
       hideBackForward: false,
     },
-  }, */
+  },
   {
     id: 10,
     name: 'Phạt nguội',

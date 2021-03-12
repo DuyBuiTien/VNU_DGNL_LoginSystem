@@ -1,58 +1,21 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import HighchartsReactNative from '@highcharts/highcharts-react-native';
+import {StyleSheet, Text, View, Switch, ScrollView, TouchableOpacity} from 'react-native';
+import {Avatar, Divider} from 'react-native-elements';
+import {useNavigation} from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+import VersionCheck from 'react-native-version-check';
 
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
+import {ItemMenu, Header} from '../../components';
 
-    this.state = {
-      chartOptions: {
-        chart: {
-          type: 'bar',
-        },
-        title: {
-          text: 'Fruit Consumption',
-        },
-        xAxis: {
-          categories: ['Apples', 'Bananas', 'Oranges'],
-        },
-        yAxis: {
-          title: {
-            text: 'Fruit eaten',
-          },
-        },
-        series: [
-          {
-            name: 'Jane',
-            data: [1, 0, 4],
-          },
-          {
-            name: 'John',
-            data: [5, 7, 3],
-          },
-        ],
-        credits: {
-          enabled: false,
-        },
-      },
-    };
-  }
+const ProfileScreen = () => {
+  return (
+    <View style={{flex: 1, backgroundColor: '#F1F1F1'}}>
+      <Header title="Thông báo" leftComponent={false} />
+    </View>
+  );
+};
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <HighchartsReactNative styles={styles.container} options={this.state.chartOptions} />
-        <HighchartsReactNative styles={styles.container} options={this.state.chartOptions} />
-      </View>
-    );
-  }
-}
+export default ProfileScreen;
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#fff',
-    justifyContent: 'center',
-    flex: 1,
-  },
-});
+const styles = StyleSheet.create({});
