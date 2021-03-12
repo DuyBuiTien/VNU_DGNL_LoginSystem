@@ -3,8 +3,7 @@ apply from: '../../node_modules/react-native-unimodules/gradle.groovy'
 
 
 project.ext.envConfigFiles = [
-    tandan: ".env",
-    
+    tandan: ".env.tandan",
 ]
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 
@@ -51,7 +50,7 @@ android {
         multiDexEnabled true
     }
 
-productFlavors { //add this object
+    productFlavors { //add this object
         tandan {
             applicationId 'com.tandan.tdsmartcity'
             resValue "string", "build_config_package", "com.tdsmartcity"

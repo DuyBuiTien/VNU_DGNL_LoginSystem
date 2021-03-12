@@ -7,7 +7,12 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "tandandebug": "ENVFILE=.env.tandan react-native run-android --variant=tandanDebug --appId com.tandan.tdsmartcity",
+    "tandanbuildDebug": "cd android && SET ENVFILE=.env.tandan && gradlew assembletandanDebug",
+    "tandanbuildDebug_mac": "cd android && ENVFILE=.env.tandan ./gradlew assembletandanDebug",
+    "tandanRelease_win": "cd android && SET ENVFILE=.env.tandan && gradlew bundletandanRelease",
+    "tandanRelease_mac": "cd android && ENVFILE=.env.tandan ./gradlew bundletandanRelease"
   },
   "dependencies": {
     "@ant-design/react-native": "^4.0.7",
