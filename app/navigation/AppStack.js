@@ -44,9 +44,11 @@ import {NN_MainScreen} from '../screens/nongnghiep';
 
 import {TMDT_DanhMucScreen, TMDT_CSKDScreen, TMDT_MainScreen} from '../screens/giacathitruong';
 
-import {KNCC_MainScreen} from '../screens/ketnoicungcau';
+import {KNCC_MainScreen, KNCC_CM_MainScreen, KNCC_CB_MainScreen, KNCC_TDT_MainScreen} from '../screens/ketnoicungcau';
 
 import {TT_MainScreen} from '../screens/tintuc';
+
+import {TTCQ_MainScreen, TTCQ_DetailScreen, TTCQ_DetailVBScreen} from '../screens/thongtinchinhquyen';
 
 import {
   YT_MainScreen,
@@ -139,6 +141,14 @@ const AppStack = () => {
       <Stack.Screen name="TMDT_CSKDScreen" component={TMDT_CSKDScreen} />
 
       <Stack.Screen name="KNCC_MainScreen" component={KNCC_MainScreen} />
+      <Stack.Screen name="KNCC_CM_MainScreen" component={KNCC_CM_MainScreen} />
+      <Stack.Screen name="KNCC_CB_MainScreen" component={KNCC_CB_MainScreen} />
+      <Stack.Screen name="KNCC_TDT_MainScreen" component={KNCC_TDT_MainScreen} />
+
+      <Stack.Screen name="TTCQ_MainScreen" component={TTCQ_MainScreen} />
+      <Stack.Screen name="TTCQ_DetailScreen" component={TTCQ_DetailScreen} />
+      <Stack.Screen name="TTCQ_DetailVBScreen" component={TTCQ_DetailVBScreen} />
+
     </Stack.Navigator>
   );
 };

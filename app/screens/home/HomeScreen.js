@@ -18,7 +18,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome5';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
 import {TT_URL} from '../../config/server';
-import {requestPOST} from '../../services/Api';
+import {requestPOST, requestGET} from '../../services/Api';
 
 import {ThoiTietHome} from '../../components/lichaqi';
 import {CovidItem} from '../../components/covid';
@@ -31,36 +31,42 @@ const _b = Dimensions.get('screen').width < 500 ? 25 : 30;
 
 const {height, width} = Dimensions.get('window');
 
+import moment from 'moment';
+moment.locale('vi');
+
 const _renderItem6 = (props) => {
   const {item, navigation} = props;
-  return (
-    <TouchableOpacity
-      onPress={() => navigation.navigate('WebViewScreen', {title: 'Tin tức', url: item.Link, color: '#f44336'})}
-      style={{
-        flex: 1,
-        flexDirection: 'column',
-        width: 300,
-        marginEnd: 10,
-        marginVertical: 10,
-        backgroundColor: '#FFFFFF',
-        borderRadius: 5,
-        borderWidth: 0.5,
-        borderColor: '#f44336',
-      }}>
-      <ImageBackground
-        resizeMode="cover"
+    return (
+      <TouchableOpacity
+      onPress={() => {navigation.navigate("TTCQ_DetailScreen", {data: item})}}
         style={{
-          height: 100,
-        }}
-        imageStyle={{borderRadius: 5}}
-        source={{uri: item.Image}}
-      />
-      <View style={{height: 80, padding: 10}}>
-        <Text style={{fontSize: 14}} numberOfLines={3}>
-          {item.Title}
-        </Text>
-      </View>
-    </TouchableOpacity>
+          flex: 1,
+          flexDirection: 'column',
+          width: 300,
+          marginEnd: 10,
+          marginVertical: 10,
+          backgroundColor: '#FFFFFF',
+          borderRadius: 5,
+          borderWidth: 0.5,
+          borderColor: '#f44336'
+  
+        }}>
+        <ImageBackground
+          resizeMode="cover"
+          style={{
+            height: 100,
+          }}
+          imageStyle={{borderRadius: 5}}
+          source={{uri: item.thumbnail?item.thumbnail:'https://file1.dangcongsan.vn/DATA/0/2018/07/thaibinh20-17_53_38_549.jpg'}}
+        />
+        <View style={{height: 80, padding: 10}}>
+          <Text style={{fontSize: 14}} numberOfLines={2}>{item.title}</Text>
+          <View style={{flexDirection: 'row', paddingTop: 10}}>
+            <FontAwesome name='clock' size={16} color='#9E9E9E' />
+            <Text style={{color: '#9E9E9E', fontSize: 12, paddingLeft: 10}}>{moment(item.created_at).format('L')}</Text>
+          </View>
+        </View>
+      </TouchableOpacity>
   );
 };
 
@@ -74,6 +80,7 @@ const HomeScreen = () => {
 
   const dataMenuCaNhan = useSelector((state) => state.global.dataMenuCaNhan);
   const dataMenu = useSelector((state) => state.global.dataMenu);
+  const dataService = useSelector((state) => state.global.dataService);
 
   let datamenus = [];
 
@@ -104,18 +111,9 @@ const HomeScreen = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      var body = {
-        take: 10,
-        urlRoot: 'https://bacha.laocai.gov.vn/',
-        urlSpecific: 'Default.aspx?sname=huyenbacha&sid=1262&pageid=28621',
-        parentXpath: "//ul[contains(@class, 'ArticleList')]//li",
-        titleXpath: './/a',
-        descriptionXpath: './/a',
-        imageXpath: './/img',
-      };
-      var data1 = await requestPOST(TT_URL, body);
+      var data1 = await requestGET(`${dataService.TT_URL}/GetDuLieuTinBai?page=2&limit=20&sync_time=0`);
       var data2 = data1.data ? data1.data : [];
-      setDataNB(data2);
+      setDataNB(data2.slice(0,6));
     };
     fetchData();
     return () => {};
@@ -187,7 +185,7 @@ const HomeScreen = () => {
             <View style={{padding: 10, paddingRight: 0}}>
               <View style={styles.viewHeader}>
                 <Text style={styles.textHeaderTitle}> Tin tức</Text>
-                <TouchableOpacity style={{flexDirection: 'row'}} activeOpacity={0.8} onPress={() => {}}>
+                <TouchableOpacity style={{flexDirection: 'row'}} activeOpacity={0.8} onPress={() => {navigation.navigate("TTCQ_MainScreen")}}>
                   <Text style={styles.textHeaderAll}>Tất cả</Text>
                   <Icon name="chevron-right" type="font-awesome" size={16} color="#f44336" />
                 </TouchableOpacity>

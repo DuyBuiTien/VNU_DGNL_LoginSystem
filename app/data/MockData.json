@@ -28,7 +28,7 @@
     "HOST_DH": "https://dieuhanh.namdinh.gov.vn",
     "COVID_URL": "https://dieuhanh.ninhthuan.gov.vn/_layouts/15/TD.COVID.Service/WCFService.svc",
     "COVID2_URL": "https://smartcity.hanoi.gov.vn/Home",
-    "TT_URL": "https://dieuhanh.namdinh.gov.vn/_layouts/15/TD.DH.Service/WCFService.svc/crawls",
+    "TT_URL": "https://namdinh.gov.vn/_layouts/tandan.portal.api/service.svc",
     "AMLICH_URL": ""
   },
   "dataMenu": [
