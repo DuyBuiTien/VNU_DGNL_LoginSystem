@@ -44,7 +44,7 @@ static void InitializeFlipper(UIApplication *application) {
 
   self.moduleRegistryAdapter = [[UMModuleRegistryAdapter alloc] initWithModuleRegistryProvider:[[UMModuleRegistryProvider alloc] init]];
 
-  [GMSServices provideAPIKey:@"AIzaSyBn1IozTpJvuyeHVimDWzwa4VykXpjWCNo"];
+  [GMSServices provideAPIKey:@"AIzaSyDS875fQaHDZUcmAkYqzrsj9IG-SfBScVM"];
 
   if ([FIRApp defaultApp] == nil) {
     [FIRApp configure];

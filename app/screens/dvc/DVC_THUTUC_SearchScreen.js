@@ -225,7 +225,6 @@ const DVC_TKHS_SearchScreen = () => {
             backgroundColor: '#EAEAEA',
             flexDirection: 'row',
             borderRadius: 4,
-            padding: 2,
             margin: 10,
             alignItems: 'center',
             flex: 1,

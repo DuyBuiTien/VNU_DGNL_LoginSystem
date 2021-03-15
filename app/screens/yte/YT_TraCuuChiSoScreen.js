@@ -132,10 +132,6 @@ const MainScreen = () => {
       </View>
       <View
         style={{
-          position: 'absolute',
-          bottom: 0,
-          left: 0,
-          right: 0,
           borderTopWidth: 0.5,
           borderTopColor: '#BDBDBD',
           backgroundColor: '#fff',
@@ -143,7 +139,7 @@ const MainScreen = () => {
         <Button
           title="Tra cứu"
           titleStyle={{fontSize: 16, color: '#fff', fontWeight: '600'}}
-          containerStyle={{margin: 10, marginHorizontal: 50, marginBottom: 30}}
+          containerStyle={{marginVertical: 10, marginHorizontal: 50}}
           buttonStyle={{borderRadius: 10, backgroundColor: '#EF6C00', paddingVertical: 10}}
           onPress={() => {
             TimKiem();

@@ -121,6 +121,7 @@ const MainScreen = () => {
       />
       <View style={{flex: 1}}>
         <MapView
+          provider={PROVIDER_GOOGLE}
           showsUserLocation={true}
           style={{flex: 1}}
           region={region}
