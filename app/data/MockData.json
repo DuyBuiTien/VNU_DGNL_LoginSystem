@@ -163,15 +163,6 @@
       "icon": "tools",
       "color": "#45A659",
       "datamenu": []
-    },
-    {
-      "appid": "18",
-      "name": "Điểm tin",
-      "navigate": "DT_MainScreen",
-      "count": 0,
-      "icon": "newspaper",
-      "color": "#DD0E2C",
-      "datamenu": []
     }
   ]
 }

@@ -171,12 +171,15 @@ const LoginScreen = () => {
                   backgroundColor: '#FFF',
                   flexDirection: 'row',
                   borderRadius: 4,
-                  padding: 8,
+                  padding: 4,
                   margin: 10,
                   alignItems: 'center',
                   shadowColor: '#2E529F',
                   shadowOffset: {width: 0, height: 2},
                   shadowOpacity: 0.2,
+                  borderColor: '#abb4bd65',
+                  shadowRadius: 2,
+                  elevation: 2,
                 }}>
                 <FontAwesome name="user" color="#787C7E" size={20} style={{marginHorizontal: 5}} />
                 <TextInput
@@ -188,7 +191,7 @@ const LoginScreen = () => {
                   value={username}
                   selectionColor={'gray'}
                   clearButtonMode="always"
-                  style={{flex: 1, margin: 10, fontSize: 15}}
+                  style={{flex: 1}}
                 />
               </View>
               <View
@@ -196,12 +199,15 @@ const LoginScreen = () => {
                   backgroundColor: '#FFF',
                   flexDirection: 'row',
                   borderRadius: 4,
-                  padding: 8,
+                  padding: 4,
                   margin: 10,
                   alignItems: 'center',
                   shadowColor: '#2E529F',
                   shadowOffset: {width: 0, height: 2},
                   shadowOpacity: 0.2,
+                  borderColor: '#abb4bd65',
+                  shadowRadius: 2,
+                  elevation: 2,
                 }}>
                 <FontAwesome name="key" color="#787C7E" size={20} style={{marginHorizontal: 5}} />
                 <TextInput
@@ -214,7 +220,7 @@ const LoginScreen = () => {
                   selectionColor={'gray'}
                   clearButtonMode="always"
                   secureTextEntry={!hide}
-                  style={{flex: 1, margin: 10, fontSize: 15}}
+                  style={{flex: 1}}
                 />
                 <FontAwesome
                   name={hide ? 'eye' : 'eye-slash'}

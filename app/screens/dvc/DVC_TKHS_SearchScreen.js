@@ -1,12 +1,11 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState} from 'react';
-import {StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, TextInput, Keyboard, FlatList} from 'react-native';
+import {StyleSheet, Text, View, ActivityIndicator, TextInput, Keyboard, FlatList} from 'react-native';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {useSelector, useDispatch} from 'react-redux';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 import {showMessage} from 'react-native-flash-message';
-
-import {Button} from 'react-native-elements';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 import {requestGET} from '../../services/Api';
 
@@ -133,7 +132,7 @@ const DVC_TKHS_SearchScreen = () => {
             }}>
             Hoặc quét mã hồ sơ
           </Text>
-          <FontAwesome name={'barcode-read'} size={20} onPress={() => {}} />
+          <FontAwesome name={'barcode-read'} size={20} />
         </TouchableOpacity>
 
         <TouchableOpacity

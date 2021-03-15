@@ -225,7 +225,7 @@ const DVC_TKHS_SearchScreen = () => {
             backgroundColor: '#EAEAEA',
             flexDirection: 'row',
             borderRadius: 4,
-            padding: 4,
+            padding: 2,
             margin: 10,
             alignItems: 'center',
             flex: 1,
@@ -241,7 +241,7 @@ const DVC_TKHS_SearchScreen = () => {
             selectionColor={'gray'}
             onSubmitEditing={TimKiem}
             clearButtonMode="always"
-            style={{flex: 1, margin: 10, fontSize: 15}}
+            style={{flex: 1}}
             keyboardType={'web-search'}
           />
         </View>

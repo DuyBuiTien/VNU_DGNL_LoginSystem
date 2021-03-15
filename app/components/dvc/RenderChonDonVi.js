@@ -91,7 +91,7 @@ const ChonDonVi = (props) => {
             value={inputValue}
             selectionColor={'gray'}
             clearButtonMode="always"
-            style={{flex: 1, margin: 10}}
+            style={{flex: 1}}
           />
         </View>
       </View>
