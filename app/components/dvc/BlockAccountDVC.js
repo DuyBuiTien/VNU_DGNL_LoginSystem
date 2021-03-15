@@ -1,6 +1,8 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {useSelector, useDispatch} from 'react-redux';
+
 import FontAwesome from 'react-native-vector-icons/FontAwesome5';
 import {RectButton} from 'react-native-gesture-handler';
 import {useNavigation, useRoute} from '@react-navigation/native';
@@ -8,6 +10,7 @@ import {useNavigation, useRoute} from '@react-navigation/native';
 //
 const BlockLogin = (props) => {
   const navigation = useNavigation();
+  const user = useSelector((state) => state.dvc.user);
 
   return (
     <View style={{backgroundColor: '#F4E7D5', marginHorizontal: 20, borderRadius: 10, padding: 10}}>
@@ -16,7 +19,7 @@ const BlockLogin = (props) => {
         <Text style={{marginHorizontal: 10, fontWeight: '400', fontSize: 16}}>Đăng nhập</Text>
       </View>
       <Text style={{color: '#72746F'}}>
-        Bạn cần đăng nhập để sử dụng các tiện ích của chức năng <Text style={{fontWeight: 'bold'}}>{props.name}</Text>
+        Xin chào <Text style={{fontWeight: 'bold'}}>{user.fullname}</Text>
       </Text>
 
       <RectButton

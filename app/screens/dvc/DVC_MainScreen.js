@@ -7,18 +7,21 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome5';
 
 import {Header} from '../../components';
 import {ItemMenuImage, BlockLogin} from '../../components/common';
+import {BlockAccountDVC} from '../../components/dvc';
 import {DANHMUC} from '../../data/DVC_Data';
 
 const DVC_MainScreen = () => {
   const navigation = useNavigation();
-  const user = useSelector((state) => state.global.user);
+  const user = useSelector((state) => state.dvc.user);
 
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
       <Header title="Dịch vụ công" isStack={true} />
       <ScrollView>
-        {!user && (
+        {!user ? (
           <BlockLogin name="Dịch vụ công" loginScreen={'DVC_Auth_LoginScreen'} registerScreen={'DVC_Auth_RegisterScreen'} />
+        ) : (
+          <BlockAccountDVC />
         )}
         <View
           style={{

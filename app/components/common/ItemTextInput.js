@@ -21,6 +21,7 @@ const ItemTextInput = (props) => {
           selectionColor={'gray'}
           clearButtonMode="always"
           style={styles.textinput}
+          secureTextEntry={showEye && !hide}
         />
         {showEye && (
           <FontAwesome

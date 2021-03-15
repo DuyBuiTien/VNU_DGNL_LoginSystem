@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState, useEffect} from 'react';
-import {shallowEqual, useSelector, useDispatch} from 'react-redux';
+import {useSelector} from 'react-redux';
 import {
   View,
   StyleSheet,
@@ -9,54 +9,59 @@ import {
   TouchableWithoutFeedback,
   KeyboardAvoidingView,
   Platform,
-  TextInput,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5Pro';
 import {Text, Button, Input} from 'react-native-elements';
 import {showMessage} from 'react-native-flash-message';
-import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 import {Header} from 'react-native-elements';
 import {useNavigation, useRoute} from '@react-navigation/native';
+
 import {ItemTextInput} from '../../components/common';
+import {requestPOST} from '../../services/Api';
 
 //import Base64 from '../../utils/Base64';
-import * as actions from '../../redux/global/Actions';
 
 const LoginScreen = () => {
   const navigation = useNavigation();
+  const dataService = useSelector((state) => state.global.dataService);
+
   const [username, setUsername] = useState('');
-
-  const dispatch = useDispatch();
-  const dataApp = useSelector((state) => state.global.dataApp);
-
-  const {actionsLoading, error} = useSelector(
-    (state) => ({
-      actionsLoading: state.global.actionsLoading,
-      error: state.global.error,
-    }),
-    shallowEqual,
-  );
-
-  useEffect(() => {
-    if (error) {
-      showMessage({
-        message: 'Thất bại',
-        description: 'Gửi thông tin khôi phục mật khẩu thất bại',
-        type: 'danger',
-      });
-    }
-    return () => {};
-  }, [error]);
-
-  const [textInput, setTextInput] = useState('');
+  const [email, setEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleOnpress = async () => {
     Keyboard.dismiss();
-    showMessage({
-      message: 'Thành công',
-      description: 'Thông tin về tài khoản được gửi về địa chỉ thư điện tử của bạn!',
-      type: 'success',
-    });
+
+    if (username.length > 1 && email.length > 1) {
+      setIsLoading(true);
+      try {
+        var res = await requestPOST(`${dataService.DVC_URL}/ResetPasswordToMail`, {
+          user: username,
+          email: email,
+        });
+        setIsLoading(false);
+        if (res) {
+          showMessage({
+            message: 'Thành công',
+            description: 'Thông tin về tài khoản được gửi về địa chỉ thư điện tử của bạn!',
+            type: 'success',
+          });
+          navigation.navigate('DVC_Auth_LoginScreen');
+        }
+      } catch (error) {
+        showMessage({
+          message: 'Thất bại',
+          description: 'Thông tin gửi chưa thành công! Vui lòng kiểm tra lại!',
+          type: 'danger',
+        });
+      }
+    } else {
+      showMessage({
+        message: 'Thất bại',
+        description: 'Thông tin gửi chưa thành công! Vui lòng kiểm tra lại!',
+        type: 'danger',
+      });
+    }
   };
 
   return (
@@ -103,24 +108,24 @@ const LoginScreen = () => {
               />
 
               <ItemTextInput
-                value={username}
-                onChangeText={setUsername}
+                value={email}
+                onChangeText={setEmail}
                 placeholder={'Thư điện tử'}
-                icon={'user'}
+                icon={'at'}
                 title={'Thư điện tử'}
               />
 
               <Button
                 onPress={() => handleOnpress()}
                 title={'Gửi thông tin xác nhận'}
-                loading={actionsLoading}
+                loading={isLoading}
                 titleStyle={{fontSize: 14, fontWeight: 'bold'}}
                 buttonStyle={styles.btn}
               />
             </View>
           </View>
 
-          {actionsLoading && <View style={styles.loading} />}
+          {isLoading && <View style={styles.loading} />}
         </KeyboardAvoidingView>
       </TouchableWithoutFeedback>
     </View>
@@ -130,7 +135,7 @@ const LoginScreen = () => {
 export default LoginScreen;
 
 const styles = StyleSheet.create({
-  container: {flex: 1},
+  container: {flex: 1, justifyContent: 'center'},
   containerLoginForm: {
     //backgroundColor: '#E7E7E7',
     padding: 10,

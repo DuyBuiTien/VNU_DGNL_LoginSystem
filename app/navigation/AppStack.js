@@ -25,6 +25,8 @@ import {
   DVC_Auth_ForgotScreen,
   DVC_Auth_LoginScreen,
   DVC_Auth_RegisterScreen,
+  DVC_Auth_AccountScreen,
+  DVC_Auth_ChangePasswordScreen,
 } from '../screens/dvc';
 import {
   PAHT_MainScreen,
@@ -133,6 +135,8 @@ const AppStack = () => {
       <Stack.Screen name="DVC_Auth_ForgotScreen" component={DVC_Auth_ForgotScreen} />
       <Stack.Screen name="DVC_Auth_LoginScreen" component={DVC_Auth_LoginScreen} />
       <Stack.Screen name="DVC_Auth_RegisterScreen" component={DVC_Auth_RegisterScreen} />
+      <Stack.Screen name="DVC_Auth_AccountScreen" component={DVC_Auth_AccountScreen} />
+      <Stack.Screen name="DVC_Auth_ChangePasswordScreen" component={DVC_Auth_ChangePasswordScreen} />
 
       <Stack.Screen name="PAHT_MainScreen" component={PAHT_MainScreen} />
       <Stack.Screen name="PAHT_TongHopScreen" component={PAHT_TongHopScreen} />

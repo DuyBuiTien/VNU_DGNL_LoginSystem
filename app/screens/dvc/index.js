@@ -10,6 +10,8 @@ import DVC_TKHS_CaNhanScreen from './DVC_TKHS_CaNhanScreen';
 import DVC_Auth_ForgotScreen from './DVC_Auth_ForgotScreen';
 import DVC_Auth_LoginScreen from './DVC_Auth_LoginScreen';
 import DVC_Auth_RegisterScreen from './DVC_Auth_RegisterScreen';
+import DVC_Auth_AccountScreen from './DVC_Auth_AccountScreen';
+import DVC_Auth_ChangePasswordScreen from './DVC_Auth_ChangePasswordScreen';
 
 export {
   DVC_MainScreen,
@@ -23,4 +25,6 @@ export {
   DVC_Auth_ForgotScreen,
   DVC_Auth_LoginScreen,
   DVC_Auth_RegisterScreen,
+  DVC_Auth_AccountScreen,
+  DVC_Auth_ChangePasswordScreen,
 };
