@@ -7,5 +7,17 @@ import ItemFilterBanDo from './ItemFilterBanDo';
 import BanDo from './BanDo';
 import HeaderBanDo from './HeaderBanDo';
 import BanDoFilter from './BanDoFilter';
+import ItemTextInput from './ItemTextInput';
 
-export {HeaderList, ItemMenuImage, BlockLogin, SwipeableGmail, ItemBanDo, ItemFilterBanDo, BanDo, HeaderBanDo, BanDoFilter};
+export {
+  ItemTextInput,
+  HeaderList,
+  ItemMenuImage,
+  BlockLogin,
+  SwipeableGmail,
+  ItemBanDo,
+  ItemFilterBanDo,
+  BanDo,
+  HeaderBanDo,
+  BanDoFilter,
+};

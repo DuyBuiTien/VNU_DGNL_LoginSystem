@@ -7,6 +7,10 @@ import DVC_THUTUC_SearchScreen from './DVC_THUTUC_SearchScreen';
 import DVC_THUTUC_DetailScreen from './DVC_THUTUC_DetailScreen';
 import DVC_TKHS_CaNhanScreen from './DVC_TKHS_CaNhanScreen';
 
+import DVC_Auth_ForgotScreen from './DVC_Auth_ForgotScreen';
+import DVC_Auth_LoginScreen from './DVC_Auth_LoginScreen';
+import DVC_Auth_RegisterScreen from './DVC_Auth_RegisterScreen';
+
 export {
   DVC_MainScreen,
   DVC_TKHS_SearchScreen,
@@ -16,4 +20,7 @@ export {
   DVC_THUTUC_SearchScreen,
   DVC_THUTUC_DetailScreen,
   DVC_TKHS_CaNhanScreen,
+  DVC_Auth_ForgotScreen,
+  DVC_Auth_LoginScreen,
+  DVC_Auth_RegisterScreen,
 };

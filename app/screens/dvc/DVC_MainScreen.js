@@ -17,7 +17,9 @@ const DVC_MainScreen = () => {
     <View style={{flex: 1, backgroundColor: 'white'}}>
       <Header title="Dịch vụ công" isStack={true} />
       <ScrollView>
-        {!user && <BlockLogin name="Dịch vụ công" />}
+        {!user && (
+          <BlockLogin name="Dịch vụ công" loginScreen={'DVC_Auth_LoginScreen'} registerScreen={'DVC_Auth_RegisterScreen'} />
+        )}
         <View
           style={{
             flexDirection: 'row',

@@ -7,7 +7,6 @@ import {useNavigation, useRoute} from '@react-navigation/native';
 
 //
 const BlockLogin = (props) => {
-  const {name, loginScreen, registerScreen} = props;
   const navigation = useNavigation();
 
   return (
@@ -17,20 +16,20 @@ const BlockLogin = (props) => {
         <Text style={{marginHorizontal: 10, fontWeight: '400', fontSize: 16}}>Đăng nhập</Text>
       </View>
       <Text style={{color: '#72746F'}}>
-        Bạn cần đăng nhập để sử dụng các tiện ích của chức năng <Text style={{fontWeight: 'bold'}}>{name}</Text>
+        Bạn cần đăng nhập để sử dụng các tiện ích của chức năng <Text style={{fontWeight: 'bold'}}>{props.name}</Text>
       </Text>
 
       <RectButton
         style={{width: '100%', backgroundColor: '#F23A27', padding: 8, marginTop: 10, borderRadius: 10}}
         onPress={() => {
-          navigation.navigate(loginScreen ? loginScreen : 'LoginScreen');
+          navigation.navigate('LoginScreen');
         }}>
         <Text style={{textAlign: 'center', fontWeight: 'bold', color: '#FFF'}}>Đăng nhập</Text>
       </RectButton>
       <RectButton
         style={{width: '100%', backgroundColor: '#FFF', padding: 8, marginTop: 10, borderRadius: 10}}
         onPress={() => {
-          navigation.navigate(registerScreen ? registerScreen : 'RegisterScreen');
+          navigation.navigate('RegisterScreen');
         }}>
         <Text style={{textAlign: 'center', fontWeight: 'bold', color: '#F23A27'}}>Đăng ký</Text>
       </RectButton>
