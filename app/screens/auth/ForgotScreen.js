@@ -103,6 +103,9 @@ const LoginScreen = () => {
                   shadowColor: '#2E529F',
                   shadowOffset: {width: 0, height: 2},
                   shadowOpacity: 0.2,
+                  borderColor: '#abb4bd65',
+                  shadowRadius: 2,
+                  elevation: 2,
                 }}>
                 <FontAwesome name="at" color="#787C7E" size={20} style={{marginHorizontal: 5}} />
                 <TextInput
@@ -114,7 +117,7 @@ const LoginScreen = () => {
                   value={textInput}
                   selectionColor={'gray'}
                   clearButtonMode="always"
-                  style={{flex: 1, margin: 10, fontSize: 15}}
+                  style={{flex: 1}}
                 />
               </View>
 

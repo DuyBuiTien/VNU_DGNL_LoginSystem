@@ -27,8 +27,16 @@ const ItemMenuImage = (props) => {
           shadowOffset: {width: 0, height: 2},
           shadowOpacity: 0.2,
           marginHorizontal: 20,
+          borderColor: '#abb4bd65',
+
+          shadowRadius: 2,
+          elevation: 2,
         }}>
-        <ImageBackground imageStyle={{borderRadius: 10}} source={item.background?item.background:{uri: item.background_uri}} style={{width: '100%', height: 80}} />
+        <ImageBackground
+          imageStyle={{borderRadius: 10}}
+          source={item.background ? item.background : {uri: item.background_uri}}
+          style={{width: '100%', height: 80}}
+        />
         <View
           style={{
             height: 20,

@@ -12,7 +12,8 @@
     "tandanbuildDebug": "cd android && SET ENVFILE=.env.tandan && gradlew assembletandanDebug",
     "tandanbuildDebug_mac": "cd android && ENVFILE=.env.tandan ./gradlew assembletandanDebug",
     "tandanRelease_win": "cd android && SET ENVFILE=.env.tandan && gradlew bundletandanRelease",
-    "tandanRelease_mac": "cd android && ENVFILE=.env.tandan ./gradlew bundletandanRelease"
+    "tandanRelease_mac": "cd android && ENVFILE=.env.tandan ./gradlew bundletandanRelease",
+    "tandanRelease_APK": "cd android && ENVFILE=.env.tandan ./gradlew assembletandanRelease"
   },
   "dependencies": {
     "@ant-design/react-native": "^4.0.7",

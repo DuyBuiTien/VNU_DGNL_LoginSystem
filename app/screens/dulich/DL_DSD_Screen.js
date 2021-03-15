@@ -101,7 +101,7 @@ const MainScreen = () => {
             value={inputValue}
             selectionColor={'gray'}
             clearButtonMode="always"
-            style={{flex: 1, margin: 10, fontSize: 15}}
+            style={{flex: 1, }}
           />
         </View>
       </View>
