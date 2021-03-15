@@ -155,13 +155,14 @@
       "color": "#0E2D7D",
       "datamenu": []
     },
+
     {
       "appid": "17",
-      "name": "Tiện ích",
-      "navigate": "TI_MainScreen",
+      "name": "Thanh toán hoá đơn",
+      "navigate": "TTD_MainScreen",
       "count": 0,
-      "icon": "tools",
-      "color": "#45A659",
+      "icon": "file-invoice",
+      "color": "#2e7d32",
       "datamenu": []
     }
   ]

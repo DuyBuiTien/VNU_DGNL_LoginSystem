@@ -17,15 +17,19 @@ const ItemFilterBanDo = (props) => {
           justifyContent: 'space-between',
           flexDirection: 'row',
           alignItems: 'center',
-          shadowColor: '#F26946',
+
+          shadowColor: '#000',
           shadowOffset: {width: 0, height: 2},
           shadowOpacity: 0.2,
+          borderColor: '#abb4bd65',
+          shadowRadius: 2,
+          elevation: 2,
         },
-        {backgroundColor: '#FFF'},
+        {backgroundColor: item.selected ? '#FFF' : '#9ccc65'},
       ]}>
-      <FontAwesome size={16} name={item?.icon ?? 'gas-pump'} color={'#F26946'} />
+      <FontAwesome size={16} name={item?.icon ?? 'gas-pump'} color={item.selected ? '#F26946' : '#FFF'} />
 
-      <Text style={{color: '#37474f', marginStart: 10, fontWeight: 'normal'}} numberOfLines={1}>
+      <Text style={{color: item.selected ? '#37474f' : '#FFF', marginStart: 10, fontWeight: 'normal'}} numberOfLines={1}>
         {item.name}
       </Text>
     </TouchableOpacity>
@@ -35,3 +39,5 @@ const ItemFilterBanDo = (props) => {
 export default ItemFilterBanDo;
 
 const styles = StyleSheet.create({});
+
+//selected

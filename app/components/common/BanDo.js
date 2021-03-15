@@ -8,24 +8,32 @@ import {useNavigation, useRoute} from '@react-navigation/native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 import {TouchableOpacity, RectButton} from 'react-native-gesture-handler';
-import Carousel, {ParallaxImage} from 'react-native-snap-carousel';
+import Carousel from 'react-native-snap-carousel';
+import {Header, Icon} from 'react-native-elements';
 import Geolocation from 'react-native-geolocation-service';
 import {showMessage} from 'react-native-flash-message';
 
 import * as actions from '../../redux/global/Actions';
-import {DANHMUC} from '../../data/DataYTe';
-import {ItemBanDo, ItemFilterBanDo, HeaderBanDo} from '../../components/common';
+import {ItemBanDo, ItemFilterBanDo} from '../../components/common';
 
 const {width: screenWidth} = Dimensions.get('window');
 
-const MainScreen = () => {
-  const navigation = useNavigation();
-  const dispatch = useDispatch();
+const MainScreen = (props) => {
+  const {dataDanhMuc, dataBanDo, openChiTiet} = props;
 
-  const user = useSelector((state) => state.global.user);
+  const dispatch = useDispatch();
   let CurrentPosition = useSelector((state) => state.global.CurrentPosition);
 
+  const [region, setRegion] = useState({
+    latitude: parseFloat(CurrentPosition.latitude),
+    longitude: parseFloat(CurrentPosition.longitude),
+    latitudeDelta: 0.01,
+    longitudeDelta: 0.01,
+  });
+
   const [indexCamera, setIndexCamera] = useState(-1);
+
+  const carouselRef = useRef(null);
 
   const hasLocationPermission = async () => {
     if (Platform.OS === 'ios' || (Platform.OS === 'android' && Platform.Version < 23)) {
@@ -88,49 +96,11 @@ const MainScreen = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const dataFilter = [
-    {
-      id: 0,
-      icon: 'hospital-alt',
-      name: 'Bệnh viện',
-      type: 'benhvien',
-    },
-    {
-      id: 1,
-      icon: 'capsules',
-      name: 'Nhà thuốc',
-      type: 'nhathuoc',
-    },
-    {
-      id: 2,
-      icon: 'first-aid',
-      name: 'Phòng khám',
-      type: 'phongkham',
-    },
-  ];
-
-  const [region, setRegion] = useState({
-    latitude: parseFloat(CurrentPosition.latitude),
-    longitude: parseFloat(CurrentPosition.longitude),
-    latitudeDelta: 0.01,
-    longitudeDelta: 0.01,
-  });
-
-  const [entries, setEntries] = useState([]);
-  const carouselRef = useRef(null);
-  const goForward = () => {
-    carouselRef.current.snapToNext();
-  };
-
-  useEffect(() => {
-    setEntries(DANHMUC);
-  }, []);
-
   useEffect(() => {
     if (indexCamera >= 0) {
       setRegion({
-        latitude: entries[indexCamera].latitude,
-        longitude: entries[indexCamera].longitude,
+        latitude: dataBanDo[indexCamera].latitude,
+        longitude: dataBanDo[indexCamera].longitude,
         latitudeDelta: 0.01,
         longitudeDelta: 0.01,
       });
@@ -138,18 +108,12 @@ const MainScreen = () => {
     return () => {
       setRegion(null);
     };
-  }, [entries, indexCamera]);
+  }, [dataBanDo, indexCamera]);
 
-  const openChiTiet = (item) => {
-    navigation.navigate('GT_ChiTietDiaDiemScreen', {
-      data: item,
-    });
-  };
   const filterBanDo = (item) => {};
 
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
-      <HeaderBanDo title={'Bản đồ y tế'} navigation={navigation} />
       <View style={{flex: 1}}>
         <MapView
           //zoomEnabled={false}
@@ -157,14 +121,8 @@ const MainScreen = () => {
           provider={PROVIDER_GOOGLE}
           showsUserLocation={true}
           style={{flex: 1}}
-          region={region}
-          initialRegion={{
-            latitude: parseFloat(CurrentPosition.latitude),
-            longitude: parseFloat(CurrentPosition.longitude),
-            latitudeDelta: 0.01,
-            longitudeDelta: 0.01,
-          }}>
-          {entries.map((i, index) => (
+          region={region}>
+          {dataBanDo.map((i, index) => (
             <Marker
               //draggable
               //onDragEnd={(e) => console.log(JSON.stringify(e.nativeEvent.coordinate))}
@@ -181,13 +139,7 @@ const MainScreen = () => {
             />
           ))}
         </MapView>
-        <View style={{position: 'absolute', top: 0}}>
-          <ScrollView horizontal style={{marginBottom: 5, flexDirection: 'row'}} showsHorizontalScrollIndicator={false}>
-            {dataFilter.map((item, index) => (
-              <ItemFilterBanDo item={item} index={index} onPress={filterBanDo} />
-            ))}
-          </ScrollView>
-        </View>
+
         <View style={{position: 'absolute', bottom: 50, zIndex: 9999}}>
           <Carousel
             ref={carouselRef}
@@ -195,7 +147,7 @@ const MainScreen = () => {
             sliderHeight={150}
             //slideStyle={styles.slide}
             itemWidth={screenWidth - 60}
-            data={entries}
+            data={dataBanDo}
             renderItem={({item, index}) => <ItemBanDo item={item} index={index} onPress={openChiTiet} />}
             hasParallaxImages={true}
             onSnapToItem={(index) => {

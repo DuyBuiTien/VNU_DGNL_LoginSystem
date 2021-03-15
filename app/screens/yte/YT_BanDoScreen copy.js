@@ -9,12 +9,13 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 import {TouchableOpacity, RectButton} from 'react-native-gesture-handler';
 import Carousel, {ParallaxImage} from 'react-native-snap-carousel';
+import {Header, Icon} from 'react-native-elements';
 import Geolocation from 'react-native-geolocation-service';
 import {showMessage} from 'react-native-flash-message';
 
 import * as actions from '../../redux/global/Actions';
 import {DANHMUC} from '../../data/DataYTe';
-import {ItemBanDo, ItemFilterBanDo, HeaderBanDo} from '../../components/common';
+import {ItemBanDo, ItemFilterBanDo} from '../../components/common';
 
 const {width: screenWidth} = Dimensions.get('window');
 
@@ -110,8 +111,8 @@ const MainScreen = () => {
   ];
 
   const [region, setRegion] = useState({
-    latitude: parseFloat(CurrentPosition.latitude),
-    longitude: parseFloat(CurrentPosition.longitude),
+    latitude: 20.43423454,
+    longitude: 106.17711091,
     latitudeDelta: 0.01,
     longitudeDelta: 0.01,
   });
@@ -149,7 +150,40 @@ const MainScreen = () => {
 
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
-      <HeaderBanDo title={'Bản đồ y tế'} navigation={navigation} />
+      <Header
+        statusBarProps={{barStyle: 'dark-content', backgroundColor: 'transparent', translucent: true}}
+        barStyle="dark-content"
+        placement="left"
+        leftComponent={
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Icon
+              name={'arrow-back'}
+              color="#2E2E2E"
+              underlayColor="#00000000"
+              containerStyle={{paddingStart: 0, marginHorizontal: 10}}
+            />
+          </TouchableOpacity>
+        }
+        centerComponent={{
+          text: 'Bản đồ y tế',
+          style: {color: '#2E2E2E', fontSize: 16, fontWeight: 'bold'},
+        }}
+        rightComponent={
+          <View style={{flexDirection: 'row'}}>
+            <FontAwesome name={'search'} color="#2E2E2E" containerStyle={{paddingStart: 0}} onPress={() => {}} size={20} />
+            <FontAwesome
+              style={{marginStart: 10}}
+              name={true ? 'map-marked-alt' : 'list'}
+              color="#2E2E2E"
+              containerStyle={{paddingStart: 0}}
+              onPress={() => {}}
+              size={20}
+            />
+          </View>
+        }
+        containerStyle={{backgroundColor: '#FFF', justifyContent: 'space-around'}}
+        centerContainerStyle={{justifyContent: 'center'}}
+      />
       <View style={{flex: 1}}>
         <MapView
           //zoomEnabled={false}

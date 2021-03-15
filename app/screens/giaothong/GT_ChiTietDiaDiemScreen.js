@@ -9,6 +9,7 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import {Header, Icon} from 'react-native-elements';
 import {Divider} from 'react-native-elements';
 import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
+import Clipboard from '@react-native-clipboard/clipboard';
 
 const MainScreen = () => {
   const navigation = useNavigation();
@@ -25,23 +26,24 @@ const MainScreen = () => {
     Linking.openURL(phoneNumber);
   };
 
-  const handleCopy = (diachi) => {
-    let phoneNumber = '';
-    if (Platform.OS === 'android') {
-      phoneNumber = `tel:${number}`;
-    } else {
-      phoneNumber = `telprompt:${number}`;
-    }
-    Linking.openURL(phoneNumber);
+  const handleCopy = (noidung) => {
+    Clipboard.setString(noidung);
   };
 
   const handleOpenMap = (latitude, longitude) => {
-    /* if (Platform.OS === 'android') {
-      phoneNumber = `tel:${number}`;
-    } else {
-      phoneNumber = `telprompt:${number}`;
-    }
-    Linking.openURL(phoneNumber); */
+    const url = Platform.select({
+      ios: `maps:${latitude},${longitude}`,
+      android: `google.navigation:q=${latitude}+${longitude}`,
+    });
+
+    Linking.canOpenURL(url).then((supported) => {
+      if (supported) {
+        return Linking.openURL(url);
+      } else {
+        const browser_url = 'https://www.google.de/maps/@' + latitude + ',' + longitude + '?q=';
+        return Linking.openURL(browser_url);
+      }
+    });
   };
 
   return (
