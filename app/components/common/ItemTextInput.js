@@ -8,21 +8,25 @@ const ItemTextInput = (props) => {
   const {value, onChangeText, placeholder, icon, title, description, showEye} = props;
   return (
     <View style={{marginVertical: 10}}>
-      <Text style={{marginHorizontal: 10}}>{title}</Text>
-      <View style={styles.textinputContainer}>
+      <Text style={{marginHorizontal: 10, color: '#5B6062', fontWeight: '600'}}>{title}</Text>
+      <View style={[styles.textinputContainer, {backgroundColor: onChangeText ? 'transparent' : '#eeeeee'}]}>
         <FontAwesome name={icon ? icon : 'home'} color="#787C7E" size={20} style={styles.textinputIcon} />
-        <TextInput
-          placeholder={placeholder ? placeholder : ''}
-          multiline={false}
-          onChangeText={(text) => {
-            onChangeText(text);
-          }}
-          value={value}
-          selectionColor={'gray'}
-          clearButtonMode="always"
-          style={styles.textinput}
-          secureTextEntry={showEye && !hide}
-        />
+        {onChangeText ? (
+          <TextInput
+            placeholder={placeholder ? placeholder : ''}
+            multiline={false}
+            onChangeText={(text) => {
+              onChangeText(text);
+            }}
+            value={value}
+            selectionColor={'gray'}
+            clearButtonMode="always"
+            style={styles.textinput}
+            secureTextEntry={showEye && !hide}
+          />
+        ) : (
+          <Text style={[styles.textinput]}>{value}</Text>
+        )}
         {showEye && (
           <FontAwesome
             name={hide ? 'eye' : 'eye-slash'}
@@ -33,7 +37,9 @@ const ItemTextInput = (props) => {
           />
         )}
       </View>
-      {description && <Text style={{marginHorizontal: 10, color: '#bdbdbd', fontStyle: 'italic'}}>{description}</Text>}
+      {description && (
+        <Text style={{marginHorizontal: 10, color: '#bdbdbd', fontStyle: 'italic', fontSize: 13}}>{description}</Text>
+      )}
     </View>
   );
 };
@@ -49,11 +55,8 @@ const styles = StyleSheet.create({
     padding: 0,
     margin: 10,
     alignItems: 'center',
-
-    shadowOpacity: 0.2,
-    borderWidth: 0.4,
     borderColor: '#abb4bd65',
-    shadowRadius: 2,
+    borderWidth: 0.4,
   },
   textinput: {flex: 1, paddingVertical: 10},
   textinputIcon: {marginHorizontal: 10},

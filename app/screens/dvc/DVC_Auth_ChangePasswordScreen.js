@@ -1,12 +1,13 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState, useEffect} from 'react';
-import {useSelector} from 'react-redux';
-import {View, StyleSheet, TouchableOpacity, Keyboard, ScrollView} from 'react-native';
+import {View, StyleSheet, TouchableOpacity, Keyboard, ScrollView, KeyboardAvoidingView, Platform} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5Pro';
 import {Text, Button, Input} from 'react-native-elements';
 import {showMessage} from 'react-native-flash-message';
 import {Header} from 'react-native-elements';
 import {useNavigation} from '@react-navigation/native';
+import {shallowEqual, useSelector, useDispatch} from 'react-redux';
+import * as actions from '../../redux/dvc/Actions';
 
 //import Base64 from '../../utils/Base64';
 import {ItemTextInput} from '../../components/common';
@@ -14,52 +15,43 @@ import {requestPOST} from '../../services/Api';
 
 const LoginScreen = () => {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
 
   const dataService = useSelector((state) => state.global.dataService);
-
+  const user = useSelector((state) => state.dvc.user);
+  const username = user.username;
   const [isLoading, setIsLoading] = useState(false);
 
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [newpass, setNewpas] = useState('');
   const [password2, setPassword2] = useState('');
-  const [fullname, setFullname] = useState('');
-  const [address, setAddress] = useState('');
-  const [phonenumber, setPhonenumber] = useState('');
-  const [email, setEmail] = useState('');
-  const [cmnd, setCmnd] = useState('');
+  const [oldpass, setOldpass] = useState('');
 
   const handleOnpress = async () => {
     Keyboard.dismiss();
 
     if (
       username.length > 1 &&
-      email.length > 1 &&
-      fullname.length > 1 &&
-      email.length > 1 &&
-      phonenumber.length > 1 &&
-      password === password2 &&
-      password.match(/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{8,})$/)
+      oldpass.length > 1 &&
+      newpass.length > 1 &&
+      newpass === password2 &&
+      newpass.match(/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{8,})$/)
     ) {
       setIsLoading(true);
       try {
-        var res = await requestPOST(`${dataService.DVC_URL}/RegisterAccount`, {
+        var res = await requestPOST(`${dataService.DVC_URL}/ResetPassword`, {
           username,
-          password,
-          fullname,
-          address,
-          phonenumber,
-          email,
-          cmnd,
+          oldpass,
+          newpass,
         });
-        console.log(res);
         setIsLoading(false);
         if (res && res.error.code === 200) {
           showMessage({
             message: 'Thành công',
-            description: 'Thông tin về tài khoản được gửi về địa chỉ thư điện tử của bạn!',
+            description: 'Mật khẩu được đổi thành công!',
             type: 'success',
           });
-          navigation.navigate('DVC_Auth_LoginScreen');
+          dispatch(actions.logOut());
+          navigation.navigate('DVC_MainScreen');
         }
       } catch (error) {
         showMessage({
@@ -96,95 +88,55 @@ const LoginScreen = () => {
           </TouchableOpacity>
         }
         centerComponent={{
-          text: '',
+          text: 'Đổi mật khẩu',
           style: {color: '#2E2E2E', fontSize: 18, fontWeight: 'bold'},
         }}
         containerStyle={{backgroundColor: '#FFF', justifyContent: 'space-around'}}
         centerContainerStyle={{justifyContent: 'center'}}
       />
+      <KeyboardAvoidingView
+        style={{flex: 1}}
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        enabled
+        keyboardVerticalOffset={150}>
+        <ScrollView containerStyle={styles.container} showsVerticalScrollIndicator={false}>
+          <View style={{margin: 10}}>
+            <ItemTextInput
+              showEye={true}
+              value={oldpass}
+              onChangeText={setOldpass}
+              placeholder={'Mật khẩu cũ'}
+              icon={'key'}
+              title={'Mật khẩu cũ'}
+            />
+            <ItemTextInput
+              showEye={true}
+              value={newpass}
+              onChangeText={setNewpas}
+              placeholder={'Mật khẩu'}
+              icon={'key'}
+              title={'Mật khẩu'}
+            />
 
-      <ScrollView containerStyle={styles.container} showsVerticalScrollIndicator={false}>
-        <Text style={styles.header_1}>{'ĐĂNG KÝ'}</Text>
+            <ItemTextInput
+              showEye={true}
+              value={password2}
+              onChangeText={setPassword2}
+              placeholder={'Nhập lại mật khẩu'}
+              icon={'key'}
+              title={'Nhập lại mật khẩu'}
+            />
 
-        <View style={{margin: 10}}>
-          <ItemTextInput
-            value={username}
-            onChangeText={setUsername}
-            placeholder={'Tên đăng nhập'}
-            icon={'user'}
-            title={'Tên đăng nhập'}
-            description={'Chỉ gồm các ký tự từ a-z, 0-9 và không gồm các ký tự đặc biệt. Ví dụ: ThanhXuan123'}
-          />
-
-          <ItemTextInput
-            showEye={true}
-            value={password}
-            onChangeText={setPassword}
-            placeholder={'Mật khẩu'}
-            icon={'key'}
-            title={'Mật khẩu'}
-            description={'Từ 6-18 ký tự, có thể có các ký tự đặc biệt. Ví dụ: Password!@#'}
-          />
-
-          <ItemTextInput
-            showEye={true}
-            value={password2}
-            onChangeText={setPassword2}
-            placeholder={'Nhập lại mật khẩu'}
-            icon={'key'}
-            title={'Nhập lại mật khẩu'}
-          />
-
-          <ItemTextInput
-            showEye={true}
-            value={fullname}
-            onChangeText={setFullname}
-            placeholder={'Họ và tên'}
-            icon={'user'}
-            title={'Họ và tên'}
-          />
-          <ItemTextInput
-            showEye={true}
-            value={cmnd}
-            onChangeText={setCmnd}
-            placeholder={'Giấy tờ tuỳ thân'}
-            icon={'id-card'}
-            title={'Số giấy tờ tuỳ thân (CMND/thẻ CCCD/giấy tờ tuỳ thân khác)'}
-          />
-          <ItemTextInput
-            showEye={true}
-            value={phonenumber}
-            onChangeText={setPhonenumber}
-            placeholder={'Số iện thoại'}
-            icon={'phone'}
-            title={'Số điện thoại'}
-          />
-          <ItemTextInput
-            showEye={true}
-            value={email}
-            onChangeText={setEmail}
-            placeholder={'Thư điện tử'}
-            icon={'at'}
-            title={'Thư điện tử'}
-          />
-          <ItemTextInput
-            showEye={true}
-            value={address}
-            onChangeText={setAddress}
-            placeholder={'Địa chỉ'}
-            icon={'map-marker-alt'}
-            title={'Địa chỉ'}
-          />
-
-          <Button
-            onPress={() => handleOnpress()}
-            title={'ĐĂNG KÝ'}
-            loading={isLoading}
-            titleStyle={{fontSize: 14, fontWeight: 'bold'}}
-            buttonStyle={styles.btn}
-          />
-        </View>
-      </ScrollView>
+            <Button
+              onPress={() => handleOnpress()}
+              title={'ĐỔI MẬT KHẨU'}
+              loading={isLoading}
+              titleStyle={{fontSize: 14, fontWeight: 'bold'}}
+              buttonStyle={styles.btn}
+            />
+          </View>
+        </ScrollView>
+      </KeyboardAvoidingView>
       {isLoading && <View style={styles.loading} />}
     </View>
   );
@@ -209,11 +161,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   btn: {
-    borderRadius: 20,
+    borderRadius: 4,
     paddingHorizontal: 20,
     paddingVertical: 10,
     margin: 10,
     marginTop: 20,
+    backgroundColor: '#EF6C00',
   },
   textLuaChon: {color: 'white', fontWeight: 'bold'},
   loading: {

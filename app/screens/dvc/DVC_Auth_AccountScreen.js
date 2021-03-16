@@ -1,81 +1,43 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState, useEffect} from 'react';
-import {useSelector} from 'react-redux';
-import {View, StyleSheet, TouchableOpacity, Keyboard, ScrollView} from 'react-native';
+import {shallowEqual, useSelector, useDispatch} from 'react-redux';
+import {View, StyleSheet, KeyboardAvoidingView, Platform} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5Pro';
 import {Text, Button, Input} from 'react-native-elements';
 import {showMessage} from 'react-native-flash-message';
+
 import {Header} from 'react-native-elements';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useRoute} from '@react-navigation/native';
+import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 
 //import Base64 from '../../utils/Base64';
+import * as actions from '../../redux/dvc/Actions';
 import {ItemTextInput} from '../../components/common';
-import {requestPOST} from '../../services/Api';
 
 const LoginScreen = () => {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
 
-  const dataService = useSelector((state) => state.global.dataService);
+  const user = useSelector((state) => state.dvc.user);
+  const username = user.username;
+  const password = user.password;
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [password2, setPassword2] = useState('');
-  const [fullname, setFullname] = useState('');
-  const [address, setAddress] = useState('');
-  const [phonenumber, setPhonenumber] = useState('');
-  const [email, setEmail] = useState('');
-  const [cmnd, setCmnd] = useState('');
+  const [fullname, setFullname] = useState(user.fullName);
+  const [address, setAddress] = useState(user.address);
+  const [phonenumber, setPhonenumber] = useState(user.phonenumber);
+  const [email, setEmail] = useState(user.email);
+  const [cmnd, setCmnd] = useState(user.cmnd);
 
-  const handleOnpress = async () => {
-    Keyboard.dismiss();
+  if (!user) {
+    navigation.navigate('DVC_MainScreen');
+  }
 
-    if (
-      username.length > 1 &&
-      email.length > 1 &&
-      fullname.length > 1 &&
-      email.length > 1 &&
-      phonenumber.length > 1 &&
-      password === password2 &&
-      password.match(/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{8,})$/)
-    ) {
-      setIsLoading(true);
-      try {
-        var res = await requestPOST(`${dataService.DVC_URL}/RegisterAccount`, {
-          username,
-          password,
-          fullname,
-          address,
-          phonenumber,
-          email,
-          cmnd,
-        });
-        console.log(res);
-        setIsLoading(false);
-        if (res && res.error.code === 200) {
-          showMessage({
-            message: 'Thành công',
-            description: 'Thông tin về tài khoản được gửi về địa chỉ thư điện tử của bạn!',
-            type: 'success',
-          });
-          navigation.navigate('DVC_Auth_LoginScreen');
-        }
-      } catch (error) {
-        showMessage({
-          message: 'Thất bại',
-          description: 'Thông tin gửi chưa thành công! Vui lòng kiểm tra lại!',
-          type: 'danger',
-        });
-      }
-    } else {
-      showMessage({
-        message: 'Thất bại',
-        description: 'Thông tin gửi chưa thành công! Vui lòng kiểm tra lại!',
-        type: 'danger',
-      });
-    }
-  };
+  useEffect(() => {
+    dispatch(actions.login(username, password));
+    return () => {};
+  }, []);
 
   return (
     <View style={{flex: 1, backgroundColor: '#FFF'}}>
@@ -96,47 +58,23 @@ const LoginScreen = () => {
           </TouchableOpacity>
         }
         centerComponent={{
-          text: '',
+          text: 'Thông tin cá nhân',
           style: {color: '#2E2E2E', fontSize: 18, fontWeight: 'bold'},
         }}
         containerStyle={{backgroundColor: '#FFF', justifyContent: 'space-around'}}
         centerContainerStyle={{justifyContent: 'center'}}
       />
 
-      <ScrollView containerStyle={styles.container} showsVerticalScrollIndicator={false}>
-        <Text style={styles.header_1}>{'ĐĂNG KÝ'}</Text>
-
-        <View style={{margin: 10}}>
-          <ItemTextInput
-            value={username}
-            onChangeText={setUsername}
-            placeholder={'Tên đăng nhập'}
-            icon={'user'}
-            title={'Tên đăng nhập'}
-            description={'Chỉ gồm các ký tự từ a-z, 0-9 và không gồm các ký tự đặc biệt. Ví dụ: ThanhXuan123'}
+      <ScrollView showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
+        <View style={{marginHorizontal: 15, marginTop: 20}}>
+          <ItemTextInput value={username} placeholder={'Tên tài khoản'} icon={'user'} title={'Tên đăng nhập'} />
+          <Button
+            onPress={() => navigation.navigate('DVC_Auth_ChangePasswordScreen')}
+            title={'Thay đổi mật khẩu'}
+            titleStyle={{fontSize: 14, fontWeight: 'bold', color: '#EF6C00'}}
+            buttonStyle={[styles.btDangNhap, {backgroundColor: '#FFF', borderWidth: 0.5, borderColor: 'gray'}]}
           />
-
           <ItemTextInput
-            showEye={true}
-            value={password}
-            onChangeText={setPassword}
-            placeholder={'Mật khẩu'}
-            icon={'key'}
-            title={'Mật khẩu'}
-            description={'Từ 6-18 ký tự, có thể có các ký tự đặc biệt. Ví dụ: Password!@#'}
-          />
-
-          <ItemTextInput
-            showEye={true}
-            value={password2}
-            onChangeText={setPassword2}
-            placeholder={'Nhập lại mật khẩu'}
-            icon={'key'}
-            title={'Nhập lại mật khẩu'}
-          />
-
-          <ItemTextInput
-            showEye={true}
             value={fullname}
             onChangeText={setFullname}
             placeholder={'Họ và tên'}
@@ -144,12 +82,11 @@ const LoginScreen = () => {
             title={'Họ và tên'}
           />
           <ItemTextInput
-            showEye={true}
             value={cmnd}
             onChangeText={setCmnd}
             placeholder={'Giấy tờ tuỳ thân'}
             icon={'id-card'}
-            title={'Số giấy tờ tuỳ thân (CMND/thẻ CCCD/giấy tờ tuỳ thân khác)'}
+            title={'Số giấy tờ tuỳ thân'}
           />
           <ItemTextInput
             showEye={true}
@@ -159,33 +96,30 @@ const LoginScreen = () => {
             icon={'phone'}
             title={'Số điện thoại'}
           />
+          <ItemTextInput value={email} placeholder={'Thư điện tử'} icon={'at'} title={'Thư điện tử'} />
           <ItemTextInput
-            showEye={true}
-            value={email}
-            onChangeText={setEmail}
-            placeholder={'Thư điện tử'}
-            icon={'at'}
-            title={'Thư điện tử'}
-          />
-          <ItemTextInput
-            showEye={true}
             value={address}
             onChangeText={setAddress}
             placeholder={'Địa chỉ'}
             icon={'map-marker-alt'}
             title={'Địa chỉ'}
           />
-
-          <Button
-            onPress={() => handleOnpress()}
-            title={'ĐĂNG KÝ'}
-            loading={isLoading}
-            titleStyle={{fontSize: 14, fontWeight: 'bold'}}
-            buttonStyle={styles.btn}
-          />
         </View>
       </ScrollView>
-      {isLoading && <View style={styles.loading} />}
+      <View
+        style={{
+          borderTopWidth: 0.5,
+          borderTopColor: '#BDBDBD',
+          backgroundColor: '#fff',
+        }}>
+        <Button
+          onPress={() => {}}
+          title={'Cập nhật thông tin cá nhân'}
+          titleStyle={{fontSize: 14, fontWeight: 'bold'}}
+          containerStyle={{marginVertical: 10, marginHorizontal: 20}}
+          buttonStyle={styles.btDangNhap}
+        />
+      </View>
     </View>
   );
 };
@@ -193,14 +127,26 @@ const LoginScreen = () => {
 export default LoginScreen;
 
 const styles = StyleSheet.create({
-  container: {flex: 1},
+  container: {flex: 1, justifyContent: 'center'},
   containerLoginForm: {
     //backgroundColor: '#E7E7E7',
     padding: 10,
     margin: 10,
     borderRadius: 20,
   },
-
+  containerXacThuc: {
+    flexDirection: 'row',
+    paddingTop: 10,
+    margin: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  containerLuaChon: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 10,
+    margin: 10,
+  },
   header_1: {
     color: '#2E529F',
     fontSize: 24,
@@ -208,12 +154,24 @@ const styles = StyleSheet.create({
     padding: 10,
     textAlign: 'center',
   },
-  btn: {
-    borderRadius: 20,
-    paddingHorizontal: 20,
+  header_2: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+    padding: 10,
+    textAlign: 'center',
+  },
+  input: {
+    marginTop: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  inputStyle: {color: '#fff', paddingStart: 10},
+  btDangNhap: {
+    borderRadius: 4,
     paddingVertical: 10,
     margin: 10,
-    marginTop: 20,
+    backgroundColor: '#EF6C00',
   },
   textLuaChon: {color: 'white', fontWeight: 'bold'},
   loading: {
@@ -225,4 +183,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  content1: {marginHorizontal: 15, marginTop: 20},
+  title: {color: '#5B6062', fontWeight: '600'},
 });

@@ -136,7 +136,6 @@ const LoginScreen = () => {
           />
 
           <ItemTextInput
-            showEye={true}
             value={fullname}
             onChangeText={setFullname}
             placeholder={'Họ và tên'}
@@ -144,7 +143,6 @@ const LoginScreen = () => {
             title={'Họ và tên'}
           />
           <ItemTextInput
-            showEye={true}
             value={cmnd}
             onChangeText={setCmnd}
             placeholder={'Giấy tờ tuỳ thân'}
@@ -152,23 +150,14 @@ const LoginScreen = () => {
             title={'Số giấy tờ tuỳ thân (CMND/thẻ CCCD/giấy tờ tuỳ thân khác)'}
           />
           <ItemTextInput
-            showEye={true}
             value={phonenumber}
             onChangeText={setPhonenumber}
             placeholder={'Số iện thoại'}
             icon={'phone'}
             title={'Số điện thoại'}
           />
+          <ItemTextInput value={email} onChangeText={setEmail} placeholder={'Thư điện tử'} icon={'at'} title={'Thư điện tử'} />
           <ItemTextInput
-            showEye={true}
-            value={email}
-            onChangeText={setEmail}
-            placeholder={'Thư điện tử'}
-            icon={'at'}
-            title={'Thư điện tử'}
-          />
-          <ItemTextInput
-            showEye={true}
             value={address}
             onChangeText={setAddress}
             placeholder={'Địa chỉ'}
