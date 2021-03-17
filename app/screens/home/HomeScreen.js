@@ -148,6 +148,8 @@ const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
+      <StatusBar backgroundColor="#00000000" barStyle="light-content" translucent={true} />
+
       <ImageBackground source={images.background.tet2} style={{flex: 1 / 6}}>
         <View style={{paddingTop: 40, padding: 10, flexDirection: 'row'}}>
           <Text style={styles.title1}> Xin chào, </Text>
@@ -176,11 +178,13 @@ const HomeScreen = () => {
               title="Thống kê COVID"
               onPress={() =>
                 navigation.navigate('WebViewScreen', {
-                  title: 'Tình hình dịch Covid',
-                  url: 'https://ncov.moh.gov.vn',
-                  colorHeader: '#252C68',
-                  hideBackForward: false,
-                  textColor: 'white',
+                  data: {
+                    title: 'Tình hình dịch Covid',
+                    url: 'https://ncov.moh.gov.vn',
+                    colorHeader: '#252C68',
+                    hideBackForward: false,
+                    textColor: 'white',
+                  },
                 })
               }
             />

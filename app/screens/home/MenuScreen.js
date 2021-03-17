@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, Text, View, TouchableOpacity, Alert, ScrollView, Dimensions, FlatList} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity, Alert, ScrollView, Dimensions, FlatList, StatusBar} from 'react-native';
 import {Header, Icon, Divider} from 'react-native-elements';
 import {useSelector, useDispatch} from 'react-redux';
 import {useNavigation, useRoute} from '@react-navigation/native';
@@ -196,6 +196,8 @@ const MenuScreen = () => {
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
       <Header
+        statusBarProps={{barStyle: 'dark-content', backgroundColor: 'transparent', translucent: true}}
+        barStyle="dark-content"
         placement="left"
         leftComponent={
           <Icon

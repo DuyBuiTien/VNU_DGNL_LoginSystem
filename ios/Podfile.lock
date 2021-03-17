@@ -433,6 +433,8 @@ PODS:
     - React-Core
   - RNCAsyncStorage (1.14.1):
     - React-Core
+  - RNCClipboard (1.7.0):
+    - React-Core
   - RNCMaskedView (0.1.10):
     - React
   - RNDateTimePicker (3.2.0):
@@ -566,6 +568,7 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - rn-fetch-blob (from `../node_modules/rn-fetch-blob`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
+  - "RNCClipboard (from `../node_modules/@react-native-clipboard/clipboard`)"
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
   - "RNDateTimePicker (from `../node_modules/@react-native-community/datetimepicker`)"
   - RNDeviceInfo (from `../node_modules/react-native-device-info`)
@@ -716,6 +719,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/rn-fetch-blob"
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-async-storage/async-storage"
+  RNCClipboard:
+    :path: "../node_modules/@react-native-clipboard/clipboard"
   RNCMaskedView:
     :path: "../node_modules/@react-native-community/masked-view"
   RNDateTimePicker:
@@ -843,6 +848,7 @@ SPEC CHECKSUMS:
   ReactCommon: 73d79c7039f473b76db6ff7c6b159c478acbbb3b
   rn-fetch-blob: f065bb7ab7fb48dd002629f8bdcb0336602d3cba
   RNCAsyncStorage: fe58eec522885718d6b297b7b658bf87d7ca557b
+  RNCClipboard: 245417a78ab585e0d4d83926c28907e7b2bc24bd
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
   RNDateTimePicker: 17593e41b6b1585aeb8ecbe1c1cbc30cba3d0b4b
   RNDeviceInfo: 7828eb110e3146324c0583c134e59db5d39f7e8b

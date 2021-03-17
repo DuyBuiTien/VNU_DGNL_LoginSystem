@@ -9,6 +9,7 @@ import {useNavigation, useRoute} from '@react-navigation/native';
 import {Button} from 'react-native-elements';
 
 import {Header} from '../../components';
+import {SearchComponent} from '../../components/common';
 import {requestGET} from '../../services/Api';
 
 const RenderItem = (props) => {
@@ -86,30 +87,8 @@ const MainScreen = () => {
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
       <Header title="Tổng hợp ý kiến" isStack={true} />
-      <View style={{flexDirection: 'row', alignItems: 'center'}}>
-        <View
-          style={{
-            backgroundColor: '#EAEAEA',
-            flexDirection: 'row',
-            borderRadius: 8,
-            padding: 4,
-            margin: 10,
-            alignItems: 'center',
-            flex: 1,
-          }}>
-          <FontAwesome name="search" color="#787C7E" size={20} style={{marginHorizontal: 5}} />
-          <TextInput
-            placeholder={'Tìm kiếm'}
-            multiline={false}
-            onChangeText={(text) => setInputValue(text)}
-            value={inputValue}
-            selectionColor={'gray'}
-            clearButtonMode="always"
-            style={{flex: 1}}
-          />
-        </View>
-        <FontAwesome name="filter" color="#787C7E" size={20} style={{marginHorizontal: 10}} />
-      </View>
+
+      <SearchComponent value={inputValue} onChangeText={setInputValue} />
       <View style={{flex: 1}}>
         <ScrollableTabView
           style={{}}
@@ -124,7 +103,10 @@ const MainScreen = () => {
             showsVerticalScrollIndicator={false}
             showsHorizontalScrollIndicator={false}
             tabLabel="Mới nhất"
-            data={data}
+            data={data.filter((item) => {
+              const name = item.tieude.toUpperCase();
+              return name.indexOf(inputValue.toUpperCase()) > -1;
+            })}
             renderItem={({item, index}) => <RenderItem data={item} index={index} navigation={navigation} histories={[]} />}
             keyExtractor={(item, index) => index.toString()}
             ListEmptyComponent={() => (
@@ -136,7 +118,10 @@ const MainScreen = () => {
             showsVerticalScrollIndicator={false}
             showsHorizontalScrollIndicator={false}
             tabLabel="Đang xử lý"
-            data={dataDangXL}
+            data={dataDangXL.filter((item) => {
+              const name = item.tieude.toUpperCase();
+              return name.indexOf(inputValue.toUpperCase()) > -1;
+            })}
             renderItem={({item, index}) => <RenderItem data={item} index={index} navigation={navigation} histories={[]} />}
             keyExtractor={(item, index) => index.toString()}
             ListEmptyComponent={() => (
@@ -148,7 +133,10 @@ const MainScreen = () => {
             showsVerticalScrollIndicator={false}
             showsHorizontalScrollIndicator={false}
             tabLabel="Đã xử lý"
-            data={dataDaXL}
+            data={dataDaXL.filter((item) => {
+              const name = item.tieude.toUpperCase();
+              return name.indexOf(inputValue.toUpperCase()) > -1;
+            })}
             renderItem={({item, index}) => <RenderItem data={item} index={index} navigation={navigation} histories={[]} />}
             keyExtractor={(item, index) => index.toString()}
             ListEmptyComponent={() => (
@@ -160,7 +148,10 @@ const MainScreen = () => {
             showsVerticalScrollIndicator={false}
             showsHorizontalScrollIndicator={false}
             tabLabel="Xem nhiều nhất"
-            data={dataNhieuNhat}
+            data={dataNhieuNhat.filter((item) => {
+              const name = item.tieude.toUpperCase();
+              return name.indexOf(inputValue.toUpperCase()) > -1;
+            })}
             renderItem={({item, index}) => <RenderItem data={item} index={index} navigation={navigation} histories={[]} />}
             keyExtractor={(item, index) => index.toString()}
             ListEmptyComponent={() => (
@@ -182,7 +173,7 @@ const MainScreen = () => {
         <Button
           title="Gửi phản ánh"
           titleStyle={{fontSize: 16, color: '#fff', fontWeight: '600'}}
-          containerStyle={{margin: 10, marginHorizontal: 50, marginBottom: 30}}
+          containerStyle={{marginVertical: 10, marginHorizontal: 50}}
           buttonStyle={{borderRadius: 10, backgroundColor: '#EF6C00', paddingVertical: 10}}
           onPress={() => {
             navigation.navigate('PAHT_ThemMoiScreen');

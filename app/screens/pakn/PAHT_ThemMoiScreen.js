@@ -22,6 +22,7 @@ import Geolocation from 'react-native-geolocation-service';
 import {Button, Avatar, Divider} from 'react-native-elements';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import ImagePicker from 'react-native-image-crop-picker';
+import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 
 import ActionSheet from '../../modules/react-native-actions-sheet';
 import {Header} from '../../components';
@@ -489,6 +490,21 @@ const MainScreen = () => {
                 {`Vĩ độ: ${CurrentPosition.latitude}, kinh độ ${CurrentPosition.longitude}`}
               </Text>
             </View>
+            <MapView
+              provider={PROVIDER_GOOGLE}
+              style={{height: 200, marginTop: 10, marginBottom: 10}}
+              region={{
+                latitude: parseFloat(CurrentPosition.latitude),
+                longitude: parseFloat(CurrentPosition.longitude),
+                latitudeDelta: 0.001,
+                longitudeDelta: 0.001,
+              }}
+              showsUserLocation={true}>
+              <MapView.Marker
+                coordinate={{latitude: parseFloat(CurrentPosition.latitude), longitude: parseFloat(CurrentPosition.longitude)}}
+                draggable
+              />
+            </MapView>
           </View>
         </ScrollView>
       </View>
@@ -502,7 +518,7 @@ const MainScreen = () => {
         <Button
           title="Đăng tin phản ánh"
           titleStyle={{fontSize: 15, color: '#fff', fontWeight: '600'}}
-          containerStyle={{margin: 10, marginHorizontal: 50, marginBottom: 30}}
+          containerStyle={{marginVertical: 10, marginHorizontal: 50}}
           buttonStyle={{borderRadius: 10, backgroundColor: '#EF6C00', paddingVertical: 10}}
           onPress={() => {
             navigation.navigate('PAHT_ThemMoiScreen');

@@ -1,20 +1,20 @@
 export const DANHMUC = [
   {
-    id: 2,
+    id: 0,
     name: 'Tra cứu thủ tục',
     navigate: 'DVC_THUTUC_SearchScreen',
     icon: require('../Images/tctt.png'),
     background: require('../Images/dvc3.jpg'),
   },
   {
-    id: 0,
+    id: 1,
     name: 'Tra cứu hồ sơ',
     navigate: 'DVC_TKHS_SearchScreen',
     icon: require('../Images/loupe.png'),
     background: require('../Images/dvc1.jpg'),
   },
   {
-    id: 1,
+    id: 2,
     name: 'Hồ sơ cá nhân',
     navigate: 'DVC_TKHS_CaNhanScreen',
     icon: require('../Images/contract.png'),
@@ -22,13 +22,20 @@ export const DANHMUC = [
   },
   {
     id: 3,
+    name: 'Đánh giá dịch vụ công',
+    navigate: 'DVC_TKHS_DanhGiaDVCScreen',
+    icon: require('../Images/contract.png'),
+    background: require('../Images/dvc2.jpg'),
+  },
+  {
+    id: 4,
     name: 'Thống kê dịch vụ công',
     navigate: 'DVC_ThongKe_MainScreen',
     icon: require('../Images/chart.png'),
     background: require('../Images/dvc3.jpg'),
   },
   {
-    id: 4,
+    id: 5,
     name: 'Cổng dịch vụ công Bộ KH & Đầu tư',
     navigate: 'WebViewScreen',
     icon: require('../Images/mail.png'),
