@@ -23,15 +23,9 @@ export const DANHMUC = [
   {
     id: 3,
     name: 'Tra cứu chỉ số sức khoẻ',
-    navigate: 'WebViewScreen',
+    navigate: 'YT_TraCuuChiSoScreen',
     icon: require('../Images/bmi_icon.png'),
     background: require('../Images/bmi.jpg'),
-    data: {
-      title: '',
-      url: 'https://prod.namdinh.tetvietaic.com/pages/bmi',
-      colorHeader: '#FFFAF3',
-      hideBackForward: false,
-    },
   },
   {
     id: 4,
