@@ -58,7 +58,7 @@ const MainScreen = () => {
 
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
-      <Header title="Du lịch" isStack={true} />
+      <Header title="Điểm du lịch" isStack={true} />
       <ScrollView>
         <View
           style={{
