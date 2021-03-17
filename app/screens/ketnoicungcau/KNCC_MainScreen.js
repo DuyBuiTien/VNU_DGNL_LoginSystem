@@ -217,7 +217,7 @@ const MainScreen = () => {
               style={{flexDirection: 'row', marginHorizontal: 5}}
               activeOpacity={0.8}
               onPress={() => {
-                navigation.navigate('TTCQ_MainScreen');
+                navigation.navigate('KNCC_SanPham_DanhSachScreen');
               }}>
               <Text style={{color: '#90caf9', fontStyle: 'italic', marginHorizontal: 10}}>Tất cả</Text>
               <FontAwesome name="chevron-right" size={16} color="#f44336" />

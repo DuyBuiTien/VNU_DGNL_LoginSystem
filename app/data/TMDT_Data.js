@@ -34,7 +34,7 @@ export const CM_Data = [
     img: 'https://www.nongsanantoanthanhhoa.vn/image/300/300/4kSiYyM96Bsbiw1Uk5fEPj78erXQaGqrfx6gBRrb.png',
     address: 'Huyện Hải Hậu, Tỉnh Nam Định',
     sdt: '0369523968',
-    area: 'Huyện Hải Hậu, Tỉnh Nam Định'
+    area: 'Huyện Hải Hậu, Tỉnh Nam Định',
   },
   {
     id: 2,
@@ -47,7 +47,7 @@ export const CM_Data = [
     img: 'https://www.nongsanantoanthanhhoa.vn/image/550/550/80IFntDa6gVd72Ip20OqBs8ISkQ4j4mU3ML1InXB.jpeg',
     address: 'Xã Hải Minh, Huyện Hải Hậu, Tỉnh Nam Định',
     sdt: '0369523968',
-    area: 'Huyện Hải Hậu, Tỉnh Nam Định'
+    area: 'Huyện Hải Hậu, Tỉnh Nam Định',
   },
   {
     id: 3,
@@ -60,7 +60,7 @@ export const CM_Data = [
     img: 'https://www.nongsanantoanthanhhoa.vn/image/550/550/fCDrXLXnQNoLUGbtYQBotMt91Qx5hAfFm8JiyHyw.jpeg',
     address: 'Xóm 12, Xã Hải Vân, Huyện Hải Hậu, Tỉnh Nam Định',
     sdt: '0237626198',
-    area: 'Huyện Hải Hậu, Tỉnh Nam Định'
+    area: 'Huyện Hải Hậu, Tỉnh Nam Định',
   },
   {
     id: 4,
@@ -73,7 +73,7 @@ export const CM_Data = [
     img: 'https://www.nongsanantoanthanhhoa.vn/image/550/550/VFloOCbDaisft1HU3mNWO3fJYH3t50LzlupTXs39.jpeg',
     address: 'Xã Trực Đại, huyện Trực Ninh, tỉnh Nam Định',
     sdt: '0394660557',
-    area: 'Huyện Trực Ninh, Tỉnh Nam Định'
+    area: 'Huyện Trực Ninh, Tỉnh Nam Định',
   },
   {
     id: 5,
@@ -82,11 +82,12 @@ export const CM_Data = [
     owner_img: 'https://www.nongsanantoanthanhhoa.vn/image/300/300/hAgLcTKRKk44LhJzQYvnKVFJcHzkTpTSpYAo9bQl.jpeg',
     owner_address: 'Huyện Hải Hậu, Tỉnh Nam Định',
     date: '09/03/2021',
-    content: 'Nông trại Hương Quê Farm xin giới thiệu sản phẩm đậu bắp.đậu bắp có tác dụng tốt cho xương khơp ,và tim mạch ,nội tiết tố nữ ,nếu bạn bi, mắc các bệnh trên ,chỉ cần 10 quả đậu bắp mỗi ngày thái lát mỏng ngâm với nước xôi để nguội và 1 chút muối ăn ngâm trong 8 giờ uống liên tục trong vòng 10 ngày là khỏi',
+    content:
+      'Nông trại Hương Quê Farm xin giới thiệu sản phẩm đậu bắp.đậu bắp có tác dụng tốt cho xương khơp ,và tim mạch ,nội tiết tố nữ ,nếu bạn bi, mắc các bệnh trên ,chỉ cần 10 quả đậu bắp mỗi ngày thái lát mỏng ngâm với nước xôi để nguội và 1 chút muối ăn ngâm trong 8 giờ uống liên tục trong vòng 10 ngày là khỏi',
     img: 'https://www.nongsanantoanthanhhoa.vn/image/550/550/2GvU2udvMatii5hfbAES22k4kSsldKmplyIYE13h.jpeg',
     address: 'Xã Trực Đại, huyện Trực Ninh, tỉnh Nam Định',
     sdt: '0983538513',
-    area: 'Huyện Trực Ninh, Tỉnh Nam Định'
+    area: 'Huyện Trực Ninh, Tỉnh Nam Định',
   },
   {
     id: 6,
@@ -95,13 +96,14 @@ export const CM_Data = [
     owner_img: 'https://www.nongsanantoanthanhhoa.vn/image/300/300/hAgLcTKRKk44LhJzQYvnKVFJcHzkTpTSpYAo9bQl.jpeg',
     owner_address: 'Huyện Hải Hậu, Tỉnh Nam Định',
     date: '09/03/2021',
-    content: 'Nhà em có bán cao cà gai leo Chuyên về các bệnh như... 1. Bổ gan, mát gan, giúp phục hồi tế bào gan và tăng cường tái tạo các tế bào gan mới. 2. Hạ men gan, đánh tan mỡ trong gan, trong mạch máu',
+    content:
+      'Nhà em có bán cao cà gai leo Chuyên về các bệnh như... 1. Bổ gan, mát gan, giúp phục hồi tế bào gan và tăng cường tái tạo các tế bào gan mới. 2. Hạ men gan, đánh tan mỡ trong gan, trong mạch máu',
     img: 'https://www.nongsanantoanthanhhoa.vn/image/550/550/2XmhNgJBiPwUoL0p6BPY2ZRLNerBP1kcagWgCy5n.jpeg',
     address: 'Xã Trực Đại, huyện Trực Ninh, tỉnh Nam Định',
     sdt: '0964817918',
-    area: 'Huyện Trực Ninh, Tỉnh Nam Định'
+    area: 'Huyện Trực Ninh, Tỉnh Nam Định',
   },
-]
+];
 
 export const CB_Data = [
   {
@@ -115,7 +117,7 @@ export const CB_Data = [
     img: 'https://www.nongsanantoanthanhhoa.vn/image/550/550/z6hs5irt3AqbjFLO0oD54Vp8qikBBEAYb14qBhdq.jpeg',
     address: 'Huyện Hải Hậu, Tỉnh Nam Định',
     sdt: '0356974435',
-    area: 'Huyện Hải Hậu, Tỉnh Nam Định'
+    area: 'Huyện Hải Hậu, Tỉnh Nam Định',
   },
   {
     id: 2,
@@ -128,7 +130,7 @@ export const CB_Data = [
     img: 'https://www.nongsanantoanthanhhoa.vn/image/550/550/vqbSYqDCrxRQFAlPtZRLl1eUnY3p0nqici4vNiiR.jpeg',
     address: 'Huyện Hải Hậu, Tỉnh Nam Định',
     sdt: '0903423808',
-    area: 'Huyện Hải Hậu, Tỉnh Nam Định'
+    area: 'Huyện Hải Hậu, Tỉnh Nam Định',
   },
   {
     id: 3,
@@ -137,11 +139,12 @@ export const CB_Data = [
     owner_img: 'https://www.nongsanantoanthanhhoa.vn/image/300/300/RjJiQc8PGf2OOKnOixUCsdRynBwhF1uRPJhyh1oS.png',
     owner_address: '',
     date: '22/01/2021',
-    content: 'Bên Thiên Trường 36 đang có dưa Kim Hoàng Hậu trái vụ, được sản xuất theo tiêu chuẩn hữu cơ, đảm bảo chất lượng an toàn. Giá cả hợp lý. Lh trực tiếp: 0842363663',
+    content:
+      'Bên Thiên Trường 36 đang có dưa Kim Hoàng Hậu trái vụ, được sản xuất theo tiêu chuẩn hữu cơ, đảm bảo chất lượng an toàn. Giá cả hợp lý. Lh trực tiếp: 0842363663',
     img: 'https://www.nongsanantoanthanhhoa.vn/image/550/550/idp7VUENw63Mhyzo0ZoyV011lcCXRlcGnhS6jeB6.jpeg',
     address: 'Huyện Hải Hậu, Tỉnh Nam Định',
     sdt: '0842363663',
-    area: 'Huyện Hải Hậu, Tỉnh Nam Định'
+    area: 'Huyện Hải Hậu, Tỉnh Nam Định',
   },
   {
     id: 4,
@@ -150,11 +153,12 @@ export const CB_Data = [
     owner_img: 'https://www.nongsanantoanthanhhoa.vn/image/300/300/RjJiQc8PGf2OOKnOixUCsdRynBwhF1uRPJhyh1oS.png',
     owner_address: '',
     date: '04/03/2021',
-    content: 'Bên Thiên Trường 36 đang có dưa Kim Hoàng Hậu trái vụ, được sản xuất theo tiêu chuẩn hữu cơ, đảm bảo chất lượng an toàn. Giá cả hợp lý. Lh trực tiếp: 0842363663',
+    content:
+      'Bên Thiên Trường 36 đang có dưa Kim Hoàng Hậu trái vụ, được sản xuất theo tiêu chuẩn hữu cơ, đảm bảo chất lượng an toàn. Giá cả hợp lý. Lh trực tiếp: 0842363663',
     img: 'https://www.nongsanantoanthanhhoa.vn/image/550/550/ojkTkp9kYGeQDDCZeFJTSl6I3chNu1JfOfP6i0nD.jpeg',
     address: 'Huyện Hải Hậu, Tỉnh Nam Định',
     sdt: '0979274484',
-    area: 'Huyện Hải Hậu, Tỉnh Nam Định'
+    area: 'Huyện Hải Hậu, Tỉnh Nam Định',
   },
   {
     id: 5,
@@ -167,7 +171,7 @@ export const CB_Data = [
     img: 'https://www.nongsanantoanthanhhoa.vn/image/550/550/Fd4SrDvWPpHjk5qdvNkDMPIho02pnK8CuPTDUoNC.jpeg',
     address: 'Huyện Hải Hậu, Tỉnh Nam Định',
     sdt: '0912894345',
-    area: 'Huyện Hải Hậu, Tỉnh Nam Định'
+    area: 'Huyện Hải Hậu, Tỉnh Nam Định',
   },
   {
     id: 6,
@@ -176,13 +180,14 @@ export const CB_Data = [
     owner_img: 'https://www.nongsanantoanthanhhoa.vn/image/300/300/RjJiQc8PGf2OOKnOixUCsdRynBwhF1uRPJhyh1oS.png',
     owner_address: '',
     date: '07/02/2021',
-    content: 'Rượu Nếp Cái Hoa Vàng Dạ Lan màu trắng của công ty cổ phần Dạ Lan được đăng ký độc quyền tên và nhãn mác gọi là Rượu Nếp Xưa. Rượu là sản phẩm của dự án khoa học công nghệ cấp Tỉnh năm 2014 – 2015 được sản xuất kết hợp giữa phương pháp cổ truyền với công nghệ hiện đại',
+    content:
+      'Rượu Nếp Cái Hoa Vàng Dạ Lan màu trắng của công ty cổ phần Dạ Lan được đăng ký độc quyền tên và nhãn mác gọi là Rượu Nếp Xưa. Rượu là sản phẩm của dự án khoa học công nghệ cấp Tỉnh năm 2014 – 2015 được sản xuất kết hợp giữa phương pháp cổ truyền với công nghệ hiện đại',
     img: 'https://www.nongsanantoanthanhhoa.vn/image/550/550/6z5KE3QIQnZPyhKWkSntZMpuK5JTZUW60yOURhFM.jpeg',
     address: 'Huyện Hải Hậu, Tỉnh Nam Định',
     sdt: '0912894345',
-    area: 'Huyện Hải Hậu, Tỉnh Nam Định'
+    area: 'Huyện Hải Hậu, Tỉnh Nam Định',
   },
-]
+];
 
 export const TDT_Data = [
   {
@@ -192,11 +197,12 @@ export const TDT_Data = [
     owner_img: 'https://www.nongsanantoanthanhhoa.vn/image/300/300/RjJiQc8PGf2OOKnOixUCsdRynBwhF1uRPJhyh1oS.png',
     owner_address: '',
     date: '01/03/2021',
-    content: 'Chúng tôi cần hợp tác cùng sản xuất Vịt Cổ Lũng thương phẩm với quy mô lớn: Chi tiết liên hệ: Anh Hải sđt 0934432111',
+    content:
+      'Chúng tôi cần hợp tác cùng sản xuất Vịt Cổ Lũng thương phẩm với quy mô lớn: Chi tiết liên hệ: Anh Hải sđt 0934432111',
     img: 'https://www.nongsanantoanthanhhoa.vn/image/550/550/bMXipO90gTBlLxtT9JkSOgdASSqBT3eaiMPqwgBO.jpeg',
     address: 'Huyện Hải Hậu, Tỉnh Nam Định',
     sdt: '0934432111',
-    area: 'Huyện Hải Hậu, Tỉnh Nam Định'
+    area: 'Huyện Hải Hậu, Tỉnh Nam Định',
   },
   {
     id: 2,
@@ -205,11 +211,12 @@ export const TDT_Data = [
     owner_img: 'https://www.nongsanantoanthanhhoa.vn/image/300/300/RjJiQc8PGf2OOKnOixUCsdRynBwhF1uRPJhyh1oS.png',
     owner_address: '',
     date: '01/03/2021',
-    content: 'Chúng tôi cần hợp tác cùng sản xuất Vịt Cổ Lũng thương phẩm với quy mô lớn: Chi tiết liên hệ: Anh Hải sđt 0934432111',
+    content:
+      'Chúng tôi cần hợp tác cùng sản xuất Vịt Cổ Lũng thương phẩm với quy mô lớn: Chi tiết liên hệ: Anh Hải sđt 0934432111',
     img: 'https://www.nongsanantoanthanhhoa.vn/image/550/550/O8QOaUkq5XWfkWIYApPllt98Aib3RjiEun3wZraW.jpeg',
     address: 'Huyện Hải Hậu, Tỉnh Nam Định',
     sdt: '0975516670',
-    area: 'Huyện Hải Hậu, Tỉnh Nam Định'
+    area: 'Huyện Hải Hậu, Tỉnh Nam Định',
   },
   {
     id: 3,
@@ -222,7 +229,7 @@ export const TDT_Data = [
     img: 'https://www.nongsanantoanthanhhoa.vn/image/550/550/DYKV3Z0Xpb8jlnUt3JTJvuB8hXDg5lEdkVOYpEaM.jpeg',
     address: 'Huyện Hải Hậu, Tỉnh Nam Định',
     sdt: '0976827277',
-    area: 'Huyện Hải Hậu, Tỉnh Nam Định'
+    area: 'Huyện Hải Hậu, Tỉnh Nam Định',
   },
   {
     id: 4,
@@ -231,11 +238,12 @@ export const TDT_Data = [
     owner_img: 'https://www.nongsanantoanthanhhoa.vn/image/300/300/RjJiQc8PGf2OOKnOixUCsdRynBwhF1uRPJhyh1oS.png',
     owner_address: '',
     date: '01/03/2021',
-    content: 'Công ty TNHH Phú Lôc Xanh ,đang xây dựng 2ha nhà lưới tại xã Phú lộc, huyện Hậu lộc, tỉnh Thanh hóa Cần tìm đơn vị thi công nhà lưới Liên hệ ,0976634312 - Mr Nghiêm',
+    content:
+      'Công ty TNHH Phú Lôc Xanh ,đang xây dựng 2ha nhà lưới tại xã Phú lộc, huyện Hậu lộc, tỉnh Thanh hóa Cần tìm đơn vị thi công nhà lưới Liên hệ ,0976634312 - Mr Nghiêm',
     img: '',
     address: 'Huyện Hải Hậu, Tỉnh Nam Định',
     sdt: '0976634312',
-    area: 'Huyện Hải Hậu, Tỉnh Nam Định'
+    area: 'Huyện Hải Hậu, Tỉnh Nam Định',
   },
   {
     id: 5,
@@ -244,10 +252,11 @@ export const TDT_Data = [
     owner_img: 'https://www.nongsanantoanthanhhoa.vn/image/300/300/RjJiQc8PGf2OOKnOixUCsdRynBwhF1uRPJhyh1oS.png',
     owner_address: '',
     date: '01/03/2021',
-    content: 'cung ứng các sản phẩm gạo và sản phẩm từ nông nghiệp có thương hiệu như: Miến gạo Thăng long, Nắm cáy Tế Nông, Dưa vàng Vạn Hòa, ổi Tế Thắng...',
+    content:
+      'cung ứng các sản phẩm gạo và sản phẩm từ nông nghiệp có thương hiệu như: Miến gạo Thăng long, Nắm cáy Tế Nông, Dưa vàng Vạn Hòa, ổi Tế Thắng...',
     img: 'https://www.nongsanantoanthanhhoa.vn/image/550/550/T06TkfDnMGArMldSLR7vbcYYsZCAshsrLNo441MU.jpeg',
     address: 'Huyện Hải Hậu, Tỉnh Nam Định',
     sdt: '0976827277',
-    area: 'Huyện Hải Hậu, Tỉnh Nam Định'
+    area: 'Huyện Hải Hậu, Tỉnh Nam Định',
   },
-]
+];
