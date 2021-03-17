@@ -22,6 +22,7 @@ import {SocialIcon} from 'react-native-elements';
 import {Header} from 'react-native-elements';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import {ItemTextInput} from '../../components/common';
 
 //import Base64 from '../../utils/Base64';
 import * as actions from '../../redux/global/Actions';
@@ -58,21 +59,8 @@ const LoginScreen = () => {
 
   const [username, setUsername] = useState(username_tmp);
   const [password, setPassword] = useState('');
-  const [hide, isHide] = useState(false);
-  const checkXacThucVanTay = useSelector((state) => state.global.XacThucVanTay);
-
-  let fcmToken = useSelector((state) => state.global.fcmToken);
-  if (fcmToken == null) {
-    fcmToken = '';
-  }
-
-  const eyepass = () => {
-    if (hide) {
-      return <Icon name="eye" type="font-awesome" size={18} color="#EEEEEE" onPress={() => isHide(!hide)} />;
-    } else {
-      return <Icon name="eye-slash" type="font-awesome" size={18} color="#BDBDBD" onPress={() => isHide(!hide)} />;
-    }
-  };
+  // const checkXacThucVanTay = useSelector((state) => state.global.XacThucVanTay);
+  const checkXacThucVanTay = true;
 
   const DangNhapBangVanTay = () => {
     TouchID.isSupported()
@@ -166,70 +154,22 @@ const LoginScreen = () => {
             <Text style={styles.header_2}>{dataApp.name}</Text>
 
             <View style={{padding: 10, margin: 10, width: '100%'}}>
-              <View
-                style={{
-                  backgroundColor: '#FFF',
-                  flexDirection: 'row',
-                  borderRadius: 4,
-                  padding: 4,
-                  margin: 10,
-                  alignItems: 'center',
-                  shadowColor: '#2E529F',
-                  shadowOffset: {width: 0, height: 2},
-                  shadowOpacity: 0.2,
-                  borderColor: '#abb4bd65',
-                  shadowRadius: 2,
-                  elevation: 2,
-                }}>
-                <FontAwesome name="user" color="#787C7E" size={20} style={{marginHorizontal: 5}} />
-                <TextInput
-                  placeholder={'Tài khoản'}
-                  multiline={false}
-                  onChangeText={(text) => {
-                    setUsername(text);
-                  }}
-                  value={username}
-                  selectionColor={'gray'}
-                  clearButtonMode="always"
-                  style={{flex: 1}}
-                />
-              </View>
-              <View
-                style={{
-                  backgroundColor: '#FFF',
-                  flexDirection: 'row',
-                  borderRadius: 4,
-                  padding: 4,
-                  margin: 10,
-                  alignItems: 'center',
-                  shadowColor: '#2E529F',
-                  shadowOffset: {width: 0, height: 2},
-                  shadowOpacity: 0.2,
-                  borderColor: '#abb4bd65',
-                  shadowRadius: 2,
-                  elevation: 2,
-                }}>
-                <FontAwesome name="key" color="#787C7E" size={20} style={{marginHorizontal: 5}} />
-                <TextInput
-                  placeholder={'Mật khẩu'}
-                  multiline={false}
-                  onChangeText={(text) => {
-                    setPassword(text);
-                  }}
-                  value={password}
-                  selectionColor={'gray'}
-                  clearButtonMode="always"
-                  secureTextEntry={!hide}
-                  style={{flex: 1}}
-                />
-                <FontAwesome
-                  name={hide ? 'eye' : 'eye-slash'}
-                  color="#787C7E"
-                  size={20}
-                  style={{marginHorizontal: 5}}
-                  onPress={() => isHide(!hide)}
-                />
-              </View>
+              <ItemTextInput
+                value={username}
+                onChangeText={setUsername}
+                placeholder={'Tên đăng nhập'}
+                icon={'user'}
+                title={'Tên đăng nhập'}
+              />
+
+              <ItemTextInput
+                showEye={true}
+                value={password}
+                onChangeText={setPassword}
+                placeholder={'Mật khẩu'}
+                icon={'key'}
+                title={'Mật khẩu'}
+              />
 
               {checkXacThucVanTay ? (
                 <TouchableOpacity
@@ -237,7 +177,7 @@ const LoginScreen = () => {
                     DangNhapBangVanTay();
                   }}>
                   <View style={styles.containerXacThuc}>
-                    <Icon name="fingerprint" size={24} color="#FFF" />
+                    <Icon name="fingerprint" size={24} color="#A2A6A8" />
                     <Text style={{paddingStart: 10, color: 'white'}}>Mở khoá bằng vân tay</Text>
                   </View>
                 </TouchableOpacity>

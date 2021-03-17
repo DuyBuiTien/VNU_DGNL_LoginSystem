@@ -2,17 +2,26 @@ import axios from 'axios';
 
 const apiKeyMaps = 'AIzaSyDS875fQaHDZUcmAkYqzrsj9IG-SfBScVM';
 
-export function Login(urlService, tokenBearer, user, pass) {
+export function Login_old(urlService, tokenBearer, user, pass) {
   return axios.post(
-    urlService + '/danhmuc/LoginUser',
+    urlService + '/GetTokenKey',
     {
       user: user,
       pass: pass,
+      tokenDevice: '',
     },
     {
       headers: {Authorization: 'Bearer ' + tokenBearer},
     },
   );
+}
+
+export function Login(urlService, tokenBearer, user, pass) {
+  return axios.post(urlService + '/GetTokenKey', {
+    user: user,
+    pass: pass,
+    tokenDevice: '',
+  });
 }
 
 export function getDataDonVi(URL) {
@@ -34,7 +43,7 @@ export function GetUserInfo(urlService, tokenBearer) {
 }
 
 export function uploadAvatar(urlService, token, body) {
-  console.log(urlService + '/v1/user/UploadProfilePicture')
+  console.log(urlService + '/v1/user/UploadProfilePicture');
   return axios.post(urlService + '/v1/user/UploadProfilePicture', body, {
     headers: {Authorization: `bearer ${token}`},
   });

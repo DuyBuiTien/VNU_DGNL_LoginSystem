@@ -44,7 +44,7 @@ const TTCB_MainScreen = () => {
                 selectionColor={'gray'}
                 onSubmitEditing={() => {}}
                 clearButtonMode="always"
-                style={{flex: 1}}
+                style={{flex: 1, margin: 8}}
                 keyboardType={'web-search'}
               />
             </View>

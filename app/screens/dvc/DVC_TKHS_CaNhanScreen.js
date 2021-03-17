@@ -78,24 +78,26 @@ const DVC_MainScreen = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      setIsLoading(true);
-      var res = await requestPOST(`${dataService.DVC_URL}/GetPersonalDoc`, {
-        token: user.token,
-        status: '',
-        page: '1',
-        perpage: '50',
-        keysearch: '',
-        sort: 'desc',
-      });
+      if (user) {
+        setIsLoading(true);
+        var res = await requestPOST(`${dataService.DVC_URL}/GetPersonalDoc`, {
+          token: user.token,
+          status: '',
+          page: '1',
+          perpage: '50',
+          keysearch: '',
+          sort: 'desc',
+        });
 
-      if (res && res.data) {
-        setData(res.data);
+        if (res && res.data) {
+          setData(res.data);
+        }
+        setIsLoading(false);
       }
-      setIsLoading(false);
     };
     fetchData();
     return () => {};
-  }, [dataService.DVC_URL, user.token]);
+  }, [dataService.DVC_URL, user]);
 
   let arr = [
     {

@@ -41,59 +41,17 @@ export const login = (username, password) => (dispatch) => {
   let state = store.getState();
   const dataApp = state.global.dataApp;
   const {serviceGetway, tokenGetway} = dataApp;
+  const dataService = state.global.dataService;
 
   dispatch(actions.startCall({callType: callTypes.action}));
   return requestFromServer
-    .Login(serviceGetway, tokenGetway, username, password)
+    .Login(dataService.CD_URL, username, password)
     .then((response) => {
-      const accessToken = response.data.data.accessToken;
-      const refreshToken = response.data.data.refreshToken;
-      const dataU = accessToken.split('.')[1];
+      let tmp = {...response.data.data};
+      tmp.username = username;
+      tmp.password = password;
 
-      let decode_data = Base64.decode(dataU);
-      let dataUser_ = JSON.parse(decode_data);
-
-      let dataUser = dataUser_.context.user;
-
-      const fullName = dataUser.displayName ? dataUser.displayName : username;
-      const token = accessToken ? accessToken : '';
-
-      const avatar = dataUser.avatar ? dataUser.avatar : '';
-      const birthday = dataUser.birthday ? dataUser.birthday : '';
-      const address = dataUser.address ? dataUser.address : '';
-      const sex = dataUser.sex ? dataUser.sex : '';
-      const phoneNumber = dataUser.phoneNumber ? dataUser.phoneNumber : '';
-      const email = dataUser.email ? dataUser.email : '';
-
-      const credentials = Base64.btoa(username + ':' + password);
-      const basicAuth = 'Basic ' + credentials;
-
-      dispatch(
-        actions.loginSuccess({
-          username: username,
-          password: password,
-          basicAuth: basicAuth,
-          AccessToken: token,
-          refreshToken: refreshToken,
-          avatar: avatar,
-          fullName: fullName,
-          birthday: birthday,
-          address: address,
-          sex: sex,
-          phoneNumber: phoneNumber,
-          email: email,
-        }),
-      );
-
-      /* requestFromServer.GetUserInfo(serviceNotifi, token).then((re_) => {
-        if (re_ && re_.data && re_.data.avatarUrl) {
-          console.log('re_.data.avatarUrl');
-          console.log(re_.data.avatarUrl);
-          dispatch(actions.getAvatarUrl(re_.data.avatarUrl));
-        }
-      }); */
-
-      // dispatch(actions.dataDonViFetched({dataApp: dataApp_, dataService: dataModule}));
+      dispatch(actions.loginSuccess(tmp));
     })
     .catch((error) => {
       error.clientMessage = "Can't find datadonvi";

@@ -4,10 +4,11 @@ import {StyleSheet, Text, View, ScrollView, TouchableOpacity, ImageBackground, F
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {useSelector, useDispatch} from 'react-redux';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
+import {RectButton} from 'react-native-gesture-handler';
 
 import {Header} from '../../components';
-import {ItemMenuImage, BlockLogin} from '../../components/common';
-import {DANHMUC, CB_Data} from '../../data/TMDT_Data';
+import {SearchComponent} from '../../components/common';
+import {CB_Data} from '../../data/TMDT_Data';
 
 const RenderItem = (props) => {
   const {data, navigation} = props;
@@ -57,37 +58,79 @@ const KNCC_CB_MainScreen = () => {
   const [data, setData] = useState(CB_Data);
   const [inputValue, setInputValue] = useState('');
 
+  const [danhmuc, setDanhmuc] = useState({name: 'Toàn bộ'});
+  const [khuvuc, setKhuvuc] = useState({name: 'Toàn quốc'});
+  const [giaca, setGiaca] = useState({giatu: 0, giaden: 0});
+
   useEffect(() => {
     return () => {};
   }, []);
+
+  const TimKiem = () => {};
 
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
       <Header title="Cần bán" isStack={true} />
       <View style={{flex: 1}}>
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
-          <View
-            style={{
-              backgroundColor: '#EAEAEA',
-              flexDirection: 'row',
-              borderRadius: 8,
-              padding: 4,
-              margin: 10,
-              alignItems: 'center',
-              flex: 1,
-            }}>
-            <FontAwesome name="search" color="#787C7E" size={20} style={{marginHorizontal: 5}} />
-            <TextInput
-              placeholder={'Tìm kiếm'}
-              multiline={false}
-              onChangeText={(text) => setInputValue(text)}
-              value={inputValue}
-              selectionColor={'gray'}
-              clearButtonMode="always"
-              style={{flex: 1}}
-            />
-          </View>
-          <FontAwesome name="filter" color="#787C7E" size={20} style={{marginHorizontal: 10}} />
+        <SearchComponent value={inputValue} onChangeText={setInputValue} keyboardType={'web-search'} onSubmitEditing={TimKiem} />
+
+        <View>
+          <ScrollView horizontal style={{marginHorizontal: 10, flexDirection: 'row'}} showsHorizontalScrollIndicator={false}>
+            <RectButton
+              onPress={() => {}}
+              style={[
+                {
+                  padding: 10,
+                  margin: 5,
+                  borderRadius: 4,
+                  justifyContent: 'space-between',
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                },
+                {backgroundColor: '#F7F7F7'},
+              ]}>
+              <Text style={{color: 'gray', marginEnd: 10, fontWeight: 'normal'}} numberOfLines={1}>
+                {khuvuc?.name ?? 'Khu vực'}
+              </Text>
+              <FontAwesome name={'chevron-down'} color={'#F26946'} />
+            </RectButton>
+            <RectButton
+              onPress={() => {}}
+              style={[
+                {
+                  padding: 10,
+                  margin: 5,
+                  borderRadius: 4,
+                  justifyContent: 'space-between',
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                },
+                {backgroundColor: '#F7F7F7'},
+              ]}>
+              <Text style={{color: 'gray', marginEnd: 10, fontWeight: 'normal'}} numberOfLines={1}>
+                {danhmuc?.name ?? 'Danh mục'}
+              </Text>
+              <FontAwesome name={'chevron-down'} color={'#F26946'} />
+            </RectButton>
+            <RectButton
+              onPress={() => {}}
+              style={[
+                {
+                  padding: 10,
+                  margin: 5,
+                  borderRadius: 4,
+                  justifyContent: 'space-between',
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                },
+                {backgroundColor: '#F7F7F7'},
+              ]}>
+              <Text style={{color: 'gray', marginEnd: 10, fontWeight: 'normal'}} numberOfLines={1}>
+                {'Giá'}
+              </Text>
+              <FontAwesome name={'chevron-down'} color={'#F26946'} />
+            </RectButton>
+          </ScrollView>
         </View>
         <FlatList
           contentContainerStyle={{flexGrow: 1}}

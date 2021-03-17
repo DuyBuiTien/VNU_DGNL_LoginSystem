@@ -18,8 +18,6 @@ export const login = (username, password) => (dispatch) => {
         tmp.username = username;
         tmp.password = password;
 
-        console.log(tmp);
-
         dispatch(actions.loginSuccess(tmp));
       } else {
         dispatch(actions.catchError({error: 'Xác thực thất bại', callType: callTypes.action}));

@@ -49,36 +49,18 @@ const RenderItem = (props) => {
         <Text style={{color: '#757575', fontWeight: 'bold', flex: 1, marginVertical: 10}} numberOfLines={2}>
           {data.TenHoSo ? data.TenHoSo : ''}
         </Text>
-        <TouchableOpacity
-          onPress={() => {
-            if (data.DanhGiaHaiLong === 'False') {
-              navigation.navigate('DVC_TKHS_DanhGiaScreen', {
-                data: data,
-              });
-            }
-          }}
-          style={{flexDirection: 'row', alignItems: 'center', marginTop: 5, justifyContent: 'space-between'}}>
+        <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 5, justifyContent: 'space-between'}}>
           <View
             style={{
               padding: 8,
-              backgroundColor: data.DanhGiaHaiLong === 'False' ? '#f44336' : '#FFF',
+              backgroundColor: '#59A266',
               borderRadius: 4,
               justifyContent: 'center',
-              borderWidth: 0.3,
-              borderColor: data.DanhGiaHaiLong === 'False' ? '#FFF' : '#f44336',
             }}>
-            <Text
-              style={{
-                color: data.DanhGiaHaiLong === 'False' ? '#FFF' : '#f44336',
-                fontWeight: '600',
-                textAlign: 'center',
-                fontSize: 13,
-              }}>
-              {data.DanhGiaHaiLong === 'False' ? 'Đánh giá dịch vụ công' : 'Đã đánh giá'}
-            </Text>
+            <Text style={{color: '#FFF', fontWeight: 'bold', textAlign: 'center'}}>{`${data.TrangThai}`}</Text>
           </View>
           <Text style={{color: '#bdbdbd', textAlign: 'center'}}>{`${data.NgayTao}`}</Text>
-        </TouchableOpacity>
+        </View>
       </View>
     </TouchableOpacity>
   );
@@ -86,7 +68,7 @@ const RenderItem = (props) => {
 
 const DVC_MainScreen = () => {
   const navigation = useNavigation();
-  const user = useSelector((state) => state.dvc.user);
+  const user = useSelector((state) => state.global.user);
   const [isLoading, setIsLoading] = useState(false);
   const [inputValue, setInputValue] = useState('');
 
@@ -94,35 +76,43 @@ const DVC_MainScreen = () => {
 
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      if (user) {
-        setIsLoading(true);
-        var res = await requestPOST(`${dataService.DVC_URL}/GetPersonalDoc`, {
-          token: user.token,
-          status: 'Trả kết quả',
-          page: '1',
-          perpage: '50',
-          keysearch: '',
-          sort: 'desc',
-        });
-
-        if (res && res.data) {
-          setData(res.data);
-        }
-        setIsLoading(false);
-      }
-    };
-    fetchData();
-    return () => {};
-  }, [dataService.DVC_URL, user]);
+  let arr = [
+    {
+      id: 0,
+      name: 'Tất cả',
+    },
+    {
+      id: 1,
+      name: 'Đang đăng',
+    },
+    {
+      id: 2,
+      name: 'Chờ duyệt',
+    },
+    {
+      id: 3,
+      name: 'Đã giải quyết',
+    },
+    {
+      id: 4,
+      name: 'Bị từ chối',
+    },
+    {
+      id: 5,
+      name: 'Nháp',
+    },
+    {
+      id: 6,
+      name: 'Khác',
+    },
+  ];
 
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
-      <Header title="Đánh giá dịch vụ công" isStack={true} />
+      <Header title="Quản lý tin đăng" isStack={true} />
 
       {!user ? (
-        <BlockLogin name="Dịch vụ công" loginScreen={'DVC_Auth_LoginScreen'} registerScreen={'DVC_Auth_RegisterScreen'} />
+        <BlockLogin name="Kết nối cung cầu" />
       ) : (
         <View style={{flex: 1}}>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
@@ -153,18 +143,34 @@ const DVC_MainScreen = () => {
             </View>
           </View>
           <View style={{flex: 1}}>
-            <FlatList
-              contentContainerStyle={{flexGrow: 1, padding: 10}}
-              data={data.filter((i) => {
-                const name = i.TenHoSo.toUpperCase();
-                return name.indexOf(inputValue.toUpperCase()) > -1;
-              })}
-              renderItem={(item_) => <RenderItem data={item_.item} navigation={navigation} />}
-              keyExtractor={(item_) => item_.Id}
-              ListEmptyComponent={() => (
-                <Text style={{textAlign: 'center', color: '#50565B', marginTop: 10}}>Không có kết quả</Text>
-              )}
-            />
+            <ScrollableTabView
+              style={{}}
+              renderTabBar={() => <ScrollableTabBar />}
+              initialPage={0}
+              tabBarPosition="top"
+              tabBarActiveTextColor="#757575"
+              tabBarInactiveTextColor={'#BDBDBD'}
+              tabBarUnderlineStyle={{backgroundColor: '#f44336', height: 2}}>
+              {arr.map((item) => (
+                <FlatList
+                  tabLabel={item.name}
+                  contentContainerStyle={{flexGrow: 1, padding: 10}}
+                  data={data.filter((i) => {
+                    const trangthai = i.TrangThai.toUpperCase();
+                    const name = i.TenHoSo.toUpperCase();
+                    return (
+                      ((item.name !== 'Tất cả' && trangthai.indexOf(item.name.toUpperCase()) > -1) || item.name === 'Tất cả') &&
+                      name.indexOf(inputValue.toUpperCase()) > -1
+                    );
+                  })}
+                  renderItem={(item_) => <RenderItem data={item_.item} navigation={navigation} />}
+                  keyExtractor={(item_) => item_.Id}
+                  ListEmptyComponent={() => (
+                    <Text style={{textAlign: 'center', color: '#50565B', marginTop: 10}}>Không có kết quả</Text>
+                  )}
+                />
+              ))}
+            </ScrollableTabView>
           </View>
         </View>
       )}
