@@ -12,9 +12,10 @@ const GalleryScreen = () => {
   const images = route.params?.images ?? [];
   const title = route.params?.title ?? [];
 
+  console.log(images);
+
   const [index, setIndex] = useState(0);
 
-  images;
   return (
     <View style={{flex: 1, backgroundColor: 'black'}}>
       <StatusBar backgroundColor="transparent" barStyle="light-content" translucent={true} />

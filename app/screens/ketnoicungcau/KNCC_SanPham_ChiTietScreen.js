@@ -3,7 +3,6 @@
 import React, {useRef, useState, useEffect} from 'react';
 import {StyleSheet, Text, View, ScrollView, Linking, Dimensions, Platform, Image} from 'react-native';
 import {useNavigation, useRoute} from '@react-navigation/native';
-import {useSelector, useDispatch} from 'react-redux';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {Header, Icon} from 'react-native-elements';
@@ -49,7 +48,7 @@ const MainScreen = () => {
           </TouchableOpacity>
         }
         centerComponent={{
-          text: `${data.name}`,
+          text: `${data.title}`,
           style: {color: '#2E2E2E', fontSize: 16, fontWeight: 'bold'},
         }}
         containerStyle={{backgroundColor: 'transparent', justifyContent: 'space-around'}}

@@ -1,24 +1,78 @@
 export const DANHMUC = [
   {
-    id: 1,
+    appid: 1,
+    name: 'Bất động sản',
+    navigate: 'PAHT_MainScreen',
+    image: 'https://cafefcdn.com/thumb_w/650/2020/7/7/bdsehxs-1594112473427911622668-crop-15941125050461441714049.jpg',
+  },
+  {
+    appid: 2,
+    name: 'Xe cộ',
+    navigate: 'PAHT_MainScreen',
+    image:
+      'http://admin.saovietlaw.com/DiaNam-DNS/Upload/images/5-ly-do-vi-sao-khong-nen-mua-xe-hoi-bang-gia-xe-o-to-moi-nhat-hom-nay-thang-1568002119-width800height450.jpg',
+  },
+  {
+    appid: 3,
+    name: 'Việc làm',
+    navigate: 'PAHT_MainScreen',
+    image:
+      'https://media.npr.org/assets/img/2020/03/13/gettyimages-667018224_wide-e69134a24ff79fd3a338ff83661815c6299e58bd-s800-c85.jpg',
+  },
+  {
+    appid: 4,
+    name: 'Đồ điện tử',
+    navigate: 'PAHT_MainScreen',
+    image: 'https://anhduongtours.vn/wp-content/uploads/2017/12/mua-do-dien-tu-tai-dai-loan-1.jpg',
+  },
+  {
+    appid: 5,
+    name: 'Thực phẩm',
+    navigate: 'PAHT_MainScreen',
+    image: 'http://hanoimoi.com.vn/Uploads/images/phananh/2020/02/27/thucpham.jpg',
+  },
+  {
+    appid: 6,
+    name: 'Mẹ và bé',
+    navigate: 'PAHT_MainScreen',
+    image: 'https://www.sapo.vn/blog/wp-content/uploads/2014/12/tao-suc-hap-dan-cho-shop-me-be1.jpg',
+  },
+  {
+    appid: 7,
+    name: 'Du lịch, dịch vụ',
+    navigate: 'PAHT_MainScreen',
+    image: 'https://vnn-imgs-f.vgcloud.vn/2020/05/21/23/du-lich.jpg',
+  },
+];
+
+export const MENU = [
+  {
+    appid: 1,
     name: 'Cần mua',
     navigate: 'KNCC_CM_MainScreen',
-    icon: require('../Images/shopping-cart.png'),
-    background: require('../Images/gctt1.jpg'),
+    icon: 'money-bill',
+    color: '#c0ca33',
   },
   {
-    id: 2,
+    appid: 2,
     name: 'Cần bán',
     navigate: 'KNCC_CB_MainScreen',
-    icon: require('../Images/design.png'),
-    background: require('../Images/nn4.jpg'),
+    icon: 'store',
+    color: '#e64a19',
   },
   {
-    id: 3,
-    name: 'Tìm đối tác',
-    navigate: 'KNCC_TDT_MainScreen',
-    icon: require('../Images/cooperation.png'),
-    background: require('../Images/paht4.jpg'),
+    appid: 3,
+    name: 'Đăng tin',
+    navigate: 'KNCC_DangTinScreen',
+    icon: 'bullhorn',
+    color: '#5B63EC',
+  },
+  {
+    appid: 4,
+    name: 'Tin của tôi',
+    navigate: 'KNCC_CaNhanScreen',
+    icon: 'user-alt',
+    color: '#bdbdbd',
   },
 ];
 
