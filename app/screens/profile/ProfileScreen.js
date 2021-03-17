@@ -17,7 +17,7 @@ const ProfileScreen = () => {
       <Header title="Tài khoản" leftComponent={false} />
 
       <ScrollView showsVerticalScrollIndicator={false}>
-        <TouchableOpacity style={[styles.item]} activeOpacity={0.6} onPress={() => navigation.navigate('AccountScreen')}>
+        {/* <TouchableOpacity style={[styles.item]} activeOpacity={0.6} onPress={() => navigation.navigate('AccountScreen')}>
           <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
             <Avatar
               containerStyle={{marginHorizontal: 15, backgroundColor: 'transparent'}}
@@ -67,20 +67,10 @@ const ProfileScreen = () => {
             </View>
           </View>
           <Icon name="chevron-right" size={16} style={styles.icon_right} />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
-        <ItemMenu
-          onPress={() => navigation.navigate('SettingScreen')}
-          title={'Danh bạ'}
-          iconLeft="address-book"
-          colorIconLeft="#3F3795"
-        />
-        <ItemMenu
-          onPress={() => navigation.navigate('SettingScreen')}
-          title={'Đánh dấu'}
-          iconLeft="bookmark"
-          colorIconLeft="#00B843"
-        />
+        <ItemMenu onPress={() => navigation.navigate('')} title={'Danh bạ'} iconLeft="address-book" colorIconLeft="#3F3795" />
+        <ItemMenu onPress={() => navigation.navigate('')} title={'Đánh dấu'} iconLeft="bookmark" colorIconLeft="#00B843" />
 
         <ItemMenu
           onPress={() => navigation.navigate('TrungTamTroGiupScreen')}
@@ -90,7 +80,7 @@ const ProfileScreen = () => {
         />
 
         <ItemMenu
-          onPress={() => navigation.navigate('SettingScreen')}
+          onPress={() => navigation.navigate('')}
           title={'Giới thiệu bạn bè'}
           iconLeft="share-alt"
           colorIconLeft="#00B843"
@@ -104,12 +94,7 @@ const ProfileScreen = () => {
           colorIconLeft="#00B843"
         />
 
-        <ItemMenu
-          onPress={() => navigation.navigate('SettingScreen')}
-          title={'Đăng xuất'}
-          iconLeft="sign-out-alt"
-          colorIconLeft="#d50000"
-        />
+        <ItemMenu onPress={() => navigation.navigate('')} title={'Đăng xuất'} iconLeft="sign-out-alt" colorIconLeft="#d50000" />
 
         <Text style={{textAlign: 'center', margin: 10, color: '#818181'}}>
           Phiên bản: {`${VersionCheck.getCurrentVersion()} (${VersionCheck.getCurrentBuildNumber()})`}
