@@ -56,7 +56,22 @@ import {
 
 import {TDTM_MainScreen, TDTM_DanhSachScreen} from '../screens/tongdaithongminh';
 
-import {GD_MainScreen, GD_DiemDanhScreen, GD_SLLDTScreen} from '../screens/giaoduc';
+import {
+  GD_MainScreen, 
+  GD_DiemDanhScreen, 
+  GD_SLLDTScreen, 
+  GD_TKB_MainScreen, 
+  GD_DD_MainScreen, 
+  GD_TB_MainScreen, 
+  GD_KSK_MainScreen,
+  GD_XNP_MainScreen,
+  GD_XNP_ListScreen,
+  GD_GY_MainScreen,
+  GD_BT_MainScreen,
+  GD_BT_DK_MainScreen,
+  GD_BT_HDK_MainScreen,
+  GD_BT_TK_MainScreen,
+} from '../screens/giaoduc';
 
 import {NN_MainScreen} from '../screens/nongnghiep';
 
@@ -138,6 +153,17 @@ const AppStack = () => {
       <Stack.Screen name="GD_MainScreen" component={GD_MainScreen} />
       <Stack.Screen name="GD_DiemDanhScreen" component={GD_DiemDanhScreen} />
       <Stack.Screen name="GD_SLLDTScreen" component={GD_SLLDTScreen} />
+      <Stack.Screen name="GD_TKB_MainScreen" component={GD_TKB_MainScreen} />
+      <Stack.Screen name="GD_DD_MainScreen" component={GD_DD_MainScreen} />
+      <Stack.Screen name="GD_TB_MainScreen" component={GD_TB_MainScreen} />
+      <Stack.Screen name="GD_KSK_MainScreen" component={GD_KSK_MainScreen} />
+      <Stack.Screen name="GD_XNP_MainScreen" component={GD_XNP_MainScreen} />
+      <Stack.Screen name="GD_XNP_ListScreen" component={GD_XNP_ListScreen} />
+      <Stack.Screen name="GD_GY_MainScreen" component={GD_GY_MainScreen} />
+      <Stack.Screen name="GD_BT_MainScreen" component={GD_BT_MainScreen} />
+      <Stack.Screen name="GD_BT_DK_MainScreen" component={GD_BT_DK_MainScreen} />
+      <Stack.Screen name="GD_BT_HDK_MainScreen" component={GD_BT_HDK_MainScreen} />
+      <Stack.Screen name="GD_BT_TK_MainScreen" component={GD_BT_TK_MainScreen} />
 
       <Stack.Screen name="TDTM_MainScreen" component={TDTM_MainScreen} />
       <Stack.Screen name="TDTM_DanhSachScreen" component={TDTM_DanhSachScreen} />

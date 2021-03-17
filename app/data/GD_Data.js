@@ -41,3 +41,18 @@ export const DANHMUC = [
     },
   },
 ];
+
+export const GD_INFO = {
+  "__type": "API_DataLogin:#TD.QLDC.Service",
+  "address": "",
+  "avartar": "",
+  "birthday": "",
+  "email": "",
+  "fullName": "ĐỖ NINH TẤT ĐIỆP",
+  "identifier": "036090006275",
+  "maXa": "",
+  "phoneNumber": "0989411990",
+  "sex": "Nam",
+  "soHoKhau": "12345678910",
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MTU3OTgzMzcsImV4cCI6MTcxMDQ5MjczNywic3ViIjoiMDM2MDkwMDA2Mjc1IiwiaGFzaHB3ZCI6IlU2VDVJZHlJLzI0a0JFdmtLL3FuL1E9PSIsImNvbnRleHQiOnsidXNlciI6eyJ1c2VyTmFtZSI6IjAzNjA5MDAwNjI3NSIsImRpc3BsYXlOYW1lIjoixJDhu5YgTklOSCBU4bqkVCDEkEnhu4ZQIn19fQ.MDT8BQnoY7oxRQsmvBhmS7gJ71A_XtE8eheddZrEfZs"
+}
