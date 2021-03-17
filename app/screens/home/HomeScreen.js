@@ -178,11 +178,13 @@ const HomeScreen = () => {
               title="Thống kê COVID"
               onPress={() =>
                 navigation.navigate('WebViewScreen', {
-                  title: 'Tình hình dịch Covid',
-                  url: 'https://ncov.moh.gov.vn',
-                  colorHeader: '#252C68',
-                  hideBackForward: false,
-                  textColor: 'white',
+                  data: {
+                    title: 'Tình hình dịch Covid',
+                    url: 'https://ncov.moh.gov.vn',
+                    colorHeader: '#252C68',
+                    hideBackForward: false,
+                    textColor: 'white',
+                  },
                 })
               }
             />

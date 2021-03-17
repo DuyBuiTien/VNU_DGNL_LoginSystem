@@ -9,6 +9,7 @@ import {useNavigation, useRoute} from '@react-navigation/native';
 import {Button} from 'react-native-elements';
 
 import {Header} from '../../components';
+import {SearchComponent} from '../../components/common';
 import {requestGET} from '../../services/Api';
 
 const RenderItem = (props) => {
@@ -86,28 +87,8 @@ const MainScreen = () => {
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
       <Header title="Tổng hợp ý kiến" isStack={true} />
-      <View style={{flexDirection: 'row', alignItems: 'center'}}>
-        <View
-          style={{
-            backgroundColor: '#EAEAEA',
-            flexDirection: 'row',
-            borderRadius: 8,
-            margin: 10,
-            alignItems: 'center',
-            flex: 1,
-          }}>
-          <FontAwesome name="search" color="#787C7E" size={20} style={{marginHorizontal: 5}} />
-          <TextInput
-            placeholder={'Tìm kiếm'}
-            multiline={false}
-            onChangeText={(text) => setInputValue(text)}
-            value={inputValue}
-            selectionColor={'gray'}
-            clearButtonMode="always"
-            style={{flex: 1}}
-          />
-        </View>
-      </View>
+
+      <SearchComponent value={inputValue} onChangeText={setInputValue} />
       <View style={{flex: 1}}>
         <ScrollableTabView
           style={{}}

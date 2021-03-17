@@ -8,7 +8,7 @@ import BanDo from './BanDo';
 import HeaderBanDo from './HeaderBanDo';
 import BanDoFilter from './BanDoFilter';
 import ItemTextInput from './ItemTextInput';
-
+import SearchComponent from './SearchComponent';
 export {
   ItemTextInput,
   HeaderList,
@@ -20,4 +20,5 @@ export {
   BanDo,
   HeaderBanDo,
   BanDoFilter,
+  SearchComponent,
 };

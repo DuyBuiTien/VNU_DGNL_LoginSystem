@@ -19,6 +19,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 import {Header} from '../../components';
 
 import {requestGET} from '../../services/Api';
+import {SearchComponent} from '../../components/common';
 
 const RenderItem = (props) => {
   const {data, likeItem, onPress} = props;
@@ -128,15 +129,6 @@ const MainScreen = () => {
     return () => {};
   }, []);
 
-  const TimKiem = (input) => {
-    var data_tmp = datafinal.filter((item) => {
-      const name = item.Ten.toUpperCase();
-      const address = item.DiaChi.toUpperCase();
-      return name.indexOf(input.toUpperCase()) > -1 || address.indexOf(input.toUpperCase()) > -1;
-    });
-    setData(data_tmp);
-  };
-
   const dialCall = (number) => {
     let phoneNumber = '';
     if (Platform.OS === 'android') {
@@ -150,32 +142,9 @@ const MainScreen = () => {
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
       <Header title="Gọi điện thoại cấp cứu" isStack={true} />
-      <View style={{flexDirection: 'row', alignItems: 'center'}}>
-        <View
-          style={{
-            backgroundColor: '#EAEAEA',
-            flexDirection: 'row',
-            borderRadius: 8,
-            padding: 4,
-            margin: 10,
-            alignItems: 'center',
-            flex: 1,
-          }}>
-          <FontAwesome name="search" color="#787C7E" size={20} style={{marginHorizontal: 5}} />
-          <TextInput
-            placeholder={'Tìm kiếm'}
-            multiline={false}
-            onChangeText={(text) => {
-              setInputValue(text);
-              TimKiem(text);
-            }}
-            value={inputValue}
-            selectionColor={'gray'}
-            clearButtonMode="always"
-            style={{flex: 1}}
-          />
-        </View>
-      </View>
+
+      <SearchComponent value={inputValue} onChangeText={setInputValue} />
+
       {isLoading ? (
         <ActivityIndicator size="large" color="#fb8c00" style={{flex: 1, justifyContent: 'center'}} />
       ) : (
@@ -183,7 +152,11 @@ const MainScreen = () => {
           contentContainerStyle={{flexGrow: 1, padding: 10}}
           showsVerticalScrollIndicator={false}
           showsHorizontalScrollIndicator={false}
-          data={data}
+          data={data.filter((item) => {
+            const name = item.Ten.toUpperCase();
+            const address = item.DiaChi.toUpperCase();
+            return name.indexOf(inputValue.toUpperCase()) > -1 || address.indexOf(inputValue.toUpperCase()) > -1;
+          })}
           renderItem={({item, index}) => <RenderItem data={item} navigation={navigation} onPress={dialCall} />}
           keyExtractor={(item, index) => index.toString()}
           ListEmptyComponent={() => <Text style={{textAlign: 'center', color: '#50565B', marginTop: 10}}>Không có kết quả</Text>}

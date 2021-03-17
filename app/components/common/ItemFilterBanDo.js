@@ -25,11 +25,11 @@ const ItemFilterBanDo = (props) => {
           shadowRadius: 2,
           elevation: 2,
         },
-        {backgroundColor: item.selected ? '#FFF' : '#9ccc65'},
+        {backgroundColor: !item.selected ? '#FFF' : '#EEE'},
       ]}>
-      <FontAwesome size={16} name={item?.icon ?? 'gas-pump'} color={item.selected ? '#F26946' : '#FFF'} />
+      <FontAwesome size={16} name={item?.icon ?? 'gas-pump'} color={'#EF6C00'} />
 
-      <Text style={{color: item.selected ? '#37474f' : '#FFF', marginStart: 10, fontWeight: 'normal'}} numberOfLines={1}>
+      <Text style={{color: '#37474f', marginStart: 10, fontWeight: 'normal'}} numberOfLines={1}>
         {item.name}
       </Text>
     </TouchableOpacity>

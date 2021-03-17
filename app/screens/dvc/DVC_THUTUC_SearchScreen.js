@@ -18,14 +18,13 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 import {showMessage} from 'react-native-flash-message';
 import {RectButton} from 'react-native-gesture-handler';
 
-import {Button} from 'react-native-elements';
 import ActionSheet from '../../modules/react-native-actions-sheet';
-const SCREEN_HEIGHT = Dimensions.get('screen').height;
 
 import {requestGET, requestPOST} from '../../services/Api';
 
 import {Header} from '../../components';
 import {RenderChonDonVi, RenderChonMucDo, RenderChonLinhVuc} from '../../components/dvc';
+import {SearchComponent} from '../../components/common';
 
 const RenderItem = (props) => {
   const {data, navigation, histories} = props;
@@ -219,34 +218,10 @@ const DVC_TKHS_SearchScreen = () => {
   return (
     <View style={{flex: 1, backgroundColor: '#FFF'}}>
       <Header title="Tra cứu thủ tục" isStack={true} />
-      <View style={{flexDirection: 'row', alignItems: 'center'}}>
-        <View
-          style={{
-            backgroundColor: '#EAEAEA',
-            flexDirection: 'row',
-            borderRadius: 4,
-            margin: 10,
-            alignItems: 'center',
-            flex: 1,
-          }}>
-          <FontAwesome name="search" color="#787C7E" size={20} style={{marginHorizontal: 5}} />
-          <TextInput
-            placeholder={'Tìm kiếm'}
-            multiline={false}
-            onChangeText={(text) => {
-              setInputValue(text);
-            }}
-            value={inputValue}
-            selectionColor={'gray'}
-            onSubmitEditing={TimKiem}
-            clearButtonMode="always"
-            style={{flex: 1, margin: 10, padding: 4}}
-            keyboardType={'web-search'}
-          />
-        </View>
-      </View>
+      <SearchComponent value={inputValue} onChangeText={setInputValue} keyboardType={'web-search'} onSubmitEditing={TimKiem} />
+
       <View>
-        <ScrollView horizontal style={{marginBottom: 10, flexDirection: 'row'}} showsHorizontalScrollIndicator>
+        <ScrollView horizontal style={{marginBottom: 10, flexDirection: 'row'}} showsHorizontalScrollIndicator={false}>
           <RectButton onPress={ChonDonVi} style={[styles.contentChon, {backgroundColor: '#F7F7F7'}]}>
             <Text style={{color: 'gray', marginEnd: 10, fontWeight: donvi.name !== '' ? 'bold' : 'normal'}} numberOfLines={1}>
               {donvi.name !== '' ? donvi.name : 'Đơn vị'}
