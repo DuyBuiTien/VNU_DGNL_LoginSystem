@@ -154,6 +154,24 @@
       "icon": "shopping-basket",
       "color": "#0E2D7D",
       "datamenu": []
+    },
+    {
+      "appid": "40",
+      "name": "Tin tuyển dụng",
+      "navigate": "KNCC_MainScreen",
+      "count": 0,
+      "icon": "shopping-basket",
+      "color": "#0E2D7D",
+      "datamenu": []
+    },
+    {
+      "appid": "41",
+      "name": "Doanh nghiệp, nhà đầu tư",
+      "navigate": "KNCC_MainScreen",
+      "count": 0,
+      "icon": "shopping-basket",
+      "color": "#0E2D7D",
+      "datamenu": []
     }
   ]
 }
