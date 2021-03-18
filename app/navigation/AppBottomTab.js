@@ -33,7 +33,7 @@ const AppBottomTab = () => {
         indicatorStyle: {
           backgroundColor: 'transparent',
         },
-        style: {paddingHorizontal: isTablet ? 200 : 0, backgroundColor: '#FFFFFF'},
+        style: {paddingHorizontal: isTablet ? 100 : 0, backgroundColor: '#FFFFFF'},
       }}
       backBehavior={'initialRoute'}>
       <Tab.Screen

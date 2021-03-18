@@ -112,7 +112,8 @@ const LoginScreen = () => {
     }
 
     dispatch(actions.login(username_, password_)).then(() => {
-      dispatch(actions.GetUserInfo());
+      //dispatch(actions.GetUserInfo());
+      navigation.navigate('TrangChuScreen');
     });
   };
 

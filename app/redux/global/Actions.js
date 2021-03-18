@@ -40,7 +40,6 @@ export const fetchDataDonVi_Demo = (URL) => (dispatch) => {
 export const login = (username, password) => (dispatch) => {
   let state = store.getState();
   const dataApp = state.global.dataApp;
-  const {serviceGetway, tokenGetway} = dataApp;
   const dataService = state.global.dataService;
 
   dispatch(actions.startCall({callType: callTypes.action}));

@@ -16,7 +16,13 @@ export function Login_old(urlService, tokenBearer, user, pass) {
   );
 }
 
-export function Login(urlService, tokenBearer, user, pass) {
+export function Login(urlService, user, pass) {
+  console.log({
+    user: user,
+    pass: pass,
+    tokenDevice: '',
+  });
+
   return axios.post(urlService + '/GetTokenKey', {
     user: user,
     pass: pass,

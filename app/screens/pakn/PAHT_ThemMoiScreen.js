@@ -98,7 +98,7 @@ const MainScreen = () => {
 
   let CurrentLocation = useSelector((state) => state.global.CurrentLocation);
 
-  const [inputValue, setInputValue] = useState('');
+  const [nguoidangtin, setNguoidangtin] = useState(user && user.fullName ? user.fullName : 'Khách');
   const [linhVuc, setLinhVuc] = useState('');
   const [tieuDe, setTieuDe] = useState('');
   const [moTa, setMoTa] = useState('');
@@ -312,7 +312,7 @@ const MainScreen = () => {
                 />
                 <View style={{marginHorizontal: 10}}>
                   <Text style={{color: '#5B6062'}}>Tên người đăng tin</Text>
-                  <Text style={styles.title}>Nguyễn Tùng Lâm</Text>
+                  <Text style={styles.title}>{nguoidangtin}</Text>
                 </View>
               </View>
 

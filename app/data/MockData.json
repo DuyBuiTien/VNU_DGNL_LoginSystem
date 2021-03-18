@@ -18,7 +18,7 @@
     "TDTM_URL": "https://dieuhanh.namdinh.gov.vn/_layouts/15/TD.LH.Service/WCFService.svc",
     "GCTT_URL": "https://dieuhanh.namdinh.gov.vn/_vti_bin/TD.XaThongMinh.GiaCaThiTruong.WCF/GCTTService.svc",
     "YT_URL": "https://dieuhanh.namdinh.gov.vn/_vti_bin/TD.XaThongMinh.YTe.WCF/XtmYteService.svc",
-    "CD_URL": "https://qldcapi.namdinh.gov.vn/_layouts/15/TD.QLDC.Service/WCFService.svc",
+    "CD_URL": "https://qldcapi.tandan.com.vn/_layouts/15/TD.QLDC.Service/WCFService.svc",
     "ATTP_URL": "https://dieuhanh.namdinh.gov.vn/_layouts/15/TD.VSATTP.Service/WCFService.svc",
     "MT_URL": "https://dieuhanh.namdinh.gov.vn/_layouts/15/TD.MT.Service/WCFService.svc",
     "DL_URL": "https://qldl.tandan.com.vn/_layouts/15/TD.QLDL.Service/WCFService.svc",

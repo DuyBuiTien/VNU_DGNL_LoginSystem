@@ -93,6 +93,9 @@ export const globalSlice = createSlice({
       state.actionsLoading = false;
       state.error = null;
 
+      console.log('errorerrorerror')
+      console.log(state.error);
+
       const payload = action.payload;
 
       state.user = payload;
