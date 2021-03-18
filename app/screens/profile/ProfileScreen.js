@@ -77,24 +77,24 @@ const ProfileScreen = () => {
         )}
 
         {user && (
-          <ItemMenu onPress={() => navigation.navigate('')} title={'Danh bạ'} iconLeft="address-book" colorIconLeft="#3F3795" />
+          <ItemMenu onPress={() => navigation.navigate('')} title={'Danh bạ'} iconLeft="address-book" colorIconLeft="#757575" />
         )}
         {user && (
-          <ItemMenu onPress={() => navigation.navigate('')} title={'Đánh dấu'} iconLeft="bookmark" colorIconLeft="#00B843" />
+          <ItemMenu onPress={() => navigation.navigate('')} title={'Đánh dấu'} iconLeft="bookmark" colorIconLeft="#757575" />
         )}
 
         <ItemMenu
           onPress={() => navigation.navigate('TrungTamTroGiupScreen')}
           title={'Trung tâm trợ giúp'}
           iconLeft="life-ring"
-          colorIconLeft="#00B843"
+          colorIconLeft="#757575"
         />
 
         <ItemMenu
           onPress={() => navigation.navigate('')}
           title={'Giới thiệu bạn bè'}
           iconLeft="share-alt"
-          colorIconLeft="#00B843"
+          colorIconLeft="#757575"
         />
 
         <ItemMenu
@@ -102,7 +102,7 @@ const ProfileScreen = () => {
           title={'Cài đặt'}
           titleRight={'Mật khẩu & bảo mật'}
           iconLeft="cogs"
-          colorIconLeft="#00B843"
+          colorIconLeft="#757575"
         />
 
         {user ? (
@@ -112,14 +112,14 @@ const ProfileScreen = () => {
             }}
             title={'Đăng xuất'}
             iconLeft="sign-out-alt"
-            colorIconLeft="#d50000"
+            colorIconLeft="#757575"
           />
         ) : (
           <ItemMenu
             onPress={() => navigation.navigate('LoginScreen')}
             title={'Đăng nhập'}
             iconLeft="sign-in-alt"
-            colorIconLeft="#d50000"
+            colorIconLeft="#757575"
           />
         )}
 

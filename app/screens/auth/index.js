@@ -1,4 +1,6 @@
 import LoginScreen from './LoginScreen';
 import ForgotScreen from './ForgotScreen';
 import RegisterScreen from './RegisterScreen';
-export {LoginScreen, ForgotScreen, RegisterScreen};
+import AccountScreen from './AccountScreen';
+
+export {LoginScreen, ForgotScreen, RegisterScreen, AccountScreen};

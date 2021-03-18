@@ -10,6 +10,7 @@ import {SettingScreen, TrungTamTroGiupScreen} from '../screens/profile';
 import AuthStack from './AuthStack';
 import AppBottomTab from './AppBottomTab';
 
+import {AccountScreen} from '../screens/auth';
 import {BDHC_UnitScreen, BDHC_UnitChildScreen} from '../screens/diaphuong';
 import {GalleryScreen, WebViewScreen, VideoScreen} from '../screens/common';
 import {MenuScreen} from '../screens/home';
@@ -135,6 +136,8 @@ const AppStack = () => {
     <Stack.Navigator headerMode={'none'} initialRouteName={'HomeScreen'}>
       <Stack.Screen name="TrangChuScreen" component={AppBottomTab} />
       <Stack.Screen name="AuthStack" component={AuthStack} />
+      <Stack.Screen name="AccountScreen" component={AccountScreen} />
+
       <Stack.Screen name="SettingScreen" component={SettingScreen} />
       <Stack.Screen name="TrungTamTroGiupScreen" component={TrungTamTroGiupScreen} />
       <Stack.Screen name="BDHC_UnitScreen" component={BDHC_UnitScreen} />
@@ -226,7 +229,7 @@ const AppStack = () => {
       <Stack.Screen name="TMDT_MainScreen" component={TMDT_MainScreen} />
       <Stack.Screen name="TMDT_CSKDScreen" component={TMDT_CSKDScreen} />
 
-     <Stack.Screen name="MT_MainScreen" component={MT_MainScreen} />
+      <Stack.Screen name="MT_MainScreen" component={MT_MainScreen} />
 
       <Stack.Screen name="KNCC_MainScreen" component={KNCC_MainScreen} />
       <Stack.Screen name="KNCC_CM_MainScreen" component={KNCC_CM_MainScreen} />
