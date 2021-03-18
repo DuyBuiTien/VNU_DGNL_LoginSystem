@@ -79,6 +79,10 @@ import {
   GD_BT_DK_MainScreen,
   GD_BT_HDK_MainScreen,
   GD_BT_TK_MainScreen,
+  GD_HTAScreen,
+  GD_HTAListScreen,
+  GD_HNScreen,
+  GD_HNListScreen,
 } from '../screens/giaoduc';
 
 import {NN_MainScreen} from '../screens/nongnghiep';
@@ -92,6 +96,8 @@ import {TT_MainScreen} from '../screens/tintuc';
 import {TTCQ_MainScreen, TTCQ_DetailScreen, TTCQ_DetailVBScreen} from '../screens/thongtinchinhquyen';
 
 import {TTCB_MainScreen, TTCB_DetailScreen} from '../screens/thongtincanhbao';
+
+import { DT_MainScreen, } from '../screens/diemtin'
 
 import {
   YT_MainScreen,
@@ -166,6 +172,8 @@ const AppStack = () => {
       <Stack.Screen name="PAHT_DetailScreen" component={PAHT_DetailScreen} />
       <Stack.Screen name="PAHT_CaNhanScreen" component={PAHT_CaNhanScreen} />
 
+      <Stack.Screen name="DT_MainScreen" component={DT_MainScreen} />
+
       <Stack.Screen name="GD_MainScreen" component={GD_MainScreen} />
       <Stack.Screen name="GD_DiemDanhScreen" component={GD_DiemDanhScreen} />
       <Stack.Screen name="GD_SLLDTScreen" component={GD_SLLDTScreen} />
@@ -180,6 +188,10 @@ const AppStack = () => {
       <Stack.Screen name="GD_BT_DK_MainScreen" component={GD_BT_DK_MainScreen} />
       <Stack.Screen name="GD_BT_HDK_MainScreen" component={GD_BT_HDK_MainScreen} />
       <Stack.Screen name="GD_BT_TK_MainScreen" component={GD_BT_TK_MainScreen} />
+      <Stack.Screen name="GD_HTAScreen" component={GD_HTAScreen} />
+      <Stack.Screen name="GD_HTAListScreen" component={GD_HTAListScreen} />
+      <Stack.Screen name="GD_HNScreen" component={GD_HNScreen} />
+      <Stack.Screen name="GD_HNListScreen" component={GD_HNListScreen} />
 
       <Stack.Screen name="TDTM_MainScreen" component={TDTM_MainScreen} />
       <Stack.Screen name="TDTM_DanhSachScreen" component={TDTM_DanhSachScreen} />
