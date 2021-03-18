@@ -93,12 +93,13 @@ export const globalSlice = createSlice({
       state.actionsLoading = false;
       state.error = null;
 
+      console.log('errorerrorerror')
+      console.log(state.error);
+
       const payload = action.payload;
 
       state.user = payload;
-      state.AccessToken = payload.AccessToken;
-      state.refreshToken = payload.refreshToken;
-      state.basicAuth = payload.basicAuth;
+      state.AccessToken = payload.token;
       state.username_tmp = payload.username;
       state.password_tmp = payload.password;
     },
@@ -128,10 +129,7 @@ export const globalSlice = createSlice({
     },
     logOut: (state, action) => {
       state.AccessToken = '';
-      state.basicAuth = '';
       state.user = null;
-      state.UserIdChat = '';
-      state.refreshToken = '';
       if (!state.XacThucVanTay) {
         state.password_tmp = '';
       }

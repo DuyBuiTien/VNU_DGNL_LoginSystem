@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>BMI</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <meta name="description" content="BMI " />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js" type="text/javascript"></script>
+    <!--Add Slick-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="https://smart-quangninh.s3-ap-southeast-1.amazonaws.com/bmi/css/style.css?v=5" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+    <meta http-equiv="content-language" content="vi" />
+  </head>
+  <body class="squangninh-stick-active">
+    <div id="main">
+      <section class="container-fluid">
+        <div class="list-news list-prod">
+          <div class="row">
+            <div class="header-bmi">
+              <h2>Chỉ số sức khỏe</h2>
+            </div>
+            <div class="container">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="row">
+                  <div class="col-md-6 col-md-offset-3">
+                    <div class="form-bsugari">
+                      <form method="POST" action="" accept-charset="UTF-8">
+                        <div class="bloodsugari-fields">
+                          <div style="text-align: justify">
+                            <p class="intro">
+                              Chỉ số sức khỏe (BMI) là chỉ số khối cơ thể (Body Mass Index) - được dùng để đánh giá mức độ gầy hay
+                              béo của một người, áp dụng cho người trên 19 tuổi. Chỉ số khối cơ thể của một người tính bằng công
+                              thức:
+                            </p>
+                            <div style="display: block; margin: 0 auto; margin: 15px">
+                              <img
+                                style="box-shadow: 0px 0px 23px rgba(0, 0, 0, 0.1); border-radius: 8px"
+                                src="https://smart-quangninh.s3-ap-southeast-1.amazonaws.com/bmi/images/bmi.png"
+                                width="100%"
+                              />
+                            </div>
+                            <br />
+                          </div>
+                          <div class="field-sug text-left box-second">
+                            <p>Nhập cân nặng và chiều cao để tính chỉ số sức khỏe (BMI) của bạn vào ô dưới đây:</p>
+                            <div style="margin-bottom: 10px">
+                              <p><b>Cân nặng</b></p>
+                              <div style="display: flex">
+                                <input
+                                  type="text"
+                                  style="width: 100%; border: 0"
+                                  placeholder="Cân nặng"
+                                  size="25"
+                                  id="weight"
+                                  name="weight"
+                                />
+                                <span class="star" style="font-weight: bold; margin-left: 15px; line-height: 32px">(kg)</span>
+                              </div>
+                            </div>
+
+                            <div class="">
+                              <p><b>Chiều cao</b></p>
+                              <div style="display: flex">
+                                <input
+                                  type="text"
+                                  style="width: 100%; border: 0"
+                                  placeholder="Chiều cao"
+                                  size="25"
+                                  id="height"
+                                  name="height"
+                                />
+                                <span class="star" style="font-weight: bold; margin-left: 15px; line-height: 32px">(cm)</span>
+                              </div>
+                            </div>
+                            <div class="btn-func text-center">
+                              <button class="button-vote2" type="button" id="btn-check">Kiểm tra tình trạng</button>
+                            </div>
+
+                            <div class="desc-bsug">
+                              <fieldset>
+                                <legend>TÌNH TRẠNG DINH DƯỠNG</legend>
+                                <div class="advice-bmi">
+                                  <div class="bmi-fields result" style="padding-top: 0; text-align: center">
+                                    <label>Chỉ số sức khỏe (BMI)</label> =
+                                    <span>
+                                      <span id="result-bmi"> </span>
+                                    </span>
+                                  </div>
+
+                                  <div id="div-result-bmi-20">
+                                    <div class="advice-bmi" style="display: block; text-align: left" id="advice_text"></div>
+                                  </div>
+                                </div>
+                              </fieldset>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="info-bmi">
+                  <center>
+                    <table cellspacing="0" cellpadding="0" border="1" style="text-align: center" class="texthelp">
+                      <tbody>
+                        <tr>
+                          <td colspan="3">
+                            <span style="font-weight: bold"
+                              >Bảng đánh giá theo chuẩn của Tổ chức Y tế thế giới (WHO) và dành riêng cho người châu Á ( IDI &
+                              WPRO):</span
+                            >
+                            <br />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong>Phân loại</strong></td>
+                          <td><strong>WHO BMI (kg/m2)</strong></td>
+                          <td><strong>IDI & WPRO BMI (kg/m2)</strong></td>
+                        </tr>
+                        <tr>
+                          <td><span>Cân nặng thấp (gầy)</span></td>
+                          <td><span>< 18.5</span></td>
+                          <td><span>< 18.5</span></td>
+                        </tr>
+                        <tr>
+                          <td><span>Bình thường</span></td>
+                          <td><span>18.5 - 24.9</span></td>
+                          <td><span>18.5 - 22.9</span></td>
+                        </tr>
+
+                        <tr>
+                          <td><span>Thừa cân</span></td>
+                          <td><span>25 - 29.9</span></td>
+                          <td><span>23 - 24.9</span></td>
+                        </tr>
+                        <tr>
+                          <td><span>Béo phì độ I</span></td>
+                          <td><span>30 - 34.9</span></td>
+                          <td><span>25 - 29.9</span></td>
+                        </tr>
+                        <tr>
+                          <td><span>Béo phì độ II</span></td>
+                          <td><span>35 - 39.9</span></td>
+                          <td><span>30 - 34.9</span></td>
+                        </tr>
+                        <tr>
+                          <td><span>Béo phì độ III</span></td>
+                          <td><span><=40</span></td>
+                          <td><span>>=35</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </center>
+                </div>
+                <div class="box-bottom">
+                  <p>- Không áp dụng cho phụ nữ có thai</p>
+                  <p>
+                    - Chỉ số sức khỏe (BMI) không thể tính được lượng chất béo trong cơ thể – yếu tố tiềm ẩn các nguy cơ liên quan
+                    đến sức khỏe tương lai
+                  </p>
+                  <p>
+                    - Chỉ số sức khỏe (BMI) sẽ không chính xác nếu bạn là vận động viên hoặc người tập thể hình (bởi các múi cơ
+                    luôn nặng hơn mỡ) và khi đó, chỉ số sức khỏe (BMI) của bạn sẽ nằm trong mức béo, rất béo. Nó cũng không chính
+                    xác với các bà bầu, đang cho con bú hay những người vừa ốm dậy.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script type="text/html" id="gay">
+      <p style="margin-bottom: 8px;">
+        -
+        <span style="padding-left: 10px;"
+          >Bạn đang bị thiếu cân nặng so với chiều cao hiện có, cần đi khám bác sỹ để tìm nguyên nhân để điều trị.
+        </span>
+      </p>
+      <p style="margin-bottom: 8px;">
+        -
+        <span style="padding-left: 10px;"
+          >Cần đảm bảo chế độ ăn đa dạng, đủ 4 nhóm thực phẩm như tinh bột, chất đạm, chất béo, rau và trái cây. Ngoài 3 bữa
+          chính, bổ sung thêm 2-3 bữa phụ bằng các thực phẩm giàu năng lượng như các loại hạt (đậu phộng, hạt điều, hạt
+          bí...).</span
+        >
+      </p>
+      <p style="margin-bottom: 8px;">
+        -
+        <span style="padding-left: 10px;"
+          >Tăng thêm lượng cơm, bánh mì, xôi...; tăng thêm lượng dầu mỡ, bơ; tăng các món chiên xào; giảm ăn các món nhiều nước
+          (bún, mì, nui…).</span
+        >
+      </p>
+      <p style="margin-bottom: 8px;">
+        -
+        <span style="padding-left: 10px;"
+          >Để tránh thiếu Canxi, nên dùng thường xuyên sữa và các sản phẩm từ sữa như sữa chua, phô mai… Để tránh thiếu sắt và
+          kẽm, cần ăn thêm thịt, cá, trứng, gan, hàu…</span
+        >
+      </p>
+      <p style="margin-bottom: 8px;">
+        -
+        <span style="padding-left: 10px;">Vận động phù hợp thường xuyên. Ngủ sớm và đủ giấc.</span>
+      </p>
+      <div class="recommend_article"></div>
+    </script>
+
+    <script type="text/html" id="binh_thuong">
+      <p style="margin-bottom: 8px;">
+        -
+        <span style="padding-left: 10px;"
+          >Bạn đang có cân nặng cân đối với chiều cao hiện có. Cần duy trì chế độ ăn uống hiện tại, ăn đa dạng thực phẩm, ăn đủ
+          bữa, tăng cường rau xanh, quả chín, lưu ý bổ sung các thực phẩm giàu canxi như cua đồng, rạm, cá nhỏ ăn luôn xương, tép
+          nhỏ ăn luôn vỏ, đậu nành, đậu hũ, uống thêm sữa giàu canxi...</span
+        >
+      </p>
+      <p style="margin-bottom: 8px;">
+        -
+        <span style="padding-left: 10px;">Vận động thường xuyên. Ngủ sớm và đủ giấc.</span>
+      </p>
+      <div class="recommend_article"></div>
+    </script>
+
+    <script type="text/html" id="thua_can">
+      <p style="margin-bottom: 8px;">
+        -
+        <span style="padding-left: 10px;"
+          >Bạn đang dư thừa cân nặng so với chiều cao hiện có nên cần điều chỉnh lại chế độ ǎn uống và tăng cường hoạt động thể
+          lực để giảm cân.</span
+        >
+      </p>
+      <p style="margin-bottom: 8px;">
+        <strong>- <span style="padding-left: 10px;">Chế độ ǎn:</span></strong>
+      </p>
+      <p style="margin-left: 25px; margin-bottom: 8px; width: 98%;">
+        + <span style="padding-left: 10px;">Cần giảm lượng tinh bột từ cơm, bánh mì, xôi/ nếp, nui, mì, mì gói…</span>
+      </p>
+      <p style="margin-left: 25px; margin-bottom: 8px;">
+        +
+        <span style="padding-left: 10px;"
+          >Giảm thức ăn ngọt (như bánh kẹo, snack, nước ngọt, chè, kem, kể cả trái cây ngọt…); giảm thức ăn béo (như các món
+          chiên/ rán, quay, nước cốt dừa, thịt hộp, xúc xích, lạp xưởng, bơ, mỡ, thịt ba chỉ, thịt mỡ, da động vật, phủ tạng động
+          vật…). Chọn thịt cá nạc, nên ăn cá nhiều hơn thịt. Nên ăn các món luộc, hấp, nướng hay rau trộn.</span
+        >
+      </p>
+      <p style="margin-left: 25px; margin-bottom: 8px;">
+        +
+        <span style="padding-left: 10px;"
+          >Nên uống sữa dành cho người thừa cân béo phì như sữa tách béo, không đường, sữa chua ít hoặc không đường.</span
+        >
+      </p>
+      <p style="margin-left: 25px; margin-bottom: 8px;">
+        +
+        <span style="padding-left: 10px;">Tăng ăn rau/củ, trái cây ít ngọt như củ sắn, táo, dưa hấu, mận, ổi, thanh long...</span>
+      </p>
+      <p style="margin-left: 25px; margin-bottom: 8px;">
+        +
+        <span style="padding-left: 10px;"
+          >Ăn chậm, nhai kỹ, không ăn quá no, không bỏ bữa, không để quá đói (vì sẽ ăn nhiều vào các bữa sau). Hạn chế ăn sau 20
+          giờ. Uống 2 - 2,5 lít nước mỗi ngày.</span
+        >
+      </p>
+      <p style="margin-bottom: 8px;">
+        -
+        <span style="padding-left: 10px;">Vận động thường xuyên ít nhất 60 phút mỗi ngày. Ngủ sớm và ngủ đủ giấc.</span>
+      </p>
+      <p style="margin-bottom: 8px;">
+        - <span style="padding-left: 10px;">Cần theo dõi cân nặng hàng tháng và khám sức khỏe định kỳ mỗi năm.</span>
+      </p>
+      <div class="recommend_article"></div>
+    </script>
+
+    <script type="text/html" id="beo_phi_do_1">
+      <p style="margin-bottom: 8px;">
+        -
+        <span style="padding-left: 10px;"
+          >Bạn đang dư thừa cân nặng nhiều so với chiều cao hiện có nên cần đi khám bác sỹ, cần điều chỉnh lại chế độ ǎn uống và
+          tăng cường hoạt động thể lực để giảm cân, đưa chỉ số sức khỏe (BMI) về mức bình thường.
+        </span>
+      </p>
+      <p style="margin-bottom: 8px;">
+        <strong>- <span style="padding-left: 10px;">Chế độ ǎn:</span></strong>
+      </p>
+      <p style="margin-left: 25px; margin-bottom: 8px; width: 98%;">
+        + <span style="padding-left: 10px;">Cần giảm lượng tinh bột từ cơm, bánh mì, xôi/ nếp, nui, mì, mì gói…</span>
+      </p>
+      <p style="margin-left: 25px; margin-bottom: 8px;">
+        +
+        <span style="padding-left: 10px;"
+          >Giảm thức ăn ngọt (như bánh kẹo, snack, nước ngọt, chè, kem, kể cả trái cây ngọt…); giảm thức ăn béo (như các món
+          chiên/ rán, quay, nước cốt dừa, thịt hộp, xúc xích, lạp xưởng, bơ, mỡ, thịt ba chỉ, thịt mỡ, da động vật, phủ tạng động
+          vật…). Chọn thịt cá nạc, nên ăn cá nhiều hơn thịt. Nên ăn các món luộc, hấp, nướng hay rau trộn.</span
+        >
+      </p>
+      <p style="margin-left: 25px; margin-bottom: 8px;">
+        +
+        <span style="padding-left: 10px;"
+          >Nên dùng sản phẩm dành cho người thừa cân béo phì sữa tách béo, không đường, sữa chua ít hoặc không đường.</span
+        >
+      </p>
+      <p style="margin-left: 25px; margin-bottom: 8px;">
+        +
+        <span style="padding-left: 10px;">Tăng ăn rau củ, trái cây ít ngọt như củ sắn, táo, dưa hấu, mận, ổi, thanh long...</span>
+      </p>
+      <p style="margin-left: 25px; margin-bottom: 8px;">
+        +
+        <span style="padding-left: 10px;"
+          >Ăn chậm, nhai kỹ, không ăn quá no, không bỏ bữa, không để quá đói (vì sẽ ăn nhiều vào các bữa sau). Hạn chế ăn sau 20
+          giờ. Uống 2 - 2,5 lít nước mỗi ngày.</span
+        >
+      </p>
+      <p style="margin-bottom: 8px;">
+        -
+        <span style="padding-left: 10px;">Vận động thường xuyên ít nhất 60 phút mỗi ngày. Ngủ sớm và ngủ đủ giấc.</span>
+      </p>
+      <p style="margin-bottom: 8px;">
+        -
+        <span style="padding-left: 10px;">Cần theo dõi cân nặng hàng tuần và khám sức khỏe định kỳ mỗi 3-6 tháng. </span>
+      </p>
+      <div class="recommend_article"></div>
+    </script>
+
+    <script type="text/html" id="beo_phi_do_2">
+      <p style="margin-bottom: 8px;">
+        -
+        <span style="padding-left: 10px;"
+          >Bạn đang dư thừa cân nặng nhiều so với chiều cao hiện có nên cần đi khám Bác sỹ, cần điều chỉnh lại chế độ ǎn uống và
+          tăng cường hoạt động thể lực để giảm cân, đưa chỉ số sức khỏe (BMI) về mức bình thường.
+        </span>
+      </p>
+      <p style="margin-bottom: 8px;">
+        <strong>- <span style="padding-left: 10px;">Chế độ ǎn:</span></strong>
+      </p>
+      <p style="margin-left: 25px; margin-bottom: 8px; width: 98%;">
+        + <span style="padding-left: 10px;">Cần giảm lượng tinh bột từ cơm, bánh mì, xôi/nếp, nui, mì, mì gói…</span>
+      </p>
+      <p style="margin-left: 25px; margin-bottom: 8px;">
+        +
+        <span style="padding-left: 10px;"
+          >Giảm thức ăn ngọt (như bánh kẹo, snack, nước ngọt, chè, kem, kể cả trái cây ngọt…); giảm thức ăn béo (như các món
+          chiên/rán, quay, nước cốt dừa, thịt hộp, xúc xích, lạp xưởng, bơ, mỡ, thịt ba chỉ, thịt mỡ, da động vật, đồ lòng…). Chọn
+          thịt cá nạc, nên ăn cá nhiều hơn thịt. Nên ăn các món luộc, hấp, nướng hay rau trộn.</span
+        >
+      </p>
+      <p style="margin-left: 25px; margin-bottom: 8px;">
+        +
+        <span style="padding-left: 10px;"
+          >Nên dùng sản phẩm dành cho người thừa cân béo phì như sữa tách béo, không đường, sữa chua ít hoặc không đường.</span
+        >
+      </p>
+      <p style="margin-left: 25px; margin-bottom: 8px;">
+        +
+        <span style="padding-left: 10px;">Tăng ăn rau củ, trái cây ít ngọt như củ sắn, táo, dưa hấu, mận, ổi, thanh long...</span>
+      </p>
+      <p style="margin-left: 25px; margin-bottom: 8px;">
+        +
+        <span style="padding-left: 10px;"
+          >Ăn chậm, nhai kỹ, không ăn quá no, không bỏ bữa, không để quá đói (vì sẽ ăn nhiều vào các bữa sau). Hạn chế ăn sau 20
+          giờ. Uống 2 - 2,5 lít nước mỗi ngày.</span
+        >
+      </p>
+      <p style="margin-bottom: 8px;">
+        -
+        <span style="padding-left: 10px;">Vận động thường xuyên ít nhất 60 phút mỗi ngày. Ngủ sớm và ngủ đủ giấc.</span>
+      </p>
+      <p style="margin-bottom: 8px;">
+        -
+        <span style="padding-left: 10px;">Cần theo dõi cân nặng hàng tuần và khám sức khỏe định kỳ mỗi 3-6 tháng. </span>
+      </p>
+      <div class="recommend_article"></div>
+    </script>
+
+    <script type="text/html" id="beo_phi_do_3">
+      <p style="margin-bottom: 8px;">
+        -
+        <span style="padding-left: 10px;"
+          >Bạn đang dư thừa cân nặng nhiều so với chiều cao hiện có nên cần đi khám Bác sỹ, cần điều chỉnh lại chế độ ǎn uống và
+          tăng cường hoạt động thể lực để giảm cân, đưa chỉ số sức khỏe (BMI) về mức bình thường.
+        </span>
+      </p>
+      <p style="margin-bottom: 8px;">
+        <strong>- <span style="padding-left: 10px;">Chế độ ǎn:</span></strong>
+      </p>
+      <p style="margin-left: 25px; margin-bottom: 8px; width: 98%;">
+        +
+        <span style="padding-left: 10px;">Cần giảm lượng tinh bột từ cơm, bánh mì, xôi/ nếp, nui, mì, mì gói…</span>
+      </p>
+      <p style="margin-left: 25px; margin-bottom: 8px;">
+        +
+        <span style="padding-left: 10px;"
+          >Giảm thức ăn ngọt (như bánh kẹo, snack, nước ngọt, chè, kem, kể cả trái cây ngọt…); giảm thức ăn béo (như các món
+          chiên/rán, quay, nước cốt dừa, thịt hộp, xúc xích, lạp xưởng, bơ, mỡ, thịt ba chỉ, thịt mỡ, da động vật, đồ lòng…). Chọn
+          thịt cá nạc, nên ăn cá nhiều hơn thịt. Nên ăn các món luộc, hấp, nướng hay rau trộn.</span
+        >
+      </p>
+      <p style="margin-left: 25px; margin-bottom: 8px;">
+        +
+        <span style="padding-left: 10px;"
+          >Nên dùng sản phẩm dành cho người thừa cân béo phì, sữa tách béo, không đường, sữa chua ít hoặc không đường.</span
+        >
+      </p>
+      <p style="margin-left: 25px; margin-bottom: 8px;">
+        +
+        <span style="padding-left: 10px;">Tăng ăn rau củ, trái cây ít ngọt như củ sắn, táo, dưa hấu, mận, ổi, thanh long...</span>
+      </p>
+      <p style="margin-left: 25px; margin-bottom: 8px;">
+        +
+        <span style="padding-left: 10px;"
+          >Ăn chậm, nhai kỹ, không ăn quá no, không bỏ bữa, không để quá đói (vì sẽ ăn nhiều vào các bữa sau). Hạn chế ăn sau 20
+          giờ. Uống 2 - 2,5 lít nước mỗi ngày.</span
+        >
+      </p>
+      <p style="margin-bottom: 8px;">
+        -
+        <span style="padding-left: 10px;">Vận động thường xuyên ít nhất 60 phút mỗi ngày. Ngủ sớm và ngủ đủ giấc.</span>
+      </p>
+      <p style="margin-bottom: 8px;">
+        -
+        <span style="padding-left: 10px;">Cần theo dõi cân nặng hàng tuần và khám sức khỏe định kỳ mỗi 3-6 tháng. </span>
+      </p>
+      <div class="recommend_article"></div>
+    </script>
+
+    <script type="text/html" id="recommend_article_gay">
+      <legend>BÀI VIẾT KHUYẾN NGHỊ</legend>
+      <div class="owl-carousel owl-theme">
+          <div class="item">
+              <div class="box-item">
+                  <a href="smartqn1477006698://www.thehinh.com/2016/02/17-cach-tang-can-nhanh-cho-nguoi-gay.html">
+                      <img src="https://smart-quangninh.s3-ap-southeast-1.amazonaws.com/bmi/images/gay-1.png">
+                  </a>
+                  <h3>
+                      <a href="smartqn1477006698://www.thehinh.com/2016/02/17-cach-tang-can-nhanh-cho-nguoi-gay.html">17 Cách tăng cân nhanh chóng cho người gầy cỡ nào cũng béo</a>
+                  </h3>
+                  <p>thehinh.com</p>
+              </div>
+          </div>
+          <div class="item">
+              <div class="box-item">
+                  <a href="smartqn1477006698://eva.vn/lam-dep/cach-tang-can-nhanh-chong-hieu-qua-cho-nguoi-gay-c58a379935.html">
+                      <img src="https://smart-quangninh.s3-ap-southeast-1.amazonaws.com/bmi/images/gay-2.png">
+                  </a>
+                  <h3>
+                      <a href="smartqn1477006698://eva.vn/lam-dep/cach-tang-can-nhanh-chong-hieu-qua-cho-nguoi-gay-c58a379935.html">
+                          Cách tăng cân nhanh chóng, hiệu quả cho người gầy
+                      </a>
+                  </h3>
+                  <p>eva.vn</p>
+              </div>
+          </div>
+          <div class="item">
+              <div class="box-item">
+                  <a href="smartqn1477006698://vietnammoi.vn/8-cach-tu-nhien-giup-tang-can-hieu-qua-114998.htm">
+                      <img src="https://smart-quangninh.s3-ap-southeast-1.amazonaws.com/bmi/images/gay-3.png">
+                  </a>
+                  <h3>
+                      <a href="smartqn1477006698://vietnammoi.vn/8-cach-tu-nhien-giup-tang-can-hieu-qua-114998.htm">
+                          8 cách tự nhiên giúp tăng cân hiệu quả
+                      </a>
+                  </h3>
+                  <p>vietnammoi.vn</p>
+              </div>
+          </div>
+          <div class="item">
+              <div class="box-item">
+                  <a href="smartqn1477006698://vietnammoi.vn/5-thuc-pham-vang-giup-nguoi-gay-tang-can-nhanh-nhu-chop-160956.htm">
+                      <img src="https://smart-quangninh.s3-ap-southeast-1.amazonaws.com/bmi/images/gay-4.png">
+                  </a>
+                  <h3>
+                      <a href="smartqn1477006698://vietnammoi.vn/5-thuc-pham-vang-giup-nguoi-gay-tang-can-nhanh-nhu-chop-160956.htm">
+                          5 thực phẩm vàng giúp người gầy tăng cân 'nhanh như chớp'
+                      </a>
+                  </h3>
+                  <p>eva.vn</p>
+              </div>
+          </div>
+          <div class="item">
+              <div class="box-item">
+                  <a href="smartqn1477006698://kienthucdinhduong.vn/top-15-thuc-pham-tang-can-tu-nhien-danh-cho-nguoi-gay/">
+                      <img src="https://smart-quangninh.s3-ap-southeast-1.amazonaws.com/bmi/images/gay-5.png">
+                  </a>
+                  <h3><a>Top 15 thực phẩm tăng cân tự nhiên dành cho người gầy</a></h3>
+                  <p>kienthucdinhduong.vn</p>
+              </div>
+          </div>
+          <div class="item">
+              <div class="box-item">
+                  <a href="smartqn1477006698://dinhduong.online/cap-nhat-che-do-an-tang-can-tot-nhat-cho-nguoi-gay.html">
+                      <img src="https://smart-quangninh.s3-ap-southeast-1.amazonaws.com/bmi/images/gay-6.png">
+                  </a>
+                  <h3>
+                      <a href="smartqn1477006698://dinhduong.online/cap-nhat-che-do-an-tang-can-tot-nhat-cho-nguoi-gay.html">
+                          Cập nhật chế độ ăn tăng cân tốt nhất cho người gầy
+                      </a>
+                  </h3>
+                  <p>dinhduong.online</p>
+              </div>
+          </div>
+
+          <div class="item">
+              <div class="box-item">
+                  <a href="smartqn1477006698://news.zing.vn/3-thuc-don-giup-tang-20-kg-cho-nguoi-gay-post681345.html">
+                      <img src="https://smart-quangninh.s3-ap-southeast-1.amazonaws.com/bmi/images/gay-7.png">
+                  </a>
+                  <h3>
+                      <a href="smartqn1477006698://news.zing.vn/3-thuc-don-giup-tang-20-kg-cho-nguoi-gay-post681345.html">
+                          3 thực đơn giúp tăng 20 kg cho người gầy
+                      </a>
+                  </h3>
+                  <p>news.zing.vn</p>
+              </div>
+          </div>
+
+          <div class="item">
+              <div class="box-item">
+                  <a href="smartqn1477006698://suckhoedoisong.vn/6-bai-tap-the-duc-giup-tang-can-n146500.html">
+                      <img src="https://smart-quangninh.s3-ap-southeast-1.amazonaws.com/bmi/images/gay-8.png">
+                  </a>
+                  <h3>
+                      <a href="smartqn1477006698://suckhoedoisong.vn/6-bai-tap-the-duc-giup-tang-can-n146500.html">
+                          6 bài tập thể dục giúp tăng cân
+                      </a>
+                  </h3>
+                  <p>suckhoedoisong.vn</p>
+              </div>
+          </div>
+          <div class="item">
+              <div class="box-item">
+                  <a href="smartqn1477006698://thanhnien.vn/suc-khoe/3-chien-luoc-tang-can-nhanh-trong-mot-thang-85096.html">
+                      <img src="https://smart-quangninh.s3-ap-southeast-1.amazonaws.com/bmi/images/gay-9.png">
+                  </a>
+                  <h3>
+                      <a href="smartqn1477006698://thanhnien.vn/suc-khoe/3-chien-luoc-tang-can-nhanh-trong-mot-thang-85096.html">
+                          3 chiến lược tăng cân nhanh trong một tháng
+                      </a>
+                  </h3>
+                  <p>thanhnien.vn</p>
+              </div>
+          </div>
+      </div>
+      </div>
+    </script>
+
+    <script type="text/html" id="recommend_article_beo">
+      <legend>BÀI VIẾT KHUYẾN NGHỊ</legend>
+      <div class="owl-carousel owl-theme">
+          <div class="item">
+              <div class="box-item">
+                  <a href="smartqn1477006698://vietnammoi.vn/10-nguyen-lieu-vang-ket-hop-voi-tra-cuc-tot-cho-suc-khoe-giup-giam-can-an-toan-159594.htm">
+                      <img src="https://smart-quangninh.s3-ap-southeast-1.amazonaws.com/bmi/images/beo-1.png">
+                  </a>
+                  <h3>
+                      <a href="smartqn1477006698://vietnammoi.vn/10-nguyen-lieu-vang-ket-hop-voi-tra-cuc-tot-cho-suc-khoe-giup-giam-can-an-toan-159594.htm">10 nguyên liệu vàng kết hợp với trà cực tốt cho sức khỏe, giúp giảm cân an toàn</a>
+                  </h3>
+                  <p>vietnammoi.vn</p>
+              </div>
+          </div>
+          <div class="item">
+              <div class="box-item">
+                  <a href="smartqn1477006698://vietnammoi.vn/bat-ngo-voi-cong-dung-cua-giam-tao-loai-giam-nay-co-thuc-su-giup-giam-can-2019060522170675.htm">
+                      <img src="https://smart-quangninh.s3-ap-southeast-1.amazonaws.com/bmi/images/beo-2.png">
+                  </a>
+                  <h3>
+                      <a href="smartqn1477006698://vietnammoi.vn/bat-ngo-voi-cong-dung-cua-giam-tao-loai-giam-nay-co-thuc-su-giup-giam-can-2019060522170675.htm">
+                          Bất ngờ với công dụng của giấm táo, loại giấm này có thực sự giúp giảm cân?
+                      </a>
+                  </h3>
+                  <p>vietnammoi.vn</p>
+              </div>
+          </div>
+          <div class="item">
+              <div class="box-item">
+                  <a href="smartqn1477006698://bikipgiamcan.vn/chay-bo-giam-mo-bung/">
+                      <img src="https://smart-quangninh.s3-ap-southeast-1.amazonaws.com/bmi/images/beo-3.png">
+                  </a>
+                  <h3>
+                      <a href="smartqn1477006698://bikipgiamcan.vn/chay-bo-giam-mo-bung/">
+                          Chạy bộ giảm mỡ bụng thành công với 4 lưu ý quan trọng này!
+                      </a>
+                  </h3>
+                  <p>bikipgiamcan.vn</p>
+              </div>
+          </div>
+          <div class="item">
+              <div class="box-item">
+                  <a href="smartqn1477006698://bikipgiamcan.vn/bua-sang-giam-can/">
+                      <img src="https://smart-quangninh.s3-ap-southeast-1.amazonaws.com/bmi/images/beo-4.png">
+                  </a>
+                  <h3>
+                      <a href="smartqn1477006698://bikipgiamcan.vn/bua-sang-giam-can/">
+                          Bữa sáng giảm cân hoàn hảo với 8 loại thực phẩm này!
+                      </a>
+                  </h3>
+                  <p>bikipgiamcan.vn</p>
+              </div>
+          </div>
+          <div class="item">
+              <div class="box-item">
+                  <a href="smartqn1477006698://bikipgiamcan.vn/giam-can-bang-tao-trong-5-ngay-co-ngay-voc-dang-thon-gon/">
+                      <img src="https://smart-quangninh.s3-ap-southeast-1.amazonaws.com/bmi/images/beo-5.png">
+                  </a>
+                  <h3>
+                      <a href="smartqn1477006698://bikipgiamcan.vn/giam-can-bang-tao-trong-5-ngay-co-ngay-voc-dang-thon-gon/">
+                          Giảm cân bằng táo trong 5 ngày – có ngay vóc dáng thon gọn!
+                      </a>
+                  </h3>
+                  <p>bikipgiamcan.vn</p>
+              </div>
+          </div>
+          <div class="item">
+              <div class="box-item">
+                  <a href="smartqn1477006698://bikipgiamcan.vn/chat-beo-tich-tu-giua-nam-va-nu/">
+                      <img src="https://smart-quangninh.s3-ap-southeast-1.amazonaws.com/bmi/images/beo-6.png">
+                  </a>
+                  <h3>
+                      <a href="smartqn1477006698://bikipgiamcan.vn/chat-beo-tich-tu-giua-nam-va-nu/">
+                          Chất béo tích tụ khác nhau giữa nam và nữ như thế nào?
+                      </a>
+                  </h3>
+                  <p>bikipgiamcan.vn</p>
+              </div>
+          </div>
+
+          <div class="item">
+              <div class="box-item">
+                  <a href="smartqn1477006698://bikipgiamcan.vn/3-van-de-can-luu-y-de-giam-can-khoa-hoc/">
+                      <img src="https://smart-quangninh.s3-ap-southeast-1.amazonaws.com/bmi/images/beo-7.png">
+                  </a>
+                  <h3>
+                      <a href="smartqn1477006698://bikipgiamcan.vn/3-van-de-can-luu-y-de-giam-can-khoa-hoc/">
+                          3 vấn đề cần lưu ý để giảm cân khoa học
+                      </a>
+                  </h3>
+                  <p>bikipgiamcan.vn</p>
+              </div>
+          </div>
+
+          <div class="item">
+              <div class="box-item">
+                  <a href="smartqn1477006698://bikipgiamcan.vn/top-10-thuc-don-giam-can-trong-7-ngay/">
+                      <img src="https://smart-quangninh.s3-ap-southeast-1.amazonaws.com/bmi/images/beo-8.png">
+                  </a>
+                  <h3>
+                      <a href="smartqn1477006698://bikipgiamcan.vn/top-10-thuc-don-giam-can-trong-7-ngay/">
+                          Top 10 thực đơn giảm cân trong 7 ngày
+                      </a>
+                  </h3>
+                  <p>bikipgiamcan.vn</p>
+              </div>
+          </div>
+
+          <div class="item">
+              <div class="box-item">
+                  <a href="smartqn1477006698://bikipgiamcan.vn/luu-y-nhung-gi-khi-chon-nhin-an-giam-can/">
+                      <img src="https://smart-quangninh.s3-ap-southeast-1.amazonaws.com/bmi/images/beo-9.png">
+                  </a>
+                  <h3>
+                      <a href="smartqn1477006698://bikipgiamcan.vn/luu-y-nhung-gi-khi-chon-nhin-an-giam-can/">
+                          Lưu ý những gì khi chọn nhịn ăn giảm cân?
+                      </a>
+                  </h3>
+                  <p>bikipgiamcan.vn</p>
+              </div>
+          </div>
+
+
+      </div>
+      </div>
+    </script>
+
+    <script type="text/javascript">
+      let listData = [
+        {
+          value: 0,
+          text: 'Cân nặng thấp (gầy)',
+          id: 'gay',
+          recommend_id: 'recommend_article_gay',
+        },
+        {
+          value: 18.5,
+          text: 'Bình thường',
+          id: 'binh_thuong',
+          recommend_id: '',
+        },
+        {
+          value: 23,
+          text: 'Thừa cân',
+          id: 'thua_can',
+          recommend_id: 'recommend_article_beo',
+        },
+        {
+          value: 25,
+          text: 'Béo phì độ I',
+          id: 'beo_phi_do_1',
+          recommend_id: 'recommend_article_beo',
+        },
+        {
+          value: 30,
+          text: 'Béo phì độ II',
+          id: 'beo_phi_do_2',
+          recommend_id: 'recommend_article_beo',
+        },
+        {
+          value: 35,
+          text: 'Béo phì độ III',
+          id: 'beo_phi_do_3',
+          recommend_id: 'recommend_article_beo',
+        },
+      ];
+
+      function calBmi(bmi) {
+        let result = {};
+        for (let x in listData) {
+          if (bmi >= listData[x].value) {
+            result = listData[x];
+          } else {
+            break;
+          }
+        }
+        return result;
+      }
+
+      function init() {
+        $('#advice_text').html('');
+        $('#result-bmi').html('');
+        $('.bmi-fields').hide();
+        $('#div-result-bmi-20').hide();
+      }
+
+      $(document).ready(function () {
+        init();
+
+        $('#btn-check').click(function () {
+          console.log(1);
+          let weight = parseFloat($('#weight').val()) || 0;
+          let height = parseFloat($('#height').val()) || 0;
+
+          if (weight <= 0 || height <= 0) {
+            init();
+            return false;
+          }
+
+          let bmi = weight / (height * height);
+          bmi = parseFloat((bmi * 1e4).toFixed(2));
+          let resultBmi = calBmi(bmi);
+          // 10000, Béo phì độ III
+          let textResult = bmi + "<span class='sub'>" + resultBmi.text + '</span>';
+          $('#result-bmi').html(textResult);
+          $('.bmi-fields').show();
+          let id = resultBmi.id;
+          let adviceText = $('#' + id).html();
+          $('#advice_text').html(adviceText);
+          let recommendId = resultBmi.recommend_id;
+          if (recommendId.length) {
+            let recommendArticle = $('#' + recommendId).html();
+            $('#advice_text .recommend_article').html(recommendArticle);
+          }
+          $('#div-result-bmi-20').show();
+          $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: false,
+            responsive: {
+              0: {
+                items: 2,
+              },
+              600: {
+                items: 2,
+              },
+              1000: {
+                items: 2,
+              },
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

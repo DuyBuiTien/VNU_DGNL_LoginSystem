@@ -10,6 +10,7 @@ import {SettingScreen, TrungTamTroGiupScreen} from '../screens/profile';
 import AuthStack from './AuthStack';
 import AppBottomTab from './AppBottomTab';
 
+import {AccountScreen} from '../screens/auth';
 import {BDHC_UnitScreen, BDHC_UnitChildScreen} from '../screens/diaphuong';
 import {GalleryScreen, WebViewScreen, VideoScreen} from '../screens/common';
 import {MenuScreen} from '../screens/home';
@@ -65,12 +66,12 @@ import {
 import {TDTM_MainScreen, TDTM_DanhSachScreen} from '../screens/tongdaithongminh';
 
 import {
-  GD_MainScreen, 
-  GD_DiemDanhScreen, 
-  GD_SLLDTScreen, 
-  GD_TKB_MainScreen, 
-  GD_DD_MainScreen, 
-  GD_TB_MainScreen, 
+  GD_MainScreen,
+  GD_DiemDanhScreen,
+  GD_SLLDTScreen,
+  GD_TKB_MainScreen,
+  GD_DD_MainScreen,
+  GD_TB_MainScreen,
   GD_KSK_MainScreen,
   GD_XNP_MainScreen,
   GD_XNP_ListScreen,
@@ -89,7 +90,16 @@ import {NN_MainScreen} from '../screens/nongnghiep';
 
 import {TMDT_DanhMucScreen, TMDT_CSKDScreen, TMDT_MainScreen} from '../screens/giacathitruong';
 
-import {KNCC_MainScreen, KNCC_CM_MainScreen, KNCC_CB_MainScreen, KNCC_TDT_MainScreen} from '../screens/ketnoicungcau';
+import {
+  KNCC_MainScreen,
+  KNCC_CM_MainScreen,
+  KNCC_CB_MainScreen,
+  KNCC_TDT_MainScreen,
+  KNCC_DangTinScreen,
+  KNCC_CaNhanScreen,
+  KNCC_SanPham_ChiTietScreen,
+  KNCC_SanPham_DanhSachScreen,
+} from '../screens/ketnoicungcau';
 
 import {TT_MainScreen} from '../screens/tintuc';
 
@@ -132,6 +142,8 @@ const AppStack = () => {
     <Stack.Navigator headerMode={'none'} initialRouteName={'HomeScreen'}>
       <Stack.Screen name="TrangChuScreen" component={AppBottomTab} />
       <Stack.Screen name="AuthStack" component={AuthStack} />
+      <Stack.Screen name="AccountScreen" component={AccountScreen} />
+
       <Stack.Screen name="SettingScreen" component={SettingScreen} />
       <Stack.Screen name="TrungTamTroGiupScreen" component={TrungTamTroGiupScreen} />
       <Stack.Screen name="BDHC_UnitScreen" component={BDHC_UnitScreen} />
@@ -141,9 +153,7 @@ const AppStack = () => {
 
       <Stack.Screen name="WebViewScreen" component={WebViewScreen} />
       <Stack.Screen name="MenuScreen" component={MenuScreen} />
-
       <Stack.Screen name="TT_MainScreen" component={TT_MainScreen} />
-
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="ForgotScreen" component={ForgotScreen} />
       <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
@@ -231,17 +241,20 @@ const AppStack = () => {
       <Stack.Screen name="TMDT_MainScreen" component={TMDT_MainScreen} />
       <Stack.Screen name="TMDT_CSKDScreen" component={TMDT_CSKDScreen} />
 
-      <Stack.Screen name="KNCC_MainScreen" component={KNCC_MainScreen} />
-
       <Stack.Screen name="MT_MainScreen" component={MT_MainScreen} />
+
+      <Stack.Screen name="KNCC_MainScreen" component={KNCC_MainScreen} />
       <Stack.Screen name="KNCC_CM_MainScreen" component={KNCC_CM_MainScreen} />
       <Stack.Screen name="KNCC_CB_MainScreen" component={KNCC_CB_MainScreen} />
       <Stack.Screen name="KNCC_TDT_MainScreen" component={KNCC_TDT_MainScreen} />
+      <Stack.Screen name="KNCC_CaNhanScreen" component={KNCC_CaNhanScreen} />
+      <Stack.Screen name="KNCC_DangTinScreen" component={KNCC_DangTinScreen} />
+      <Stack.Screen name="KNCC_SanPham_ChiTietScreen" component={KNCC_SanPham_ChiTietScreen} />
+      <Stack.Screen name="KNCC_SanPham_DanhSachScreen" component={KNCC_SanPham_DanhSachScreen} />
 
       <Stack.Screen name="TTCQ_MainScreen" component={TTCQ_MainScreen} />
       <Stack.Screen name="TTCQ_DetailScreen" component={TTCQ_DetailScreen} />
       <Stack.Screen name="TTCQ_DetailVBScreen" component={TTCQ_DetailVBScreen} />
-
       <Stack.Screen name="TTCB_MainScreen" component={TTCB_MainScreen} />
       <Stack.Screen name="TTCB_DetailScreen" component={TTCB_DetailScreen} />
     </Stack.Navigator>

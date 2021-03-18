@@ -168,7 +168,7 @@ const PAHT_DetailScreen = () => {
       mediaguiarr.map((item) => {
         if (item.type === 'Image') {
           images_.push(item);
-          imagesurl_.push(item.url);
+          imagesurl_.push({url: item.url});
         } else if (item.type === 'Image') {
           videos_.push(item);
         }
@@ -181,7 +181,7 @@ const PAHT_DetailScreen = () => {
       mediakq.map((item) => {
         if (item.type === 'Image') {
           imageskq_.push(item);
-          imagesurlKQ_.push(item.url);
+          imagesurlKQ_.push({url: item.url});
         } else if (item.type === 'Image') {
           videoskq_.push(item);
         }
@@ -271,14 +271,16 @@ const PAHT_DetailScreen = () => {
           style: { color: '#2E2E2E', fontSize: 18, fontWeight: 'bold' },
         }}
         rightComponent={
-          <TouchableOpacity onPress={() => navigation.goBack()}>
+          {
+            /* <TouchableOpacity onPress={() => navigation.goBack()}>
             <Icon
               name={'note-add'}
               color="#2E2E2E"
               underlayColor="#00000000"
               containerStyle={{ paddingStart: 0, marginHorizontal: 10 }}
             />
-          </TouchableOpacity>
+          </TouchableOpacity> */
+          }
         }
         containerStyle={{ backgroundColor: '#FFF', justifyContent: 'space-around' }}
         centerContainerStyle={{}}
@@ -290,12 +292,12 @@ const PAHT_DetailScreen = () => {
               {data.linhvuc}
             </Text>
 
-            <Text style={{ color: '#ffca28', textTransform: 'uppercase', fontWeight: '600', marginHorizontal: 10 }}>
+            <Text style={{color: '#bf360c', textTransform: 'uppercase', fontWeight: '600', marginHorizontal: 10}}>
               {data.tinhtrang}
             </Text>
           </View>
-          <Text style={{ color: '#37474f', fontWeight: '600', margin: 10, fontSize: 16 }}>{data.tieude}</Text>
-          <View style={{ flexDirection: 'row', alignItems: 'center', padding: 5, flex: 1 }}>
+          <Text style={{color: '#37474f', fontWeight: 'bold', margin: 10, fontSize: 18}}>{data.tieude}</Text>
+          <View style={{flexDirection: 'row', alignItems: 'center', padding: 5, flex: 1}}>
             <FontAwesome name="map-marker-alt" color="#757575" size={16} />
             <Text style={{ color: '#757575', fontSize: 12, paddingStart: 10, flex: 1 }} numberOfLines={2}>
               {data.diachi}
