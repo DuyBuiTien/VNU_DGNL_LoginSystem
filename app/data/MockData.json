@@ -29,7 +29,8 @@
     "COVID_URL": "https://dieuhanh.ninhthuan.gov.vn/_layouts/15/TD.COVID.Service/WCFService.svc",
     "COVID2_URL": "https://smartcity.hanoi.gov.vn/Home",
     "TT_URL": "https://namdinh.gov.vn/_layouts/tandan.portal.api/service.svc",
-    "AMLICH_URL": ""
+    "AIC_URL": "https://api-smartapp.namdinh.gov.vn/api",
+    "NETVIEW_URL": "https://api.netview.vn"
   },
   "dataMenu": [
     {
@@ -135,6 +136,15 @@
       "count": 0,
       "icon": "user-shield",
       "color": "#FC7D2E",
+      "datamenu": []
+    },
+    {
+      "appid": "48",
+      "name": "Điểm tin",
+      "navigate": "DT_MainScreen",
+      "count": 0,
+      "icon": "newspaper",
+      "color": "#45A659",
       "datamenu": []
     },
     {
