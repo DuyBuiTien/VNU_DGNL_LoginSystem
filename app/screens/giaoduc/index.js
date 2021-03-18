@@ -12,5 +12,9 @@ import GD_BT_MainScreen from './GD_BT_MainScreen';
 import GD_BT_DK_MainScreen from './GD_BT_DK_MainScreen';
 import GD_BT_HDK_MainScreen from './GD_BT_HDK_MainScreen';
 import GD_BT_TK_MainScreen from './GD_BT_TK_MainScreen';
+import GD_HTAScreen from './GD_HTAScreen';
+import GD_HTAListScreen from './GD_HTAListScreen';
+import GD_HNScreen from './GD_HNScreen';
+import GD_HNListScreen from './GD_HNListScreen';
 
-export {GD_BT_TK_MainScreen, GD_BT_HDK_MainScreen, GD_BT_DK_MainScreen, GD_BT_MainScreen, GD_GY_MainScreen, GD_SLLDTScreen, GD_DiemDanhScreen, GD_MainScreen, GD_TKB_MainScreen, GD_DD_MainScreen, GD_TB_MainScreen, GD_KSK_MainScreen, GD_XNP_MainScreen, GD_XNP_ListScreen};
+export {GD_HNListScreen, GD_HNScreen,GD_HTAListScreen, GD_HTAScreen, GD_BT_TK_MainScreen, GD_BT_HDK_MainScreen, GD_BT_DK_MainScreen, GD_BT_MainScreen, GD_GY_MainScreen, GD_SLLDTScreen, GD_DiemDanhScreen, GD_MainScreen, GD_TKB_MainScreen, GD_DD_MainScreen, GD_TB_MainScreen, GD_KSK_MainScreen, GD_XNP_MainScreen, GD_XNP_ListScreen};

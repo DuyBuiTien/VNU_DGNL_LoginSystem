@@ -1,56 +1,61 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState, useEffect, useRef} from 'react';
-import {StyleSheet, Text, View, ScrollView, TouchableOpacity, ImageBackground, Image, TextInput, FlatList} from 'react-native';
-import {useSelector, useDispatch} from 'react-redux';
+import React, { useState, useEffect, useRef } from 'react';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, ImageBackground, Image, TextInput, FlatList } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
-import ScrollableTabView, {ScrollableTabBar} from 'react-native-scrollable-tab-view';
-import {useNavigation, useRoute} from '@react-navigation/native';
-import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
-import {Header, Icon} from 'react-native-elements';
-import {RectButton} from 'react-native-gesture-handler';
+import ScrollableTabView, { ScrollableTabBar } from 'react-native-scrollable-tab-view';
+import { useNavigation, useRoute } from '@react-navigation/native';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+import { Header, Icon } from 'react-native-elements';
+import { RectButton } from 'react-native-gesture-handler';
 
 import ActionSheet from '../../modules/react-native-actions-sheet';
 
 //import {Header} from '../../components';
-import {requestGET} from '../../services/Api';
+import { requestGET, requestPOST } from '../../services/Api';
+import { showMessage } from 'react-native-flash-message';
 
 const RenderBinhLuan = (props) => {
-  const {item, renderReply} = props;
+  const { item, setCommentParentID, refRBSheet } = props;
 
   if (!item.item.parentid) {
     return (
-      <View style={{padding: 5}}>
-        <View style={{backgroundColor: '#F5F5F5', borderRadius: 10, padding: 5}}>
-          <Text style={{fontSize: 14, color: 'black', fontWeight: '600'}}> {item.item.name}</Text>
-          <Text style={{color: '#212121', padding: 5}}>{item.item.content}</Text>
+      <View style={{ padding: 5 }}>
+        <View style={{ backgroundColor: '#F5F5F5', borderRadius: 10, padding: 5 }}>
+          <Text style={{ fontSize: 14, color: 'black', fontWeight: '600' }}> {item.item.name}</Text>
+          <Text style={{ color: '#212121', padding: 5 }}>{item.item.content}</Text>
         </View>
-        <View style={{flexDirection: 'row', padding: 5, alignItems: 'center'}}>
+        <View style={{ flexDirection: 'row', padding: 5, alignItems: 'center' }}>
           <Text style={{}}>{item.item.time}</Text>
-          <TouchableOpacity onPress={() => renderReply(item.item)}>
-            <Text style={{color: '#9E9E9E', paddingStart: 10, fontWeight: 'bold'}}>Phản hồi</Text>
+          <TouchableOpacity onPress={() => {
+            console.log(item)
+            setCommentParentID(item.item.id)
+            refRBSheet.current.setModalVisible(true);
+          }}>
+            <Text style={{ color: '#9E9E9E', paddingStart: 10, fontWeight: 'bold' }}>Phản hồi</Text>
           </TouchableOpacity>
         </View>
       </View>
     );
   } else {
     return (
-      <View style={{padding: 5, paddingStart: 30}}>
-        <View style={{backgroundColor: '#F5F5F5', borderRadius: 10, padding: 5}}>
-          <Text style={{fontSize: 14, color: 'black', fontWeight: '600'}}> {item.item.name}</Text>
-          <Text style={{color: '#212121', padding: 5}}>{item.item.content}</Text>
+      <View style={{ padding: 5, paddingStart: 30 }}>
+        <View style={{ backgroundColor: '#F5F5F5', borderRadius: 10, padding: 5 }}>
+          <Text style={{ fontSize: 14, color: 'black', fontWeight: '600' }}> {item.item.name}</Text>
+          <Text style={{ color: '#212121', padding: 5 }}>{item.item.content}</Text>
         </View>
-        <Text style={{padding: 5}}>{item.item.time}</Text>
+        <Text style={{ padding: 5 }}>{item.item.time}</Text>
       </View>
     );
   }
 };
 
 const RenderKetQuaXuLy = (props) => {
-  const {data, videoskq, imageskq, urlImagesKQ, navigation, dataService} = props;
+  const { data, videoskq, imageskq, urlImagesKQ, navigation, dataService } = props;
   return (
-    <View style={{paddingTop: 10, paddingBottom: 20}}>
-      <Text style={{textAlign: 'center', fontSize: 16, color: 'black'}}>{data.coquanxuly}</Text>
-      <View style={{flexDirection: 'row', alignItems: 'center', paddingTop: 10, paddingStart: 5, justifyContent: 'center'}}>
+    <View style={{ paddingTop: 10, paddingBottom: 20 }}>
+      <Text style={{ textAlign: 'center', fontSize: 16, color: 'black' }}>{data.coquanxuly}</Text>
+      <View style={{ flexDirection: 'row', alignItems: 'center', paddingTop: 10, paddingStart: 5, justifyContent: 'center' }}>
         <Text>{data.ngayxuly}</Text>
       </View>
       <View
@@ -66,8 +71,8 @@ const RenderKetQuaXuLy = (props) => {
       />
       <Text style={styles.text1}>{data.noidungxuly}</Text>
       <TouchableOpacity
-        style={{flex: 1}}
-        onPress={() => navigation.navigate('GalleryScreen', {images: urlImagesKQ, title: data.coquanxuly})}>
+        style={{ flex: 1 }}
+        onPress={() => navigation.navigate('GalleryScreen', { images: urlImagesKQ, title: data.coquanxuly })}>
         <FlatList
           //numColumns={width/100}
           contentContainerStyle={{}}
@@ -75,12 +80,12 @@ const RenderKetQuaXuLy = (props) => {
           renderItem={(item, index) => (
             <Image
               resizeMethod="resize"
-              style={{height: 100, width: 100, resizeMode: 'cover', aspectRatio: 1, margin: 10}}
-              source={{uri: `${item.item.url}`}}
+              style={{ height: 100, width: 100, resizeMode: 'cover', aspectRatio: 1, margin: 10 }}
+              source={{ uri: `${item.item.url}` }}
             />
           )}
           keyExtractor={(item, index) => index.toString()}
-          //ListEmptyComponent={this.showEmptyListView()}
+        //ListEmptyComponent={this.showEmptyListView()}
         />
       </TouchableOpacity>
       <FlatList
@@ -88,7 +93,7 @@ const RenderKetQuaXuLy = (props) => {
         renderItem={(item, index) => (
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate('VideoScreen', {url: `${dataService.HOST_PAHT}${item.item.url}`});
+              navigation.navigate('VideoScreen', { url: `${dataService.HOST_PAHT}${item.item.url}` });
             }}
             style={{
               height: 150,
@@ -102,7 +107,7 @@ const RenderKetQuaXuLy = (props) => {
           </TouchableOpacity>
         )}
         keyExtractor={(item, index) => index.toString()}
-        //ListEmptyComponent={this.showEmptyListView()}
+      //ListEmptyComponent={this.showEmptyListView()}
       />
     </View>
   );
@@ -113,7 +118,7 @@ const PAHT_DetailScreen = () => {
   const route = useRoute();
   const refRBSheet = useRef();
 
-  const {data} = route.params;
+  const { data } = route.params;
 
   const dataService = useSelector((state) => state.global.dataService);
   const [dataPA, setDataPA] = useState(null);
@@ -125,6 +130,7 @@ const PAHT_DetailScreen = () => {
   const [urlImagesKQ, setUrlImagesKQ] = useState([]);
   const [comments, setComments] = useState([]);
   const [commentinput, setCommentinput] = useState('');
+  const [commentParentID, setCommentParentID] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -134,9 +140,26 @@ const PAHT_DetailScreen = () => {
       const mediaguiarr = JSON.parse(data2.mediagui);
       const kqdgarr = JSON.parse(data2.ketquadanhgia);
       const mediakq = JSON.parse(data2.mediaketqua);
-      const commentarr = JSON.parse(data2.comment);
 
-      setComments(commentarr);
+      const commentarr = JSON.parse(data2.comment);
+      var parent = []
+      var child = []
+      commentarr.reverse()
+      commentarr.forEach((item, index) => {
+        if (!item.parentid) {
+          parent.push(item)
+        }
+        else {
+          child.push(item)
+        }
+      })
+      child.reverse()
+      child.forEach((item1) => {
+        index = parent.findIndex(x => x.id === Number(item1.parentid));
+        parent.splice(index + 1, 0, item1)
+      })
+
+      setComments(parent);
 
       let images_ = [];
       let imagesurl_ = [];
@@ -173,11 +196,53 @@ const PAHT_DetailScreen = () => {
       setDataPA(data2);
     };
     fetchData();
-    return () => {};
+    return () => { };
   }, []);
 
-  const sendComment = (input, id, parentId) => {
-    refRBSheet.current.setModalVisible(false);
+  const sendComment = async (input, id, parentId) => {
+    var userName1 = 'Người dùng'
+    if (input) {
+      var body = {
+        gopyid: id,
+        name: userName1,
+        comment: input,
+        parentid: parentId
+      }
+      var data = await requestPOST(`${dataService.PAHT_URL}/CommentByID`, body)
+      if (data) {
+        showMessage('Gửi bình luận thành công')
+        setCommentinput('')
+        const res = await requestGET(`${dataService.PAHT_URL}/ViewByID?id=${id}`);
+        var data2 = await JSON.parse(res);
+        const commentarr = JSON.parse(data2.comment);
+        var parent = []
+        var child = []
+        commentarr.reverse()
+        commentarr.forEach((item, index) => {
+          if (!item.parentid) {
+            parent.push(item)
+          }
+          else {
+            child.push(item)
+          }
+        })
+        child.reverse()
+        child.forEach((item1) => {
+          index = parent.findIndex(x => x.id === Number(item1.parentid));
+          parent.splice(index + 1, 0, item1)
+        })
+
+        setComments(parent);
+        refRBSheet.current.setModalVisible(false);
+      }
+      else {
+        showMessage('Xảy ra lỗi trong quá trình gửi')
+      }
+    }
+    else {
+      showMessage('Vui lòng nhập bình luận');
+    }
+
   };
 
   if (!dataPA) {
@@ -185,10 +250,10 @@ const PAHT_DetailScreen = () => {
   }
 
   return (
-    <View style={{flex: 1, backgroundColor: 'white'}}>
+    <View style={{ flex: 1, backgroundColor: 'white' }}>
       {/* <Header title="Chi tiết phản ánh" isStack={true} /> */}
       <Header
-        statusBarProps={{barStyle: 'dark-content', backgroundColor: 'transparent', translucent: true}}
+        statusBarProps={{ barStyle: 'dark-content', backgroundColor: 'transparent', translucent: true }}
         barStyle="dark-content"
         placement="left"
         leftComponent={
@@ -197,13 +262,13 @@ const PAHT_DetailScreen = () => {
               name={'arrow-back'}
               color="#2E2E2E"
               underlayColor="#00000000"
-              containerStyle={{paddingStart: 0, marginHorizontal: 10}}
+              containerStyle={{ paddingStart: 0, marginHorizontal: 10 }}
             />
           </TouchableOpacity>
         }
         centerComponent={{
           text: 'Chi tiết phản ánh',
-          style: {color: '#2E2E2E', fontSize: 18, fontWeight: 'bold'},
+          style: { color: '#2E2E2E', fontSize: 18, fontWeight: 'bold' },
         }}
         rightComponent={
           {
@@ -212,18 +277,18 @@ const PAHT_DetailScreen = () => {
               name={'note-add'}
               color="#2E2E2E"
               underlayColor="#00000000"
-              containerStyle={{paddingStart: 0, marginHorizontal: 10}}
+              containerStyle={{ paddingStart: 0, marginHorizontal: 10 }}
             />
           </TouchableOpacity> */
           }
         }
-        containerStyle={{backgroundColor: '#FFF', justifyContent: 'space-around'}}
+        containerStyle={{ backgroundColor: '#FFF', justifyContent: 'space-around' }}
         centerContainerStyle={{}}
       />
-      <View style={{flex: 1, padding: 10}}>
+      <View style={{ flex: 1, padding: 10 }}>
         <ScrollView showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
-          <View style={{flexDirection: 'row'}}>
-            <Text style={{color: '#78909c', textTransform: 'uppercase', fontWeight: '600', marginHorizontal: 10, flex: 1}}>
+          <View style={{ flexDirection: 'row' }}>
+            <Text style={{ color: '#78909c', textTransform: 'uppercase', fontWeight: '600', marginHorizontal: 10, flex: 1 }}>
               {data.linhvuc}
             </Text>
 
@@ -234,57 +299,57 @@ const PAHT_DetailScreen = () => {
           <Text style={{color: '#37474f', fontWeight: 'bold', margin: 10, fontSize: 18}}>{data.tieude}</Text>
           <View style={{flexDirection: 'row', alignItems: 'center', padding: 5, flex: 1}}>
             <FontAwesome name="map-marker-alt" color="#757575" size={16} />
-            <Text style={{color: '#757575', fontSize: 12, paddingStart: 10, flex: 1}} numberOfLines={2}>
+            <Text style={{ color: '#757575', fontSize: 12, paddingStart: 10, flex: 1 }} numberOfLines={2}>
               {data.diachi}
             </Text>
 
-            <Text style={{color: '#757575', fontSize: 12, paddingStart: 10}}>{data.thoigiangui}</Text>
+            <Text style={{ color: '#757575', fontSize: 12, paddingStart: 10 }}>{data.thoigiangui}</Text>
           </View>
 
-          <View style={{height: 0.5, backgroundColor: 'gray', margin: 10}} />
+          <View style={{ height: 0.5, backgroundColor: 'gray', margin: 10 }} />
 
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <FontAwesome name="user" size={16} />
-            <Text style={{fontSize: 16, fontWeight: '600', color: '#37474f', marginStart: 10}}> {dataPA.hovaten}</Text>
+            <Text style={{ fontSize: 16, fontWeight: '600', color: '#37474f', marginStart: 10 }}> {dataPA.hovaten}</Text>
           </View>
 
-          <View style={{paddingTop: 20, borderBottomColor: '#e8e8e8', borderBottomWidth: 0.8}}>
-            <Text style={{fontSize: 18, color: '#212121', fontWeight: 'bold'}}>Nội dung</Text>
-            <Text style={{fontSize: 16, color: '#424242', paddingTop: 10, paddingBottom: 20}}>{dataPA.noidung}</Text>
+          <View style={{ paddingTop: 20, borderBottomColor: '#e8e8e8', borderBottomWidth: 0.8 }}>
+            <Text style={{ fontSize: 18, color: '#212121', fontWeight: 'bold' }}>Nội dung</Text>
+            <Text style={{ fontSize: 16, color: '#424242', paddingTop: 10, paddingBottom: 20 }}>{dataPA.noidung}</Text>
           </View>
 
           {images && images.length > 0 && (
-            <View style={{paddingTop: 20, borderBottomColor: '#e8e8e8', borderBottomWidth: 0.8}}>
-              <Text style={{fontSize: 18, color: '#212121', fontWeight: 'bold'}}>Hình ảnh</Text>
+            <View style={{ paddingTop: 20, borderBottomColor: '#e8e8e8', borderBottomWidth: 0.8 }}>
+              <Text style={{ fontSize: 18, color: '#212121', fontWeight: 'bold' }}>Hình ảnh</Text>
               <TouchableOpacity
-                style={{flex: 1}}
-                onPress={() => navigation.navigate('GalleryScreen', {images: urlImages, title: dataPA.tieude})}>
+                style={{ flex: 1 }}
+                onPress={() => navigation.navigate('GalleryScreen', { images: urlImages, title: dataPA.tieude })}>
                 <FlatList
-                  //numColumns={width/100}
-                  contentContainerStyle={{}}
+                  numColumns={3}
+                  contentContainerStyle={{alignItems: 'center'}}
                   data={images}
                   renderItem={(item, index) => (
                     <Image
                       resizeMethod="resize"
-                      style={{height: 100, width: 100, resizeMode: 'cover', aspectRatio: 1, margin: 10}}
-                      source={{uri: `${item.item.url}`}}
+                      style={{ height: 100, width: 100, resizeMode: 'cover', aspectRatio: 1, margin: 10 }}
+                      source={{ uri: `${item.item.url}` }}
                     />
                   )}
                   keyExtractor={(item, index) => index.toString()}
-                  //ListEmptyComponent={this.showEmptyListView()}
+                //ListEmptyComponent={this.showEmptyListView()}
                 />
               </TouchableOpacity>
             </View>
           )}
           {videos && videos.length > 0 && (
-            <View style={{paddingTop: 20, borderBottomColor: '#e8e8e8', borderBottomWidth: 0.8, minHeight: 60}}>
-              <Text style={{fontSize: 18, color: '#212121', fontWeight: 'bold'}}>Video</Text>
+            <View style={{ paddingTop: 20, borderBottomColor: '#e8e8e8', borderBottomWidth: 0.8, minHeight: 60 }}>
+              <Text style={{ fontSize: 18, color: '#212121', fontWeight: 'bold' }}>Video</Text>
               <FlatList
                 data={videos}
                 renderItem={(item, index) => (
                   <TouchableOpacity
                     onPress={() => {
-                      navigation.navigate('VideoScreen', {url: `${dataService.HOST_PAHT}${item.item.url}`});
+                      navigation.navigate('VideoScreen', { url: `${dataService.HOST_PAHT}${item.item.url}` });
                     }}
                     style={{
                       height: 150,
@@ -298,16 +363,16 @@ const PAHT_DetailScreen = () => {
                   </TouchableOpacity>
                 )}
                 keyExtractor={(item, index) => index.toString()}
-                //ListEmptyComponent={this.showEmptyListView()}
+              //ListEmptyComponent={this.showEmptyListView()}
               />
             </View>
           )}
           {dataPA.latitude ? (
-            <View style={{paddingTop: 20, borderBottomColor: '#e8e8e8', borderBottomWidth: 0.8, minHeight: 60}}>
-              <Text style={{fontSize: 18, color: '#212121', fontWeight: 'bold'}}>Vị trí</Text>
+            <View style={{ paddingTop: 20, borderBottomColor: '#e8e8e8', borderBottomWidth: 0.8, minHeight: 60 }}>
+              <Text style={{ fontSize: 18, color: '#212121', fontWeight: 'bold' }}>Vị trí</Text>
               <MapView
                 provider={PROVIDER_GOOGLE}
-                style={{height: 200, marginVertical: 10}}
+                style={{ height: 200, marginVertical: 10 }}
                 region={{
                   latitude: parseFloat(dataPA.latitude),
                   longitude: parseFloat(dataPA.longitude),
@@ -316,17 +381,17 @@ const PAHT_DetailScreen = () => {
                 }}
                 showsUserLocation={true}>
                 <MapView.Marker
-                  coordinate={{latitude: parseFloat(dataPA.latitude), longitude: parseFloat(dataPA.longitude)}}
+                  coordinate={{ latitude: parseFloat(dataPA.latitude), longitude: parseFloat(dataPA.longitude) }}
                   draggable
                 />
               </MapView>
             </View>
           ) : (
-            <></>
-          )}
+              <></>
+            )}
 
-          <View style={{paddingTop: 20, borderBottomColor: '#e8e8e8', borderBottomWidth: 0.8}}>
-            <Text style={{fontSize: 18, color: '#212121', fontWeight: 'bold'}}>Kết quả xử lý</Text>
+          <View style={{ paddingTop: 20, borderBottomColor: '#e8e8e8', borderBottomWidth: 0.8 }}>
+            <Text style={{ fontSize: 18, color: '#212121', fontWeight: 'bold' }}>Kết quả xử lý</Text>
             <RenderKetQuaXuLy
               data={dataPA}
               videoskq={videoskq}
@@ -338,18 +403,19 @@ const PAHT_DetailScreen = () => {
           </View>
 
           {comments.length > 0 && (
-            <View style={{paddingTop: 20}}>
-              <Text style={{fontSize: 18, color: '#212121', fontWeight: 'bold'}}>Bình luận ({comments.length})</Text>
+            <View style={{ paddingTop: 20 }}>
+              <Text style={{ fontSize: 18, color: '#212121', fontWeight: 'bold' }}>Bình luận ({comments.length})</Text>
               <FlatList
                 data={comments}
-                renderItem={(item, index) => <RenderBinhLuan item={item} />}
+                renderItem={(item, index) => <RenderBinhLuan item={item} setCommentParentID={setCommentParentID} refRBSheet={refRBSheet} />}
                 keyExtractor={(item, index) => index.toString()}
               />
             </View>
           )}
           <RectButton
-            style={{flexDirection: 'row', alignItems: 'center'}}
+            style={{ flexDirection: 'row', alignItems: 'center' }}
             onPress={() => {
+              setCommentParentID(null)
               refRBSheet.current.setModalVisible(true);
             }}>
             <Text
@@ -378,9 +444,9 @@ const PAHT_DetailScreen = () => {
         onClose={() => {
           //setTypeBottomSheet(0);
         }}
-        containerStyle={{margin: 20}}
+        containerStyle={{ margin: 20 }}
         defaultOverlayOpacity={0.3}>
-        <View style={{flexDirection: 'row', alignItems: 'center', padding: 10}}>
+        <View style={{ flexDirection: 'row', alignItems: 'center', padding: 10 }}>
           <TextInput
             autoCapitalize="none"
             style={{
@@ -399,7 +465,7 @@ const PAHT_DetailScreen = () => {
             value={commentinput}
             underlineColorAndroid={'transparent'}
           />
-          <RectButton onPress={() => sendComment(commentinput, data.id, null)}>
+          <RectButton onPress={() => sendComment(commentinput, data.id, commentParentID)}>
             <FontAwesome name="paper-plane" color="#fb8c00" size={25} />
           </RectButton>
         </View>

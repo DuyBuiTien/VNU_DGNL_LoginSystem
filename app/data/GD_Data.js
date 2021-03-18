@@ -16,14 +16,14 @@ export const DANHMUC = [
   {
     id: 2,
     name: 'Học tiếng Anh',
-    navigate: 'GD_DiemDanhScreen',
+    navigate: 'GD_HTAScreen',
     icon: require('../Images/learn.png'),
     background: require('../Images/hoctienganh.jpg'),
   },
   {
     id: 3,
     name: 'Học nghề',
-    navigate: 'GD_DiemDanhScreen',
+    navigate: 'GD_HNScreen',
     icon: require('../Images/icon01.png'),
     background: require('../Images/jobs.png'),
   },

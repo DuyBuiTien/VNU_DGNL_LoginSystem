@@ -20,7 +20,7 @@ const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
   blacklist: [],
-  whitelist: ['global', 'dvc'],
+  whitelist: ['global', 'dvc', 'diemtin'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
