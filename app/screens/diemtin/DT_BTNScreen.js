@@ -12,6 +12,33 @@ import moment from 'moment';
 import 'moment/locale/vi';
 moment.locale('vi')
 
+const DB = [
+    {
+        "id": 1,
+        "name": "Báo dân trí",
+        "code_id": 22694,
+        "icon": "https://smart-namdinh.s3.amazonaws.com/news/icon/1579251005.8227956.png"
+    },
+    {
+        "id": 2,
+        "name": "VNExpress",
+        "code_id": 22691,
+        "icon": "https://smart-namdinh.s3.amazonaws.com/news/icon/1579251034.985394.png"
+    },
+    {
+        "id": 3,
+        "name": "Báo lao động",
+        "code_id": 22697,
+        "icon": "https://smart-namdinh.s3.amazonaws.com/news/icon/1579251053.7323692.png"
+    },
+    {
+        "id": 4,
+        "name": "Báo VietNamNet",
+        "code_id": 22700,
+        "icon": "https://smart-namdinh.s3.amazonaws.com/news/icon/1579251074.3374116.png"
+    }
+]
+
 
 const RenderItem = (props) => {
     const { item, navigation, index } = props;
@@ -49,6 +76,42 @@ const RenderItem1 = (props) => {
     );
 };
 
+const RenderItem2 = (props) => {
+    const {item, navigation, index, active, setActive} = props;
+    return (
+      <TouchableOpacity
+        onPress={() => {
+          setActive(item.id)
+        }}
+        style={{
+        flex: 1,
+        flexDirection: 'column',
+        marginEnd: 10,
+        marginVertical: 20,
+        backgroundColor: '#FFFFFF',
+        borderWidth: 1,
+        borderColor: active==item.id?'#f44336':'#e8e8e8',
+        padding: 20,
+        borderRadius: 10,
+        alignItems: 'center',
+        justifyContent: 'center'
+        }}>
+        <Image
+          resizeMode='stretch'
+          style={{
+            height: 60,
+            width: 150,
+          }}
+          imageStyle={{}}
+          source={{
+            uri: item.icon,
+          }}
+        >
+        </Image>
+      </TouchableOpacity>
+    );
+  };
+
 const RightComponent = (props) => {
     const { isList, setIsList } = props;
     return (
@@ -57,7 +120,7 @@ const RightComponent = (props) => {
 }
 
 
-const DT_TNScreen = () => {
+const DT_BTNScreen = () => {
     const navigation = useNavigation();
     const token = useSelector((state) => state.diemtin.token);
     const dataService = useSelector((state) => state.global.dataService);
@@ -66,8 +129,10 @@ const DT_TNScreen = () => {
     const [data, setData] = useState([]);
     const [isList, setIsList] = useState(false);
     const [footerLoad, setFooterLoad] = useState(false);
+    const [active, setActive] = useState(1);
 
-    const fetchData = async () => {
+    const fetchData = async (_active) => {
+        var topic = DB.find(i => i.id == active).code_id
         var date_from = moment().subtract(10, 'days').format('YYYY/MM/DD') + " " + moment().format('LTS')
         var date_to = moment().format('YYYY/MM/DD') + " " + moment().format('LTS')
         var body = {
@@ -76,13 +141,18 @@ const DT_TNScreen = () => {
             "order": 1,
             "page": page,
             "size": 10,
-            "topic": 918,
+            "topic": topic,
             "topic_id": 0,
-            "tree_node": 0
+            "tree_node": 9875
         }
         var data1 = await requestPOST_NETVIEW(`${dataService.NETVIEW_URL}/articles/search`, body, token)
         var data2 = data1.data ? data1.data.hits : []
-        setData([...data, ...data2]);
+        if(_active){
+            setData(data2)
+        }
+        else{
+            setData([...data, ...data2])
+        }
         setFooterLoad(false)
         setIsLoading(false)
     };
@@ -93,8 +163,23 @@ const DT_TNScreen = () => {
     }, []);
 
     useEffect(() => {
-        setFooterLoad(true)
-        fetchData();
+        setIsLoading(true);
+        if(page != 0){
+            setPage(0)
+            fetchData(true);
+        }
+        else{
+            fetchData(true);
+        }
+        return () => { };
+    }, [active]);
+
+
+    useEffect(() => {
+        if(page>0){
+            setFooterLoad(true)
+            fetchData();
+        }
         return () => { };
     }, [page]);
 
@@ -104,11 +189,22 @@ const DT_TNScreen = () => {
 
     return (
         <View style={{ flex: 1, backgroundColor: 'white' }}>
-            <Header title="Tin nóng trong nước" isStack={true} RightComponent={() => <RightComponent setIsList={setIsList} isList={isList} />} />
+            <Header title="Báo trong ngày" isStack={true} RightComponent={() => <RightComponent setIsList={setIsList} isList={isList} />} />
             {isLoading ? (
                 <ActivityIndicator size="large" color="#fb8c00" style={{ flex: 1, justifyContent: 'center' }} />
             ) : (
                     <View style={{ flex: 1 }}>
+                        <FlatList
+                            horizontal
+                            scrollEnabled
+                            scrollEventThrottle={16}
+                            showsHorizontalScrollIndicator={false}
+                            snapToAlignment="center"
+                            contentContainerStyle={{paddingHorizontal: 20}}
+                            data={DB}
+                            keyExtractor={(item, index) => index.toString()}
+                            renderItem={({item, index}) => <RenderItem2 item={item} index={index} navigation={navigation} active={active} setActive={setActive} />}
+                        />
                         <FlatList
                             data={data}
                             renderItem={({ item, index }) => isList?<RenderItem1 item={item} index={index} navigation={navigation} />:<RenderItem item={item} index={index} navigation={navigation} />}
@@ -127,7 +223,7 @@ const DT_TNScreen = () => {
     );
 };
 
-export default DT_TNScreen;
+export default DT_BTNScreen;
 
 const styles = StyleSheet.create({
     tabView: {

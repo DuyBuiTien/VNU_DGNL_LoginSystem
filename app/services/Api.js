@@ -92,14 +92,14 @@ export const requestPOST_NETVIEW = async (URL, data, token) => {
     data: data,
     timeout: 15000,
     headers: {
-      Authorization: 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtYWluX29yZ2FuaXphdGlvbl9pZCI6MzQxLCJ1c2VybmFtZSI6InJpa2tlaV91c2VyMSIsImN1c3RvbV9oaWdobGlnaHRfdG9waWNfbmV3cyI6MCwic3ViIjoiMTc1NDMiLCJleHAiOjE2NDc2NjA0MDEsImlhdCI6MTYxNjAzODAwMX0.lnLK7oTghXqZAGqHEO50r04wxEt3QX34s9VCGTIU770hIgMVYg6hxNkgAILmrI21CDiNADw7Ro3V0iwyBsUPtQ'
+      Authorization: `Bearer ${token}`
     }
   })
     .then(function (response) {
-      return response.data?response.data:{data: []};
+      return response.data?response.data:{data: null};
     })
     .catch(function (error) {
       console.log(error);
-      return {data: []};
+      return {data: null};
     });
 };

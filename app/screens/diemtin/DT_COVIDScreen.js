@@ -57,7 +57,7 @@ const RightComponent = (props) => {
 }
 
 
-const DT_TNScreen = () => {
+const DT_COVIDScreen = () => {
     const navigation = useNavigation();
     const token = useSelector((state) => state.diemtin.token);
     const dataService = useSelector((state) => state.global.dataService);
@@ -76,8 +76,8 @@ const DT_TNScreen = () => {
             "order": 1,
             "page": page,
             "size": 10,
-            "topic": 918,
-            "topic_id": 0,
+            "topic": 0,
+            "topic_id": 23804,
             "tree_node": 0
         }
         var data1 = await requestPOST_NETVIEW(`${dataService.NETVIEW_URL}/articles/search`, body, token)
@@ -104,7 +104,7 @@ const DT_TNScreen = () => {
 
     return (
         <View style={{ flex: 1, backgroundColor: 'white' }}>
-            <Header title="Tin nóng trong nước" isStack={true} RightComponent={() => <RightComponent setIsList={setIsList} isList={isList} />} />
+            <Header title="Tin về dịch COVID-19" isStack={true} RightComponent={() => <RightComponent setIsList={setIsList} isList={isList} />} />
             {isLoading ? (
                 <ActivityIndicator size="large" color="#fb8c00" style={{ flex: 1, justifyContent: 'center' }} />
             ) : (
@@ -127,7 +127,7 @@ const DT_TNScreen = () => {
     );
 };
 
-export default DT_TNScreen;
+export default DT_COVIDScreen;
 
 const styles = StyleSheet.create({
     tabView: {

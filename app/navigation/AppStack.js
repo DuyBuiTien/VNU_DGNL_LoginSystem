@@ -107,7 +107,7 @@ import {TTCQ_MainScreen, TTCQ_DetailScreen, TTCQ_DetailVBScreen} from '../screen
 
 import {TTCB_MainScreen, TTCB_DetailScreen} from '../screens/thongtincanhbao';
 
-import { DT_MainScreen, } from '../screens/diemtin'
+import { DT_MainScreen, DT_TNScreen, DT_QTScreen, DT_DetailScreen, DT_COVIDScreen, DT_BTNScreen } from '../screens/diemtin'
 
 import {
   YT_MainScreen,
@@ -183,6 +183,11 @@ const AppStack = () => {
       <Stack.Screen name="PAHT_CaNhanScreen" component={PAHT_CaNhanScreen} />
 
       <Stack.Screen name="DT_MainScreen" component={DT_MainScreen} />
+      <Stack.Screen name="DT_TNScreen" component={DT_TNScreen} />
+      <Stack.Screen name="DT_QTScreen" component={DT_QTScreen} />
+      <Stack.Screen name="DT_DetailScreen" component={DT_DetailScreen} />
+      <Stack.Screen name="DT_COVIDScreen" component={DT_COVIDScreen} />
+      <Stack.Screen name="DT_BTNScreen" component={DT_BTNScreen} />
 
       <Stack.Screen name="GD_MainScreen" component={GD_MainScreen} />
       <Stack.Screen name="GD_DiemDanhScreen" component={GD_DiemDanhScreen} />

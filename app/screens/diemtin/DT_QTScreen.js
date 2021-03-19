@@ -76,7 +76,7 @@ const DT_TNScreen = () => {
             "order": 1,
             "page": page,
             "size": 10,
-            "topic": 918,
+            "topic": 919,
             "topic_id": 0,
             "tree_node": 0
         }
@@ -104,7 +104,7 @@ const DT_TNScreen = () => {
 
     return (
         <View style={{ flex: 1, backgroundColor: 'white' }}>
-            <Header title="Tin nóng trong nước" isStack={true} RightComponent={() => <RightComponent setIsList={setIsList} isList={isList} />} />
+            <Header title="Tin nóng quốc tế" isStack={true} RightComponent={() => <RightComponent setIsList={setIsList} isList={isList} />} />
             {isLoading ? (
                 <ActivityIndicator size="large" color="#fb8c00" style={{ flex: 1, justifyContent: 'center' }} />
             ) : (
