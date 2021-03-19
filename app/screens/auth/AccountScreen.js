@@ -1,43 +1,108 @@
+/* eslint-disable react/self-closing-comp */
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState, useEffect} from 'react';
 import {shallowEqual, useSelector, useDispatch} from 'react-redux';
-import {View, StyleSheet, KeyboardAvoidingView, Platform} from 'react-native';
+import {View, StyleSheet, Keyboard} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5Pro';
 import {Text, Button, Input} from 'react-native-elements';
 import {showMessage} from 'react-native-flash-message';
+import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 
 import {Header} from 'react-native-elements';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 
 //import Base64 from '../../utils/Base64';
-import * as actions from '../../redux/dvc/Actions';
-import {ItemTextInput} from '../../components/common';
+import * as actions from '../../redux/global/Actions';
+import {ItemTextInput, ItemCheckbox} from '../../components/common';
+import {requestPOST} from '../../services/Api';
 
 const LoginScreen = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
+  const dataService = useSelector((state) => state.global.dataService);
 
-  const user = useSelector((state) => state.dvc.user);
+  const user = useSelector((state) => state.global.user);
+  console.log(user);
   const username = user.username;
   const password = user.password;
+  const token = user.token;
 
   const [isLoading, setIsLoading] = useState(false);
 
   const [fullname, setFullname] = useState(user.fullName);
   const [address, setAddress] = useState(user.address);
-  const [phonenumber, setPhonenumber] = useState(user.phonenumber);
+  const [phone, setPhonenumber] = useState(user.phoneNumber);
   const [email, setEmail] = useState(user.email);
-  const [cmnd, setCmnd] = useState(user.cmnd);
+  const [cmnd, setCmnd] = useState(user.personalid);
+  const [birthday, setBirthday] = useState(user.birthday);
+  const [sex, setSex] = useState(user.sex);
+  const [areaCode, setAreaCode] = useState(user.maXa);
+  const [personalid, setPersonalid] = useState(user.personalid);
+  const [personaliddate, setPersonaliddate] = useState(user.personaliddate);
+  const [personalidaddress, setPersonalidaddress] = useState(user.personalidaddress);
+  const [iscompany, setIscompany] = useState(user.iscompany);
+  const [companyname, setCompanyname] = useState(user.companyname);
+  const [companyaddress, setCompanyaddress] = useState(user.companyaddress);
+  const [companycode, setCompanycode] = useState(user.companycode);
 
   if (!user) {
-    navigation.navigate('DVC_MainScreen');
+    navigation.navigate('LoginScreen');
   }
 
   useEffect(() => {
     dispatch(actions.login(username, password));
     return () => {};
   }, []);
+
+  const handleOnpress = async () => {
+    Keyboard.dismiss();
+
+    if (username.length > 1 && fullname.length > 1) {
+      setIsLoading(true);
+      try {
+        var res = await requestPOST(`${dataService.CD_URL}/UpdateUser`, {
+          token: token,
+          address: address,
+          birthday: birthday,
+          email: email,
+          fullName: fullname,
+          phone: phone,
+          sex: sex,
+          personalid: personalid,
+          personaliddate: personalid,
+          personalidaddress: personalidaddress,
+          iscompany: iscompany,
+          companyname: companyname,
+          companyaddress: companyaddress,
+          companycode: companycode,
+        });
+        setIsLoading(false);
+        if (res && res.error.code === 200) {
+          showMessage({
+            message: 'Thành công',
+            description: 'Thông tin thay đổi thành công!',
+            type: 'success',
+          });
+          dispatch(actions.login(username, password)).then(() => {
+            //dispatch(actions.GetUserInfo());
+          });
+        }
+      } catch (error) {
+        showMessage({
+          message: 'Thất bại',
+          description: 'Vui lòng kiểm tra lại!',
+          type: 'danger',
+        });
+      }
+    } else {
+      showMessage({
+        message: 'Thất bại',
+        description: 'Vui lòng kiểm tra lại!',
+        type: 'danger',
+      });
+    }
+  };
 
   return (
     <View style={{flex: 1, backgroundColor: '#FFF'}}>
@@ -69,7 +134,7 @@ const LoginScreen = () => {
         <View style={{marginHorizontal: 15, marginTop: 20}}>
           <ItemTextInput value={username} placeholder={'Tên tài khoản'} icon={'user'} title={'Tên đăng nhập'} />
           <Button
-            onPress={() => navigation.navigate('DVC_Auth_ChangePasswordScreen')}
+            onPress={() => navigation.navigate('ChangePasswordScreen')}
             title={'Thay đổi mật khẩu'}
             titleStyle={{fontSize: 14, fontWeight: 'bold', color: '#EF6C00'}}
             buttonStyle={[styles.btDangNhap, {backgroundColor: '#FFF', borderWidth: 0.5, borderColor: 'gray'}]}
@@ -82,6 +147,23 @@ const LoginScreen = () => {
             title={'Họ và tên'}
           />
           <ItemTextInput
+            value={birthday}
+            onChangeText={setBirthday}
+            placeholder={'Ngày sinh'}
+            icon={'calendar-alt'}
+            title={'Ngày sinh'}
+          />
+          <ItemTextInput value={sex} onChangeText={setSex} placeholder={'Giới tính'} icon={'venus-mars'} title={'Giới tính'} />
+          <ItemTextInput
+            value={phone}
+            onChangeText={setPhonenumber}
+            placeholder={'Số điện thoại'}
+            icon={'phone'}
+            title={'Số điện thoại'}
+          />
+          <ItemTextInput value={email} placeholder={'Thư điện tử'} icon={'at'} title={'Thư điện tử'} />
+
+          <ItemTextInput
             value={cmnd}
             onChangeText={setCmnd}
             placeholder={'Giấy tờ tuỳ thân'}
@@ -89,14 +171,27 @@ const LoginScreen = () => {
             title={'Số giấy tờ tuỳ thân'}
           />
           <ItemTextInput
-            showEye={true}
-            value={phonenumber}
-            onChangeText={setPhonenumber}
-            placeholder={'Số iện thoại'}
-            icon={'phone'}
-            title={'Số điện thoại'}
+            value={personalid}
+            onChangeText={setPersonalid}
+            placeholder={'Số giấy tờ tuỳ thân'}
+            icon={'id-card'}
+            title={'Số giấy tờ tuỳ thân'}
           />
-          <ItemTextInput value={email} placeholder={'Thư điện tử'} icon={'at'} title={'Thư điện tử'} />
+          <ItemTextInput
+            value={personaliddate}
+            onChangeText={setPersonaliddate}
+            placeholder={'Ngày cấp'}
+            icon={'calendar-alt'}
+            title={'Ngày cấp'}
+          />
+          <ItemTextInput
+            value={personalidaddress}
+            onChangeText={setPersonalidaddress}
+            placeholder={'Nơi cấp'}
+            icon={'map-marker-alt'}
+            title={'Nơi cấp'}
+          />
+
           <ItemTextInput
             value={address}
             onChangeText={setAddress}
@@ -104,6 +199,36 @@ const LoginScreen = () => {
             icon={'map-marker-alt'}
             title={'Địa chỉ'}
           />
+
+          <ItemCheckbox isChecked={iscompany} setChecked={setIscompany} title={'Tôi là đại diện cho Doanh nghiệp/Nhà đầu tư'} />
+
+          {iscompany && (
+            <>
+              <ItemTextInput
+                value={companyname}
+                onChangeText={setCompanyname}
+                placeholder={'Tên doanh nghiệp'}
+                icon={'file-signature'}
+                title={'Tên doanh nghiệp'}
+              />
+              <ItemTextInput
+                value={companyaddress}
+                onChangeText={setCompanyaddress}
+                placeholder={'Địa chỉ'}
+                icon={'map-marker-alt'}
+                title={'Địa chỉ'}
+              />
+              <ItemTextInput
+                value={companycode}
+                onChangeText={setCompanycode}
+                placeholder={'Mã số thuế'}
+                icon={'file-alt'}
+                title={'Mã số thuế'}
+              />
+            </>
+          )}
+
+          <View style={{height: 30}}></View>
         </View>
       </ScrollView>
       <View
@@ -113,7 +238,10 @@ const LoginScreen = () => {
           backgroundColor: '#fff',
         }}>
         <Button
-          onPress={() => {}}
+          onPress={() => {
+            handleOnpress();
+          }}
+          loading={isLoading}
           title={'Cập nhật thông tin cá nhân'}
           titleStyle={{fontSize: 14, fontWeight: 'bold'}}
           containerStyle={{marginVertical: 10, marginHorizontal: 20}}

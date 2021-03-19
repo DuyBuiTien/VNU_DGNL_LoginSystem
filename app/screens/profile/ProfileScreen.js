@@ -30,7 +30,7 @@ const ProfileScreen = () => {
                 size="medium"
                 rounded
                 source={{
-                  uri: avatarUrl,
+                  uri: user.avatar,
                 }}
               />
               <View style={styles.view}>
@@ -41,7 +41,7 @@ const ProfileScreen = () => {
                       fontSize: 15,
                       color: '#353535',
                     }}>
-                    {'Tung Lam'}
+                    {user.fullName}
                   </Text>
                   <Text
                     style={{
@@ -50,7 +50,7 @@ const ProfileScreen = () => {
                       marginTop: 5,
                       color: '#52575D',
                     }}>
-                    0988171725
+                    {user.phoneNumber}
                   </Text>
                 </View>
                 <View
@@ -115,12 +115,20 @@ const ProfileScreen = () => {
             colorIconLeft="#757575"
           />
         ) : (
-          <ItemMenu
-            onPress={() => navigation.navigate('LoginScreen')}
-            title={'Đăng nhập'}
-            iconLeft="sign-in-alt"
-            colorIconLeft="#757575"
-          />
+          <>
+            <ItemMenu
+              onPress={() => navigation.navigate('LoginScreen')}
+              title={'Đăng nhập'}
+              iconLeft="sign-in-alt"
+              colorIconLeft="#757575"
+            />
+            <ItemMenu
+              onPress={() => navigation.navigate('RegisterScreen')}
+              title={'Đăng ký'}
+              iconLeft="registered"
+              colorIconLeft="#757575"
+            />
+          </>
         )}
 
         <Text style={{textAlign: 'center', margin: 10, color: '#818181'}}>

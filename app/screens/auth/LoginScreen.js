@@ -201,7 +201,7 @@ const LoginScreen = () => {
                 <SocialIcon style={{marginHorizontal: 20}} type="google" />
                 <SocialIcon style={{backgroundColor: 'black', marginHorizontal: 20}} type="apple" />
               </View>
-
+ */}
               <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: 40}}>
                 <TouchableOpacity onPress={() => navigation.navigate('RegisterScreen')}>
                   <Text style={{textAlign: 'center', color: '#2E529F', fontWeight: 'bold'}}>Đăng ký</Text>
@@ -209,7 +209,7 @@ const LoginScreen = () => {
                 <TouchableOpacity onPress={() => navigation.navigate('ForgotScreen')}>
                   <Text style={{textAlign: 'center', color: '#2E529F', fontWeight: 'bold', marginStart: 10}}>Quên mật khẩu</Text>
                 </TouchableOpacity>
-              </View> */}
+              </View>
             </View>
           </View>
 

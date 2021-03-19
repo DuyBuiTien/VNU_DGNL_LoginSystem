@@ -3,7 +3,7 @@ export const DANHMUC = [
     id: 10,
     name: 'Đi chung xe',
     navigate: 'GT_DICHUNGXE_MainScreen',
-    icon: require('../Images/boarding.png'),
+    icon: require('../Images/uber.png'),
     background: require('../Images/gt9.jpg'),
   },
   {
@@ -38,21 +38,21 @@ export const DANHMUC = [
     id: 10,
     name: 'Phạt nguội',
     navigate: 'GT_PHATNGUOI_MainScreen',
-    icon: require('../Images/traffic.png'),
+    icon: require('../Images/paper.png'),
     background: require('../Images/gt10.png'),
   },
   {
     id: 8,
     name: 'Sổ tay luật giao thông',
     navigate: 'GT_STLGT_MainScreen',
-    icon: require('../Images/traffic.png'),
+    icon: require('../Images/balance.png'),
     background: require('../Images/gt7.jpg'),
   },
   {
     id: 9,
     name: 'Ôn thi GPLX',
     navigate: 'GT_OTGPLX_MainScreen',
-    icon: require('../Images/traffic.png'),
+    icon: require('../Images/test.png'),
     background: require('../Images/gt11.jpg'),
   },
 ];

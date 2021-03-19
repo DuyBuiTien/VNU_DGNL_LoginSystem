@@ -44,6 +44,26 @@
       "datamenu": []
     },
     {
+      "appid": "2",
+      "menumain": 1,
+      "name": "Phản ánh hiện trường",
+      "navigate": "PAHT_MainScreen",
+      "count": 0,
+      "icon": "mail-bulk",
+      "color": "#5B63EC",
+      "datamenu": []
+    },
+    {
+      "appid": "8",
+      "menumain": 1,
+      "name": "Giáo dục",
+      "navigate": "GD_MainScreen",
+      "count": 0,
+      "icon": "graduation-cap",
+      "color": "#0271FE",
+      "datamenu": []
+    },
+    {
       "appid": "5",
       "menumain": 1,
       "name": "Tổng đài thông minh",
@@ -54,33 +74,16 @@
       "datamenu": []
     },
     {
-      "appid": "8",
-      "name": "Giáo dục",
-      "navigate": "GD_MainScreen",
-      "count": 0,
-      "icon": "graduation-cap",
-      "color": "#0271FE",
-      "datamenu": []
-    },
-    {
       "appid": "9",
       "name": "Y tế",
+      "menumain": 1,
       "navigate": "YT_MainScreen",
       "count": 0,
       "icon": "hospital-alt",
       "color": "#AF1A16",
       "datamenu": []
     },
-    {
-      "appid": "2",
-      "menumain": 1,
-      "name": "Phản ánh hiện trường",
-      "navigate": "PAHT_MainScreen",
-      "count": 0,
-      "icon": "mail-bulk",
-      "color": "#5B63EC",
-      "datamenu": []
-    },
+
     {
       "appid": "3",
       "menumain": 1,
@@ -93,7 +96,6 @@
     },
     {
       "appid": "4",
-      "menumain": 1,
       "name": "Thông tin cảnh báo",
       "navigate": "TTCB_MainScreen",
       "count": 0,
@@ -112,15 +114,6 @@
       "datamenu": []
     },
     {
-      "appid": "12",
-      "name": "Giá cả thị trường",
-      "navigate": "TMDT_MainScreen",
-      "count": 0,
-      "icon": "chart-line",
-      "color": "#2856C6",
-      "datamenu": []
-    },
-    {
       "appid": "13",
       "name": "Môi trường",
       "navigate": "MT_MainScreen",
@@ -131,6 +124,7 @@
     },
     {
       "appid": "14",
+      "menumain": 1,
       "name": "Thông tin từ chính quyền",
       "navigate": "TTCQ_MainScreen",
       "count": 0,
@@ -170,8 +164,8 @@
       "name": "Tin tuyển dụng",
       "navigate": "KNCC_MainScreen",
       "count": 0,
-      "icon": "shopping-basket",
-      "color": "#0E2D7D",
+      "icon": "briefcase",
+      "color": "#9e9d24",
       "datamenu": []
     },
     {
@@ -179,8 +173,8 @@
       "name": "Doanh nghiệp, nhà đầu tư",
       "navigate": "KNCC_MainScreen",
       "count": 0,
-      "icon": "shopping-basket",
-      "color": "#0E2D7D",
+      "icon": "building",
+      "color": "#1565c0",
       "datamenu": []
     }
   ]

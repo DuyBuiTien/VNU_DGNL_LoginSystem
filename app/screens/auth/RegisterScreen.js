@@ -9,7 +9,7 @@ import {Header} from 'react-native-elements';
 import {useNavigation} from '@react-navigation/native';
 
 //import Base64 from '../../utils/Base64';
-import {ItemTextInput} from '../../components/common';
+import {ItemTextInput, ItemCheckbox} from '../../components/common';
 import {requestPOST} from '../../services/Api';
 
 const LoginScreen = () => {
@@ -26,9 +26,17 @@ const LoginScreen = () => {
   const [address, setAddress] = useState('');
   const [phonenumber, setPhonenumber] = useState('');
   const [email, setEmail] = useState('');
-  const [cmnd, setCmnd] = useState('');
-  const [ngaysinh, setNgaysinh] = useState('');
+  const [birthday, setBirthday] = useState('');
   const [gioitinh, setGioitinh] = useState('');
+
+  const [areaCode, setAreaCode] = useState('');
+  const [personalid, setPersonalid] = useState('');
+  const [personaliddate, setPersonaliddate] = useState('');
+  const [personalidaddress, setPersonalidaddress] = useState('');
+  const [iscompany, setIscompany] = useState(false);
+  const [companyname, setCompanyname] = useState('');
+  const [companyaddress, setCompanyaddress] = useState('');
+  const [companycode, setCompanycode] = useState('');
 
   const handleOnpress = async () => {
     Keyboard.dismiss();
@@ -39,19 +47,27 @@ const LoginScreen = () => {
       fullname.length > 1 &&
       email.length > 1 &&
       phonenumber.length > 1 &&
-      password === password2 &&
-      password.match(/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{8,})$/)
+      password === password2
     ) {
       setIsLoading(true);
       try {
-        var res = await requestPOST(`${dataService.DVC_URL}/RegisterAccount`, {
-          username,
-          password,
-          fullname,
-          address,
-          phonenumber,
-          email,
-          cmnd,
+        var res = await requestPOST(`${dataService.CD_URL}/RegisterAccount`, {
+          account: username,
+          passWord: password,
+          address: address,
+          avatar: '',
+          birthday: birthday,
+          email: email,
+          fullName: fullname,
+          phone: phonenumber,
+          sex: gioitinh,
+          personalid: personalid,
+          personaliddate: personaliddate,
+          personalidaddress: personalidaddress,
+          iscompany: true,
+          companyname: companyname,
+          companyaddress: companyaddress,
+          companycode: companycode,
         });
         console.log(res);
         setIsLoading(false);
@@ -145,8 +161,8 @@ const LoginScreen = () => {
             title={'Họ và tên'}
           />
           <ItemTextInput
-            value={ngaysinh}
-            onChangeText={setNgaysinh}
+            value={birthday}
+            onChangeText={setBirthday}
             placeholder={'Ngày sinh'}
             icon={'calendar-alt'}
             title={'Ngày sinh'}
@@ -159,11 +175,25 @@ const LoginScreen = () => {
             title={'Giới tính'}
           />
           <ItemTextInput
-            value={cmnd}
-            onChangeText={setCmnd}
+            value={personalid}
+            onChangeText={setPersonalid}
             placeholder={'Giấy tờ tuỳ thân'}
             icon={'id-card'}
             title={'Số giấy tờ tuỳ thân (CMND/thẻ CCCD/giấy tờ tuỳ thân khác)'}
+          />
+          <ItemTextInput
+            value={personaliddate}
+            onChangeText={setPersonaliddate}
+            placeholder={'Ngày cấp'}
+            icon={'calendar-alt'}
+            title={'Ngày cấp)'}
+          />
+          <ItemTextInput
+            value={personalidaddress}
+            onChangeText={setPersonalidaddress}
+            placeholder={'Quê quán'}
+            icon={'map-marker-alt'}
+            title={'Quê quán'}
           />
           <ItemTextInput
             value={phonenumber}
@@ -180,6 +210,34 @@ const LoginScreen = () => {
             icon={'map-marker-alt'}
             title={'Địa chỉ'}
           />
+
+          <ItemCheckbox isChecked={iscompany} setChecked={setIscompany} title={'Tôi là đại diện cho Doanh nghiệp/Nhà đầu tư'} />
+
+          {iscompany && (
+            <>
+              <ItemTextInput
+                value={companyname}
+                onChangeText={setCompanyname}
+                placeholder={'Tên doanh nghiệp'}
+                icon={'file-signature'}
+                title={'Tên doanh nghiệp'}
+              />
+              <ItemTextInput
+                value={companyaddress}
+                onChangeText={setCompanyaddress}
+                placeholder={'Địa chỉ'}
+                icon={'map-marker-alt'}
+                title={'Địa chỉ'}
+              />
+              <ItemTextInput
+                value={companycode}
+                onChangeText={setCompanycode}
+                placeholder={'Mã số thuế'}
+                icon={'file-alt'}
+                title={'Mã số thuế'}
+              />
+            </>
+          )}
 
           <Button
             onPress={() => handleOnpress()}
