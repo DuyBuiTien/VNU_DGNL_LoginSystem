@@ -9,6 +9,7 @@ import HeaderBanDo from './HeaderBanDo';
 import BanDoFilter from './BanDoFilter';
 import ItemTextInput from './ItemTextInput';
 import SearchComponent from './SearchComponent';
+import ItemCheckbox from './ItemCheckbox';
 export {
   ItemTextInput,
   HeaderList,
@@ -21,4 +22,5 @@ export {
   HeaderBanDo,
   BanDoFilter,
   SearchComponent,
+  ItemCheckbox,
 };

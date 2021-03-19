@@ -10,7 +10,7 @@ import {SettingScreen, TrungTamTroGiupScreen} from '../screens/profile';
 import AuthStack from './AuthStack';
 import AppBottomTab from './AppBottomTab';
 
-import {AccountScreen} from '../screens/auth';
+import {AccountScreen, ChangePasswordScreen} from '../screens/auth';
 import {BDHC_UnitScreen, BDHC_UnitChildScreen} from '../screens/diaphuong';
 import {GalleryScreen, WebViewScreen, VideoScreen} from '../screens/common';
 import {MenuScreen} from '../screens/home';
@@ -107,7 +107,7 @@ import {TTCQ_MainScreen, TTCQ_DetailScreen, TTCQ_DetailVBScreen} from '../screen
 
 import {TTCB_MainScreen, TTCB_DetailScreen} from '../screens/thongtincanhbao';
 
-import { DT_MainScreen, } from '../screens/diemtin'
+import {DT_MainScreen} from '../screens/diemtin';
 
 import {
   YT_MainScreen,
@@ -143,6 +143,7 @@ const AppStack = () => {
       <Stack.Screen name="TrangChuScreen" component={AppBottomTab} />
       <Stack.Screen name="AuthStack" component={AuthStack} />
       <Stack.Screen name="AccountScreen" component={AccountScreen} />
+      <Stack.Screen name="ChangePasswordScreen" component={ChangePasswordScreen} />
 
       <Stack.Screen name="SettingScreen" component={SettingScreen} />
       <Stack.Screen name="TrungTamTroGiupScreen" component={TrungTamTroGiupScreen} />
