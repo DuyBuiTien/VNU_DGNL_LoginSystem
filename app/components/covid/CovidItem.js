@@ -1,12 +1,28 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {Component, useState, useEffect} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import {requestGET, requestPOST} from '../../services/Api';
+import {useNavigation} from '@react-navigation/native';
 
 const ItemCovid = (props) => {
+  const navigation = useNavigation();
+
   const {name, data} = props;
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() =>
+        navigation.navigate('WebViewScreen', {
+          data: {
+            title: 'Tình hình dịch Covid',
+            url: 'https://ncov.moh.gov.vn',
+            colorHeader: '#252C68',
+            hideBackForward: false,
+            textColor: 'white',
+          },
+        })
+      }>
       <View style={styles.name}>
         <Text style={styles.name_text}>{name}</Text>
       </View>
@@ -24,7 +40,7 @@ const ItemCovid = (props) => {
           <Text style={[styles.text2, {color: '#666666'}]}>{data.tvong.toLocaleString()}</Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
