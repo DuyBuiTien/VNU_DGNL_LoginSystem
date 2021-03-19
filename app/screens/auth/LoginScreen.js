@@ -172,7 +172,7 @@ const LoginScreen = () => {
                 title={'Mật khẩu'}
               />
 
-              {checkXacThucVanTay ? (
+              {/* {checkXacThucVanTay ? (
                 <TouchableOpacity
                   onPress={() => {
                     DangNhapBangVanTay();
@@ -184,7 +184,7 @@ const LoginScreen = () => {
                 </TouchableOpacity>
               ) : (
                 <></>
-              )}
+              )} */}
 
               <Button
                 onPress={() => handleLogin(username, password)}
@@ -194,7 +194,7 @@ const LoginScreen = () => {
                 buttonStyle={styles.btDangNhap}
               />
 
-              <Text style={{textAlign: 'center', color: '#A2A6A8', marginTop: 20}}>- Kết nối với tài khoản xã hội của bạn -</Text>
+              {/* <Text style={{textAlign: 'center', color: '#A2A6A8', marginTop: 20}}>- Kết nối với tài khoản xã hội của bạn -</Text>
 
               <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: 10}}>
                 <SocialIcon style={{marginHorizontal: 20}} type="facebook" />
@@ -209,7 +209,7 @@ const LoginScreen = () => {
                 <TouchableOpacity onPress={() => navigation.navigate('ForgotScreen')}>
                   <Text style={{textAlign: 'center', color: '#2E529F', fontWeight: 'bold', marginStart: 10}}>Quên mật khẩu</Text>
                 </TouchableOpacity>
-              </View>
+              </View> */}
             </View>
           </View>
 
