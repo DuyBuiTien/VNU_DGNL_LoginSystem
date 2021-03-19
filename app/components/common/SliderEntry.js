@@ -28,13 +28,12 @@ export default class SliderEntry extends Component {
 
     static propTypes = {
         data: PropTypes.object.isRequired,
-        even: PropTypes.bool,
         parallax: PropTypes.bool,
         parallaxProps: PropTypes.object
     };
 
     get image () {
-        const { data: { image_sources, title, published_timestamp }, parallax, parallaxProps, even } = this.props;
+        const { data: { image_sources, title, published_timestamp }, parallax, parallaxProps } = this.props;
 
         return (
             <ImageBackground
@@ -61,12 +60,13 @@ export default class SliderEntry extends Component {
     }
 
     render () {
-        const { data: { image_sources, title, published_timestamp }, even } = this.props;
+        const { data, navigation } = this.props;
 
         return (
             <TouchableOpacity
+            activeOpacity={1}
               style={styles.slideInnerContainer}
-              onPress={() => {  }}
+              onPress={() => { navigation.navigate('DT_DetailScreen', { item: this.props.data }) }}
               >
                 <View style={styles.shadow} />
                 <View style={[styles.imageContainer]}>

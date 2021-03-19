@@ -16,7 +16,7 @@ export const DANHMUC = [
     {
         id: 3,
         name: 'Báo trong ngày',
-        navigate: 'DT_TNScreen',
+        navigate: 'DT_BTNScreen',
         icon: require("../Images/newspaper.png"),
         background: require("../Images/paht2.jpg"),
     },

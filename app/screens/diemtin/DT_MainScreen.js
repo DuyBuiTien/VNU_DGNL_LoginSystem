@@ -47,22 +47,21 @@ const MainScreen = () => {
     );
 
     const fetchData = async () => {
-        var date_from = moment().subtract(10, 'days').format('L') + " " + moment().format('LTS')
-            var date_to = moment().format('L') + " " + moment().format('LTS')
-            var body = {
-                "date_from": date_from,
-                "date_to": date_to,
-                "order": 1,
-                "page": 0,
-                "size": 20,
-                "topic": 0,
-                "topic_id": 23804,
-                "tree_node": 0
-            }
-            var data1 = await requestPOST_NETVIEW(`${dataService.NETVIEW_URL}/articles/search`, body, token)
-            var data2 = data1.data ? data1.data.hits : []
-            console.log(data2)
-            setData(data2)
+        var date_from = moment().subtract(10, 'days').format('YYYY/MM/DD') + " " + moment().format('LTS')
+        var date_to = moment().format('YYYY/MM/DD') + " " + moment().format('LTS')
+        var body = {
+            "date_from": date_from,
+            "date_to": date_to,
+            "order": 1,
+            "page": 0,
+            "size": 20,
+            "topic": 0,
+            "topic_id": 23804,
+            "tree_node": 0
+        }
+        var data1 = await requestPOST_NETVIEW(`${dataService.NETVIEW_URL}/articles/search`, body, token)
+        var data2 = data1.data ? data1.data.hits : []
+        setData(data2)
     };
 
     useEffect(() => {
@@ -79,14 +78,14 @@ const MainScreen = () => {
                 <ActivityIndicator size="large" color="#fb8c00" style={{ flex: 1, justifyContent: 'center' }} />
             ) : (
                     <ScrollView>
-                        <View style={{flexDirection: 'row', justifyContent: 'space-between', padding: 10, paddingHorizontal: 20}}>
-                            <Text style={{fontWeight: 'bold', color: '#3B484E', fontSize: 16}}>Tin về dịch COVID-19</Text>
-                            <Text style={{color: '#9E9E9E'}}>Xem tất cả</Text>
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 10, paddingHorizontal: 20 }}>
+                            <Text style={{ fontWeight: 'bold', color: '#3B484E', fontSize: 16 }}>Tin về dịch COVID-19</Text>
+                            <TouchableOpacity onPress={() => navigation.navigate('DT_COVIDScreen')}><Text style={{ color: '#9E9E9E' }}>Xem tất cả</Text></TouchableOpacity>
                         </View>
-                        <View style={{ paddingTop: 10, backgroundColor: 'white'}}>
+                        <View style={{ paddingTop: 10, backgroundColor: 'white' }}>
                             <Carousel
                                 data={data}
-                                renderItem={({ item, index }) => <SliderEntry data={item} even={(index + 1) % 2 === 0} />}
+                                renderItem={({ item, index }) => <SliderEntry data={item} navigation={navigation} />}
                                 sliderWidth={sliderWidth}
                                 itemWidth={itemWidth}
                                 containerCustomStyle={styles.slider}
