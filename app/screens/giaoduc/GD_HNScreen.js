@@ -27,7 +27,7 @@ const RenderItem1 = (props) => {
           marginVertical: 20,
           backgroundColor: '#FFFFFF',
           shadowOpacity: 0.2,
-        shadowRadius: 5,
+        shadowRadius: 2,
         shadowColor: '#000',
         shadowOffset: { height: 0, width: 0 },
         borderRadius: 10

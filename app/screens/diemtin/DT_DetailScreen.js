@@ -46,7 +46,7 @@ const DT_DetailScreen = () => {
                         {data.image_sources ?
                             <Image resizeMode='cover' source={{ uri: data.image_sources[0] }} style={{ borderRadius: 5, height: 200, width: '100%', marginVertical: 10 }} />
                             : <></>}
-                        <Text style={{ lineHeight: 20 }}>{data.content ? data.content.replace(/\n/g, '\n\n') : ''}</Text>
+                        <Text style={{ lineHeight: 20, textAlign: 'justify' }}>{data.content ? data.content.replace(/\n/g, '\n\n') : ''}</Text>
                         <View style={{paddingBottom: 50}}>
                             <View style={{ flexDirection: 'row', padding: 10 }}>
                                 <Text style={{ fontWeight: '600', fontStyle: 'italic' }}>Tác giả:</Text>

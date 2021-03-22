@@ -10,7 +10,6 @@ export const requestGET = async (URL) => {
       return response.data;
     })
     .catch(function (error) {
-      console.log(error);
       return {data: []};
     });
 };
@@ -26,7 +25,6 @@ export const requestPOST = async (URL, data) => {
       return response.data;
     })
     .catch(function (error) {
-      console.log(error);
       return {data: []};
     });
 };
@@ -43,7 +41,6 @@ export const requestPOSTWSO2 = async (URL, data) => {
       return response.data;
     })
     .catch(function (error) {
-      console.log(error);
       return {data: []};
     });
 };
@@ -61,7 +58,6 @@ export const requestGET_AIC = async (URL) => {
       return response.data?response.data.results:{data: []};
     })
     .catch(function (error) {
-      console.log(error);
       return {data: []};
     });
 };
@@ -80,7 +76,6 @@ export const requestPOST_AIC = async (URL, data) => {
       return response.data?response.data.results:{data: []};
     })
     .catch(function (error) {
-      console.log(error);
       return {data: []};
     });
 };
@@ -99,7 +94,6 @@ export const requestPOST_NETVIEW = async (URL, data, token) => {
       return response.data?response.data:{data: null};
     })
     .catch(function (error) {
-      console.log(error);
       return {data: null};
     });
 };

@@ -11,84 +11,21 @@ import { Header } from '../../components';
 import { ItemMenuImage, BlockLogin } from '../../components/common';
 const windowWidth = Dimensions.get('window').width;
 
-const RenderItem1 = (props) => {
-    const { item, navigation } = props;
-    return (
-        <TouchableOpacity
-            onPress={() => {
-                navigation.navigate('VideoScreen', { url: item.source });
-            }}
-            style={{
-                flex: 1,
-                flexDirection: 'column',
-                width: windowWidth - 80,
-                marginEnd: 20,
-                marginStart: 5,
-                marginVertical: 20,
-                backgroundColor: '#FFFFFF',
-                shadowOpacity: 0.2,
-                shadowRadius: 2,
-                shadowColor: '#000',
-                shadowOffset: { height: 0, width: 0 },
-                borderRadius: 10
-            }}>
-            <ImageBackground
-                resizeMode="cover"
-                style={{
-                    height: 120,
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                }}
-                imageStyle={{ borderRadius: 5 }}
-                source={{
-                    uri: item.image,
-                }}
-            >
-                <View style={{ height: 40, width: 40, alignItems: 'center', justifyContent: 'center', borderRadius: 40, backgroundColor: '#fff' }}>
-                    <FontAwesome style={{ marginLeft: 5 }} name="play" size={20} color="#FF9800" />
-                </View>
-            </ImageBackground>
-            <View style={{ height: 80, padding: 10, justifyContent: 'space-between' }}>
-                <Text style={{ fontSize: 14 }} numberOfLines={2}>
-                    {item.title}
-                </Text>
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                        <FontAwesome name="eye" size={16} color="#9E9E9E" />
-                        <Text style={{ color: '#9E9E9E', fontSize: 12, paddingLeft: 10 }}>{item.view_quantity}</Text>
-                    </View>
-                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                        <FontAwesome name="clock" size={16} color="#9E9E9E" />
-                        <Text style={{ color: '#9E9E9E', fontSize: 12, paddingLeft: 10 }}>{item.created_at}</Text>
-                    </View>
-                </View>
-            </View>
-        </TouchableOpacity>
-    );
-};
-
 const RenderItem = (props) => {
     const { item, navigation } = props;
     return (
-        <View style={{ padding: 20, paddingRight: 0 }}>
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingRight: 20 }}>
-                <Text style={{ fontWeight: '600', flex: 1, paddingRight: 20 }}>{item.name}</Text>
-                <TouchableOpacity onPress={() => navigation.navigate('GD_HTAListScreen', { videos: item.videos, title: item.name })} style={{ flexDirection: 'row', alignItems: 'center' }}>
-                    <Text style={{ color: '#FF9800', paddingRight: 5 }}>Tất cả({item.videos ? item.videos.length : 0})</Text>
-                    <FontAwesome name='chevron-right' color='#FF9800' size={10} />
-                </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('DT_DetailScreen', { item: item })} style={{ padding: 10, paddingHorizontal: 20, flexDirection: index<3?'column':'row', borderRadius: 5, justifyContent: 'space-between', alignItems: 'flex-start' }}>
+
+            <ImageBackground resizeMode='cover' source={item.image_sources?{ uri: item.image_sources[0] }:require('../../Images/nn1.jpg')} imageStyle={{borderRadius: 10}} style={{ borderRadius: 5, height: index<3?200:100, width: index<3?'100%':100 }} />
+            <View style={{ flex: 1, marginLeft: index<3?0:10, borderBottomColor: '#e8e8e8', borderBottomWidth: index<3?0:1, paddingBottom: 10, alignSelf: 'stretch' }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 10 }}><Text numberOfLines={2} style={{ fontSize: 16, flex: 1, paddingRight: 10, fontWeight: '600' }}>{item.title}</Text></View>
+                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                    <Text style={{ color: '#757575', fontSize: 12 }}>{moment(item.published_timestamp).fromNow()}</Text>
+                    <FontAwesome name='dot-circle' color='#757575' size={8} style={{ marginHorizontal: 10 }} />
+                    <Text style={{ color: '#757575', fontSize: 12 }}>{item.author_display_name}</Text>
+                </View>
             </View>
-            <FlatList
-                horizontal
-                scrollEnabled
-                scrollEventThrottle={16}
-                showsHorizontalScrollIndicator={false}
-                snapToAlignment="center"
-                data={item.videos}
-                keyExtractor={(item, index) => index.toString()}
-                renderItem={({ item, index }) => <RenderItem1 item={item} index={index} navigation={navigation} />}
-            />
-        </View>
+        </TouchableOpacity>
     )
 }
 
@@ -104,8 +41,8 @@ const GD_HTAScreen = () => {
 
     const fetchData = async () => {
         setIsLoading(true);
-        var data1 = await requestGET_AIC(`${dataService.AIC_URL}/englishes/level`)
-        var data2 = data1.data ? data1.data : []
+        var data1 = await requestGET_AIC(`${dataService.NN_URL}/getListdanhmucgiacathitruong`)
+        var data2 = data1 ? data1 : []
         if (data2.length > 0) {
             setData(data2)
             setActive(0)
@@ -114,8 +51,8 @@ const GD_HTAScreen = () => {
     };
     const fetchCourse = async () => {
         setIsLoadingCourse(true);
-        var data1 = await requestGET_AIC(`${dataService.AIC_URL}/englishes/lesson?level=${data[active].name}`)
-        var data2 = data1.data ? data1.data : []
+        var data1 = await requestGET_AIC(`${dataService.AIC_URL}/getListgiacathitruong?page=1&?perpage=100&&idlist=${data[active].ID}`)
+        var data2 = data1 ? data1 : []
         setDataCourse(data2)
         setIsLoadingCourse(false);
     };
@@ -134,7 +71,7 @@ const GD_HTAScreen = () => {
 
     return (
         <View style={{ flex: 1, backgroundColor: 'white' }}>
-            <Header title="Học tiếng anh" isStack={true} />{isLoading ? (
+            <Header title="Giá cả thị trường" isStack={true} />{isLoading ? (
                 <ActivityIndicator size="large" color="#fb8c00" style={{ flex: 1, justifyContent: 'center' }} />
             ) : (
                     <View style={{ flex: 1 }}>
@@ -149,7 +86,7 @@ const GD_HTAScreen = () => {
                                 tabBarInactiveTextColor={'#BDBDBD'}
                                 tabBarUnderlineStyle={{ backgroundColor: '#f44336', height: 2 }}>
                                 {data.map((i) => (
-                                    <View tabLabel={i.name} style={styles.tabView}>
+                                    <View tabLabel={i.ten_danhmuc} style={styles.tabView}>
                                         {isLoadingCourse ?
                                             <ActivityIndicator size="large" color="#fb8c00" style={{ flex: 1, justifyContent: 'center' }} />
                                             :
