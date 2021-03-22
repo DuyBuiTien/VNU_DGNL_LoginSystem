@@ -46,11 +46,15 @@ export const login = (username, password) => (dispatch) => {
   return requestFromServer
     .Login(dataService.CD_URL, username, password)
     .then((response) => {
-      let tmp = {...response.data.data};
-      tmp.username = username;
-      tmp.password = password;
+      if (response.data.data) {
+        let tmp = {...response.data.data};
+        tmp.username = username;
+        tmp.password = password;
 
-      dispatch(actions.loginSuccess(tmp));
+        dispatch(actions.loginSuccess(tmp));
+      } else {
+        dispatch(actions.catchError({error: 'Đăng nhập không thành công', callType: callTypes.action}));
+      }
     })
     .catch((error) => {
       error.clientMessage = "Can't find datadonvi";

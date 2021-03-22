@@ -10,6 +10,8 @@ import BanDoFilter from './BanDoFilter';
 import ItemTextInput from './ItemTextInput';
 import SearchComponent from './SearchComponent';
 import ItemCheckbox from './ItemCheckbox';
+import ItemDateInput from './ItemDateInput';
+
 export {
   ItemTextInput,
   HeaderList,
@@ -23,4 +25,5 @@ export {
   BanDoFilter,
   SearchComponent,
   ItemCheckbox,
+  ItemDateInput,
 };
