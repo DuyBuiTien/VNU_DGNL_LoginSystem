@@ -6,7 +6,7 @@ import {Header, Icon} from 'react-native-elements';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 
 const HeaderBanDo = (props) => {
-  const {navigation, title} = props;
+  const {navigation, title, typeView, setTypeView} = props;
   return (
     <Header
       statusBarProps={{barStyle: 'dark-content', backgroundColor: 'transparent', translucent: true}}
@@ -28,14 +28,13 @@ const HeaderBanDo = (props) => {
       }}
       rightComponent={
         <View style={{flexDirection: 'row'}}>
-          <FontAwesome name={'search'} color="#2E2E2E" containerStyle={{paddingStart: 0}} onPress={() => {}} size={20} />
+          <FontAwesome name={'search'} color="#2E2E2E" style={{marginHorizontal: 10}} onPress={() => {}} size={22} />
           <FontAwesome
-            style={{marginStart: 10}}
-            name={true ? 'map-marked-alt' : 'list'}
+            name={typeView ? 'map-marked-alt' : 'list'}
             color="#2E2E2E"
-            containerStyle={{paddingStart: 0}}
-            onPress={() => {}}
-            size={20}
+            style={{marginHorizontal: 10}}
+            onPress={() => setTypeView(!typeView)}
+            size={22}
           />
         </View>
       }

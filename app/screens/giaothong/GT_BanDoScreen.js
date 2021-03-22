@@ -19,6 +19,7 @@ const MainScreen = () => {
   const navigation = useNavigation();
   const user = useSelector((state) => state.global.user);
   const [indexCamera, setIndexCamera] = useState(-1);
+  const [dataBanDo, setDataBanDo] = useState([]);
 
   const dataFilter = [
     {
@@ -41,6 +42,11 @@ const MainScreen = () => {
       icon: 'money-bill',
       name: 'Trạm thu phí',
     },
+    {
+      id: 4,
+      icon: 'money-bill',
+      name: 'Điểm đen giao thông',
+    },
   ];
 
   const [region, setRegion] = useState({
@@ -55,6 +61,8 @@ const MainScreen = () => {
   const goForward = () => {
     carouselRef.current.snapToNext();
   };
+
+  const fetchData = async () => {};
 
   useEffect(() => {
     setEntries(DANHMUC);

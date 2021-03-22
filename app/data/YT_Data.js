@@ -9,7 +9,36 @@ export const DANHMUC = [
   {
     id: 1,
     name: 'Bản đồ y tế',
-    navigate: 'YT_BanDoScreen',
+    navigate: 'BanDoScreen',
+    data: {
+      dataFilter: [
+        {
+          id: 0,
+          icon: 'gas-pump',
+          name: 'Trạm xăng',
+        },
+        {
+          id: 1,
+          icon: 'parking',
+          name: 'Điểm đỗ xe',
+        },
+        {
+          id: 2,
+          icon: 'tools',
+          name: 'Gara ô tô',
+        },
+        {
+          id: 3,
+          icon: 'money-bill',
+          name: 'Trạm thu phí',
+        },
+        {
+          id: 4,
+          icon: 'money-bill',
+          name: 'Điểm đen giao thông',
+        },
+      ],
+    },
     icon: require('../Images/map.png'),
     background: require('../Images/gt2.jpg'),
   },
