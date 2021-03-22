@@ -33,11 +33,10 @@ const ItemDanhBa = (props) => {
         }}>
         <Avatar
           size="large"
-          title=""
           onPress={() => console.log('Works!')}
           activeOpacity={0.7}
           source={{
-            uri: data.AnhDaiDien,
+            uri: 'https://qldv.hanhchinhcong.net' + data.HotLine.image,
           }}
           overlayContainerStyle={{backgroundColor: '#E7E7E7'}}
         />

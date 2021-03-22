@@ -1,5 +1,12 @@
 export const DANHMUC = [
   {
+    id: 0,
+    name: 'Bản đồ du lịch',
+    navigate: 'DL_DSD_Screen',
+    icon: require('../Images/map.png'),
+    background: require('../Images/dl1.jpg'),
+  },
+  {
     id: 1,
     name: 'Danh sách đường',
     navigate: 'DL_DSD_Screen',

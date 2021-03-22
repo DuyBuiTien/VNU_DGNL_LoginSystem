@@ -45,7 +45,7 @@ const MainScreen = () => {
           },
           icon: item.Icon,
           iconClass: item.IconClass,
-          background: item.Image && item.Image.length > 5 ? item.Image : require('../../Images/tdtm0.jpg'),
+          background: item.Image && item.Image.length > 5 ? {uri: item.Image} : require('../../Images/tdtm0.jpg'),
         });
       });
     setDANHMUC(data2);

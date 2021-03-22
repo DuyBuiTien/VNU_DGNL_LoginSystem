@@ -14,7 +14,7 @@ import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 
 //import Base64 from '../../utils/Base64';
 import * as actions from '../../redux/global/Actions';
-import {ItemTextInput, ItemCheckbox} from '../../components/common';
+import {ItemTextInput, ItemCheckbox, ItemDateInput} from '../../components/common';
 import {requestPOST} from '../../services/Api';
 
 const LoginScreen = () => {
@@ -132,7 +132,12 @@ const LoginScreen = () => {
 
       <ScrollView showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
         <View style={{marginHorizontal: 15, marginTop: 20}}>
-          <ItemTextInput value={username} placeholder={'Tên tài khoản'} icon={'user'} title={'Tên đăng nhập'} />
+          <ItemTextInput
+            value={username}
+            placeholder={'Số điện thoại đăng nhập'}
+            icon={'user'}
+            title={'Số điện thoại đăng nhập'}
+          />
           <Button
             onPress={() => navigation.navigate('ChangePasswordScreen')}
             title={'Thay đổi mật khẩu'}
@@ -146,7 +151,7 @@ const LoginScreen = () => {
             icon={'user'}
             title={'Họ và tên'}
           />
-          <ItemTextInput
+          <ItemDateInput
             value={birthday}
             onChangeText={setBirthday}
             placeholder={'Ngày sinh'}
@@ -177,7 +182,7 @@ const LoginScreen = () => {
             icon={'id-card'}
             title={'Số giấy tờ tuỳ thân'}
           />
-          <ItemTextInput
+          <ItemDateInput
             value={personaliddate}
             onChangeText={setPersonaliddate}
             placeholder={'Ngày cấp'}

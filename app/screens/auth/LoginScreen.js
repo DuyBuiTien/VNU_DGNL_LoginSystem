@@ -29,9 +29,14 @@ import * as actions from '../../redux/global/Actions';
 
 const LoginScreen = () => {
   const navigation = useNavigation();
+  const user = useSelector((state) => state.global.user);
 
   const dispatch = useDispatch();
   const dataApp = useSelector((state) => state.global.dataApp);
+
+  if (user && user.token) {
+    navigation.navigate('TrangChuScreen');
+  }
 
   const {actionsLoading, error} = useSelector(
     (state) => ({
@@ -113,7 +118,7 @@ const LoginScreen = () => {
 
     dispatch(actions.login(username_, password_)).then(() => {
       //dispatch(actions.GetUserInfo());
-      navigation.navigate('TrangChuScreen');
+      //navigation.navigate('TrangChuScreen');
     });
   };
 
