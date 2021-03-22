@@ -30,7 +30,8 @@
     "COVID2_URL": "https://smartcity.hanoi.gov.vn/Home",
     "TT_URL": "https://namdinh.gov.vn/_layouts/tandan.portal.api/service.svc",
     "AIC_URL": "https://api-smartapp.namdinh.gov.vn/api",
-    "NETVIEW_URL": "https://api.netview.vn"
+    "NETVIEW_URL": "https://api.netview.vn",
+    "NN_URL": "https://qldv.hanhchinhcong.net/_vti_bin/XtmNnService.svc/nnapi"
   },
   "dataMenu": [
     {
@@ -177,9 +178,9 @@
     {
       "appid": "41",
       "name": "Doanh nghiệp, nhà đầu tư",
-      "navigate": "KNCC_MainScreen",
+      "navigate": "DNNDT_MainScreen",
       "count": 0,
-      "icon": "shopping-basket",
+      "icon": "briefcase",
       "color": "#0E2D7D",
       "datamenu": []
     }

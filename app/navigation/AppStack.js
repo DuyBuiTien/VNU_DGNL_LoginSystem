@@ -103,6 +103,21 @@ import {
 
 import {TT_MainScreen} from '../screens/tintuc';
 
+import {
+  DNNDT_MainScreen, 
+  DNNDT_CSDLLScreen, 
+  DNNDT_CSDLLDetailScreen, 
+  DNNDT_TTTTLDScreen,
+  DNNDT_TTTTLDDetailScreen,
+  DNNDT_DAKGDTScreen,
+  DNNDT_DAKGDT_LVScreen,
+  DNNDT_DAKGDT_ListScreen,
+  DNNDT_DAKGDT_DetailScreen,
+  DNNDT_DDDNNDTScreen,
+  DNNDT_DDDNNDTListScreen,
+  DNNDT_DDDNNDTDetailScreen,
+} from '../screens/doanhnghiep';
+
 import {TTCQ_MainScreen, TTCQ_DetailScreen, TTCQ_DetailVBScreen} from '../screens/thongtinchinhquyen';
 
 import {TTCB_MainScreen, TTCB_DetailScreen} from '../screens/thongtincanhbao';
@@ -174,6 +189,19 @@ const AppStack = () => {
       <Stack.Screen name="DVC_TKHS_CaNhan_DetailScreen" component={DVC_TKHS_CaNhan_DetailScreen} />
       <Stack.Screen name="DVC_TKHS_DanhGiaScreen" component={DVC_TKHS_DanhGiaScreen} />
       <Stack.Screen name="DVC_TKHS_DanhGiaDVCScreen" component={DVC_TKHS_DanhGiaDVCScreen} />
+
+      <Stack.Screen name="DNNDT_MainScreen" component={DNNDT_MainScreen} />
+      <Stack.Screen name="DNNDT_CSDLLScreen" component={DNNDT_CSDLLScreen} />
+      <Stack.Screen name="DNNDT_CSDLLDetailScreen" component={DNNDT_CSDLLDetailScreen} />
+      <Stack.Screen name="DNNDT_TTTTLDScreen" component={DNNDT_TTTTLDScreen} />
+      <Stack.Screen name="DNNDT_TTTTLDDetailScreen" component={DNNDT_TTTTLDDetailScreen} />
+      <Stack.Screen name="DNNDT_DAKGDTScreen" component={DNNDT_DAKGDTScreen} />
+      <Stack.Screen name="DNNDT_DAKGDT_LVScreen" component={DNNDT_DAKGDT_LVScreen} />
+      <Stack.Screen name="DNNDT_DAKGDT_ListScreen" component={DNNDT_DAKGDT_ListScreen} />
+      <Stack.Screen name="DNNDT_DAKGDT_DetailScreen" component={DNNDT_DAKGDT_DetailScreen} />
+      <Stack.Screen name="DNNDT_DDDNNDTScreen" component={DNNDT_DDDNNDTScreen} />
+      <Stack.Screen name="DNNDT_DDDNNDTListScreen" component={DNNDT_DDDNNDTListScreen} />
+      <Stack.Screen name="DNNDT_DDDNNDTDetailScreen" component={DNNDT_DDDNNDTDetailScreen} />
 
       <Stack.Screen name="PAHT_MainScreen" component={PAHT_MainScreen} />
       <Stack.Screen name="PAHT_TongHopScreen" component={PAHT_TongHopScreen} />
