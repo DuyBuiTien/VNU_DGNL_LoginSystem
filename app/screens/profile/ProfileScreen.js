@@ -91,14 +91,14 @@ const ProfileScreen = () => {
           </TouchableOpacity>
         )}
 
-        {user && (
+        {/* {user && (
           <ItemMenu
             onPress={() => navigation.navigate('DanhBaScreen')}
             title={'Danh bạ'}
             iconLeft="address-book"
             colorIconLeft="#757575"
           />
-        )}
+        )} */}
         {user && (
           <ItemMenu
             onPress={() => navigation.navigate('BookmarksScreen')}
