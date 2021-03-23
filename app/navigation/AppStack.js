@@ -143,12 +143,9 @@ import {BanDoScreen, ChiTietDiaDiemScreen} from '../screens/bando';
 
 import {TD_MainScreen, TD_DetailScreen} from '../screens/tuyendung';
 
-<<<<<<< HEAD
 import {AL_MainScreen} from '../screens/amlich';
-=======
 import {BookmarksScreen} from '../screens/bookmark';
 import {DanhBaScreen} from '../screens/danhba';
->>>>>>> ab4493163a6657c315351b7ab39eeec9ffbc2860
 
 const AppStack = () => {
   useEffect(() => {
