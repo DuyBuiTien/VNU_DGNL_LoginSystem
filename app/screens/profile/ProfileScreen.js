@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, Text, View, Switch, ScrollView, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View, Switch, ScrollView, TouchableOpacity, Share} from 'react-native';
 import {Avatar, Divider} from 'react-native-elements';
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
@@ -15,7 +15,22 @@ const ProfileScreen = () => {
   const user = useSelector((state) => state.global.user);
   const dispatch = useDispatch();
 
-  const avatarUrl = 'https://gravatar.com/avatar/b40f03bff7ca801821bb5e335fa6be2d?s=400&d=robohash&r=x';
+  const onShare = async () => {
+    try {
+      const result = await Share.share({
+        message: 'Tải App Smart Tân Dân tại https://www.tandan.com.vn/portal/home/default.aspx',
+      });
+      if (result.action === Share.sharedAction) {
+        if (result.activityType) {
+          // shared with activity type of result.activityType
+        } else {
+          // shared
+        }
+      } else if (result.action === Share.dismissedAction) {
+        // dismissed
+      }
+    } catch (error) {}
+  };
 
   return (
     <View style={{flex: 1, backgroundColor: '#F1F1F1'}}>
@@ -101,7 +116,9 @@ const ProfileScreen = () => {
         />
 
         <ItemMenu
-          onPress={() => navigation.navigate('')}
+          onPress={() => {
+            onShare();
+          }}
           title={'Giới thiệu bạn bè'}
           iconLeft="share-alt"
           colorIconLeft="#757575"
