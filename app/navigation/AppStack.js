@@ -63,7 +63,7 @@ import {
   DL_DSD_ListScreen,
 } from '../screens/dulich';
 
-import {TDTM_MainScreen, TDTM_DanhSachScreen} from '../screens/tongdaithongminh';
+import {TDTM_MainScreen, TDTM_DanhSachScreen, TDTM_YeuThichScreen} from '../screens/tongdaithongminh';
 
 import {
   GD_MainScreen,
@@ -104,9 +104,9 @@ import {
 import {TT_MainScreen} from '../screens/tintuc';
 
 import {
-  DNNDT_MainScreen, 
-  DNNDT_CSDLLScreen, 
-  DNNDT_CSDLLDetailScreen, 
+  DNNDT_MainScreen,
+  DNNDT_CSDLLScreen,
+  DNNDT_CSDLLDetailScreen,
   DNNDT_TTTTLDScreen,
   DNNDT_TTTTLDDetailScreen,
   DNNDT_DAKGDTScreen,
@@ -122,7 +122,7 @@ import {TTCQ_MainScreen, TTCQ_DetailScreen, TTCQ_DetailVBScreen} from '../screen
 
 import {TTCB_MainScreen, TTCB_DetailScreen} from '../screens/thongtincanhbao';
 
-import { DT_MainScreen, DT_TNScreen, DT_QTScreen, DT_DetailScreen, DT_COVIDScreen, DT_BTNScreen } from '../screens/diemtin'
+import {DT_MainScreen, DT_TNScreen, DT_QTScreen, DT_DetailScreen, DT_COVIDScreen, DT_BTNScreen} from '../screens/diemtin';
 
 import {
   YT_MainScreen,
@@ -139,9 +139,16 @@ import {
 
 import {MT_MainScreen} from '../screens/moitruong';
 
+import {BanDoScreen, ChiTietDiaDiemScreen} from '../screens/bando';
+
 import {TD_MainScreen, TD_DetailScreen} from '../screens/tuyendung';
 
+<<<<<<< HEAD
 import {AL_MainScreen} from '../screens/amlich';
+=======
+import {BookmarksScreen} from '../screens/bookmark';
+import {DanhBaScreen} from '../screens/danhba';
+>>>>>>> ab4493163a6657c315351b7ab39eeec9ffbc2860
 
 const AppStack = () => {
   useEffect(() => {
@@ -163,6 +170,8 @@ const AppStack = () => {
       <Stack.Screen name="AuthStack" component={AuthStack} />
       <Stack.Screen name="AccountScreen" component={AccountScreen} />
       <Stack.Screen name="ChangePasswordScreen" component={ChangePasswordScreen} />
+      <Stack.Screen name="BookmarksScreen" component={BookmarksScreen} />
+      <Stack.Screen name="DanhBaScreen" component={DanhBaScreen} />
 
       <Stack.Screen name="SettingScreen" component={SettingScreen} />
       <Stack.Screen name="TrungTamTroGiupScreen" component={TrungTamTroGiupScreen} />
@@ -170,6 +179,8 @@ const AppStack = () => {
       <Stack.Screen name="BDHC_UnitChildScreen" component={BDHC_UnitChildScreen} />
       <Stack.Screen name="GalleryScreen" component={GalleryScreen} />
       <Stack.Screen name="VideoScreen" component={VideoScreen} />
+      <Stack.Screen name="BanDoScreen" component={BanDoScreen} />
+      <Stack.Screen name="ChiTietDiaDiemScreen" component={ChiTietDiaDiemScreen} />
 
       <Stack.Screen name="WebViewScreen" component={WebViewScreen} />
       <Stack.Screen name="MenuScreen" component={MenuScreen} />
@@ -245,6 +256,7 @@ const AppStack = () => {
 
       <Stack.Screen name="TDTM_MainScreen" component={TDTM_MainScreen} />
       <Stack.Screen name="TDTM_DanhSachScreen" component={TDTM_DanhSachScreen} />
+      <Stack.Screen name="TDTM_YeuThichScreen" component={TDTM_YeuThichScreen} />
 
       <Stack.Screen name="GT_MainScreen" component={GT_MainScreen} />
       <Stack.Screen name="GT_VEXEVEMB_MainScreen" component={GT_VEXEVEMB_MainScreen} />

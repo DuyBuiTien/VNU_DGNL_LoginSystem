@@ -9,7 +9,31 @@ export const DANHMUC = [
   {
     id: 1,
     name: 'Bản đồ y tế',
-    navigate: 'YT_BanDoScreen',
+    navigate: 'BanDoScreen',
+    data: {
+      dataFilter: [
+        {
+          id: 0,
+          icon: 'hospital',
+          name: 'Bệnh viện',
+        },
+        {
+          id: 1,
+          icon: 'capsules',
+          name: 'Hiệu thuốc',
+        },
+        {
+          id: 2,
+          icon: 'stethoscope',
+          name: 'Phòng khám',
+        },
+        {
+          id: 3,
+          icon: 'briefcase-medical',
+          name: 'Trạm y tế',
+        },
+      ],
+    },
     icon: require('../Images/map.png'),
     background: require('../Images/gt2.jpg'),
   },

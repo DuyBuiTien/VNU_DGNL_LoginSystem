@@ -131,6 +131,7 @@ const DVC_TKHS_SearchScreen = () => {
     setTypeDialog('DonVi');
   };
   const ChonMucDo = () => {
+    console.log('CHON MUC DO');
     refRBSheet.current.setModalVisible(true);
     setTypeDialog('MucDo');
   };
@@ -222,7 +223,7 @@ const DVC_TKHS_SearchScreen = () => {
 
       <View>
         <ScrollView horizontal style={{marginBottom: 10, flexDirection: 'row'}} showsHorizontalScrollIndicator={false}>
-          <RectButton onPress={ChonDonVi} style={[styles.contentChon, {backgroundColor: '#F7F7F7'}]}>
+          <TouchableOpacity onPress={ChonDonVi} style={[styles.contentChon, {backgroundColor: '#F7F7F7'}]}>
             <Text style={{color: 'gray', marginEnd: 10, fontWeight: donvi.name !== '' ? 'bold' : 'normal'}} numberOfLines={1}>
               {donvi.name !== '' ? donvi.name : 'Đơn vị'}
             </Text>
@@ -230,8 +231,8 @@ const DVC_TKHS_SearchScreen = () => {
               name={donvi.name === '' ? 'chevron-down' : 'times-circle'}
               color={donvi.name === '' ? 'gray' : '#F26946'}
             />
-          </RectButton>
-          <RectButton
+          </TouchableOpacity>
+          <TouchableOpacity
             onPress={() => {
               if (donvi.name !== '') {
                 ChonLinhVuc();
@@ -251,8 +252,8 @@ const DVC_TKHS_SearchScreen = () => {
               name={linhvuc.name === '' ? 'chevron-down' : 'times-circle'}
               color={linhvuc.name === '' ? 'gray' : '#F26946'}
             />
-          </RectButton>
-          <RectButton onPress={ChonMucDo} style={[styles.contentChon, {backgroundColor: '#F7F7F7'}]}>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={ChonMucDo} style={[styles.contentChon, {backgroundColor: '#F7F7F7'}]}>
             <Text style={{color: 'gray', marginEnd: 10, fontWeight: mucdo.name !== '' ? 'bold' : 'normal'}} numberOfLines={1}>
               {mucdo.name !== '' ? mucdo.name : 'Tất cả'}
             </Text>
@@ -260,7 +261,7 @@ const DVC_TKHS_SearchScreen = () => {
               name={mucdo.name === '' ? 'chevron-down' : 'times-circle'}
               color={mucdo.name === '' ? 'gray' : '#F26946'}
             />
-          </RectButton>
+          </TouchableOpacity>
         </ScrollView>
       </View>
       <View style={{flex: 1}}>

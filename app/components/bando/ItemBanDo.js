@@ -7,13 +7,15 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const ItemBanDo = (props) => {
-  const {item, onPress} = props;
+  const {item, onPress, isList} = props;
 
   return (
-    <TouchableOpacity style={{flexDirection: 'row', backgroundColor: '#FFF', borderRadius: 8}} onPress={() => onPress(item)}>
+    <TouchableOpacity
+      style={{flexDirection: 'row', backgroundColor: '#FFF', borderRadius: isList ? 0 : 8, margin: isList ? 8 : 0}}
+      onPress={() => onPress(item)}>
       <ImageBackground
         resizeMethod="resize"
-        imageStyle={{borderBottomLeftRadius: 8, borderTopLeftRadius: 8}}
+        imageStyle={{borderBottomLeftRadius: isList ? 0 : 8, borderTopLeftRadius: isList ? 0 : 8}}
         style={{height: 120, width: 120, resizeMode: 'cover', aspectRatio: 1}}
         source={{uri: item.cover_url}}
       />

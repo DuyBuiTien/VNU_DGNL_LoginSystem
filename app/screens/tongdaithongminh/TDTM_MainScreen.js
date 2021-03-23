@@ -20,18 +20,20 @@ const MainScreen = () => {
     setIsLoading(true);
     const res = await requestGET(`${dataService.TDTM_URL}/categories`);
 
-    let data2 = [
-      {
+    let data2 = [];
+
+    if (user && user.token) {
+      data2.push({
         id: 0,
         name: 'Yêu thích',
-        navigate: 'TDTM_DanhSachScreen',
+        navigate: 'TDTM_YeuThichScreen',
         data: {
           type: 'yeuthich',
         },
         icon: require('../../Images/favorite.png'),
         background: require('../../Images/paht1.jpg'),
-      },
-    ];
+      });
+    }
 
     res.data &&
       res.data.map((item) => {
