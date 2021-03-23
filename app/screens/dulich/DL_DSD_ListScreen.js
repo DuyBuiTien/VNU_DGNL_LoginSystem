@@ -3,12 +3,9 @@ import React, {useState, useEffect} from 'react';
 import {StyleSheet, Text, View, ScrollView, TouchableOpacity, ImageBackground, Image, TextInput, FlatList} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
-import ScrollableTabView, {ScrollableTabBar} from 'react-native-scrollable-tab-view';
 import {useNavigation, useRoute} from '@react-navigation/native';
-import HTMLView from 'react-native-htmlview';
 
-import {Button} from 'react-native-elements';
-
+import {SearchComponent} from '../../components/common';
 import {Header} from '../../components';
 import {requestGET} from '../../services/Api';
 
@@ -72,7 +69,6 @@ const MainScreen = () => {
 
   const fetchData = async () => {
     const res = await requestGET(`${dataService.DL_URL}/GetDiemDuLichs?loaidulichids=${data.id}`);
-
     setDatafinal(res.data ? res.data : []);
   };
 
@@ -81,34 +77,10 @@ const MainScreen = () => {
     return () => {};
   }, []);
 
-  //return await axios.get(`${dataService.PAHT_URL}/GetByStatus?limit=20&status=${status}`)
-
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
       <Header title={`${data.name}`} isStack={true} />
-      <View style={{flexDirection: 'row', alignItems: 'center'}}>
-        <View
-          style={{
-            backgroundColor: '#EAEAEA',
-            flexDirection: 'row',
-            borderRadius: 8,
-            padding: 4,
-            margin: 10,
-            alignItems: 'center',
-            flex: 1,
-          }}>
-          <FontAwesome name="search" color="#787C7E" size={20} style={{marginHorizontal: 5}} />
-          <TextInput
-            placeholder={'Tìm kiếm'}
-            multiline={false}
-            onChangeText={(text) => setInputValue(text)}
-            value={inputValue}
-            selectionColor={'gray'}
-            clearButtonMode="always"
-            style={{flex: 1, }}
-          />
-        </View>
-      </View>
+      <SearchComponent value={inputValue} onChangeText={setInputValue} keyboardType={'web-search'} />
       <View style={{flex: 1}}>
         <FlatList
           contentContainerStyle={{flexGrow: 1}}

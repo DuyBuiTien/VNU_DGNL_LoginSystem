@@ -77,10 +77,20 @@ const ProfileScreen = () => {
         )}
 
         {user && (
-          <ItemMenu onPress={() => navigation.navigate('')} title={'Danh bạ'} iconLeft="address-book" colorIconLeft="#757575" />
+          <ItemMenu
+            onPress={() => navigation.navigate('DanhBaScreen')}
+            title={'Danh bạ'}
+            iconLeft="address-book"
+            colorIconLeft="#757575"
+          />
         )}
         {user && (
-          <ItemMenu onPress={() => navigation.navigate('')} title={'Đánh dấu'} iconLeft="bookmark" colorIconLeft="#757575" />
+          <ItemMenu
+            onPress={() => navigation.navigate('BookmarksScreen')}
+            title={'Đánh dấu'}
+            iconLeft="bookmark"
+            colorIconLeft="#757575"
+          />
         )}
 
         <ItemMenu

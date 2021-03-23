@@ -1,9 +1,8 @@
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable react-native/no-inline-styles */
-import React, {useRef, useState, useEffect} from 'react';
-import {StyleSheet, Text, View, ScrollView, ImageBackground, Dimensions, Platform, Image} from 'react-native';
+import React from 'react';
+import {StyleSheet, Text, View, ScrollView, Image} from 'react-native';
 import {useNavigation, useRoute} from '@react-navigation/native';
-import {useSelector, useDispatch} from 'react-redux';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {Header, Icon} from 'react-native-elements';

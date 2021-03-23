@@ -63,7 +63,7 @@ import {
   DL_DSD_ListScreen,
 } from '../screens/dulich';
 
-import {TDTM_MainScreen, TDTM_DanhSachScreen} from '../screens/tongdaithongminh';
+import {TDTM_MainScreen, TDTM_DanhSachScreen, TDTM_YeuThichScreen} from '../screens/tongdaithongminh';
 
 import {
   GD_MainScreen,
@@ -143,6 +143,9 @@ import {BanDoScreen, ChiTietDiaDiemScreen} from '../screens/bando';
 
 import {TD_MainScreen, TD_DetailScreen} from '../screens/tuyendung';
 
+import {BookmarksScreen} from '../screens/bookmark';
+import {DanhBaScreen} from '../screens/danhba';
+
 const AppStack = () => {
   useEffect(() => {
     messaging().onNotificationOpenedApp((remoteMessage) => {});
@@ -163,6 +166,8 @@ const AppStack = () => {
       <Stack.Screen name="AuthStack" component={AuthStack} />
       <Stack.Screen name="AccountScreen" component={AccountScreen} />
       <Stack.Screen name="ChangePasswordScreen" component={ChangePasswordScreen} />
+      <Stack.Screen name="BookmarksScreen" component={BookmarksScreen} />
+      <Stack.Screen name="DanhBaScreen" component={DanhBaScreen} />
 
       <Stack.Screen name="SettingScreen" component={SettingScreen} />
       <Stack.Screen name="TrungTamTroGiupScreen" component={TrungTamTroGiupScreen} />
@@ -245,6 +250,7 @@ const AppStack = () => {
 
       <Stack.Screen name="TDTM_MainScreen" component={TDTM_MainScreen} />
       <Stack.Screen name="TDTM_DanhSachScreen" component={TDTM_DanhSachScreen} />
+      <Stack.Screen name="TDTM_YeuThichScreen" component={TDTM_YeuThichScreen} />
 
       <Stack.Screen name="GT_MainScreen" component={GT_MainScreen} />
       <Stack.Screen name="GT_VEXEVEMB_MainScreen" component={GT_VEXEVEMB_MainScreen} />
