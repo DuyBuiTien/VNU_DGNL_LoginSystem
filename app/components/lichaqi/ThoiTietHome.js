@@ -86,14 +86,7 @@ const ThoiTietHome = () => {
       <View style={{flexDirection: 'row', padding: 5}}>
         <TouchableOpacity
           onPress={() =>
-            navigation.navigate('WebViewScreen', {
-              data: {
-                title: 'Lịch',
-                url: 'https://misc.zaloapp.com/calendar/v2/index.html',
-                colorHeader: '#FFFAF3',
-                hideBackForward: true,
-              },
-            })
+            navigation.navigate('AL_MainScreen')
           }
           style={{flex: 1 / 2, alignItems: 'center', justifyContent: 'center'}}>
           <LichHome />

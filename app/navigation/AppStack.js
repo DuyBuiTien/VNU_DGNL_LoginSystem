@@ -141,6 +141,8 @@ import {MT_MainScreen} from '../screens/moitruong';
 
 import {TD_MainScreen, TD_DetailScreen} from '../screens/tuyendung';
 
+import {AL_MainScreen} from '../screens/amlich';
+
 const AppStack = () => {
   useEffect(() => {
     messaging().onNotificationOpenedApp((remoteMessage) => {});
@@ -175,6 +177,8 @@ const AppStack = () => {
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="ForgotScreen" component={ForgotScreen} />
       <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
+
+      <Stack.Screen name="AL_MainScreen" component={AL_MainScreen} />
 
       <Stack.Screen name="DVC_MainScreen" component={DVC_MainScreen} />
       <Stack.Screen name="DVC_TKHS_SearchScreen" component={DVC_TKHS_SearchScreen} />
