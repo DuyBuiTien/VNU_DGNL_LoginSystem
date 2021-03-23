@@ -13,7 +13,7 @@ const RenderLeftActions = (progress, dragX) => {
   });
   return (
     <View style={styles.leftAction}>
-      <AnimatedIcon name="phone" size={30} color="#fff" style={[styles.actionIcon, {transform: [{scale}]}]} />
+      <AnimatedIcon name="phone" size={30} color="#e64a19" style={[styles.actionIcon, {transform: [{scale}]}]} />
     </View>
   );
 };
@@ -26,7 +26,7 @@ const RenderRightActions = (progress, dragX) => {
   });
   return (
     <View style={styles.rightAction}>
-      <AnimatedIcon name="favorite" size={30} color="#fff" style={[styles.actionIcon, {transform: [{scale}]}]} />
+      <AnimatedIcon name="favorite" size={30} color="#e64a19" style={[styles.actionIcon, {transform: [{scale}]}]} />
     </View>
   );
 };
@@ -64,7 +64,7 @@ export default SwipeableGmail;
 const styles = StyleSheet.create({
   leftAction: {
     flex: 1,
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#f5f5f5',
     justifyContent: 'flex-end',
     alignItems: 'center',
     flexDirection: 'row-reverse',
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
   rightAction: {
     alignItems: 'center',
     flexDirection: 'row',
-    backgroundColor: '#f44336',
+    backgroundColor: '#f5f5f5',
     flex: 1,
     justifyContent: 'flex-end',
   },

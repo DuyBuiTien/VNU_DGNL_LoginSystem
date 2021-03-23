@@ -190,7 +190,16 @@ const DVC_TKHS_Detail = () => {
             tabLabel="YÊN CẦU ĐIỀU KIỆN"
             style={{backgroundColor: 'transparent', flex: 1}}>
             <View style={{marginStart: 10, flex: 1}}>
-              <HTMLView value={dataThuTuc.yeucaudieukien} style={{margin: 10}} />
+              <HTMLView
+                value={dataThuTuc.yeucaudieukien}
+                style={{
+                  margin: 10,
+                  p: {
+                    textAlign: 'justify',
+                    margin: 0,
+                  },
+                }}
+              />
             </View>
           </ScrollView>
           <ScrollView
@@ -199,7 +208,16 @@ const DVC_TKHS_Detail = () => {
             tabLabel="CĂN CỨ PHÁP LÝ"
             style={{backgroundColor: 'transparent', flex: 1}}>
             <View style={{marginStart: 10, flex: 1}}>
-              <HTMLView value={dataThuTuc.cancuphaply} style={{margin: 10}} />
+              <HTMLView
+                value={dataThuTuc.cancuphaply}
+                style={{
+                  margin: 10,
+                  p: {
+                    textAlign: 'justify',
+                    margin: 0,
+                  },
+                }}
+              />
             </View>
           </ScrollView>
           {/* <View

@@ -1,11 +1,11 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, Text, View, Dimensions, TextInput} from 'react-native';
+import {StyleSheet, Text, View, Dimensions, TextInput, TouchableOpacity} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome5Pro';
 import ScrollableTabView, {ScrollableTabBar} from 'react-native-scrollable-tab-view';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-
+/* import {TouchableOpacity} from 'react-native-gesture-handler';
+ */
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
 
 const RenderItem = (props) => {

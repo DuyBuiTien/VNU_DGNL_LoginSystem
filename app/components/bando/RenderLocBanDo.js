@@ -9,7 +9,7 @@ import ScrollableTabView, {ScrollableTabBar} from 'react-native-scrollable-tab-v
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
 
 const RenderItem = (props) => {
-  const {item, handleCheckChieldElement} = props;
+  const {item, isMultiChoice, handleCheckChieldElement} = props;
   return (
     <TouchableOpacity
       style={{
@@ -22,7 +22,8 @@ const RenderItem = (props) => {
       }}
       onPress={() => handleCheckChieldElement(item)}
       key={item.code}>
-      <Icon name={item.checked ? 'dot-circle' : 'circle'} color={'gray'} size={20} />
+      <Icon name={!item.checked ? 'check-square' : 'square'} color={'gray'} size={20} />
+
       <Text
         style={{
           color: '#1e1e1e',
@@ -37,13 +38,18 @@ const RenderItem = (props) => {
 };
 
 const ChonDonVi = (props) => {
-  const {data, handleDongY, actionSheetRef, ModalHide, title} = props;
-  const [inputValue, setInputValue] = useState('');
+  const {data, handleDongY, actionSheetRef, ModalHide, title, isMultiChoice} = props;
 
-  const [listChoice, setListChoice] = useState(JSON.parse(JSON.stringify(data)));
+  const [listChoice, setListChoice] = useState(data);
 
   const handleCheckChieldElement = (itemChoice) => {
-    handleDongY(itemChoice);
+    let filteredDataSource = data.filter((item) => {
+      if (item.name === itemChoice.name) {
+        item.checked = !item.checked;
+      }
+      return item;
+    });
+    setListChoice(filteredDataSource);
   };
 
   return (
@@ -65,9 +71,9 @@ const ChonDonVi = (props) => {
 
         <TouchableOpacity
           onPress={() => {
-            handleDongY({name: '', code: ''});
+            handleDongY(listChoice);
           }}>
-          <Text style={{textAlign: 'center', fontSize: 14, color: '#161616'}}>Đặt lại</Text>
+          <Text style={{textAlign: 'center', fontSize: 14, color: '#161616'}}>Đồng ý</Text>
         </TouchableOpacity>
       </View>
 
@@ -78,7 +84,12 @@ const ChonDonVi = (props) => {
         onScrollAnimationEnd={() => actionSheetRef.current?.handleChildScrollEnd()}
         onMomentumScrollEnd={() => actionSheetRef.current?.handleChildScrollEnd()}>
         {listChoice.map((item) => (
-          <RenderItem item={item} handleCheckChieldElement={handleCheckChieldElement} key={item.code} />
+          <RenderItem
+            item={item}
+            handleCheckChieldElement={handleCheckChieldElement}
+            key={item.code}
+            isMultiChoice={isMultiChoice}
+          />
         ))}
       </ScrollView>
     </View>

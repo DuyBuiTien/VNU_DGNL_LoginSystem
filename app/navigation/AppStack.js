@@ -104,9 +104,9 @@ import {
 import {TT_MainScreen} from '../screens/tintuc';
 
 import {
-  DNNDT_MainScreen, 
-  DNNDT_CSDLLScreen, 
-  DNNDT_CSDLLDetailScreen, 
+  DNNDT_MainScreen,
+  DNNDT_CSDLLScreen,
+  DNNDT_CSDLLDetailScreen,
   DNNDT_TTTTLDScreen,
   DNNDT_TTTTLDDetailScreen,
   DNNDT_DAKGDTScreen,
@@ -122,7 +122,7 @@ import {TTCQ_MainScreen, TTCQ_DetailScreen, TTCQ_DetailVBScreen} from '../screen
 
 import {TTCB_MainScreen, TTCB_DetailScreen} from '../screens/thongtincanhbao';
 
-import { DT_MainScreen, DT_TNScreen, DT_QTScreen, DT_DetailScreen, DT_COVIDScreen, DT_BTNScreen } from '../screens/diemtin'
+import {DT_MainScreen, DT_TNScreen, DT_QTScreen, DT_DetailScreen, DT_COVIDScreen, DT_BTNScreen} from '../screens/diemtin';
 
 import {
   YT_MainScreen,
@@ -138,6 +138,8 @@ import {
 } from '../screens/yte';
 
 import {MT_MainScreen} from '../screens/moitruong';
+
+import {BanDoScreen, ChiTietDiaDiemScreen} from '../screens/bando';
 
 import {TD_MainScreen, TD_DetailScreen} from '../screens/tuyendung';
 
@@ -168,6 +170,8 @@ const AppStack = () => {
       <Stack.Screen name="BDHC_UnitChildScreen" component={BDHC_UnitChildScreen} />
       <Stack.Screen name="GalleryScreen" component={GalleryScreen} />
       <Stack.Screen name="VideoScreen" component={VideoScreen} />
+      <Stack.Screen name="BanDoScreen" component={BanDoScreen} />
+      <Stack.Screen name="ChiTietDiaDiemScreen" component={ChiTietDiaDiemScreen} />
 
       <Stack.Screen name="WebViewScreen" component={WebViewScreen} />
       <Stack.Screen name="MenuScreen" component={MenuScreen} />
