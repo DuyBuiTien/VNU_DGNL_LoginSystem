@@ -139,7 +139,7 @@ import {
 
 import {MT_MainScreen} from '../screens/moitruong';
 
-import {BanDoScreen} from '../screens/bando';
+import {BanDoScreen, ChiTietDiaDiemScreen} from '../screens/bando';
 
 const AppStack = () => {
   useEffect(() => {
@@ -169,6 +169,7 @@ const AppStack = () => {
       <Stack.Screen name="GalleryScreen" component={GalleryScreen} />
       <Stack.Screen name="VideoScreen" component={VideoScreen} />
       <Stack.Screen name="BanDoScreen" component={BanDoScreen} />
+      <Stack.Screen name="ChiTietDiaDiemScreen" component={ChiTietDiaDiemScreen} />
 
       <Stack.Screen name="WebViewScreen" component={WebViewScreen} />
       <Stack.Screen name="MenuScreen" component={MenuScreen} />

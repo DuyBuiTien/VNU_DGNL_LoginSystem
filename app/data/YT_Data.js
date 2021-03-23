@@ -14,28 +14,23 @@ export const DANHMUC = [
       dataFilter: [
         {
           id: 0,
-          icon: 'gas-pump',
-          name: 'Trạm xăng',
+          icon: 'hospital',
+          name: 'Bệnh viện',
         },
         {
           id: 1,
-          icon: 'parking',
-          name: 'Điểm đỗ xe',
+          icon: 'capsules',
+          name: 'Hiệu thuốc',
         },
         {
           id: 2,
-          icon: 'tools',
-          name: 'Gara ô tô',
+          icon: 'stethoscope',
+          name: 'Phòng khám',
         },
         {
           id: 3,
-          icon: 'money-bill',
-          name: 'Trạm thu phí',
-        },
-        {
-          id: 4,
-          icon: 'money-bill',
-          name: 'Điểm đen giao thông',
+          icon: 'briefcase-medical',
+          name: 'Trạm y tế',
         },
       ],
     },

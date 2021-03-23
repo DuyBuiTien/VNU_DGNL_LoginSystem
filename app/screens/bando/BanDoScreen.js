@@ -13,8 +13,8 @@ import axios from 'axios';
 
 import * as actions from '../../redux/global/Actions';
 import {ItemFilterBanDo, HeaderBanDo} from '../../components/common';
-import {BanDoMapView, ItemBanDo} from '../../components/bando';
-import {database} from 'faker';
+import {BanDoMapView, ItemBanDo, RenderLocBanDo} from '../../components/bando';
+import ActionSheet from '../../modules/react-native-actions-sheet';
 
 const {width: screenWidth} = Dimensions.get('window');
 
@@ -23,13 +23,41 @@ const MainScreen = () => {
   const dispatch = useDispatch();
   const route = useRoute();
   const data = route.params?.data ?? null;
-  const {dataFilter} = data;
+  const refRBSheet = useRef();
+
+  const TitleBanDo = route.params?.title ?? 'Bản đồ';
+
+  //const {dataFilter} = data;
   const [typeView, setTypeView] = useState(true);
 
-  let category = '';
-  dataFilter.map((i) => {
-    category += i.name + '|';
-  });
+  const [dataFilter, setDataFilter] = useState(data.dataFilter);
+  /*  useEffect(() => {
+    let tmp = [];
+    data.dataFilter.map((i) => {
+      let item = {...i};
+      item.checked = true;
+      tmp.push(i);
+    });
+    console.log(tmp);
+    console.log('aaaa');
+    setDataFilter(tmp);
+    return () => {};
+  }, [data.dataFilter]); */
+
+  const [category, setCategory] = useState('z');
+
+  useEffect(() => {
+    let categorytmp = '';
+    dataFilter.map((i) => {
+      if (!i.checked) {
+        categorytmp += i.name + '|';
+      }
+    });
+    if (categorytmp.length > 1) {
+      setCategory(categorytmp);
+    }
+    return () => {};
+  }, [dataFilter]);
 
   const user = useSelector((state) => state.global.user);
   let CurrentPosition = useSelector((state) => state.global.CurrentPosition);
@@ -124,7 +152,10 @@ const MainScreen = () => {
         setEntries(response.data.results.data);
       }
     };
-    fetchData();
+
+    if (category.length > 3) {
+      fetchData();
+    }
     return () => {
       setEntries([]);
     };
@@ -132,12 +163,14 @@ const MainScreen = () => {
 
   useEffect(() => {
     if (indexCamera >= 0) {
-      setRegion({
-        latitude: entries[indexCamera].latitude,
-        longitude: entries[indexCamera].longitude,
-        latitudeDelta: 0.01,
-        longitudeDelta: 0.01,
-      });
+      try {
+        setRegion({
+          latitude: entries[indexCamera].latitude,
+          longitude: entries[indexCamera].longitude,
+          latitudeDelta: 0.01,
+          longitudeDelta: 0.01,
+        });
+      } catch (error) {}
     }
     return () => {
       setRegion(null);
@@ -145,20 +178,45 @@ const MainScreen = () => {
   }, [entries, indexCamera]);
 
   const openChiTiet = (item) => {
-    navigation.navigate('GT_ChiTietDiaDiemScreen', {
+    navigation.navigate('ChiTietDiaDiemScreen', {
       data: item,
     });
   };
-  const filterBanDo = (item) => {};
+  const filterBanDo = (item) => {
+    console.log(item);
+    refRBSheet.current.setModalVisible(true);
+  };
+
+  const ModalHide = () => {
+    refRBSheet.current.setModalVisible(false);
+  };
+
+  const handleDongY = (listChoice) => {
+    //console.log(listChoice);
+    setDataFilter(listChoice);
+    refRBSheet.current.setModalVisible(false);
+  };
 
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
-      <HeaderBanDo title={'Bản đồ y tế'} navigation={navigation} typeView={typeView} setTypeView={setTypeView} />
+      <HeaderBanDo title={TitleBanDo} navigation={navigation} typeView={typeView} setTypeView={setTypeView} />
       <View /* style={{position: 'absolute', top: 60}} */>
         <ScrollView horizontal style={{marginBottom: 5, flexDirection: 'row'}} showsHorizontalScrollIndicator={false}>
-          {dataFilter.map((item, index) => (
-            <ItemFilterBanDo item={item} index={index} onPress={filterBanDo} />
-          ))}
+          <ItemFilterBanDo
+            item={{
+              id: 999,
+              icon: 'filter',
+              name: 'Bộ lọc',
+            }}
+            index={99}
+            onPress={() => {
+              refRBSheet.current.setModalVisible(true);
+            }}
+          />
+
+          {dataFilter.map((item, index) => {
+            if (!item.checked) return <ItemFilterBanDo item={item} index={index} onPress={filterBanDo} />;
+          })}
         </ScrollView>
       </View>
       {typeView ? (
@@ -178,6 +236,28 @@ const MainScreen = () => {
           keyExtractor={(item, index) => index.toString()}
         />
       )}
+
+      <ActionSheet
+        // initialOffsetFromBottom={0.5}
+        initialOffsetFromBottom={1}
+        ref={refRBSheet}
+        bounceOnOpen={true}
+        bounciness={8}
+        gestureEnabled={true}
+        onClose={() => {
+          //setTypeBottomSheet(0);
+        }}
+        containerStyle={{margin: 20}}
+        defaultOverlayOpacity={0.3}>
+        <RenderLocBanDo
+          data={dataFilter}
+          handleDongY={handleDongY}
+          actionSheetRef={refRBSheet}
+          ModalHide={ModalHide}
+          isMultiChoice={true}
+          title="Bộ lọc"
+        />
+      </ActionSheet>
     </View>
   );
 };

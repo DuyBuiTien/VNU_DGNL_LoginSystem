@@ -19,6 +19,7 @@ const MainScreen = () => {
   const fetchData = async () => {
     setIsLoading(true);
     const res = await requestGET(`${dataService.TDTM_URL}/categories`);
+    console.log(`${dataService.TDTM_URL}/categories`);
 
     let data2 = [
       {

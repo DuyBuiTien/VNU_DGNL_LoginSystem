@@ -103,4 +103,9 @@ const MainScreen = () => {
 
 export default MainScreen;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  p: {
+    textAlign: 'justify',
+    margin: 0,
+  },
+});
