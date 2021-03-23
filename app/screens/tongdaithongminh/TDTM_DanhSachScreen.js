@@ -20,6 +20,7 @@ import {Header, Icon} from 'react-native-elements';
 import {ItemDanhBa} from '../../components/tongdaithongminh';
 
 import {requestGET} from '../../services/Api';
+import {SearchComponent} from '../../components/common';
 
 const MainScreen = () => {
   const navigation = useNavigation();
@@ -57,11 +58,11 @@ const MainScreen = () => {
     return () => {};
   }, [data.type]);
 
-  const TimKiem = (input) => {
+  const TimKiem = () => {
     var data_tmp = datafinal.filter((item) => {
       const name_ = item.HotLine.Detail.toUpperCase();
       const address = item.HotLine.Phone.toUpperCase();
-      return name_.indexOf(input.toUpperCase()) > -1 || address.indexOf(input.toUpperCase()) > -1;
+      return name_.indexOf(inputValue.toUpperCase()) > -1 || address.indexOf(inputValue.toUpperCase()) > -1;
     });
     setDataDanhBa(data_tmp);
   };
@@ -72,8 +73,8 @@ const MainScreen = () => {
   };
 
   const swipRight = (item) => {
-    console.log('swipRight');
-    console.log(item);
+    //console.log('swipRight');
+    //console.log(item);
   };
 
   return (
@@ -108,9 +109,9 @@ const MainScreen = () => {
                   title: 'Yêu thích',
                 });
               }}
-              style={{flexDirection: 'row', alignItems: 'center', backgroundColor: 'red', padding: 5, borderRadius: 100}}>
+              style={{flexDirection: 'row', alignItems: 'center', backgroundColor: 'red', padding: 3, borderRadius: 100}}>
               <Icon name={'star'} color="#FFF" underlayColor="#00000000" containerStyle={{paddingStart: 0}} />
-              <Text style={{color: '#FFF', fontWeight: 'bold', fontSize: 15}}>Yêu thích</Text>
+              <Text style={{color: '#FFF', fontWeight: 'bold', fontSize: 14}}>Yêu thích</Text>
             </TouchableOpacity>
           ) : (
             <></>
@@ -119,32 +120,8 @@ const MainScreen = () => {
         containerStyle={{backgroundColor: '#FFF', justifyContent: 'space-around'}}
         centerContainerStyle={{justifyContent: 'center'}}
       />
-      <View style={{flexDirection: 'row', alignItems: 'center'}}>
-        <View
-          style={{
-            backgroundColor: '#EAEAEA',
-            flexDirection: 'row',
-            borderRadius: 8,
-            padding: 4,
-            margin: 10,
-            alignItems: 'center',
-            flex: 1,
-          }}>
-          <FontAwesome name="search" color="#787C7E" size={20} style={{marginHorizontal: 5}} />
-          <TextInput
-            placeholder={'Tìm kiếm'}
-            multiline={false}
-            onChangeText={(text) => {
-              setInputValue(text);
-              TimKiem(text);
-            }}
-            value={inputValue}
-            selectionColor={'gray'}
-            clearButtonMode="always"
-            style={{flex: 1}}
-          />
-        </View>
-      </View>
+      <SearchComponent value={inputValue} onChangeText={setInputValue} keyboardType={'web-search'} onSubmitEditing={TimKiem} />
+
       {isLoading ? (
         <ActivityIndicator size="large" color="#fb8c00" style={{flex: 1, justifyContent: 'center'}} />
       ) : (

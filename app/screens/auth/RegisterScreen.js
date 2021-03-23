@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState, useEffect} from 'react';
 import {useSelector} from 'react-redux';
-import {View, StyleSheet, TouchableOpacity, Keyboard, ScrollView} from 'react-native';
+import {View, StyleSheet, TouchableOpacity, Keyboard, ScrollView, TextInput} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5Pro';
 import {Text, Button, Input} from 'react-native-elements';
 import {showMessage} from 'react-native-flash-message';
@@ -9,7 +9,7 @@ import {Header} from 'react-native-elements';
 import {useNavigation} from '@react-navigation/native';
 
 //import Base64 from '../../utils/Base64';
-import {ItemTextInput, ItemCheckbox} from '../../components/common';
+import {ItemTextInput, ItemCheckbox, ItemDateInput} from '../../components/common';
 import {requestPOST} from '../../services/Api';
 
 const LoginScreen = () => {
@@ -37,6 +37,10 @@ const LoginScreen = () => {
   const [companyname, setCompanyname] = useState('');
   const [companyaddress, setCompanyaddress] = useState('');
   const [companycode, setCompanycode] = useState('');
+
+  const setUserNameTmp = (number) => {
+    setUsername(number.replace(/[^0-9]/g, ''));
+  };
 
   const handleOnpress = async () => {
     Keyboard.dismiss();
@@ -127,11 +131,12 @@ const LoginScreen = () => {
         <View style={{margin: 10}}>
           <ItemTextInput
             value={username}
-            onChangeText={setUsername}
-            placeholder={'Tên đăng nhập'}
+            onChangeText={setUserNameTmp}
+            placeholder={'Số điện thoại đăng nhập'}
             icon={'user'}
-            title={'Tên đăng nhập'}
-            description={'Chỉ gồm các ký tự từ a-z, 0-9 và không gồm các ký tự đặc biệt. Ví dụ: ThanhXuan123'}
+            title={'Số điện thoại đăng nhập'}
+            keyboardType={'numeric'}
+            //description={'Chỉ gồm các ký tự từ a-z, 0-9 và không gồm các ký tự đặc biệt. Ví dụ: ThanhXuan123'}
           />
 
           <ItemTextInput
@@ -160,13 +165,14 @@ const LoginScreen = () => {
             icon={'user'}
             title={'Họ và tên'}
           />
-          <ItemTextInput
+          <ItemDateInput
             value={birthday}
             onChangeText={setBirthday}
             placeholder={'Ngày sinh'}
             icon={'calendar-alt'}
             title={'Ngày sinh'}
           />
+
           <ItemTextInput
             value={gioitinh}
             onChangeText={setGioitinh}
@@ -181,13 +187,14 @@ const LoginScreen = () => {
             icon={'id-card'}
             title={'Số giấy tờ tuỳ thân (CMND/thẻ CCCD/giấy tờ tuỳ thân khác)'}
           />
-          <ItemTextInput
+          <ItemDateInput
             value={personaliddate}
             onChangeText={setPersonaliddate}
             placeholder={'Ngày cấp'}
             icon={'calendar-alt'}
-            title={'Ngày cấp)'}
+            title={'Ngày cấp'}
           />
+
           <ItemTextInput
             value={personalidaddress}
             onChangeText={setPersonalidaddress}
@@ -198,8 +205,9 @@ const LoginScreen = () => {
           <ItemTextInput
             value={phonenumber}
             onChangeText={setPhonenumber}
-            placeholder={'Số iện thoại'}
+            placeholder={'Số điện thoại'}
             icon={'phone'}
+            keyboardType="numeric"
             title={'Số điện thoại'}
           />
           <ItemTextInput value={email} onChangeText={setEmail} placeholder={'Thư điện tử'} icon={'at'} title={'Thư điện tử'} />
@@ -288,4 +296,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  textinputContainer: {
+    backgroundColor: '#FFF',
+    flexDirection: 'row',
+    borderRadius: 4,
+    padding: 0,
+    margin: 10,
+    alignItems: 'center',
+    borderColor: '#abb4bd65',
+    borderWidth: 0.4,
+  },
+  textinput: {flex: 1, paddingVertical: 10},
+  textinputIcon: {marginHorizontal: 10},
 });
