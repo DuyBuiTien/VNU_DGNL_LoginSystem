@@ -163,7 +163,7 @@
     {
       "appid": "40",
       "name": "Tin tuyển dụng",
-      "navigate": "KNCC_MainScreen",
+      "navigate": "TD_MainScreen",
       "count": 0,
       "icon": "briefcase",
       "color": "#9e9d24",
