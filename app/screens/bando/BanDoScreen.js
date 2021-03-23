@@ -6,7 +6,6 @@ import {useSelector, useDispatch} from 'react-redux';
 import {StyleSheet, Text, View, ScrollView, Linking, Dimensions, Platform, PermissionsAndroid, FlatList} from 'react-native';
 import {useNavigation, useRoute} from '@react-navigation/native';
 
-import {TouchableOpacity, RectButton} from 'react-native-gesture-handler';
 import Geolocation from 'react-native-geolocation-service';
 import {showMessage} from 'react-native-flash-message';
 import axios from 'axios';
@@ -15,8 +14,6 @@ import * as actions from '../../redux/global/Actions';
 import {ItemFilterBanDo, HeaderBanDo} from '../../components/common';
 import {BanDoMapView, ItemBanDo, RenderLocBanDo} from '../../components/bando';
 import ActionSheet from '../../modules/react-native-actions-sheet';
-
-const {width: screenWidth} = Dimensions.get('window');
 
 const MainScreen = () => {
   const navigation = useNavigation();

@@ -17,6 +17,11 @@ const MainScreen = () => {
   const route = useRoute();
   const data = route.params?.data ?? {};
   const [isLoading, setIsLoading] = useState(false);
+  let user = useSelector((state) => state.global.user);
+  const dataService = useSelector((state) => state.global.dataService);
+
+  const [isBookmark, setisBookmark] = useState(false);
+  const [idBookmark, setIdBookmark] = useState(null);
 
   const [dataBanDo, setDataBanDo] = useState(null);
   useEffect(() => {
@@ -40,6 +45,75 @@ const MainScreen = () => {
       setDataBanDo([]);
     };
   }, [data.id]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      let response = await axios({
+        method: 'get',
+        url: `${dataService.BOOKMARK_URL}/v1/bookmark/checkbookmark?ContentType=bookmark_bando&TopicId=${data.id}`,
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
+      if (response.data && response.data.data) {
+        setisBookmark(true);
+        setIdBookmark(response.data.data);
+      } else {
+        setisBookmark(false);
+      }
+    };
+    fetchData();
+    return () => {};
+  }, []);
+
+  const AddBookmark = async () => {
+    let response = await axios({
+      method: 'post',
+      url: `${dataService.BOOKMARK_URL}/v1/bookmark`,
+      headers: {
+        Authorization: `Bearer ${user.token}`,
+      },
+      data: {
+        IsOwned: false,
+        TopicId: data.id,
+        TopicTitle: dataBanDo.title,
+        CategoryId: null,
+        CategoryName: dataBanDo.category,
+        ContentType: 'bookmark_bando',
+        CoverUrl: dataBanDo.cover_url,
+        Latitude: dataBanDo.informations.latitude,
+        Longitude: dataBanDo.informations.longitude,
+        AddressDetail: dataBanDo.informations.address_detail,
+        DateStart: null,
+        TimeStart: null,
+        DateEnd: null,
+        TimeEnd: null,
+        Navigate: 'ChiTietDiaDiemScreen',
+        Link: null,
+      },
+    });
+    if (response.data && response.data.created) {
+      setisBookmark(true);
+      setIdBookmark(response.data.item.Id);
+    } else {
+      setisBookmark(false);
+    }
+  };
+
+  const RemoveBookmark = async () => {
+    let response = await axios({
+      method: 'delete',
+      url: `${dataService.BOOKMARK_URL}/v1/bookmark/${idBookmark}`,
+      headers: {
+        Authorization: `Bearer ${user.token}`,
+      },
+    });
+    if (response.data) {
+      setisBookmark(false);
+      setIdBookmark(null);
+    } else {
+    }
+  };
 
   const handlePhoneCall = (number) => {
     let phoneNumber = '';
@@ -93,7 +167,19 @@ const MainScreen = () => {
         }}
         rightComponent={
           <View style={{flexDirection: 'row'}}>
-            <FontAwesome name={'bookmark'} color="#2E2E2E" containerStyle={{paddingStart: 0}} onPress={() => {}} size={20} />
+            <Icon
+              name={isBookmark ? 'bookmark' : 'bookmark-border'}
+              color="#2E2E2E"
+              containerStyle={{paddingStart: 0}}
+              onPress={() => {
+                if (isBookmark) {
+                  RemoveBookmark();
+                } else {
+                  AddBookmark();
+                }
+              }}
+              size={23}
+            />
           </View>
         }
         containerStyle={{backgroundColor: 'transparent', justifyContent: 'space-around'}}

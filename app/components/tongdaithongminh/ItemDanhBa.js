@@ -18,7 +18,7 @@ const ItemDanhBa = (props) => {
 
   return (
     <SwipeableGmail swipRight={swipRight} swipLeft={swipLeft} item={data}>
-      <RectButton
+      <TouchableOpacity
         onPress={() => {
           onPress(data);
         }}
@@ -106,7 +106,7 @@ const ItemDanhBa = (props) => {
             </View>
           )}
         </View>
-      </RectButton>
+      </TouchableOpacity>
     </SwipeableGmail>
   );
 };
