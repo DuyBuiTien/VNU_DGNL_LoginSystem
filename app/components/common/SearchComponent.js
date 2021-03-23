@@ -5,7 +5,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 
 const SearchComponent = ({value, onChangeText, placeholder, onSubmitEditing, keyboardType}) => {
   return (
-    <View style={{flexDirection: 'row', alignItems: 'center'}}>
+    <View style={{flexDirection: 'row', alignItems: 'center', paddingHorizontal: 10}}>
       <View
         style={{
           backgroundColor: '#EAEAEA',

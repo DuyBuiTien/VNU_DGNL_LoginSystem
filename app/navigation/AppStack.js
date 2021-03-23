@@ -139,6 +139,8 @@ import {
 
 import {MT_MainScreen} from '../screens/moitruong';
 
+import {TD_MainScreen, TD_DetailScreen} from '../screens/tuyendung';
+
 const AppStack = () => {
   useEffect(() => {
     messaging().onNotificationOpenedApp((remoteMessage) => {});
@@ -276,6 +278,9 @@ const AppStack = () => {
       <Stack.Screen name="TMDT_CSKDScreen" component={TMDT_CSKDScreen} />
 
       <Stack.Screen name="MT_MainScreen" component={MT_MainScreen} />
+
+      <Stack.Screen name="TD_MainScreen" component={TD_MainScreen} />
+      <Stack.Screen name="TD_DetailScreen" component={TD_DetailScreen} />
 
       <Stack.Screen name="KNCC_MainScreen" component={KNCC_MainScreen} />
       <Stack.Screen name="KNCC_CM_MainScreen" component={KNCC_CM_MainScreen} />
