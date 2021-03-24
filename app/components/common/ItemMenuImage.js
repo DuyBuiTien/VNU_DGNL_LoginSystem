@@ -28,7 +28,6 @@ const ItemMenuImage = (props) => {
           shadowOpacity: 0.2,
           marginHorizontal: 20,
           borderColor: '#abb4bd65',
-
           shadowRadius: 2,
           elevation: 2,
         }}>

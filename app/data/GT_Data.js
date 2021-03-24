@@ -72,3 +72,34 @@ export const DANHMUC = [
     background: require('../Images/gt11.jpg'),
   },
 ];
+
+export const MENU = [
+  {
+    appid: 1,
+    name: 'Tìm xe khách',
+    navigate: 'GT_DiChung_TimXeKhach_Screen',
+    icon: 'car-bus',
+    color: '#c0ca33',
+  },
+  {
+    appid: 2,
+    name: 'Đi chung',
+    navigate: 'GT_DiChung_DiChung_Screen',
+    icon: 'car',
+    color: '#e64a19',
+  },
+  {
+    appid: 3,
+    name: 'Đăng tin',
+    navigate: 'GT_DiChung_DangTin_Screen',
+    icon: 'bullhorn',
+    color: '#5B63EC',
+  },
+  {
+    appid: 4,
+    name: 'Tin của tôi',
+    navigate: 'GT_DiChung_CaNhan_Screen',
+    icon: 'user-alt',
+    color: '#bdbdbd',
+  },
+];

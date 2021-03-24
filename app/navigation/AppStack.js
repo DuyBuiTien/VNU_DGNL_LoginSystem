@@ -50,6 +50,11 @@ import {
   GT_STLGT_MainScreen,
   GT_OTGPLX_MainScreen,
   GT_ChiTietDiaDiemScreen,
+  GT_DiChung_CaNhan_Screen,
+  GT_DiChung_DangTin_Screen,
+  GT_DiChung_DiChung_Screen,
+  GT_DiChung_TimXeKhach_Screen,
+  GT_DiChung_ChiTietScreen,
 } from '../screens/giaothong';
 
 import {
@@ -260,6 +265,11 @@ const AppStack = () => {
       <Stack.Screen name="GT_STLGT_MainScreen" component={GT_STLGT_MainScreen} />
       <Stack.Screen name="GT_OTGPLX_MainScreen" component={GT_OTGPLX_MainScreen} />
       <Stack.Screen name="GT_ChiTietDiaDiemScreen" component={GT_ChiTietDiaDiemScreen} />
+      <Stack.Screen name="GT_DiChung_CaNhan_Screen" component={GT_DiChung_CaNhan_Screen} />
+      <Stack.Screen name="GT_DiChung_DangTin_Screen" component={GT_DiChung_DangTin_Screen} />
+      <Stack.Screen name="GT_DiChung_DiChung_Screen" component={GT_DiChung_DiChung_Screen} />
+      <Stack.Screen name="GT_DiChung_TimXeKhach_Screen" component={GT_DiChung_TimXeKhach_Screen} />
+      <Stack.Screen name="GT_DiChung_ChiTietScreen" component={GT_DiChung_ChiTietScreen} />
 
       <Stack.Screen name="DL_MainScreen" component={DL_MainScreen} />
       <Stack.Screen name="DL_DDL_Screen" component={DL_DDL_Screen} />
