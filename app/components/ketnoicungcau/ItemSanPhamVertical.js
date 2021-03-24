@@ -17,21 +17,21 @@ const ItemSanPhamVertical = (props) => {
         imageStyle={{borderRadius: 5}}
         resizeMode="cover"
         style={{width: '100%', height: 100}}
-        source={data.img ? {uri: data.img} : require('../../Images/nn1.jpg')}
+        source={data.Images ? {uri: data.Images} : require('../../Images/nn1.jpg')}
       />
       <Text style={{paddingTop: 10, fontSize: 13}} numberOfLines={2}>
-        {data.title}
+        {data.Title}
       </Text>
       <View style={{flexDirection: 'row', alignItems: 'center', paddingTop: 10}}>
         <FontAwesome name="calendar-alt" size={13} color="#9e9e9e" />
         <Text style={{marginStart: 5, fontSize: 12, color: '#9e9e9e'}} numberOfLines={1}>
-          {data.date}
+          {data.FromDate}
         </Text>
       </View>
       <View style={{flexDirection: 'row', alignItems: 'center', paddingTop: 10}}>
         <FontAwesome name="map-marker-alt" size={13} color="#9e9e9e" />
         <Text style={{marginStart: 5, fontSize: 12, color: '#9e9e9e', flex: 1}} numberOfLines={1}>
-          {data.address}
+          {data.Address}
         </Text>
       </View>
     </TouchableOpacity>

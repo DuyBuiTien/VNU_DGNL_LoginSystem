@@ -86,7 +86,7 @@ import {
   GD_HNListScreen,
 } from '../screens/giaoduc';
 
-import {NN_MainScreen} from '../screens/nongnghiep';
+import {NN_MainScreen, NN_GCTTScreen} from '../screens/nongnghiep';
 
 import {TMDT_DanhMucScreen, TMDT_CSKDScreen, TMDT_MainScreen} from '../screens/giacathitruong';
 
@@ -99,6 +99,7 @@ import {
   KNCC_CaNhanScreen,
   KNCC_SanPham_ChiTietScreen,
   KNCC_SanPham_DanhSachScreen,
+  KNCC_DanhMucScreen,
 } from '../screens/ketnoicungcau';
 
 import {TT_MainScreen} from '../screens/tintuc';
@@ -289,6 +290,7 @@ const AppStack = () => {
       <Stack.Screen name="YT_TraCuuChiSoScreen" component={YT_TraCuuChiSoScreen} />
 
       <Stack.Screen name="NN_MainScreen" component={NN_MainScreen} />
+      <Stack.Screen name="NN_GCTTScreen" component={NN_GCTTScreen} />
 
       <Stack.Screen name="TMDT_DanhMucScreen" component={TMDT_DanhMucScreen} />
       <Stack.Screen name="TMDT_MainScreen" component={TMDT_MainScreen} />
@@ -307,6 +309,7 @@ const AppStack = () => {
       <Stack.Screen name="KNCC_DangTinScreen" component={KNCC_DangTinScreen} />
       <Stack.Screen name="KNCC_SanPham_ChiTietScreen" component={KNCC_SanPham_ChiTietScreen} />
       <Stack.Screen name="KNCC_SanPham_DanhSachScreen" component={KNCC_SanPham_DanhSachScreen} />
+      <Stack.Screen name="KNCC_DanhMucScreen" component={KNCC_DanhMucScreen} />
 
       <Stack.Screen name="TTCQ_MainScreen" component={TTCQ_MainScreen} />
       <Stack.Screen name="TTCQ_DetailScreen" component={TTCQ_DetailScreen} />
