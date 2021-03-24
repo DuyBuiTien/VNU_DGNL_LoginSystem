@@ -91,7 +91,7 @@ const ThoiTietHome = () => {
           style={{flex: 1 / 2, alignItems: 'center', justifyContent: 'center'}}>
           <LichHome />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => {}} style={{flex: 1 / 2, alignItems: 'center', justifyContent: 'center'}}>
+        <TouchableOpacity onPress={() => {navigation.navigate('TTDB_MainScreen', {aqi: dataAQI.current.pollution.aqius})}} style={{flex: 1 / 2, alignItems: 'center', justifyContent: 'center'}}>
           <AQI
             aqi={
               dataAQI && dataAQI.current && dataAQI.current.pollution && dataAQI.current.pollution.aqius

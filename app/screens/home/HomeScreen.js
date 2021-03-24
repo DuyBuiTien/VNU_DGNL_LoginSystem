@@ -191,7 +191,7 @@ const HomeScreen = () => {
 
             <CovidItem />
 
-            <View style={{padding: 10, paddingRight: 0}}>
+            <View style={{padding: 10, paddingHorizontal: 0}}>
               <View style={styles.viewHeader}>
                 <Text style={styles.textHeaderTitle}> Tin tức</Text>
                 <TouchableOpacity
@@ -205,6 +205,7 @@ const HomeScreen = () => {
                 </TouchableOpacity>
               </View>
               <FlatList
+                contentContainerStyle={{paddingHorizontal: 10}}
                 horizontal
                 scrollEnabled
                 scrollEventThrottle={16}

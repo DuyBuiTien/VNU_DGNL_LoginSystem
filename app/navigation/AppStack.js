@@ -143,6 +143,8 @@ import {BanDoScreen, ChiTietDiaDiemScreen} from '../screens/bando';
 
 import {TD_MainScreen, TD_DetailScreen} from '../screens/tuyendung';
 
+import {TTDB_MainScreen} from '../screens/thoitiet';
+
 import {AL_MainScreen} from '../screens/amlich';
 import {BookmarksScreen} from '../screens/bookmark';
 import {DanhBaScreen} from '../screens/danhba';
@@ -187,6 +189,8 @@ const AppStack = () => {
       <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
 
       <Stack.Screen name="AL_MainScreen" component={AL_MainScreen} />
+
+      <Stack.Screen name="TTDB_MainScreen" component={TTDB_MainScreen} />
 
       <Stack.Screen name="DVC_MainScreen" component={DVC_MainScreen} />
       <Stack.Screen name="DVC_TKHS_SearchScreen" component={DVC_TKHS_SearchScreen} />
