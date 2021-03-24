@@ -179,7 +179,7 @@ const MainScreen = () => {
                     onPress={() => {}}
                     size={15}
                   />
-                  <Text style={{marginStart: 10, flex: 1, color: '#424242', fontWeight: '600'}}>Ghi chú</Text>
+                  <Text style={{marginStart: 10, flex: 1, color: '#424242', fontWeight: 'bold'}}>Ghi chú</Text>
                 </View>
                 <Text style={{marginStart: 20, marginTop: 10, flex: 1, color: '#424242'}}>{data.GhiChu}</Text>
               </View>
