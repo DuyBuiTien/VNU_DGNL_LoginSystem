@@ -38,18 +38,9 @@ const SettingScreen = () => {
         </TouchableOpacity>
 
         <ItemMenu
-          onPress={() => navigation.navigate('SettingScreen')}
+          onPress={() => navigation.navigate('ChangePasswordScreen')}
           title={'Đổi mật khẩu'}
           iconLeft="key"
-          colorIconLeft="#5C7F63"
-        />
-
-        <ItemMenu
-          onPress={() => navigation.navigate('SettingScreen')}
-          title={'Đổi mật khẩu'}
-          titleRight={'Tiếng Việt'}
-          iconLeft="globe"
-          iconRight="chevron-down"
           colorIconLeft="#5C7F63"
         />
       </ScrollView>
