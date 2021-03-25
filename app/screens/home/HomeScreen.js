@@ -14,7 +14,7 @@ import {
 import {useSelector, useDispatch} from 'react-redux';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {Text, Button, Icon, Divider, Badge} from 'react-native-elements';
-import FontAwesome from 'react-native-vector-icons/FontAwesome5';
+import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
 import {TT_URL} from '../../config/server';
@@ -90,9 +90,6 @@ const HomeScreen = () => {
   const dataService = useSelector((state) => state.global.dataService);
 
   const imgs = [
-    'https://source.unsplash.com/1024x768/?nature',
-    'https://source.unsplash.com/1024x768/?water',
-    'https://source.unsplash.com/1024x768/?girl',
     'https://source.unsplash.com/1024x768/?tree', // Network image
     require('../../Images/slider.jpeg'), // Local image
   ];
@@ -161,10 +158,14 @@ const HomeScreen = () => {
       <StatusBar backgroundColor="#00000000" barStyle="light-content" translucent={true} />
 
       <ImageBackground source={images.background.tet2} style={{flex: 1 / 6}}>
-        <View style={{paddingTop: 40, padding: 10, flexDirection: 'row'}}>
+        <TouchableOpacity
+          style={{paddingTop: 40, padding: 10, flexDirection: 'row'}}
+          onPress={() => {
+            navigation.navigate('ProfileScreen');
+          }}>
           <Text style={styles.title1}> Xin chào, </Text>
           <Text style={styles.title2}>{fullName}</Text>
-        </View>
+        </TouchableOpacity>
       </ImageBackground>
       <View style={{marginTop: -50, backgroundColor: 'transparent', flex: 1}}>
         <View style={{flex: 1}}>
@@ -258,6 +259,21 @@ const HomeScreen = () => {
                 renderItem={({item, index}) => <_renderItem6 item={item} index={index} navigation={navigation} />}
               />
             </View>
+
+            <View style={{marginHorizontal: 10}}>
+              <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                <FontAwesome name={'headset'} size={18} style={{marginEnd: 10, color: '#d50000'}} />
+                <Text style={styles.textHeaderTitle}>Hỗ trợ nóng</Text>
+              </View>
+              <TouchableOpacity
+                style={{flexDirection: 'row', backgroundColor: '#1D89A3', padding: 20, borderRadius: 10, marginVertical: 10}}>
+                <View style={{flex: 1}}>
+                  <Text style={{color: '#FFF', fontSize: 20, fontWeight: 'normal'}}>Tổng đài hỗ trợ</Text>
+                  <Text style={{color: '#FFF', fontSize: 22, fontWeight: 'bold', marginTop: 5}}>0228 363 1116</Text>
+                </View>
+                <FontAwesome name={'phone-volume'} size={55} style={{marginEnd: 10, color: '#59ABBC'}} />
+              </TouchableOpacity>
+            </View>
           </ScrollView>
         </View>
       </View>
@@ -298,7 +314,7 @@ const styles = StyleSheet.create({
     borderLeftWidth: 2,
     borderLeftColor: '#f44336',
   },
-  textHeaderTitle: {fontSize: 18, color: '#3D4458', fontWeight: '500'},
+  textHeaderTitle: {fontSize: 18, color: '#3D4458', fontWeight: 'bold'},
   textHeaderAll: {color: '#90caf9', fontStyle: 'italic', marginHorizontal: 10},
   viewIcon: {
     marginHorizontal: 10,

@@ -30,5 +30,5 @@ const styles = StyleSheet.create({
     borderLeftWidth: 2,
     borderLeftColor: '#f44336',
   },
-  textHeaderTitle: {fontSize: 18, color: '#3D4458', fontWeight: '500'},
+  textHeaderTitle: {fontSize: 18, color: '#3D4458', fontWeight: 'bold'},
 });
