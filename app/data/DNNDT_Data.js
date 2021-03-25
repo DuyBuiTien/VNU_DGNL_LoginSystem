@@ -23,7 +23,7 @@ export const DANHMUC = [
     {
         id: 4,
         name: 'Đăng tin tuyển dụng',
-        navigate: 'DNNDT_DTTDScreen',
+        navigate: 'TD_MainScreen',
         icon: require('../Images/headhunting.png'),
         background: require('../Images/paht4.jpg'),
     },

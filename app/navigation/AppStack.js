@@ -86,7 +86,7 @@ import {
   GD_HNListScreen,
 } from '../screens/giaoduc';
 
-import {NN_MainScreen} from '../screens/nongnghiep';
+import {NN_MainScreen, NN_GCTTScreen} from '../screens/nongnghiep';
 
 import {TMDT_DanhMucScreen, TMDT_CSKDScreen, TMDT_MainScreen} from '../screens/giacathitruong';
 
@@ -99,6 +99,7 @@ import {
   KNCC_CaNhanScreen,
   KNCC_SanPham_ChiTietScreen,
   KNCC_SanPham_DanhSachScreen,
+  KNCC_DanhMucScreen,
 } from '../screens/ketnoicungcau';
 
 import {TT_MainScreen} from '../screens/tintuc';
@@ -143,6 +144,9 @@ import {BanDoScreen, ChiTietDiaDiemScreen} from '../screens/bando';
 
 import {TD_MainScreen, TD_DetailScreen} from '../screens/tuyendung';
 
+import {TTDB_MainScreen} from '../screens/thoitiet';
+
+import {AL_MainScreen} from '../screens/amlich';
 import {BookmarksScreen} from '../screens/bookmark';
 import {DanhBaScreen} from '../screens/danhba';
 
@@ -184,6 +188,10 @@ const AppStack = () => {
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="ForgotScreen" component={ForgotScreen} />
       <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
+
+      <Stack.Screen name="AL_MainScreen" component={AL_MainScreen} />
+
+      <Stack.Screen name="TTDB_MainScreen" component={TTDB_MainScreen} />
 
       <Stack.Screen name="DVC_MainScreen" component={DVC_MainScreen} />
       <Stack.Screen name="DVC_TKHS_SearchScreen" component={DVC_TKHS_SearchScreen} />
@@ -282,6 +290,7 @@ const AppStack = () => {
       <Stack.Screen name="YT_TraCuuChiSoScreen" component={YT_TraCuuChiSoScreen} />
 
       <Stack.Screen name="NN_MainScreen" component={NN_MainScreen} />
+      <Stack.Screen name="NN_GCTTScreen" component={NN_GCTTScreen} />
 
       <Stack.Screen name="TMDT_DanhMucScreen" component={TMDT_DanhMucScreen} />
       <Stack.Screen name="TMDT_MainScreen" component={TMDT_MainScreen} />
@@ -300,6 +309,7 @@ const AppStack = () => {
       <Stack.Screen name="KNCC_DangTinScreen" component={KNCC_DangTinScreen} />
       <Stack.Screen name="KNCC_SanPham_ChiTietScreen" component={KNCC_SanPham_ChiTietScreen} />
       <Stack.Screen name="KNCC_SanPham_DanhSachScreen" component={KNCC_SanPham_DanhSachScreen} />
+      <Stack.Screen name="KNCC_DanhMucScreen" component={KNCC_DanhMucScreen} />
 
       <Stack.Screen name="TTCQ_MainScreen" component={TTCQ_MainScreen} />
       <Stack.Screen name="TTCQ_DetailScreen" component={TTCQ_DetailScreen} />

@@ -48,7 +48,7 @@ const MainScreen = () => {
           </TouchableOpacity>
         }
         centerComponent={{
-          text: `${data.title}`,
+          text: `${data.Title}`,
           style: {color: '#2E2E2E', fontSize: 16, fontWeight: 'bold'},
         }}
         containerStyle={{backgroundColor: 'transparent', justifyContent: 'space-around'}}
@@ -56,10 +56,10 @@ const MainScreen = () => {
       />
       <View style={{flex: 1}}>
         <ScrollView showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
-          <Image style={{height: 240, width: '100%', resizeMode: 'stretch'}} source={{uri: data.img}} />
+          <Image style={{height: 240, width: '100%', resizeMode: 'stretch'}} source={{uri: data.Images}} />
           <View style={{flex: 1, padding: 15}}>
             <Text style={{color: '#F23A27'}}>{data.owner}</Text>
-            <Text style={{marginTop: 15, fontWeight: 'bold', color: '#424242', fontSize: 16}}>{data.content}</Text>
+            <Text style={{marginTop: 15, fontWeight: 'bold', color: '#424242', fontSize: 16}}>{data.Content}</Text>
             <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 15}}>
               <FontAwesome name={'clock'} color="#F23A27" containerStyle={{paddingStart: 0}} onPress={() => {}} size={15} />
               <Text style={{marginStart: 10, flex: 1, color: '#424242', fontWeight: '600'}}>Ngày đăng</Text>
@@ -79,7 +79,7 @@ const MainScreen = () => {
                 />
                 <Text style={{marginStart: 10, flex: 1, color: '#424242', fontWeight: '600'}}>Địa chỉ</Text>
               </View>
-              <Text style={{marginStart: 20, marginTop: 10, flex: 1, color: '#424242'}}>{data.address}</Text>
+              <Text style={{marginStart: 20, marginTop: 10, flex: 1, color: '#424242'}}>{data.Address}</Text>
 
               <View style={{flexDirection: 'row', marginTop: 10, justifyContent: 'space-between'}}>
                 <TouchableOpacity
@@ -91,7 +91,7 @@ const MainScreen = () => {
                     borderRadius: 100,
                   }}
                   onPress={() => {
-                    handleCopy(data.address);
+                    handleCopy(data.Address);
                   }}>
                   <FontAwesome name={'copy'} color="#F23A27" containerStyle={{paddingStart: 0}} size={15} />
                   <Text style={{marginStart: 20, color: '#424242'}}>{'Sao chép'}</Text>
@@ -105,7 +105,7 @@ const MainScreen = () => {
                     borderRadius: 100,
                   }}
                   onPress={() => {
-                    handleOpenMap(data.latitude, data.longitude);
+                    //handleOpenMap(data.latitude, data.longitude);
                   }}>
                   <FontAwesome name={'map-marked-alt'} color="#F23A27" containerStyle={{paddingStart: 0}} size={15} />
                   <Text style={{marginStart: 20, color: '#424242'}}>{'Chỉ đường'}</Text>
@@ -118,7 +118,7 @@ const MainScreen = () => {
                   <Text style={{marginStart: 10, flex: 1, color: '#424242', fontWeight: '600'}}>Điện thoại</Text>
                 </View>
                 <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 10}}>
-                  <Text style={{marginStart: 20, flex: 1, color: '#424242'}}>{data.sdt}</Text>
+                  <Text style={{marginStart: 20, flex: 1, color: '#424242'}}>{data.Phone}</Text>
                   <TouchableOpacity
                     style={{
                       flexDirection: 'row',
@@ -128,7 +128,7 @@ const MainScreen = () => {
                       borderRadius: 100,
                     }}
                     onPress={() => {
-                      handlePhoneCall(data.sdt);
+                      handlePhoneCall(data.Phone);
                     }}>
                     <FontAwesome name={'phone'} color="#F23A27" containerStyle={{paddingStart: 0}} />
                     <Text style={{marginStart: 20, color: '#424242'}}>{'Gọi ngay'}</Text>
@@ -149,7 +149,7 @@ const MainScreen = () => {
                   />
                   <Text style={{marginStart: 10, flex: 1, color: '#424242', fontWeight: '600'}}>Mô tả</Text>
                 </View>
-                <Text style={{marginStart: 20, marginTop: 10, flex: 1, color: '#424242'}}>{data.content}</Text>
+                <Text style={{marginStart: 20, marginTop: 10, flex: 1, color: '#424242'}}>{data.Content}</Text>
               </View>
             </View>
           </View>

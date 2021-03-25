@@ -6,6 +6,7 @@ import KNCC_DangTinScreen from './KNCC_DangTinScreen';
 import KNCC_CaNhanScreen from './KNCC_CaNhanScreen';
 import KNCC_SanPham_ChiTietScreen from './KNCC_SanPham_ChiTietScreen';
 import KNCC_SanPham_DanhSachScreen from './KNCC_SanPham_DanhSachScreen';
+import KNCC_DanhMucScreen from './KNCC_DanhMucScreen';
 
 export {
   KNCC_MainScreen,
@@ -16,4 +17,5 @@ export {
   KNCC_CaNhanScreen,
   KNCC_SanPham_ChiTietScreen,
   KNCC_SanPham_DanhSachScreen,
+  KNCC_DanhMucScreen
 };

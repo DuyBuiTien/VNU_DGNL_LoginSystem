@@ -14,11 +14,13 @@ import { requestGET } from '../../services/Api';
 
 import {Divider} from 'react-native-elements'
 
-const MainScreen = () => {
+const KNCC_DanhMucScreen = (props) => {
   const navigation = useNavigation();
   const user = useSelector((state) => state.global.user);
+  const route = useRoute();
 
-  const [dataMenu, setDataMenu] = useState(MENU);
+  const { id, title } = route.params
+
   const [data, setData] = useState([]);
   const [dataDanhMuc, setDataDanhMuc] = useState([]);
   const dataService = useSelector((state) => state.global.dataService);
@@ -26,9 +28,9 @@ const MainScreen = () => {
 
   const fetchData = async () => {
     setIsLoading(true);
-    var data1 = await requestGET(`${dataService.KNCC_URL}/category/all`)
+    var data1 = await requestGET(`${dataService.KNCC_URL}/subcategory?CategoryId=${id}`)
     var data2 = data1 ? data1 : []
-    var data3 = await requestGET(`${dataService.KNCC_URL}/SupplyDemand?q=`)
+    var data3 = await requestGET(`${dataService.KNCC_URL}/SupplyDemand?CategoryId=${id}`)
     var data4 = data3.data ? data3.data : []
     setData(data4)
     setDataDanhMuc(data2)
@@ -42,27 +44,12 @@ const MainScreen = () => {
 
   return (
     <View style={{ flex: 1, backgroundColor: '#fff' }}>
-      <Header title="Kết nối cung cầu" isStack={true} />
+      <Header title={title} isStack={true} />
       {isLoading ? (
         <ActivityIndicator size="large" color="#fb8c00" style={{ flex: 1, justifyContent: 'center' }} />
       ) : (
           <ScrollView>
-            <View style={{ backgroundColor: '#FFF', paddingVertical: 10 }}>
-              <FlatList
-                data={dataMenu}
-                renderItem={({ item, index }) => <ItemHomeMenu item={item} index={index} navigation={navigation} />}
-                keyExtractor={(item, index) => index.toString()}
-                contentContainerStyle={{
-                  flexGrow: 1,
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-                numColumns={4}
-              />
-            </View>
-            <Divider style={{height: 8, backgroundColor: '#eeeeee'}} />
             <View style={{ backgroundColor: '#FFF'}}>
-              <Text style={{ margin: 10, fontWeight: '600' }}>Khám phá danh mục</Text>
               <FlatList
                 scrollEnabled={false}
                 contentContainerStyle={{
@@ -78,18 +65,6 @@ const MainScreen = () => {
             </View>
             <Divider style={{height: 8, backgroundColor: '#eeeeee'}} />
             <View style={{ backgroundColor: '#FFF'}}>
-              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                <Text style={{ margin: 10, fontWeight: '600', flex: 1 }}>Tin dành cho bạn</Text>
-                <TouchableOpacity
-                  style={{ flexDirection: 'row', marginHorizontal: 5 }}
-                  activeOpacity={0.8}
-                  onPress={() => {
-                    navigation.navigate('KNCC_SanPham_DanhSachScreen');
-                  }}>
-                  <Text style={{ color: '#90caf9', fontStyle: 'italic', marginHorizontal: 10 }}>Tất cả</Text>
-                  <FontAwesome name="chevron-right" size={16} color="#f44336" />
-                </TouchableOpacity>
-              </View>
               <FlatList
                 scrollEnabled={false}
                 contentContainerStyle={{
@@ -109,6 +84,6 @@ const MainScreen = () => {
   );
 };
 
-export default MainScreen;
+export default KNCC_DanhMucScreen;
 
 const styles = StyleSheet.create({});

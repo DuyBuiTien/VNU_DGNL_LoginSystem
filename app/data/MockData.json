@@ -33,7 +33,8 @@
     "NETVIEW_URL": "https://api.netview.vn",
     "NN_URL": "https://qldv.hanhchinhcong.net/_vti_bin/XtmNnService.svc/nnapi",
     "TDTM_HOST": "https://qldv.hanhchinhcong.net",
-    "BOOKMARK_URL": "http://demo.tandan.com.vn:8084"
+    "BOOKMARK_URL": "http://demo.tandan.com.vn:8084",
+    "KNCC_URL": "http://knccapi.hanhchinhcong.net/v1"
   },
   "dataMenu": [
     {

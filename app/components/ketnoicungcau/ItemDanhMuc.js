@@ -11,16 +11,16 @@ const ItemDanhMuc = (props) => {
   const {item, navigation} = props;
   return (
     <TouchableOpacity
-      key={item.appid}
-      onPress={() => navigation.navigate(item.navigate)}
+      key={item.Id}
+      onPress={() => navigation.navigate('KNCC_DanhMucScreen', {id: item.Id, title: item.Title})}
       style={{justifyContent: 'center', alignItems: 'center', width: width / 4 - 2, marginVertical: 10}}>
       <ImageBackground
         resizeMethod="resize"
         imageStyle={{borderRadius: 8}}
         style={{height: 60, width: 60, resizeMode: 'cover', aspectRatio: 1}}
-        source={{uri: item.image}}
+        source={{uri: item.Image}}
       />
-      <Text style={{width: _w + 30, textAlign: 'center', paddingTop: 10, fontSize: 13}}>{item.name}</Text>
+      <Text style={{width: _w + 30, textAlign: 'center', paddingTop: 10, fontSize: 13}}>{item.Title}</Text>
     </TouchableOpacity>
   );
 };
