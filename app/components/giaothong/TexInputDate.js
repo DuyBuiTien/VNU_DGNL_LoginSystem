@@ -6,10 +6,12 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 import DatePicker from '../../modules/react-native-datepicker';
 
 const TexInputDate = (props) => {
-  const {value, setValue, title} = props;
+  const {value, setValue, title, isImportant} = props;
   return (
     <View style={styles.content1}>
-      <Text style={styles.title}>{title}:</Text>
+      <Text style={styles.title}>
+        {title}: <Text style={{color: 'red', fontWeight: 'bold'}}>{isImportant ? ' *' : ''}</Text>
+      </Text>
       <View style={styles.content2}>
         <DatePicker
           style={{flex: 1}}

@@ -57,13 +57,13 @@ export const DANHMUC = [
     icon: require('../Images/paper.png'),
     background: require('../Images/gt10.png'),
   },
-  {
+  /* {
     id: 8,
     name: 'Sổ tay luật giao thông',
     navigate: 'GT_STLGT_MainScreen',
     icon: require('../Images/balance.png'),
     background: require('../Images/gt7.jpg'),
-  },
+  }, */
   {
     id: 9,
     name: 'Ôn thi GPLX',

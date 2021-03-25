@@ -7,17 +7,24 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 import {Header, Icon} from 'react-native-elements';
 import {Divider} from 'react-native-elements';
 import {useSelector, useDispatch} from 'react-redux';
-import Clipboard from '@react-native-clipboard/clipboard';
+import axios from 'axios';
 import moment from 'moment';
+
+import * as actions from '../../redux/global/Actions';
 
 const MainScreen = () => {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
+
   const route = useRoute();
-  const data = route.params?.data ?? {};
   const user = useSelector((state) => state.global.user);
   const dataService = useSelector((state) => state.global.dataService);
 
+  const [data, setData] = useState(route.params?.data ?? {});
+
   let UsernameData = data.User.Username;
+
+  const [checkDelete, setcheckDelete] = useState(user.username === UsernameData);
 
   const handlePhoneCall = (number) => {
     let phoneNumber = '';
@@ -29,11 +36,44 @@ const MainScreen = () => {
     Linking.openURL(phoneNumber);
   };
 
-  const handleCopy = (noidung) => {
-    Clipboard.setString(noidung);
+  const handlePhoneSMS = (number) => {
+    let phoneNumber = '';
+    if (Platform.OS === 'android') {
+      phoneNumber = `sms:${number}`;
+    } else {
+      phoneNumber = `sms:${number}`;
+    }
+    Linking.openURL(phoneNumber);
   };
 
-  const handleOpenMap = (latitude, longitude) => {};
+  const deleteItem = async () => {
+    const res = await axios({
+      method: 'delete',
+      url: `${dataService.BOOKMARK_URL}/v1/dichungxe/${data.Id}`,
+      headers: {
+        Authorization: `Bearer ${user.token}`,
+      },
+    });
+
+    dispatch(actions.setRandom());
+    navigation.goBack();
+  };
+
+  const hoanThanh = async () => {
+    const res = await axios({
+      method: 'patch',
+      url: `${dataService.BOOKMARK_URL}/v1/dichungxe/${data.Id}`,
+      headers: {
+        Authorization: `Bearer ${user.token}`,
+      },
+      data: {TrangThai: 1},
+    });
+
+    if (res && res.data && res.data.status === true && res.data.data) {
+      dispatch(actions.setRandom());
+      setData(res.data.data);
+    }
+  };
 
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
@@ -168,6 +208,25 @@ const MainScreen = () => {
                 </View>
               </View>
 
+              <View style={{marginTop: 15}}>
+                <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                  <FontAwesome
+                    name={'money-bill'}
+                    color="#F23A27"
+                    containerStyle={{paddingStart: 0}}
+                    onPress={() => {}}
+                    size={15}
+                  />
+                  <Text style={{marginStart: 10, flex: 1, color: '#424242', fontWeight: 'bold'}}>Giá</Text>
+                </View>
+                <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 10}}>
+                  <Text style={{marginStart: 20, flex: 1, color: '#424242'}}>
+                    {data.GiaDuKien.toLocaleString('it-IT', {style: 'currency', currency: 'VND'})}
+                    {Intl.NumberFormat('vi-VN', {style: 'currency', currency: 'VND'}).format(data.GiaDuKien)}
+                  </Text>
+                </View>
+              </View>
+
               <Divider style={{backgroundColor: '#ff6e40', marginTop: 15}} />
 
               <View style={{marginTop: 15}}>
@@ -187,24 +246,63 @@ const MainScreen = () => {
           </View>
         </ScrollView>
       </View>
-      <View style={{flexDirection: 'row', borderWidth: 0.5, borderColor: 'gray'}}>
-        <TouchableOpacity
-          style={{flex: 1, justifyContent: 'center', alignItems: 'center', padding: 5, backgroundColor: '#e65100'}}>
-          <FontAwesome name="phone-volume" size={20} color="#FFF" />
-          <Text style={{fontWeight: '600', color: '#FFF', margin: 5}}>Gọi điện</Text>
-        </TouchableOpacity>
+      {checkDelete ? (
+        <View style={{flexDirection: 'row'}}>
+          {data.TrangThai == 0 && (
+            <TouchableOpacity
+              onPress={() => {
+                handlePhoneCall(data.SoDienThoai);
+              }}
+              style={{flex: 1, justifyContent: 'center', alignItems: 'center', padding: 5, backgroundColor: '#1976d2'}}>
+              <FontAwesome name="edit" size={20} color="#FFF" />
+              <Text style={{fontWeight: '600', color: '#FFF', margin: 5}}>Sửa tin</Text>
+            </TouchableOpacity>
+          )}
+          {data.TrangThai == 0 && (
+            <TouchableOpacity
+              onPress={() => {
+                hoanThanh();
+              }}
+              style={{flex: 1, justifyContent: 'center', alignItems: 'center', padding: 5, backgroundColor: '#00796b'}}>
+              <FontAwesome name="calendar-check" size={20} color="#FFF" />
+              <Text style={{fontWeight: '600', color: '#FFF', margin: 5}}>Hoàn thành</Text>
+            </TouchableOpacity>
+          )}
+          <TouchableOpacity
+            onPress={() => {
+              deleteItem();
+            }}
+            style={{flex: 1, justifyContent: 'center', alignItems: 'center', padding: 5, backgroundColor: '#e65100'}}>
+            <FontAwesome name="trash-alt" size={20} color="#FFF" />
+            <Text style={{fontWeight: '600', color: '#FFF', margin: 5}}>Xoá tin</Text>
+          </TouchableOpacity>
+        </View>
+      ) : (
+        <View style={{flexDirection: 'row'}}>
+          <TouchableOpacity
+            onPress={() => {
+              handlePhoneCall(data.SoDienThoai);
+            }}
+            style={{flex: 1, justifyContent: 'center', alignItems: 'center', padding: 5, backgroundColor: '#e65100'}}>
+            <FontAwesome name="phone-volume" size={20} color="#FFF" />
+            <Text style={{fontWeight: '600', color: '#FFF', margin: 5}}>Gọi điện</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity
-          style={{flex: 1, justifyContent: 'center', alignItems: 'center', padding: 5, backgroundColor: '#26a69a'}}>
-          <FontAwesome name="sms" size={20} color="#FFF" />
-          <Text style={{fontWeight: '600', color: '#FFF', margin: 5}}>Gửi SMS</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={{flex: 1, justifyContent: 'center', alignItems: 'center', padding: 5, backgroundColor: '#1976d2'}}>
-          <FontAwesome name="comments" size={20} color="#FFF" />
-          <Text style={{fontWeight: '600', color: '#FFF', margin: 5}}>Chat</Text>
-        </TouchableOpacity>
-      </View>
+          <TouchableOpacity
+            onPress={() => {
+              handlePhoneSMS(data.SoDienThoai);
+            }}
+            style={{flex: 1, justifyContent: 'center', alignItems: 'center', padding: 5, backgroundColor: '#26a69a'}}>
+            <FontAwesome name="sms" size={20} color="#FFF" />
+            <Text style={{fontWeight: '600', color: '#FFF', margin: 5}}>Gửi SMS</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{flex: 1, justifyContent: 'center', alignItems: 'center', padding: 5, backgroundColor: '#1976d2'}}>
+            <FontAwesome name="comments" size={20} color="#FFF" />
+            <Text style={{fontWeight: '600', color: '#FFF', margin: 5}}>Chat</Text>
+          </TouchableOpacity>
+        </View>
+      )}
     </View>
   );
 };

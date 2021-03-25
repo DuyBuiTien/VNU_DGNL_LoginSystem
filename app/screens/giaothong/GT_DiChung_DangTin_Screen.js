@@ -6,12 +6,12 @@ import {useSelector, useDispatch} from 'react-redux';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 import {Button} from 'react-native-elements';
 import {showMessage} from 'react-native-flash-message';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 import {Header} from '../../components';
 import ActionSheet from '../../modules/react-native-actions-sheet';
+import * as actions from '../../redux/global/Actions';
 
-import {TouchableOpacity} from 'react-native-gesture-handler';
-import {MENU} from '../../data/GT_Data';
 import axios from 'axios';
 import {RenderChonViTri, TextInputLuaChon, GTTextInput, TexInputDate} from '../../components/giaothong';
 
@@ -56,6 +56,7 @@ const DATATANSUAT = [
 
 const MainScreen = () => {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.global.user);
   const refRBSheet = useRef();
   const dataService = useSelector((state) => state.global.dataService);
@@ -65,7 +66,7 @@ const MainScreen = () => {
   const [isNoidi, setIsNoidi] = useState(true);
 
   const [Ten, setTen] = useState(user.fullName);
-  const [SoDienThoai, setSoDienThoai] = useState('');
+  const [SoDienThoai, setSoDienThoai] = useState(user.phoneNumber);
   const [DiemDi, setDiemDi] = useState('');
   const [DiemDen, setDiemDen] = useState('');
   const [MucDich, setMucDich] = useState('');
@@ -116,6 +117,8 @@ const MainScreen = () => {
       DiemDen.length < 1 ||
       LoaiPhuongTien.length < 1 ||
       VaiTro.length < 1 ||
+      MucDich.length < 1 ||
+      TanSuat.length < 1 ||
       NgayDi.length < 1
     ) {
       showMessage({
@@ -165,6 +168,7 @@ const MainScreen = () => {
         description: 'Đăng tin thành công!',
         type: 'success',
       });
+      dispatch(actions.setRandom());
       navigation.navigate('GT_DiChung_CaNhan_Screen');
     }
   };
@@ -173,15 +177,21 @@ const MainScreen = () => {
     <View style={{flex: 1, backgroundColor: '#FFF'}}>
       <Header title="Đăng tin" isStack={true} />
 
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{}}>
-          <GTTextInput value={Ten} setValue={setTen} title={'Họ tên'} />
-          <GTTextInput value={SoDienThoai} setValue={setSoDienThoai} title={'Số điện thoại'} />
+          <GTTextInput value={Ten} setValue={setTen} title={'Họ tên'} isImportant={true} />
+          <GTTextInput value={SoDienThoai} setValue={setSoDienThoai} title={'Số điện thoại'} isImportant={true} />
 
-          <TextInputLuaChon value={VaiTro} title={'Vai Trò'} data={DATAVAITRO} setValue={setVaiTro} />
-          <TextInputLuaChon value={MucDich} title={'Mục đích'} data={MUCDICH} setValue={setMucDich} />
+          <TextInputLuaChon value={VaiTro} title={'Vai Trò'} data={DATAVAITRO} setValue={setVaiTro} isImportant={true} />
+          <TextInputLuaChon value={MucDich} title={'Mục đích'} data={MUCDICH} setValue={setMucDich} isImportant={true} />
           <GTTextInput value={GhiChu} setValue={setGhiChu} title={'Ghi chú'} multiline={true} />
-          <TextInputLuaChon value={LoaiPhuongTien} title={'Loại phương tiện'} data={PHUONGTIEN} setValue={setLoaiPhuongTien} />
+          <TextInputLuaChon
+            value={LoaiPhuongTien}
+            title={'Loại phương tiện'}
+            data={PHUONGTIEN}
+            setValue={setLoaiPhuongTien}
+            isImportant={true}
+          />
           <GTTextInput value={TongSoGhe} setValue={setTongSoGhe} title={'Số ghế đặt'} />
           <GTTextInput value={GiaDuKien} setValue={setGiaDuKien} title={'Giá'} />
           <GTTextInput value={HanhLy} setValue={setHanhLy} title={'Hành lý'} />
@@ -189,7 +199,9 @@ const MainScreen = () => {
           <TextInputLuaChon value={MuonDiCung} title={'Muốn đi cùng'} data={DATAGIOITINH} setValue={setMuonDiCung} />
 
           <View style={styles.content1}>
-            <Text style={styles.title}>Nơi đi:</Text>
+            <Text style={styles.title}>
+              Nơi đi: <Text style={{color: 'red', fontWeight: 'bold'}}>{' *'}</Text>
+            </Text>
             <TouchableOpacity
               onPress={() => {
                 ChonDiaDiem(true);
@@ -204,7 +216,9 @@ const MainScreen = () => {
             </TouchableOpacity>
           </View>
           <View style={styles.content1}>
-            <Text style={styles.title}>Nơi đến:</Text>
+            <Text style={styles.title}>
+              Nơi đến:<Text style={{color: 'red', fontWeight: 'bold'}}>{' *'}</Text>
+            </Text>
             <TouchableOpacity
               onPress={() => {
                 ChonDiaDiem(false);
@@ -219,12 +233,12 @@ const MainScreen = () => {
             </TouchableOpacity>
           </View>
 
-          <TextInputLuaChon value={TanSuat} title={'Tần suất'} data={DATATANSUAT} setValue={setMucDich} />
+          <TextInputLuaChon value={TanSuat} title={'Tần suất'} data={DATATANSUAT} setValue={setTanSuat} isImportant={true} />
 
-          <TexInputDate value={NgayDi} setValue={setNgayDi} title={'Ngày đi'} />
+          <TexInputDate value={NgayDi} setValue={setNgayDi} title={'Ngày đi'} isImportant={true} />
           <TexInputDate value={NgayVe} setValue={setNgayVe} title={'Ngày về'} />
 
-          <Button buttonStyle={{marginTop: 20, marginHorizontal: 15}} title="Đăng tin" onPress={DangTin} />
+          <Button buttonStyle={{marginTop: 20, marginHorizontal: 15, marginBottom: 10}} title="Đăng tin" onPress={DangTin} />
         </View>
       </ScrollView>
       <ActionSheet

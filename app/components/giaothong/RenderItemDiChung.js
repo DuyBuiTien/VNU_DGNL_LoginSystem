@@ -36,7 +36,7 @@ const RenderItemDiChung = (props) => {
         <View style={{flexDirection: 'row', alignItems: 'center', flex: 1}}>
           <FontAwesome name="money-bill" size={13} color="#1a237e" />
           <Text style={{marginStart: 5, fontSize: 12, color: '#263238'}} numberOfLines={1}>
-            {data.GiaDuKien}
+            {`${data.GiaDuKien.toLocaleString()}`}
           </Text>
         </View>
       </View>

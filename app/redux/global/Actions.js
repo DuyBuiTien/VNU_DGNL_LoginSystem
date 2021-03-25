@@ -1,5 +1,3 @@
-import {Base64} from 'js-base64';
-
 import * as requestFromServer from './Crud';
 import {globalSlice, callTypes} from './Slice';
 import store from '../store';
@@ -138,4 +136,8 @@ export const uploadAvatar = (body) => (dispatch) => {
 
 export const setMenuFavor = (menus) => (dispatch) => {
   return dispatch(actions.setMenuCaNhan(menus));
+};
+
+export const setRandom = () => (dispatch) => {
+  dispatch(actions.setRandom());
 };

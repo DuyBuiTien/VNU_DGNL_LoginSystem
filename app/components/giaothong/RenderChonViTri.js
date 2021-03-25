@@ -62,7 +62,6 @@ const ChonDonVi = (props) => {
       if (response.data && response.data.data) {
         setDataDiaDiem(response.data.data);
       }
-      console.log(response.data.data);
       setIsLoading(false);
     };
     fetchData();

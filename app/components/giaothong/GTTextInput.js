@@ -3,10 +3,12 @@ import React from 'react';
 import {StyleSheet, Text, View, TextInput} from 'react-native';
 
 const GTTextInput = (props) => {
-  const {title, value, setValue, multiline} = props;
+  const {title, value, setValue, multiline, isImportant} = props;
   return (
     <View style={styles.content1}>
-      <Text style={styles.title}>{title}:</Text>
+      <Text style={styles.title}>
+        {title}: <Text style={{color: 'red', fontWeight: 'bold'}}>{isImportant ? ' *' : ''}</Text>
+      </Text>
       <View style={styles.input}>
         <TextInput
           placeholder={title}
