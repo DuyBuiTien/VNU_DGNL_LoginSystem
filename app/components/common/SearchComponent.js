@@ -11,7 +11,7 @@ const SearchComponent = ({value, onChangeText, placeholder, onSubmitEditing, key
           backgroundColor: '#EAEAEA',
           flexDirection: 'row',
           borderRadius: 4,
-          margin: Platform.OS === 'android' ? 0 : 10,
+          margin: Platform.OS === 'android' ? 0 : 0,
           alignItems: 'center',
           flex: 1,
         }}>

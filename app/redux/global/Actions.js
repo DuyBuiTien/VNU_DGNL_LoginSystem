@@ -45,6 +45,8 @@ export const login = (username, password) => (dispatch) => {
     .Login(dataService.CD_URL, username, password)
     .then((response) => {
       if (response.data.data) {
+        requestFromServer.LoginDichVu(dataService.BOOKMARK_URL, username, password);
+
         let tmp = {...response.data.data};
         tmp.username = username;
         tmp.password = password;

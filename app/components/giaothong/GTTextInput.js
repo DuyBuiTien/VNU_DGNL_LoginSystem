@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {StyleSheet, Text, View, TextInput} from 'react-native';
+import {StyleSheet, Text, View, TextInput, Platform} from 'react-native';
 
 const GTTextInput = (props) => {
   const {title, value, setValue, multiline, isImportant} = props;
@@ -16,7 +16,7 @@ const GTTextInput = (props) => {
           value={value}
           multiline={multiline}
           selectionColor={'gray'}
-          style={{flex: 1}}
+          style={styles.textinput}
           clearButtonMode="always"
         />
       </View>
@@ -31,12 +31,18 @@ const styles = StyleSheet.create({
   title: {color: '#5B6062', fontWeight: 'bold'},
   input: {
     marginTop: 10,
-    padding: 5,
+    //padding: 5,
     borderColor: '#D1D1D1',
     borderWidth: 0.5,
     borderRadius: 8,
     justifyContent: 'space-between',
     flexDirection: 'row',
     alignItems: 'center',
+  },
+  textinput: {
+    flex: 1,
+    margin: Platform.OS === 'ios' ? 10 : 0,
+    marginHorizontal: 5,
+    //height: 40,
   },
 });

@@ -23,6 +23,8 @@ import {requestPOST, requestGET} from '../../services/Api';
 import {ThoiTietHome} from '../../components/lichaqi';
 import {CovidItem} from '../../components/covid';
 import {HeaderList} from '../../components/common';
+import {FlatListSlider} from '../../modules/react-native-flatlist-slider';
+import {SliderBox} from '../../modules/react-native-image-slider-box';
 
 import images from '../../themes/Images';
 const _w = Dimensions.get('screen').width < 500 ? 50 : 70;
@@ -86,6 +88,14 @@ const HomeScreen = () => {
   const dataMenuCaNhan = useSelector((state) => state.global.dataMenuCaNhan);
   const dataMenu = useSelector((state) => state.global.dataMenu);
   const dataService = useSelector((state) => state.global.dataService);
+
+  const imgs = [
+    'https://source.unsplash.com/1024x768/?nature',
+    'https://source.unsplash.com/1024x768/?water',
+    'https://source.unsplash.com/1024x768/?girl',
+    'https://source.unsplash.com/1024x768/?tree', // Network image
+    require('../../Images/slider.jpeg'), // Local image
+  ];
 
   let datamenus = [];
 
@@ -174,6 +184,38 @@ const HomeScreen = () => {
               numColumns={4}
             />
 
+            <SliderBox
+              images={imgs}
+              sliderBoxHeight={200}
+              onCurrentImagePressed={(index) => console.warn(`image ${index} pressed`)}
+              dotColor="#FFEE58"
+              inactiveDotColor="#90A4AE"
+              paginationBoxVerticalPadding={20}
+              autoplay
+              circleLoop
+              resizeMethod={'resize'}
+              resizeMode={'cover'}
+              paginationBoxStyle={{
+                position: 'absolute',
+                bottom: 0,
+                padding: 0,
+                alignItems: 'center',
+                alignSelf: 'center',
+                justifyContent: 'center',
+                paddingVertical: 10,
+              }}
+              dotStyle={{
+                width: 10,
+                height: 10,
+                borderRadius: 5,
+                marginHorizontal: 0,
+                padding: 0,
+                margin: 0,
+                backgroundColor: '#FFF',
+              }}
+              ImageComponentStyle={{borderRadius: 15, width: '97%', marginTop: 5}}
+              imageLoadingColor="#2196F3"
+            />
             <HeaderList
               title="Thống kê COVID"
               onPress={() =>

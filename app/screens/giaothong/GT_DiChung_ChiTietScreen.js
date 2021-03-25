@@ -148,6 +148,24 @@ const MainScreen = () => {
 
               <View style={{marginTop: 15}}>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                  <FontAwesome
+                    name={'calendar-alt'}
+                    color="#F23A27"
+                    containerStyle={{paddingStart: 0}}
+                    onPress={() => {}}
+                    size={15}
+                  />
+                  <Text style={{marginStart: 10, flex: 1, color: '#424242', fontWeight: 'bold'}}>Ngày khởi hành</Text>
+                </View>
+                <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 10}}>
+                  <Text style={{marginStart: 20, flex: 1, color: '#424242'}}>{`${moment(new Date(data.NgayDi)).format(
+                    'DD/MM/YYYY',
+                  )}`}</Text>
+                </View>
+              </View>
+
+              <View style={{marginTop: 15}}>
+                <View style={{flexDirection: 'row', alignItems: 'center'}}>
                   <FontAwesome name={'phone'} color="#F23A27" containerStyle={{paddingStart: 0}} onPress={() => {}} size={15} />
                   <Text style={{marginStart: 10, flex: 1, color: '#424242', fontWeight: 'bold'}}>Điện thoại</Text>
                 </View>
@@ -222,7 +240,6 @@ const MainScreen = () => {
                 <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 10}}>
                   <Text style={{marginStart: 20, flex: 1, color: '#424242'}}>
                     {data.GiaDuKien.toLocaleString('it-IT', {style: 'currency', currency: 'VND'})}
-                    {Intl.NumberFormat('vi-VN', {style: 'currency', currency: 'VND'}).format(data.GiaDuKien)}
                   </Text>
                 </View>
               </View>

@@ -235,8 +235,8 @@ const MainScreen = () => {
 
           <TextInputLuaChon value={TanSuat} title={'Tần suất'} data={DATATANSUAT} setValue={setTanSuat} isImportant={true} />
 
-          <TexInputDate value={NgayDi} setValue={setNgayDi} title={'Ngày đi'} isImportant={true} />
-          <TexInputDate value={NgayVe} setValue={setNgayVe} title={'Ngày về'} />
+          <TexInputDate value={NgayDi} setValue={setNgayDi} title={'Ngày khởi hành'} isImportant={true} />
+          <TexInputDate value={GioDi} setValue={setGioDi} title={'Giờ xuất phát'} mode={'time'} format={'HH:mm'} />
 
           <Button buttonStyle={{marginTop: 20, marginHorizontal: 15, marginBottom: 10}} title="Đăng tin" onPress={DangTin} />
         </View>

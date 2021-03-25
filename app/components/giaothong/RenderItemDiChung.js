@@ -18,39 +18,39 @@ const RenderItemDiChung = (props) => {
           {data.VaiTro}
           <Text style={{fontWeight: 'bold'}}> {data.Ten}</Text>
         </Text>
-        <View style={{flexDirection: 'row', alignItems: 'center', flex: 1}}>
+        {/* <View style={{flexDirection: 'row', alignItems: 'center', flex: 1}}>
           <FontAwesome name="suitcase-rolling" size={13} color="#dd2c00" />
           <Text style={{marginStart: 5, fontSize: 12, color: '#263238'}} numberOfLines={1}>
             {data.HanhLy}
           </Text>
-        </View>
+        </View> */}
       </View>
       <View style={{flexDirection: 'row', alignItems: 'center', margin: 10}}>
         <View style={{flexDirection: 'row', alignItems: 'center', flex: 1}}>
           <FontAwesome name="car" size={13} color="#1a237e" />
-          <Text style={{marginStart: 5, fontSize: 12, color: '#263238'}} numberOfLines={1}>
+          <Text style={{marginStart: 5, fontSize: 13, color: '#263238'}} numberOfLines={1}>
             {data.LoaiPhuongTien}
           </Text>
         </View>
 
         <View style={{flexDirection: 'row', alignItems: 'center', flex: 1}}>
           <FontAwesome name="money-bill" size={13} color="#1a237e" />
-          <Text style={{marginStart: 5, fontSize: 12, color: '#263238'}} numberOfLines={1}>
-            {`${data.GiaDuKien.toLocaleString()}`}
+          <Text style={{marginStart: 5, fontSize: 13, color: '#263238'}} numberOfLines={1}>
+            {data.GiaDuKien.toLocaleString('it-IT', {style: 'currency', currency: 'VND'})}
           </Text>
         </View>
       </View>
       <View style={{flexDirection: 'row', alignItems: 'center', margin: 10}}>
         <View style={{flexDirection: 'row', alignItems: 'center', flex: 2}}>
           <FontAwesome name="calendar-alt" size={13} color="#004d40" />
-          <Text style={{marginStart: 5, fontSize: 12, color: '#263238'}} numberOfLines={1}>
+          <Text style={{marginStart: 5, fontSize: 13, color: '#263238'}} numberOfLines={1}>
             {`${moment(new Date(data.NgayDi)).format('DD/MM/YYYY')}`}
           </Text>
         </View>
 
         <View style={{flexDirection: 'row', alignItems: 'center', flex: 2}}>
           <FontAwesome name="clock" size={13} color="#004d40" />
-          <Text style={{marginStart: 5, fontSize: 12, color: '#263238'}} numberOfLines={1}>
+          <Text style={{marginStart: 5, fontSize: 13, color: '#263238'}} numberOfLines={1}>
             {`${data.GioDi}`}
           </Text>
         </View>
@@ -58,13 +58,13 @@ const RenderItemDiChung = (props) => {
       <View style={{flexDirection: 'row', alignItems: 'center', margin: 10}}>
         <View style={{flexDirection: 'row', alignItems: 'center', flex: 1}}>
           <FontAwesome name="plane-departure" size={13} color="#004d40" />
-          <Text style={{marginStart: 5, fontSize: 12, color: '#263238', flex: 1}} numberOfLines={1}>
+          <Text style={{marginStart: 5, fontSize: 13, color: '#263238', flex: 1, marginHorizontal: 5}} numberOfLines={2}>
             {data.DiemDi}
           </Text>
         </View>
         <View style={{flexDirection: 'row', alignItems: 'center', flex: 1}}>
           <FontAwesome name="plane-arrival" size={13} color="#004d40" />
-          <Text style={{marginStart: 5, fontSize: 12, color: '#263238', flex: 1}} numberOfLines={1}>
+          <Text style={{marginStart: 5, fontSize: 13, color: '#263238', flex: 1, marginHorizontal: 5}} numberOfLines={2}>
             {data.DiemDen}
           </Text>
         </View>

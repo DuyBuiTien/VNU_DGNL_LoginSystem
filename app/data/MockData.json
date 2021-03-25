@@ -14,7 +14,7 @@
     "HOST_PAHT": "https://tuongtac.ninhthuan.gov.vn",
     "DVC_URL": "https://dichvucong.namdinh.gov.vn/_layouts/tandan.dvc.api/APIDVCService.svc",
     "DN_URL": "https://dieuhanh.namdinh.gov.vn/_layouts/15/TD.DN.Service/WCFService.svc",
-    "CB_URL": "https://dieuhanh.namdinh.gov.vn/_layouts/15/TD.CB.Service/WCFService.svc",
+    "CB_URL": "https://qldv.hanhchinhcong.net/_vti_bin/WCFService.svc",
     "TDTM_URL": "https://qldv.hanhchinhcong.net/_vti_bin/WCFServiceHL.svc",
     "GCTT_URL": "https://dieuhanh.namdinh.gov.vn/_vti_bin/TD.XaThongMinh.GiaCaThiTruong.WCF/GCTTService.svc",
     "YT_URL": "https://dieuhanh.namdinh.gov.vn/_vti_bin/TD.XaThongMinh.YTe.WCF/XtmYteService.svc",

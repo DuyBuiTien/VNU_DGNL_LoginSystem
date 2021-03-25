@@ -55,7 +55,7 @@ const LoginScreen = () => {
     ) {
       setIsLoading(true);
       try {
-        var res = await requestPOST(`${dataService.CD_URL}/RegisterAccount`, {
+        var res = await requestPOST(`${dataService.CD_URL}/CreateNewUser`, {
           account: username,
           passWord: password,
           address: address,
@@ -73,15 +73,15 @@ const LoginScreen = () => {
           companyaddress: companyaddress,
           companycode: companycode,
         });
-        console.log(res);
+
         setIsLoading(false);
         if (res && res.error.code === 200) {
           showMessage({
             message: 'Thành công',
-            description: 'Thông tin về tài khoản được gửi về địa chỉ thư điện tử của bạn!',
+            description: 'Tạo tài khoản thành cônng!',
             type: 'success',
           });
-          navigation.navigate('DVC_Auth_LoginScreen');
+          navigation.navigate('LoginScreen');
         }
       } catch (error) {
         showMessage({

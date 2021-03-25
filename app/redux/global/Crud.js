@@ -17,16 +17,17 @@ export function Login_old(urlService, tokenBearer, user, pass) {
 }
 
 export function Login(urlService, user, pass) {
-  console.log({
-    user: user,
-    pass: pass,
-    tokenDevice: '',
-  });
-
   return axios.post(urlService + '/GetTokenKey', {
     user: user,
     pass: pass,
     tokenDevice: '',
+  });
+}
+
+export function LoginDichVu(urlService, user, pass) {
+  return axios.post(urlService + '/v1/auth/login', {
+    user: user,
+    pass: pass,
   });
 }
 

@@ -6,7 +6,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 import DatePicker from '../../modules/react-native-datepicker';
 
 const TexInputDate = (props) => {
-  const {value, setValue, title, isImportant} = props;
+  const {value, setValue, title, isImportant, mode, format} = props;
   return (
     <View style={styles.content1}>
       <Text style={styles.title}>
@@ -14,11 +14,12 @@ const TexInputDate = (props) => {
       </Text>
       <View style={styles.content2}>
         <DatePicker
+          is24Hour={true}
           style={{flex: 1}}
           date={value}
-          mode="date"
+          mode={mode ? mode : 'date'}
           placeholder={title}
-          format="DD/MM/YYYY"
+          format={format ? format : 'DD/MM/YYYY'}
           confirmBtnText="Chọn"
           cancelBtnText="Huỷ"
           customStyles={{
