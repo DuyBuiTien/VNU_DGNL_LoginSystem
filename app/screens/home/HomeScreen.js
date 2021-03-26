@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import {
   StyleSheet,
   View,
@@ -7,7 +7,7 @@ import {
   ScrollView,
   RefreshControl,
   FlatList,
-  Image,
+  Linking,
   StatusBar,
   Dimensions,
 } from 'react-native';
@@ -17,13 +17,11 @@ import {Text, Button, Icon, Divider, Badge} from 'react-native-elements';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
-import {TT_URL} from '../../config/server';
 import {requestPOST, requestGET} from '../../services/Api';
 
 import {ThoiTietHome} from '../../components/lichaqi';
 import {CovidItem} from '../../components/covid';
 import {HeaderList} from '../../components/common';
-import {FlatListSlider} from '../../modules/react-native-flatlist-slider';
 import {SliderBox} from '../../modules/react-native-image-slider-box';
 
 import images from '../../themes/Images';
@@ -89,10 +87,45 @@ const HomeScreen = () => {
   const dataMenu = useSelector((state) => state.global.dataMenu);
   const dataService = useSelector((state) => state.global.dataService);
 
-  const imgs = [
-    'https://source.unsplash.com/1024x768/?tree', // Network image
+  /* const imgs = [
+    require('../../Images/congthongtinnd.jpeg'),
     require('../../Images/slider.jpeg'), // Local image
+  ]; */
+  const [imgs, setImgs] = useState([]);
+
+  const IMAGEHOME = [
+    {
+      Id: 0,
+      Image: require('../../Images/congthongtinnd.jpeg'),
+      IpagePad: null,
+      Url: 'https://namdinh.gov.vn',
+      Title: 'Cổng thông tin Nam Định',
+    },
+    {
+      Id: 1,
+      Image: require('../../Images/slider.jpeg'),
+      IpagePad: null,
+      Url: 'https://bluezone.gov.vn',
+      Title: 'Bluzone',
+    },
   ];
+
+  useEffect(() => {
+    let arr_image = [];
+    IMAGEHOME.map((item) => {
+      arr_image.push(item.Image);
+    });
+    setImgs(arr_image);
+    return () => {};
+  }, []);
+
+  const handlePressURL = async (url) => {
+    const supported = await Linking.canOpenURL(url);
+    if (supported) {
+      await Linking.openURL(url);
+    } else {
+    }
+  };
 
   let datamenus = [];
 
@@ -187,8 +220,10 @@ const HomeScreen = () => {
 
             <SliderBox
               images={imgs}
-              sliderBoxHeight={200}
-              onCurrentImagePressed={(index) => console.warn(`image ${index} pressed`)}
+              sliderBoxHeight={160}
+              onCurrentImagePressed={(index) => {
+                handlePressURL(IMAGEHOME[index].Url);
+              }}
               dotColor="#FFEE58"
               inactiveDotColor="#90A4AE"
               paginationBoxVerticalPadding={20}
