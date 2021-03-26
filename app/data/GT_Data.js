@@ -57,6 +57,13 @@ export const DANHMUC = [
     icon: require('../Images/paper.png'),
     background: require('../Images/gt10.png'),
   },
+  {
+    id: 11,
+    name: 'Tính nồng độ cồn',
+    navigate: 'GT_NONGDOCON_MainScreen',
+    icon: require('../Images/no_alcohol.png'),
+    background: require('../Images/nongdocon.jpeg'),
+  },
   /* {
     id: 8,
     name: 'Sổ tay luật giao thông',
@@ -64,6 +71,13 @@ export const DANHMUC = [
     icon: require('../Images/balance.png'),
     background: require('../Images/gt7.jpg'),
   }, */
+  {
+    id: 8,
+    name: 'Biển báo giao thông',
+    navigate: 'GT_BienBao_MainScreen',
+    icon: require('../Images/forbbiden.png'),
+    background: require('../Images/gt7.jpg'),
+  },
   {
     id: 9,
     name: 'Ôn thi GPLX',

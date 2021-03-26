@@ -8,7 +8,7 @@ const ItemTextInput = (props) => {
   const {value, onChangeText, placeholder, icon, title, description, showEye} = props;
   return (
     <View style={{marginVertical: 5}}>
-      <Text style={{marginHorizontal: 10, color: '#5B6062', fontWeight: '600'}}>{title}</Text>
+      <Text style={{marginHorizontal: 10, color: '#5B6062', fontWeight: 'bold'}}>{title}</Text>
       <View style={[styles.textinputContainer, {backgroundColor: onChangeText ? 'transparent' : '#eeeeee'}]}>
         <FontAwesome name={icon ? icon : 'home'} color="#787C7E" size={20} style={styles.textinputIcon} />
         {onChangeText ? (
