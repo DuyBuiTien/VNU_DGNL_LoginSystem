@@ -24,7 +24,7 @@
     "DL_URL": "https://qldl.tandan.com.vn/_layouts/15/TD.QLDL.Service/WCFService.svc",
     "GD_URL": "https://slldt.namdinh.gov.vn/_layouts/15/TD.QLGD.Service/WCFService.svc",
     "QLDB_URL": "https://qldv.hanhchinhcong.net/_vti_bin/TD.XaThongMinh.DiaBan.WCF/XtmDiaBanService.svc",
-    "HOST_YT": "https://qlyt.tandan.com.vn",
+    "HOST_YT": "https://qldv.hanhchinhcong.net",
     "HOST_DH": "https://dieuhanh.namdinh.gov.vn",
     "COVID_URL": "https://dieuhanh.ninhthuan.gov.vn/_layouts/15/TD.COVID.Service/WCFService.svc",
     "COVID2_URL": "https://smartcity.hanoi.gov.vn/Home",

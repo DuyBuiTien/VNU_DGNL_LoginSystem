@@ -7,6 +7,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 import {Button} from 'react-native-elements';
 import {showMessage} from 'react-native-flash-message';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import moment from 'moment';
 
 import {Header} from '../../components';
 import ActionSheet from '../../modules/react-native-actions-sheet';
@@ -56,6 +57,8 @@ const DATATANSUAT = [
 
 const MainScreen = () => {
   const navigation = useNavigation();
+  const route = useRoute();
+  const data = route.params?.data ?? null;
   const dispatch = useDispatch();
   const user = useSelector((state) => state.global.user);
   const refRBSheet = useRef();
@@ -65,25 +68,27 @@ const MainScreen = () => {
 
   const [isNoidi, setIsNoidi] = useState(true);
 
+  console.log(data);
+
   const [Ten, setTen] = useState(user.fullName);
   const [SoDienThoai, setSoDienThoai] = useState(user.phoneNumber);
-  const [DiemDi, setDiemDi] = useState('');
-  const [DiemDen, setDiemDen] = useState('');
-  const [MucDich, setMucDich] = useState('');
-  const [HanhLy, setHanhLy] = useState('');
-  const [MuonDiCung, setMuonDiCung] = useState('');
-  const [GhiChu, setGhiChu] = useState('');
-  const [LoaiPhuongTien, setLoaiPhuongTien] = useState('');
-  const [VaiTro, setVaiTro] = useState('');
-  const [TanSuat, setTanSuat] = useState('');
-  const [NgayDi, setNgayDi] = useState('');
-  const [NgayVe, setNgayVe] = useState('');
-  const [GioDi, setGioDi] = useState('');
-  const [GioVe, setGioVe] = useState('');
-  const [Thu, setThu] = useState('');
-  const [GiaDuKien, setGiaDuKien] = useState(0);
-  const [SoGheTrong, setSoGheTrong] = useState(0);
-  const [TongSoGhe, setTongSoGhe] = useState(0);
+  const [DiemDi, setDiemDi] = useState(data?.DiemDi ?? '');
+  const [DiemDen, setDiemDen] = useState(data?.DiemDen ?? '');
+  const [MucDich, setMucDich] = useState(data?.MucDich ?? '');
+  const [HanhLy, setHanhLy] = useState(data?.HanhLy ?? '');
+  const [MuonDiCung, setMuonDiCung] = useState(data?.MuonDiCung ?? '');
+  const [GhiChu, setGhiChu] = useState(data?.GhiChu ?? '');
+  const [LoaiPhuongTien, setLoaiPhuongTien] = useState(data?.LoaiPhuongTien ?? '');
+  const [VaiTro, setVaiTro] = useState(data?.VaiTro ?? '');
+  const [TanSuat, setTanSuat] = useState(data?.TanSuat ?? '');
+  const [NgayDi, setNgayDi] = useState(data.NgayDi != null ? moment(new Date(data.NgayDi)).format('DD/MM/YYYY') : '');
+  const [NgayVe, setNgayVe] = useState(data?.NgayVe ?? '');
+  const [GioDi, setGioDi] = useState(data?.GioDi ?? '');
+  const [GioVe, setGioVe] = useState(data?.GioVe ?? '');
+  const [Thu, setThu] = useState(data?.Thu ?? '');
+  const [GiaDuKien, setGiaDuKien] = useState(`${data?.GiaDuKien ?? 0}`);
+  const [SoGheTrong, setSoGheTrong] = useState(`${data?.SoGheTrong ?? 0}`);
+  const [TongSoGhe, setTongSoGhe] = useState(`${data?.TongSoGhe ?? 0}`);
 
   useEffect(() => {
     return () => {};
@@ -93,14 +98,14 @@ const MainScreen = () => {
     setIsNoidi(check);
     refRBSheet.current.setModalVisible(true);
   };
-  const handleChonNoiDi = (data) => {
+  const handleChonNoiDi = (data_) => {
     refRBSheet.current.setModalVisible(false);
-    setDiemDi(data.PathWithType ? data.PathWithType : data.NameWithType);
+    setDiemDi(data_.PathWithType ? data_.PathWithType : data_.NameWithType);
   };
 
-  const handleChonNoiDen = (data) => {
+  const handleChonNoiDen = (data_) => {
     refRBSheet.current.setModalVisible(false);
-    setDiemDen(data.PathWithType ? data.PathWithType : data.NameWithType);
+    setDiemDen(data_.PathWithType ? data_.PathWithType : data_.NameWithType);
   };
 
   const ModalHide = () => {
@@ -132,8 +137,8 @@ const MainScreen = () => {
     }
 
     var config = {
-      method: 'post',
-      url: `${dataService.BOOKMARK_URL}/v1/dichungxe`,
+      method: 'patch',
+      url: `${dataService.BOOKMARK_URL}/v1/dichungxe/${data.Id}`,
       headers: {
         Authorization: `Bearer ${user.token}`,
       },
@@ -145,13 +150,13 @@ const MainScreen = () => {
         HanhLy,
         MuonDiCung,
         GhiChu,
+        MucDich,
         LoaiPhuongTien,
         VaiTro,
         TanSuat,
         NgayDi,
         NgayVe,
         GioDi,
-        MucDich,
         GioVe,
         Thu,
         GiaDuKien,
@@ -160,13 +165,15 @@ const MainScreen = () => {
       },
     };
 
+    console.log(config);
+
     const res = await axios(config);
 
     setloading(false);
     if (res) {
       showMessage({
         message: 'Thành công',
-        description: 'Đăng tin thành công!',
+        description: 'Sửa tin thành công!',
         type: 'success',
       });
       dispatch(actions.setRandom());
@@ -239,7 +246,7 @@ const MainScreen = () => {
           <TexInputDate value={NgayDi} setValue={setNgayDi} title={'Ngày khởi hành'} isImportant={true} />
           <TexInputDate value={GioDi} setValue={setGioDi} title={'Giờ xuất phát'} mode={'time'} format={'HH:mm'} />
 
-          <Button buttonStyle={{marginTop: 20, marginHorizontal: 15, marginBottom: 10}} title="Đăng tin" onPress={DangTin} />
+          <Button buttonStyle={{marginTop: 20, marginHorizontal: 15, marginBottom: 10}} title={'Lưu'} onPress={DangTin} />
         </View>
       </ScrollView>
       <ActionSheet

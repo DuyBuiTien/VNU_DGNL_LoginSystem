@@ -23,14 +23,6 @@ const DVC_MainScreen = () => {
 
   const dataService = useSelector((state) => state.global.dataService);
 
-  const [TrangThai, setTrangThai] = useState(0);
-  const [MucDich, setMucDich] = useState('');
-  const [DiemDi, setDiemDi] = useState('');
-  const [DiemDen, setDiemDen] = useState('');
-  const [LoaiPhuongTien, setLoaiPhuongTien] = useState('');
-  const [VaiTro, setVaiTro] = useState('');
-  const [TanSuat, setTanSuat] = useState('');
-
   const [dataDiChung, setDataDiChung] = useState([]);
   const [refreshing, setRefreshing] = React.useState(false);
 
@@ -39,7 +31,7 @@ const DVC_MainScreen = () => {
       setIsLoading(true);
       let response = await axios({
         method: 'get',
-        url: `${dataService.BOOKMARK_URL}/v1/dichungxe/tinmoi?page=0&perpage=1000&TrangThai=${active}&q=${inputValue}`,
+        url: `${dataService.BOOKMARK_URL}/v1/dichungxe/tinmoi?page=0&perpage=1000&TrangThai=1&q=${inputValue}`,
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
@@ -57,7 +49,7 @@ const DVC_MainScreen = () => {
 
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
-      <Header title="Quản lý tin đăng" isStack={true} />
+      <Header title="Danh sách tin đăng" isStack={true} />
 
       {!user ? (
         <BlockLogin name="Đi chung xe" />
@@ -70,6 +62,7 @@ const DVC_MainScreen = () => {
               <ActivityIndicator size="large" color="#fb8c00" style={{flex: 1, justifyContent: 'center'}} />
             ) : (
               <FlatList
+                showsVerticalScrollIndicator={false}
                 onRefresh={() => {
                   setRefreshing(true);
                 }}

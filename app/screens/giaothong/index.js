@@ -15,6 +15,7 @@ import GT_DiChung_CaNhan_Screen from './GT_DiChung_CaNhan_Screen';
 import GT_DiChung_ChiTietScreen from './GT_DiChung_ChiTietScreen';
 import GT_BienBao_MainScreen from './GT_BienBao_MainScreen';
 import GT_NONGDOCON_MainScreen from './GT_NONGDOCON_MainScreen';
+import GT_DiChung_SuaTin_Screen from './GT_DiChung_SuaTin_Screen';
 
 export {
   GT_MainScreen,
@@ -32,4 +33,5 @@ export {
   GT_DiChung_ChiTietScreen,
   GT_BienBao_MainScreen,
   GT_NONGDOCON_MainScreen,
+  GT_DiChung_SuaTin_Screen,
 };

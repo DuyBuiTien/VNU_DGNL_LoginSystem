@@ -5,13 +5,13 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 
 const SearchComponent = ({value, onChangeText, placeholder, onSubmitEditing, keyboardType}) => {
   return (
-    <View style={{flexDirection: 'row', alignItems: 'center', paddingHorizontal: 10}}>
+    <View style={{flexDirection: 'row', alignItems: 'center', paddingHorizontal: 10, marginBottom: 5}}>
       <View
         style={{
           backgroundColor: '#EAEAEA',
           flexDirection: 'row',
           borderRadius: 4,
-          margin: Platform.OS === 'android' ? 0 : 0,
+          margin: Platform.OS === 'android' ? 2 : 2,
           alignItems: 'center',
           flex: 1,
         }}>

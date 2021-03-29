@@ -10,6 +10,7 @@ import {
   Linking,
   StatusBar,
   Dimensions,
+  Platform,
 } from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import {useNavigation, useRoute} from '@react-navigation/native';
@@ -30,6 +31,8 @@ const _h = Dimensions.get('screen').width < 500 ? 50 : 70;
 const _b = Dimensions.get('screen').width < 500 ? 25 : 30;
 
 const {height, width} = Dimensions.get('window');
+
+const PHONE = '0228 363 1116';
 
 import moment from 'moment';
 moment.locale('vi');
@@ -186,6 +189,16 @@ const HomeScreen = () => {
     );
   };
 
+  const handlePhoneCall = (number) => {
+    let phoneNumber = '';
+    if (Platform.OS === 'android') {
+      phoneNumber = `tel:${number}`;
+    } else {
+      phoneNumber = `telprompt:${number}`;
+    }
+    Linking.openURL(phoneNumber);
+  };
+
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="#00000000" barStyle="light-content" translucent={true} />
@@ -301,10 +314,13 @@ const HomeScreen = () => {
                 <Text style={styles.textHeaderTitle}>Hỗ trợ nóng</Text>
               </View>
               <TouchableOpacity
-                style={{flexDirection: 'row', backgroundColor: '#1D89A3', padding: 20, borderRadius: 10, marginVertical: 10}}>
+                style={{flexDirection: 'row', backgroundColor: '#1D89A3', padding: 20, borderRadius: 10, marginVertical: 10}}
+                onPress={() => {
+                  handlePhoneCall(PHONE);
+                }}>
                 <View style={{flex: 1}}>
                   <Text style={{color: '#FFF', fontSize: 20, fontWeight: 'normal'}}>Tổng đài hỗ trợ</Text>
-                  <Text style={{color: '#FFF', fontSize: 22, fontWeight: 'bold', marginTop: 5}}>0228 363 1116</Text>
+                  <Text style={{color: '#FFF', fontSize: 22, fontWeight: 'bold', marginTop: 5}}>{PHONE}</Text>
                 </View>
                 <FontAwesome name={'phone-volume'} size={55} style={{marginEnd: 10, color: '#59ABBC'}} />
               </TouchableOpacity>

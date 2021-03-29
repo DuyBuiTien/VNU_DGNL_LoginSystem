@@ -11,7 +11,7 @@ import AuthStack from './AuthStack';
 import AppBottomTab from './AppBottomTab';
 
 import {AccountScreen, ChangePasswordScreen} from '../screens/auth';
-import {BDHC_UnitScreen, BDHC_UnitChildScreen} from '../screens/diaphuong';
+import {BDHC_UnitScreen, BDHC_UnitChildScreen, BDHC_UnitChild2Screen} from '../screens/diaphuong';
 import {GalleryScreen, WebViewScreen, VideoScreen} from '../screens/common';
 import {MenuScreen} from '../screens/home';
 import {
@@ -57,6 +57,7 @@ import {
   GT_DiChung_ChiTietScreen,
   GT_BienBao_MainScreen,
   GT_NONGDOCON_MainScreen,
+  GT_DiChung_SuaTin_Screen,
 } from '../screens/giaothong';
 
 import {
@@ -184,6 +185,7 @@ const AppStack = () => {
       <Stack.Screen name="TrungTamTroGiupScreen" component={TrungTamTroGiupScreen} />
       <Stack.Screen name="BDHC_UnitScreen" component={BDHC_UnitScreen} />
       <Stack.Screen name="BDHC_UnitChildScreen" component={BDHC_UnitChildScreen} />
+      <Stack.Screen name="BDHC_UnitChild2Screen" component={BDHC_UnitChild2Screen} />
       <Stack.Screen name="GalleryScreen" component={GalleryScreen} />
       <Stack.Screen name="VideoScreen" component={VideoScreen} />
       <Stack.Screen name="BanDoScreen" component={BanDoScreen} />
@@ -277,6 +279,7 @@ const AppStack = () => {
       <Stack.Screen name="GT_ChiTietDiaDiemScreen" component={GT_ChiTietDiaDiemScreen} />
       <Stack.Screen name="GT_DiChung_CaNhan_Screen" component={GT_DiChung_CaNhan_Screen} />
       <Stack.Screen name="GT_DiChung_DangTin_Screen" component={GT_DiChung_DangTin_Screen} />
+      <Stack.Screen name="GT_DiChung_SuaTin_Screen" component={GT_DiChung_SuaTin_Screen} />
       <Stack.Screen name="GT_DiChung_DiChung_Screen" component={GT_DiChung_DiChung_Screen} />
       <Stack.Screen name="GT_DiChung_TimXeKhach_Screen" component={GT_DiChung_TimXeKhach_Screen} />
       <Stack.Screen name="GT_DiChung_ChiTietScreen" component={GT_DiChung_ChiTietScreen} />

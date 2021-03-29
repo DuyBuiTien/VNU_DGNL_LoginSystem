@@ -75,6 +75,10 @@ const MainScreen = () => {
     }
   };
 
+  const handleEdit = () => {
+    navigation.navigate('GT_DiChung_SuaTin_Screen', {data: data});
+  };
+
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
       <Header
@@ -268,7 +272,7 @@ const MainScreen = () => {
           {data.TrangThai == 0 && (
             <TouchableOpacity
               onPress={() => {
-                handlePhoneCall(data.SoDienThoai);
+                handleEdit();
               }}
               style={{flex: 1, justifyContent: 'center', alignItems: 'center', padding: 5, backgroundColor: '#1976d2'}}>
               <FontAwesome name="edit" size={20} color="#FFF" />

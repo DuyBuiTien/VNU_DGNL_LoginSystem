@@ -78,13 +78,13 @@ export const DANHMUC = [
     icon: require('../Images/forbbiden.png'),
     background: require('../Images/gt7.jpg'),
   },
-  {
+  /*  {
     id: 9,
     name: 'Ôn thi GPLX',
     navigate: 'GT_OTGPLX_MainScreen',
     icon: require('../Images/test.png'),
     background: require('../Images/gt11.jpg'),
-  },
+  }, */
 ];
 
 export const MENU = [

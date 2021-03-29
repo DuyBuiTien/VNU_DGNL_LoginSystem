@@ -57,13 +57,13 @@ const RenderItemDiChung = (props) => {
       </View>
       <View style={{flexDirection: 'row', alignItems: 'center', margin: 10}}>
         <View style={{flexDirection: 'row', alignItems: 'center', flex: 1}}>
-          <FontAwesome name="plane-departure" size={13} color="#004d40" />
+          <FontAwesome name="plane-departure" size={13} color="#dd2c00" />
           <Text style={{marginStart: 5, fontSize: 13, color: '#263238', flex: 1, marginHorizontal: 5}} numberOfLines={2}>
             {data.DiemDi}
           </Text>
         </View>
         <View style={{flexDirection: 'row', alignItems: 'center', flex: 1}}>
-          <FontAwesome name="plane-arrival" size={13} color="#004d40" />
+          <FontAwesome name="plane-arrival" size={13} color="#dd2c00" />
           <Text style={{marginStart: 5, fontSize: 13, color: '#263238', flex: 1, marginHorizontal: 5}} numberOfLines={2}>
             {data.DiemDen}
           </Text>
