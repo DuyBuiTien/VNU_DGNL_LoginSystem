@@ -149,14 +149,14 @@ const MainScreen = () => {
           />
         </View>
         <View style={{backgroundColor: '#FFF', marginTop: 10}}>
-          <Text style={{margin: 10, fontWeight: 'bold', fontSize: 15}}>Tin mới</Text>
+          <Text style={{margin: 10, fontWeight: 'bold', fontSize: 16, color: '#263238'}}>Tin mới</Text>
           {dataDiChung.map((item, index) => (
             <RenderItemDiChung data={item} index={index} navigation={navigation} />
           ))}
         </View>
 
         <View style={{backgroundColor: '#FFF', marginTop: 10}}>
-          <Text style={{margin: 10, fontWeight: 'bold', fontSize: 15}}>Nhà xe phổ biến</Text>
+          <Text style={{margin: 10, fontWeight: 'bold', fontSize: 16, color: '#263238'}}>Nhà xe phổ biến</Text>
           <FlatList
             horizontal={true}
             scrollEnabled={true}
