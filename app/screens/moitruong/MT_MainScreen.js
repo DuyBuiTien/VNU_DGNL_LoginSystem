@@ -6,16 +6,15 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome5';
 
 import {Header} from '../../components';
 import {ItemMenuImage, BlockLogin} from '../../components/common';
-import {DANHMUC} from '../../data/PAHT_Data';
+import {DANHMUC} from '../../data/MT_Data';
 
 const MainScreen = () => {
   const user = useSelector((state) => state.global.user);
 
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
-      <Header title="Phản ánh hiện trường" isStack={true} />
+      <Header title="Môi trường" isStack={true} />
       <ScrollView>
-        {!user && <BlockLogin name={'Phản ánh hiện trường'} />}
         <View
           style={{
             flexDirection: 'row',

@@ -43,10 +43,7 @@ const RenderItem = (props) => {
 const ChonDonVi = (props) => {
   const [inputValue, setInputValue] = useState('');
   const {data, handleDongY, actionSheetRef, ModalHide, title} = props;
-  let user = useSelector((state) => state.global.user);
   const dataService = useSelector((state) => state.global.dataService);
-
-  const [listChoice, setListChoice] = useState(data);
 
   const [dataDiaDiem, setDataDiaDiem] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -69,8 +66,6 @@ const ChonDonVi = (props) => {
       setDataDiaDiem([]);
     };
   }, [dataService.BOOKMARK_URL, inputValue]);
-
-  //http://demo.tandan.com.vn:8084/v1/area?q=cổ lễ
 
   return (
     <View style={{padding: 5, marginBottom: 20, height: SCREEN_HEIGHT / 2}}>

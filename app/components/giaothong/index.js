@@ -5,5 +5,17 @@ import GTTextInput from './GTTextInput';
 import TexInputDate from './TexInputDate';
 import RenderItemDiChung from './RenderItemDiChung';
 import ItemBienBao from './ItemBienBao';
+import FilterBar from './FilterBar';
+import TextInputChonViTri from './TextInputChonViTri';
 
-export {RenderChonViTri, RenderLuaChon, TextInputLuaChon, GTTextInput, TexInputDate, RenderItemDiChung, ItemBienBao};
+export {
+  TextInputChonViTri,
+  RenderChonViTri,
+  RenderLuaChon,
+  TextInputLuaChon,
+  GTTextInput,
+  TexInputDate,
+  RenderItemDiChung,
+  ItemBienBao,
+  FilterBar,
+};

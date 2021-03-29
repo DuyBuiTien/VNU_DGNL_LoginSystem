@@ -58,6 +58,7 @@ import {
   GT_BienBao_MainScreen,
   GT_NONGDOCON_MainScreen,
   GT_DiChung_SuaTin_Screen,
+  GT_DiChung_TimXeKhach_DanhSach_Screen,
 } from '../screens/giaothong';
 
 import {
@@ -289,6 +290,7 @@ const AppStack = () => {
       <Stack.Screen name="GT_DiChung_ChiTietScreen" component={GT_DiChung_ChiTietScreen} />
       <Stack.Screen name="GT_BienBao_MainScreen" component={GT_BienBao_MainScreen} />
       <Stack.Screen name="GT_NONGDOCON_MainScreen" component={GT_NONGDOCON_MainScreen} />
+      <Stack.Screen name="GT_DiChung_TimXeKhach_DanhSach_Screen" component={GT_DiChung_TimXeKhach_DanhSach_Screen} />
 
       <Stack.Screen name="DL_MainScreen" component={DL_MainScreen} />
       <Stack.Screen name="DL_DDL_Screen" component={DL_DDL_Screen} />
