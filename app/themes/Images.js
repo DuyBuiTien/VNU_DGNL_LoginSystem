@@ -1,6 +1,9 @@
 const Images = {
   images: {
-    slides_1: require('../assets/images/entrepreneurs.png'),
+    slides_1: require('../assets/images/onboarding1.png'),
+    slides_2: require('../assets/images/onboarding2.png'),
+    slides_3: require('../assets/images/onboarding3.png'),
+    slides_4: require('../assets/images/onboarding4.png'),
   },
   logos: {},
   backgrounds: {
