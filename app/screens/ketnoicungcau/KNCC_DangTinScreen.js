@@ -47,6 +47,8 @@ const KNCC_CB_MainScreen = () => {
   const user = useSelector((state) => state.global.user);
   const dataService = useSelector((state) => state.global.dataService);
 
+  const AccessToken = state.global.AccessToken;
+
   const [dataLoai, setDataLoai] = useState([
     {
       label: 'Cần mua',
@@ -338,6 +340,7 @@ const KNCC_CB_MainScreen = () => {
       DistrictId: huyen.code,
       CommuneId: xa.code,
       Status: 0,
+      Token: AccessToken
     }
     var data = await requestPOST(`${dataService.KNCC_URL}/SupplyDemand`, obj)
     console.log(data)
@@ -358,7 +361,7 @@ const KNCC_CB_MainScreen = () => {
   return (
     <View style={{ flex: 1, backgroundColor: 'white' }}>
       <Header title="Đăng tin" isStack={true} />
-      {user ? (
+      {!user ? (
         <BlockLogin name="Đăng tin" loginScreen={'LoginScreen'} registerScreen={'RegisterScreen'} />
       ) : (
           <>
