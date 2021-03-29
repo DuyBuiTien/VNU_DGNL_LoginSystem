@@ -1,10 +1,11 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {Header, Icon} from 'react-native-elements';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
-const Item = ({leftComponent, isStack, title, showRight, RightComponent}) => {
+const Item = ({leftComponent, isStack, title, showRight, RightComponent, backgroundColor, textColor}) => {
   const navigation = useNavigation();
 
   return (
@@ -15,7 +16,12 @@ const Item = ({leftComponent, isStack, title, showRight, RightComponent}) => {
       leftComponent={
         leftComponent || isStack ? (
           <TouchableOpacity onPress={() => (isStack ? navigation.goBack() : navigation.openDrawer())}>
-            <Icon name={isStack ? 'arrow-back' : 'menu'} color="#2E2E2E" underlayColor="#00000000" containerStyle={styles.icon} />
+            <Icon
+              name={isStack ? 'arrow-back' : 'menu'}
+              color={textColor ? textColor : '#2E2E2E'}
+              underlayColor="#00000000"
+              containerStyle={styles.icon}
+            />
           </TouchableOpacity>
         ) : (
           <></>
@@ -23,10 +29,13 @@ const Item = ({leftComponent, isStack, title, showRight, RightComponent}) => {
       }
       centerComponent={{
         text: title,
-        style: {color: '#2E2E2E', fontSize: 18, fontWeight: 'bold'},
+        style: {color: textColor ? textColor : '#2E2E2E', fontSize: 18, fontWeight: 'bold'},
       }}
       rightComponent={RightComponent && <RightComponent />}
-      containerStyle={styles.container}
+      containerStyle={{
+        backgroundColor: backgroundColor ? backgroundColor : '#FFF',
+        justifyContent: 'space-around',
+      }}
       centerContainerStyle={{}}
     />
   );

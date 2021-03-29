@@ -1,19 +1,5 @@
 export const DANHMUC = [
   {
-    id: 10,
-    name: 'Đi chung xe',
-    navigate: 'GT_DICHUNGXE_MainScreen',
-    icon: require('../Images/uber.png'),
-    background: require('../Images/gt9.jpg'),
-  },
-  {
-    id: 0,
-    name: 'Đặt vé xe, máy bay',
-    navigate: 'GT_VEXEVEMB_MainScreen',
-    icon: require('../Images/boarding.png'),
-    background: require('../Images/gt1.jpg'),
-  },
-  {
     id: 1,
     name: 'Bản đồ giao thông',
     navigate: 'BanDoScreen',
@@ -49,20 +35,21 @@ export const DANHMUC = [
     icon: require('../Images/map.png'),
     background: require('../Images/gt2.jpg'),
   },
+  {
+    id: 10,
+    name: 'Đi chung xe',
+    navigate: 'GT_DICHUNGXE_MainScreen',
+    icon: require('../Images/uber.png'),
+    background: require('../Images/gt9.jpg'),
+  },
+  {
+    id: 0,
+    name: 'Đặt vé xe, máy bay',
+    navigate: 'GT_VEXEVEMB_MainScreen',
+    icon: require('../Images/boarding.png'),
+    background: require('../Images/gt1.jpg'),
+  },
 
-  /* {
-    id: 7,
-    name: 'Tra cứu vi phạm giao thông',
-    navigate: 'WebViewScreen',
-    icon: require('../Images/traffic.png'),
-    background: require('../Images/gt10.png'),
-    data: {
-      title: 'Tra cứu vi phạm giao thông',
-      url: 'https://dichvucong.gov.vn/p/home/dvc-thanh-toan-vi-pham-giao-thong.html',
-      colorHeader: '#FFFAF3',
-      hideBackForward: false,
-    },
-  }, */
   {
     id: 10,
     name: 'Phạt nguội',
@@ -83,5 +70,36 @@ export const DANHMUC = [
     navigate: 'GT_OTGPLX_MainScreen',
     icon: require('../Images/test.png'),
     background: require('../Images/gt11.jpg'),
+  },
+];
+
+export const MENU = [
+  {
+    appid: 1,
+    name: 'Tìm xe khách',
+    navigate: 'GT_DiChung_TimXeKhach_Screen',
+    icon: 'car-bus',
+    color: '#c0ca33',
+  },
+  {
+    appid: 2,
+    name: 'Đi chung',
+    navigate: 'GT_DiChung_DiChung_Screen',
+    icon: 'car',
+    color: '#e64a19',
+  },
+  {
+    appid: 3,
+    name: 'Đăng tin',
+    navigate: 'GT_DiChung_DangTin_Screen',
+    icon: 'bullhorn',
+    color: '#5B63EC',
+  },
+  {
+    appid: 4,
+    name: 'Tin của tôi',
+    navigate: 'GT_DiChung_CaNhan_Screen',
+    icon: 'user-alt',
+    color: '#bdbdbd',
   },
 ];
