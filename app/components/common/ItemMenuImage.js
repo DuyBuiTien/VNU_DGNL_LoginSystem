@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {StyleSheet, Text, View, Dimensions, ImageBackground, Image} from 'react-native';
+import {StyleSheet, Text, View, Dimensions, ImageBackground, Image, Linking, Platform} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5';
 const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -15,7 +15,17 @@ const ItemMenuImage = (props) => {
     <View key={index} style={{width: SCREEN_WIDTH / 2 - 10, margin: 5}}>
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate(item.navigate, {data: item.data, title: item.name});
+          if (item.navigate && item.navigate.length > 1) {
+            navigation.navigate(item.navigate, {data: item.data, title: item.name});
+          } else {
+            if (item.APP_STORE_LINK && item.PLAY_STORE_LINK) {
+              if (Platform.OS === 'ios') {
+                Linking.openURL(item.APP_STORE_LINK).catch((err) => console.error('An error occurred', err));
+              } else {
+                Linking.openURL(item.PLAY_STORE_LINK).catch((err) => console.error('An error occurred', err));
+              }
+            }
+          }
         }}
         style={{
           alignItems: 'center',

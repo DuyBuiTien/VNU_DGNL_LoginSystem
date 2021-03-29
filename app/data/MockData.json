@@ -180,6 +180,24 @@
       "icon": "building",
       "color": "#1565c0",
       "datamenu": []
+    },
+    {
+      "appid": "42",
+      "name": "Tiện ích",
+      "navigate": "TienIch_MainScreen",
+      "count": 0,
+      "icon": "tools",
+      "color": "#dd2c00",
+      "datamenu": []
+    },
+    {
+      "appid": "43",
+      "name": "Người yếu thế",
+      "navigate": "NguoiYeuThe_MainScreen",
+      "count": 0,
+      "icon": "heartbeat",
+      "color": "#c62828",
+      "datamenu": []
     }
   ]
 }

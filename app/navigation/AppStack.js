@@ -158,6 +158,10 @@ import {AL_MainScreen} from '../screens/amlich';
 import {BookmarksScreen} from '../screens/bookmark';
 import {DanhBaScreen} from '../screens/danhba';
 
+import {TienIch_MainScreen} from '../screens/tienich';
+
+import {NguoiYeuThe_MainScreen} from '../screens/nguoiyeuthe';
+
 const AppStack = () => {
   useEffect(() => {
     messaging().onNotificationOpenedApp((remoteMessage) => {});
@@ -333,6 +337,10 @@ const AppStack = () => {
       <Stack.Screen name="TTCQ_DetailVBScreen" component={TTCQ_DetailVBScreen} />
       <Stack.Screen name="TTCB_MainScreen" component={TTCB_MainScreen} />
       <Stack.Screen name="TTCB_DetailScreen" component={TTCB_DetailScreen} />
+
+      <Stack.Screen name="TienIch_MainScreen" component={TienIch_MainScreen} />
+
+      <Stack.Screen name="NguoiYeuThe_MainScreen" component={NguoiYeuThe_MainScreen} />
     </Stack.Navigator>
   );
 };
