@@ -4,4 +4,6 @@ import TextInputLuaChon from './TextInputLuaChon';
 import GTTextInput from './GTTextInput';
 import TexInputDate from './TexInputDate';
 import RenderItemDiChung from './RenderItemDiChung';
-export {RenderChonViTri, RenderLuaChon, TextInputLuaChon, GTTextInput, TexInputDate, RenderItemDiChung};
+import ItemBienBao from './ItemBienBao';
+
+export {RenderChonViTri, RenderLuaChon, TextInputLuaChon, GTTextInput, TexInputDate, RenderItemDiChung, ItemBienBao};

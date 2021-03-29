@@ -92,6 +92,7 @@ const MainScreen = () => {
   const navigation = useNavigation();
   const user = useSelector((state) => state.global.user);
   const dataService = useSelector((state) => state.global.dataService);
+  const random = useSelector((state) => state.global.random);
 
   const [refreshing, setRefreshing] = React.useState(false);
 
@@ -113,7 +114,7 @@ const MainScreen = () => {
     const fetchData = async () => {
       let response = await axios({
         method: 'get',
-        url: `${dataService.BOOKMARK_URL}/v1/dichungxe/tinmoi`,
+        url: `${dataService.BOOKMARK_URL}/v1/dichungxe/tinmoi?TrangThai=1`,
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
@@ -126,12 +127,14 @@ const MainScreen = () => {
     };
     fetchData();
     return () => {};
-  }, [refreshing]);
+  }, [dataService.BOOKMARK_URL, refreshing, user.token, random]);
 
   return (
     <View style={{flex: 1, backgroundColor: '#eeeeee'}}>
       <Header title="Đi chung" isStack={true} />
-      <ScrollView refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>
+      <ScrollView
+        refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
+        showsVerticalScrollIndicator={false}>
         <View style={{backgroundColor: '#FFF', paddingVertical: 10}}>
           <FlatList
             data={dataMenu}
@@ -146,14 +149,14 @@ const MainScreen = () => {
           />
         </View>
         <View style={{backgroundColor: '#FFF', marginTop: 10}}>
-          <Text style={{margin: 10, fontWeight: 'bold', fontSize: 15}}>Tin mới</Text>
+          <Text style={{margin: 10, fontWeight: 'bold', fontSize: 16, color: '#263238'}}>Tin mới</Text>
           {dataDiChung.map((item, index) => (
             <RenderItemDiChung data={item} index={index} navigation={navigation} />
           ))}
         </View>
 
         <View style={{backgroundColor: '#FFF', marginTop: 10}}>
-          <Text style={{margin: 10, fontWeight: 'bold', fontSize: 15}}>Nhà xe phổ biến</Text>
+          <Text style={{margin: 10, fontWeight: 'bold', fontSize: 16, color: '#263238'}}>Nhà xe phổ biến</Text>
           <FlatList
             horizontal={true}
             scrollEnabled={true}

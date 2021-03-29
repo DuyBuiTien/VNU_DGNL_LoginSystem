@@ -1,9 +1,11 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {Component, useState, useEffect} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import {StyleSheet, Text, View, Dimensions} from 'react-native';
+import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 import {requestGET, requestPOST} from '../../services/Api';
 import {useNavigation} from '@react-navigation/native';
+
+const SCREEN_WIDTH = Dimensions.get('screen').width;
 
 const ItemCovid = (props) => {
   const navigation = useNavigation();
@@ -71,8 +73,6 @@ const ThongKeCovid = () => {
       var data3 = await requestGET(`${url}/CovidWorld`);
       var dataTG = data3.Data ? data3.Data : [];
 
-      console.log('aaa');
-
       let dataND_ = dataVN_.find((i) => i.City === 'Nam Định');
       let CasesNd = parseInt(dataND_.Cases, 10);
       let RecoveredNd = parseInt(dataND_.Cured, 10);
@@ -117,11 +117,11 @@ const ThongKeCovid = () => {
   }, []);
 
   return (
-    <>
+    <ScrollView horizontal showsHorizontalScrollIndicator={false}>
       <ItemCovid name="Nam Định" data={dataND} />
       <ItemCovid name="Việt Nam" data={dataVN} />
       <ItemCovid name="Thế Giới" data={dataTG} />
-    </>
+    </ScrollView>
   );
 };
 
@@ -135,6 +135,7 @@ const styles = StyleSheet.create({
     borderColor: 'gray',
     padding: 10,
     margin: 10,
+    width: SCREEN_WIDTH - 20,
   },
   name: {
     backgroundColor: '#c9302c',

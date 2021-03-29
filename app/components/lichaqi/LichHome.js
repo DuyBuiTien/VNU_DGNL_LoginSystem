@@ -4,6 +4,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5';
 
 import moment from 'moment';
+import 'moment/locale/vi';
 moment.locale('vi');
 
 import {getLunarDate, getDayName} from '../../utils/amlich';

@@ -9,7 +9,7 @@ import RenderLuaChon from './RenderLuaChon';
 const TextInputLuaChon = (props) => {
   const refRBSheet = useRef();
 
-  const {value, setValue, title, data} = props;
+  const {value, setValue, title, data, isImportant} = props;
 
   const ModalHide = () => {
     refRBSheet.current.setModalVisible(false);
@@ -22,7 +22,9 @@ const TextInputLuaChon = (props) => {
 
   return (
     <View style={styles.content1}>
-      <Text style={styles.title}>{title}:</Text>
+      <Text style={styles.title}>
+        {title}:<Text style={{color: 'red', fontWeight: 'bold'}}>{isImportant ? ' *' : ''}</Text>
+      </Text>
       <TouchableOpacity
         onPress={() => {
           refRBSheet.current.setModalVisible(true);

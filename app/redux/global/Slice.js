@@ -26,6 +26,8 @@ const initialState = {
 
   actionsLoadingDonVi: false,
 
+  random: 0,
+
   totalCount: 0,
   entities: null,
   customerForEdit: undefined,
@@ -93,7 +95,7 @@ export const globalSlice = createSlice({
       state.actionsLoading = false;
       state.error = null;
 
-      console.log('errorerrorerror')
+      console.log('errorerrorerror');
       console.log(state.error);
 
       const payload = action.payload;
@@ -137,6 +139,9 @@ export const globalSlice = createSlice({
 
     setMenuCaNhan: (state, action) => {
       state.dataMenuCaNhan = action.payload;
+    },
+    setRandom: (state, action) => {
+      state.random = Math.random();
     },
   },
 });

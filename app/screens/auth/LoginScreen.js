@@ -1,24 +1,12 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState, useEffect} from 'react';
 import {shallowEqual, useSelector, useDispatch} from 'react-redux';
-import {
-  StatusBar,
-  View,
-  StyleSheet,
-  ImageBackground,
-  Keyboard,
-  TouchableWithoutFeedback,
-  KeyboardAvoidingView,
-  ScrollView,
-  Platform,
-  TextInput,
-} from 'react-native';
+import {View, StyleSheet, Keyboard, TouchableWithoutFeedback, KeyboardAvoidingView, Platform} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5Pro';
 import TouchID from 'react-native-touch-id';
 import {Text, Button, Input} from 'react-native-elements';
 import {showMessage} from 'react-native-flash-message';
-import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
-import {SocialIcon} from 'react-native-elements';
+
 import {Header} from 'react-native-elements';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {TouchableOpacity} from 'react-native-gesture-handler';

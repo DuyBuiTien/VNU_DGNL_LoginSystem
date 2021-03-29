@@ -20,6 +20,8 @@ const DiaPhuongScreen = (props) => {
 
       var dataInfo_ = data1.data ? data1.data[0] : [];
 
+      console.log(dataInfo_);
+
       var data2 = await requestGET(`${QLDB_URL}/DiaBanApi/mGetChildByCode?AreaCode=${areaCode}`);
       var dataChild_ = data2.data ? data2.data : [];
 
