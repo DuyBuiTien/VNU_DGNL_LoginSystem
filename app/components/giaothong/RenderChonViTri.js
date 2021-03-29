@@ -62,7 +62,6 @@ const ChonDonVi = (props) => {
       if (response.data && response.data.data) {
         setDataDiaDiem(response.data.data);
       }
-      console.log(response.data.data);
       setIsLoading(false);
     };
     fetchData();
@@ -74,7 +73,7 @@ const ChonDonVi = (props) => {
   //http://demo.tandan.com.vn:8084/v1/area?q=cổ lễ
 
   return (
-    <View style={{padding: 15, marginBottom: 20, height: SCREEN_HEIGHT / 2}}>
+    <View style={{padding: 5, marginBottom: 20, height: SCREEN_HEIGHT / 2}}>
       <View
         style={{
           flexDirection: 'row',
@@ -82,7 +81,7 @@ const ChonDonVi = (props) => {
           borderBottomWidth: 0.5,
           borderColor: 'gray',
           paddingBottom: 10,
-          marginBottom: 10,
+          marginBottom: 5,
         }}>
         <TouchableOpacity
           onPress={() => {
@@ -97,7 +96,7 @@ const ChonDonVi = (props) => {
       <SearchComponent value={inputValue} onChangeText={setInputValue} />
 
       <ScrollView
-        style={{marginTop: 10}}
+        style={{marginTop: 5}}
         nestedScrollEnabled={true}
         showsVerticalScrollIndicator={false}
         onScrollEndDrag={() => actionSheetRef.current?.handleChildScrollEnd()}

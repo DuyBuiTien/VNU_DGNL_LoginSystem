@@ -56,7 +56,7 @@ const BDHC_UnitScreen = () => {
             <View tabLabel="Tổng quan" style={styles.tabView}>
               <ScrollView style={{padding: 10}}>
                 <Text style={{fontWeight: 'bold', padding: 10, paddingLeft: 0, fontSize: 16}}>Giới thiệu</Text>
-                <Text style={{lineHeight: 30}}>{dataInfo.TongQuan_GioiThieu}</Text>
+                <Text style={{lineHeight: 30, textAlign: 'justify'}}>{dataInfo.TongQuan_GioiThieu}</Text>
                 <Text style={{fontWeight: 'bold', padding: 10, paddingLeft: 0, fontSize: 16}}>Hành chính</Text>
                 <View
                   style={{
@@ -266,7 +266,7 @@ const BDHC_UnitScreen = () => {
             <View tabLabel="Lịch sử" style={styles.tabView}>
               <ScrollView style={{padding: 10}}>
                 <Text style={{fontWeight: 'bold', padding: 10, paddingLeft: 0, fontSize: 16}}>Lịch sử</Text>
-                <Text style={{lineHeight: 30}}>{dataInfo.LichSu}</Text>
+                <Text style={{lineHeight: 30, textAlign: 'justify'}}>{dataInfo.LichSu}</Text>
               </ScrollView>
             </View>
             <View tabLabel="Kinh tế" style={styles.tabView}>

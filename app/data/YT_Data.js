@@ -57,13 +57,13 @@ export const DANHMUC = [
       hideBackForward: false,
     },
   },
-  {
+  /* {
     id: 4,
     name: 'Trạm y tế',
     navigate: 'YT_TramYTeScreen',
     icon: require('../Images/hospital.png'),
     background: require('../Images/yt3.jpg'),
-  },
+  }, */
   {
     id: 5,
     name: 'Dịch bệnh',
@@ -71,13 +71,13 @@ export const DANHMUC = [
     icon: require('../Images/virus.png'),
     background: require('../Images/yt4.jpg'),
   },
-  {
+  /* {
     id: 6,
     name: 'Quầy thuốc',
     navigate: 'YT_QuayThuocScreen',
     icon: require('../Images/pharmacy.png'),
     background: require('../Images/yt5.jpg'),
-  },
+  }, */
   {
     id: 7,
     name: 'Tra cứu thẻ BHYT',

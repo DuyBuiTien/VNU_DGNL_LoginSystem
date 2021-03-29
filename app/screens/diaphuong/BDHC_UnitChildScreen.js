@@ -86,7 +86,7 @@ const BDHC_UnitChildScreen = () => {
             <Text style={{fontWeight: 'bold', paddingTop: 10}}>{ds}</Text>
           </View>
         </View>
-        <Text style={{lineHeight: 30}}>{dataInfo_.TongQuan_GioiThieu}</Text>
+        <Text style={{lineHeight: 30, textAlign: 'justify'}}>{dataInfo_.TongQuan_GioiThieu}</Text>
         <Text
           style={{
             fontSize: 18,
@@ -231,8 +231,7 @@ const BDHC_UnitChildScreen = () => {
           <Animated.ScrollView
             style={styles.fill}
             scrollEventThrottle={16}
-            onScroll={Animated.event([{nativeEvent: {contentOffset: {y: scrollY}}}], {useNativeDriver: true})}
-            >
+            onScroll={Animated.event([{nativeEvent: {contentOffset: {y: scrollY}}}], {useNativeDriver: true})}>
             {_renderScrollViewContent(dataInfo, dataChild)}
           </Animated.ScrollView>
           <Animated.View pointerEvents="none" style={[styles.header, {transform: [{translateY: headerTranslate}]}]}>

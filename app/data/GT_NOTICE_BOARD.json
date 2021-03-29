@@ -1,0 +1,3752 @@
+[
+  {
+    "ID": 3,
+    "Type_ID": 1,
+    "Name": "Biển số P.124a \"Cấm quay đầu xe\"",
+    "NameEN": "Bien so P.124a \"Cam quay dau xe\"",
+    "Detail": "Để báo cấm các loại xe quay đầu (theo kiểu chữ U). Chiều mũi tên phù hợp với chiều cấm quay đầu xe. Biển này có hiệu lực cấm các loại xe (cơ giới và thô sơ) trừ các xe được ưu tiên theo quy định. Biển không có giá trị cấm rẽ trái để đi sang hướng đường khác.\r\n\r\n",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.124a2.png",
+    "UpdateDay": "20200623094042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 5,
+    "Type_ID": 1,
+    "Name": "Biển số P.105 \"Cấm xe ôtô và xe máy\"",
+    "NameEN": "Bien so P.105 \"Cam xe oto va xe may\"",
+    "Detail": "Để báo đường cấm các loại xe cơ giới và xe máy đi qua trừ các xe được ưu tiên theo quy định.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.105.png",
+    "UpdateDay": "20200622090500",
+    "IsDelete": 0
+  },
+  {
+    "ID": 6,
+    "Type_ID": 5,
+    "Name": "Biển số S.501. \"Phạm vi tác dụng của biển\"",
+    "NameEN": "Bien so S.501. \"Pham vi tac dung cua bien\"",
+    "Detail": "Để thông báo chiều dài đoạn đường nguy hiểm hoặc cấm hoặc hiệu lệnh hoặc hạn chế bên dưới một số biển báo chính.\r\n",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.501.png",
+    "UpdateDay": "20200622093418",
+    "IsDelete": 0
+  },
+  {
+    "ID": 7,
+    "Type_ID": 5,
+    "Name": "Biển số S.502 \"Khoảng cách đến đối tượng báo hiệu\"",
+    "NameEN": "Bien so S.502 \"Khoang cach den doi tuong bao hieu\"",
+    "Detail": "Để thông báo khoảng cách thực tế từ vị trí đặt biển đến đối tượng báo hiệu ở phía trước.\r\n",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.502.png",
+    "UpdateDay": "20200623094056",
+    "IsDelete": 0
+  },
+  {
+    "ID": 8,
+    "Type_ID": 5,
+    "Name": "Biển số S.503a \"Hướng tác dụng của biển\"",
+    "NameEN": "Bien so S.503a \"Huong tac dung cua bien\"",
+    "Detail": "Để chỉ hướng tác dụng của biển là hướng vuông góc với chiều đi.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.503a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 9,
+    "Type_ID": 5,
+    "Name": "Biển số S.503b \"Hướng tác dụng của biển\"",
+    "NameEN": "Bien so S.503b \"Huong tac dung cua bien\"",
+    "Detail": "Để chỉ đồng thời hai hướng tác dụng (trái và phải) của biển là hướng vuông góc với chiều đi.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.503b.png",
+    "UpdateDay": "20200622095209",
+    "IsDelete": 0
+  },
+  {
+    "ID": 10,
+    "Type_ID": 5,
+    "Name": "Biển số S.503c \"Hướng tác dụng của biển\"",
+    "NameEN": "Bien so S.503c \"Huong tac dung cua bien\"",
+    "Detail": "Để chỉ hướng tác dụng của biển là hướng vuông góc với chiều đi.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.503c.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 11,
+    "Type_ID": 5,
+    "Name": "Biển số S.503d \"Hướng tác dụng của biển\"",
+    "NameEN": "Bien so S.503d \"Huong tac dung cua bien\"",
+    "Detail": "Để chỉ hướng tác dụng của biển là hướng song song với chiều đi.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.503d.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 12,
+    "Type_ID": 5,
+    "Name": "Biển số S.503e \"Hướng tác dụng của biển\"",
+    "NameEN": "Bien so S.503e \"Huong tac dung cua bien\"",
+    "Detail": "Để chỉ đồng thời hai hướng tác dụng (trước và sau) nơi đặt biển báo nhắc lại lệnh cấm dừng và cấm đỗ xe là hướng song song với chiều đi.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.503e.png",
+    "UpdateDay": "20200622100238",
+    "IsDelete": 0
+  },
+  {
+    "ID": 13,
+    "Type_ID": 5,
+    "Name": "Biển số S.503f \"Hướng tác dụng của biển\"",
+    "NameEN": "Bien so S.503f \"Huong tac dung cua bien\"",
+    "Detail": "Để chỉ hướng tác dụng của biển là hướng song song với chiều đi.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.503f.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 14,
+    "Type_ID": 5,
+    "Name": "Biển số S.504 \"Làn đường\"",
+    "NameEN": "Bien so S.504 \"Lan duong\"",
+    "Detail": "Để chỉ làn đường chịu hiệu lực của biển báo hay đèn tín hiệu.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.504.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 15,
+    "Type_ID": 5,
+    "Name": "Biển số S.505a \"Loại xe\"",
+    "NameEN": "Bien so S.505a \"Loai xe\"",
+    "Detail": "Để chỉ loại xe chịu hiệu lực của biển báo cấm, biển hiệu lệnh hay biển chỉ dẫn. ",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.505a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 16,
+    "Type_ID": 5,
+    "Name": "Biển số S.505b \"Loại xe hạn chế qua cầu\"",
+    "NameEN": "Bien so S.505b \"Loai xe han che qua cau\"",
+    "Detail": "Để chỉ các loại xe tải chịu hiệu lực của biển báo và tải trọng toàn bộ xe cho phép (bao gồm tải trọng bản thân xe và khối lượng chuyên chở cho phép) tương ứng với mỗi loại xe không phụ thuộc vào số lượng trục.\r\n\r\n",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.505b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 17,
+    "Type_ID": 5,
+    "Name": "Biển số S.505c \"Tải trọng trục hạn chế qua cầu\"",
+    "NameEN": "Bien so S.505c \"Tai trong truc han che qua cau\"",
+    "Detail": "Để chỉ các loại xe tải có tải trọng trục lớn nhất cho phép tương ứng với mỗi loại trục (trục đơn, trục kép, trục ba).\r\n\r\n",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.505c.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 18,
+    "Type_ID": 5,
+    "Name": "Biển số S.506a \"Hướng đường ưu tiên\"",
+    "NameEN": "Bien so S.506a \"Huong duong uu tien\"",
+    "Detail": "Để chỉ dẫn cho người tham gia giao thông trên đường ưu tiên biết hướng đường ưu tiên ở ngã tư.\r\n",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.506a.png",
+    "UpdateDay": "20200622102419",
+    "IsDelete": 0
+  },
+  {
+    "ID": 19,
+    "Type_ID": 5,
+    "Name": "Biển số S.506b \"Hướng đường ưu tiên\"",
+    "NameEN": "Bien so S.506b \"Huong duong uu tien\"",
+    "Detail": "Để chỉ dẫn cho người tham gia giao thông trên đường không ưu tiên biết hướng đường ưu tiên ở ngã tư.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.506b.png",
+    "UpdateDay": "20200622102716",
+    "IsDelete": 0
+  },
+  {
+    "ID": 20,
+    "Type_ID": 5,
+    "Name": "Biển số S.507 \"Hướng rẽ\"",
+    "NameEN": "Bien so S.507 \"Huong re\"",
+    "Detail": "Để báo trước cho người tham gia giao thông biết chỗ rẽ nguy hiểm và để chỉ hướng rẽ.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.507.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 21,
+    "Type_ID": 5,
+    "Name": "Biển số S.508a \"Biểu thị thời gian\"",
+    "NameEN": "Bien so S.508a \"Bieu thi thoi gian\"",
+    "Detail": "Nhằm quy định phạm vi thời gian hiệu lực của các biển báo cấm, biển báo hiệu lệnh cho phù hợp yêu cầu.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.508a.png",
+    "UpdateDay": "20200622103822",
+    "IsDelete": 0
+  },
+  {
+    "ID": 22,
+    "Type_ID": 5,
+    "Name": "Biển số S.508b \"Biểu thị thời gian\"",
+    "NameEN": "Bien so S.508b \"Bieu thi thoi gian\"",
+    "Detail": "Nhằm quy định phạm vi thời gian hiệu lực của các biển báo cấm, biển báo hiệu lệnh cho phù hợp yêu cầu.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.508b.png",
+    "UpdateDay": "20200622103837",
+    "IsDelete": 0
+  },
+  {
+    "ID": 23,
+    "Type_ID": 5,
+    "Name": "Biển số S.509a \"Thuyết minh biển chính\"",
+    "NameEN": "Bien so S.509a \"Thuyet minh bien chinh\"",
+    "Detail": "Để bổ sung cho biển số W.239 \"Đường cáp điện ở phía trên\", biển này chỉ rõ chiều cao cho các phương tiện đi qua an toàn.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.509a.png",
+    "UpdateDay": "20200622104559",
+    "IsDelete": 0
+  },
+  {
+    "ID": 24,
+    "Type_ID": 5,
+    "Name": "Biển số S.509b \"Thuyết minh biển chính\"",
+    "NameEN": "Bien so S.509b \"Thuyet minh bien chinh\"",
+    "Detail": "Để làm rõ thông tin cho biển số P.130 \"Cấm dừng, đỗ xe\", biển số P.131 (a,b,c) \"Cấm đỗ xe\".",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.509b.png",
+    "UpdateDay": "20200622104843",
+    "IsDelete": 0
+  },
+  {
+    "ID": 25,
+    "Type_ID": 5,
+    "Name": "Biển số S.510a “Chú ý đường trơn có băng tuyết”",
+    "NameEN": "Bien so S.510a “Chu y duong tron co bang tuyet”",
+    "Detail": "Để cảnh báo đường trơn, có tuyết trong những ngày trời có tuyết.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.510.png",
+    "UpdateDay": "20200622105214",
+    "IsDelete": 0
+  },
+  {
+    "ID": 26,
+    "Type_ID": 5,
+    "Name": "Biển số S.H,3c \"Hướng tác dụng của biển\"",
+    "NameEN": "Bien so S.H,3c \"Huong tac dung cua bien\"",
+    "Detail": "Để chỉ hướng tác dụng của biển là hướng vuông góc với chiều đi. Trên các tuyến đường đối ngoại và các tuyến đường có nhiều người đi lại.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.H,3c.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 27,
+    "Type_ID": 5,
+    "Name": "Biển số S.G,7 “Địa điểm cắm trại” ",
+    "NameEN": "Bien so S.G,7 “Dia diem cam trai” ",
+    "Detail": "Để chỉ dẫn tới địa điểm cắm trại.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.G,7.png",
+    "UpdateDay": "20200622110957",
+    "IsDelete": 0
+  },
+  {
+    "ID": 28,
+    "Type_ID": 5,
+    "Name": "Biển số S.G,8 “Địa điểm nhà trọ\"",
+    "NameEN": "Bien so S.G,8 “Dia diem nha tro\"",
+    "Detail": "Để chỉ dẫn tới nhà trọ.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.G,8.png",
+    "UpdateDay": "20200622110147",
+    "IsDelete": 0
+  },
+  {
+    "ID": 29,
+    "Type_ID": 5,
+    "Name": "Biển số S.G,9b chỉ dẫn tới điểm đỗ xe dành cho lái xe muốn sử dụng phương tiện công cộng ",
+    "NameEN": "Biẻn so S.G,9b chi dan toi diem do xe danh cho lai xe muon su dung phuong tien cong cong ",
+    "Detail": "Để chỉ dẫn tới địa điểm đỗ xe dành cho xe có lái xe muốn sử dụng phương tiện công cộng.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.G,9b.png",
+    "UpdateDay": "20200622110842",
+    "IsDelete": 0
+  },
+  {
+    "ID": 30,
+    "Type_ID": 5,
+    "Name": "Biển số S.G,11a chỉ dẫn số lượng làn và hướng đi cho từng làn ",
+    "NameEN": "Bien so S.G,11a chi dan so luong lan va huong di cho tung lan ",
+    "Detail": "Để thông báo cho lái xe số làn và hướng đi của từng làn xe. Các biển này phải có số mũi tên bằng số lượng làn xe đi cùng hướng và phải chỉ dẫn số lượng làn xe của hướng đi sắp tới.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.G,11a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 31,
+    "Type_ID": 5,
+    "Name": "Biển số S.G,11c chỉ dẫn số lượng làn và hướng đi cho từng làn",
+    "NameEN": "Bien so S.G,11c chi dan so luong lan va huong di cho tung lan",
+    "Detail": "Để thông báo cho lái xe số làn và hướng đi của từng làn xe. Các biển này phải có số mũi tên bằng số lượng làn xe đi cùng hướng và phải chỉ dẫn số lượng làn xe của hướng đi sắp tới.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.G,11c.png",
+    "UpdateDay": "20200622110741",
+    "IsDelete": 0
+  },
+  {
+    "ID": 32,
+    "Type_ID": 5,
+    "Name": "Biển số S.G,12a chỉ dẫn làn đường không lưu thông",
+    "NameEN": "Bien so S.G,12a chi dan lan duong khong luu thong",
+    "Detail": "Để chỉ dẫn cho lái xe biết làn đường không lưu thông.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.G,12a.png",
+    "UpdateDay": "20200622111405",
+    "IsDelete": 0
+  },
+  {
+    "ID": 33,
+    "Type_ID": 5,
+    "Name": "Biển số S.G,12b chỉ dẫn làn đường không lưu thông",
+    "NameEN": "Bien so S.G,12b chi dan lan duong khong luu thong",
+    "Detail": "Để chỉ dẫn cho lái xe biết làn đường không lưu thông.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.G,12b.png",
+    "UpdateDay": "20200622110930",
+    "IsDelete": 0
+  },
+  {
+    "ID": 34,
+    "Type_ID": 5,
+    "Name": "Biển số S.H,6 Biển báo phụ “Ngoại lệ”",
+    "NameEN": "Bien só S.H,6 Bien bao phu “Ngoai le”",
+    "Detail": "Để chỉ các trường hợp mà biển cấm hoặc hạn chế được coi là không áp dụng đặc biệt cho một nhóm đối tượng tham gia giao thông nào đó.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.H,6.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 35,
+    "Type_ID": 1,
+    "Name": "Biển số P.101 \"Đường cấm\"",
+    "NameEN": "Bien so P.101 \"Duong cam\"",
+    "Detail": "Để báo đường cấm các loại phương tiện đi lại cả hai hướng, trừ các xe được ưu tiên theo quy định.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.101.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 36,
+    "Type_ID": 1,
+    "Name": "Biển số P.102 \"Cấm đi ngược chiều\"",
+    "NameEN": "Bien so P.102 \"Cam di nguoc chieu\"",
+    "Detail": "Để báo đường cấm các loại xe (cơ giới và thô sơ) đi vào theo chiều đặt biển, trừ các xe được ưu tiên theo quy định. Người đi bộ được phép đi trên vỉa hè hoặc lề đường.\r\n",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.102.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 37,
+    "Type_ID": 1,
+    "Name": "Biển số P.103a \"Cấm xe ôtô\"",
+    "NameEN": "Bien so P.103a \"Cam xe oto\"",
+    "Detail": "Để báo đường cấm các loại xe cơ giới kể cả xe máy 3 bánh có thùng đi qua, trừ xe máy 2 bánh, xe gắn máy và các xe được ưu tiên theo quy định.\r\n",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.103a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 38,
+    "Type_ID": 1,
+    "Name": "Biển số P.103b \"Cấm xe ôtô rẽ phải\" ",
+    "NameEN": "Bien so P.103b \"Cam xe oto re phai\" ",
+    "Detail": "Để báo đường cấm các loại xe cơ giới kể cả xe máy 3 bánh có thùng rẽ phải, trừ xe máy 2 bánh, xe gắn máy và các xe được ưu tiên theo quy định.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.103b.png",
+    "UpdateDay": "20200622085300",
+    "IsDelete": 0
+  },
+  {
+    "ID": 39,
+    "Type_ID": 1,
+    "Name": "Biển số P.103c \"Cấm ôtô rẽ trái\" ",
+    "NameEN": "Bien so P.103c \"Cam oto re trai\" ",
+    "Detail": "Để báo đường cấm các loại xe cơ giới kể cả xe máy 3 bánh có thùng rẽ trái, trừ xe máy 2 bánh, xe gắn máy và các xe được ưu tiên theo quy định, \r\n",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.103c.png",
+    "UpdateDay": "20200622085804",
+    "IsDelete": 0
+  },
+  {
+    "ID": 40,
+    "Type_ID": 1,
+    "Name": "Biển số P.104 \"Cấm xe máy\"",
+    "NameEN": "Bien so P.104 \"Cam xe may\"",
+    "Detail": "Để báo đường cấm các loại xe máy, trừ các xe được ưu tiên theo quy định. Biển không có giá trị cấm những người dắt xe máy.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.104.png",
+    "UpdateDay": "20200623083651",
+    "IsDelete": 0
+  },
+  {
+    "ID": 41,
+    "Type_ID": 1,
+    "Name": "Biển số P.124b \"Cấm quay đầu xe\"",
+    "NameEN": "Bien so P.124b \"Cam quay dau xe\"",
+    "Detail": "Để báo cấm xe ôtô quay đầu (theo kiểu chữ U). Chiều mũi tên phù hợp với chiều cấm xe ô tô quay đầu. Biển này có hiệu lực cấm xe ôtô và xe máy 3 bánh (side car) quay đầu (theo kiểu chữ U) trừ các xe được ưu tiên theo quy định. Biển không có giá trị cấm rẽ trái để đi sang hướng đường khác.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.124b2.png",
+    "UpdateDay": "20200623094107",
+    "IsDelete": 0
+  },
+  {
+    "ID": 42,
+    "Type_ID": 1,
+    "Name": "Biển số P.106a \"Cấm xe ôtô tải\" ",
+    "NameEN": "Bien so P.106a \"Cam xe oto tai\" ",
+    "Detail": "Để báo đường cấm các loại xe ôtô tải trừ các xe được ưu tiên theo quy định. Biển có hiệu lực cấm đối với cả máy kéo và các xe máy chuyên dùng đi vào đoạn đường đặt biển số P.106a.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.106a.png",
+    "UpdateDay": "20200623083928",
+    "IsDelete": 0
+  },
+  {
+    "ID": 43,
+    "Type_ID": 1,
+    "Name": "Biển số P.106b \"Cấm xe ôtô tải\" ",
+    "NameEN": "Bien so P.106b \"Cam xe oto tai\" ",
+    "Detail": "Để báo đường cấm các loại xe ôtô tải có khối lượng chuyên chở (theo Giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường phương tiện giao thông cơ giới đường bộ) lớn hơn một giá trị nhất định. Biển có hiệu lực cấm các xe ôtô tải có khối lượng chuyên chở (xác định theo Giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường phương tiện giao thông cơ giới đường bộ) lớn hơn giá trị chữ số ghi trong biển (chữ số tấn ghi bằng màu trắng trên hình vẽ xe). Biển có hiệu lực cấm đối với cả máy kéo và các xe máy chuyên dùng đi vào đoạn đường đặt biển.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.106b.png",
+    "UpdateDay": "20200704104646",
+    "IsDelete": 0
+  },
+  {
+    "ID": 44,
+    "Type_ID": 1,
+    "Name": "Biển số P.106c \"Cấm xe chở hàng nguy hiểm”",
+    "NameEN": "Bien so P.106c \"Cam xe cho hang nguy hiem”",
+    "Detail": "Để báo đường cấm các xe chở hàng nguy hiểm.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.106c.png",
+    "UpdateDay": "20200622093209",
+    "IsDelete": 0
+  },
+  {
+    "ID": 45,
+    "Type_ID": 1,
+    "Name": "Biển số P.107 \"Cấm xe ôtô khách và xe ôtô tải\"",
+    "NameEN": "Bien so P.107 \"Cam xe oto khach va xe oto tai\"",
+    "Detail": "Để báo đường cấm xe ôtô chở khách và các loại xe ôtô tải kể cả các loại máy kéo và xe máy chuyên dùng đi qua trừ các xe được ưu tiên theo quy định.\r\n",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.107.png",
+    "UpdateDay": "20200622094231",
+    "IsDelete": 0
+  },
+  {
+    "ID": 46,
+    "Type_ID": 1,
+    "Name": "Biển số P.107a \"Cấm xe ôtô khách\"",
+    "NameEN": "Bien so P.107a \"Cam xe oto khach\"",
+    "Detail": "Để báo đường cấm ôtô chở khách đi qua trừ các xe ưu tiên theo quy định. Biển này không cấm xe buýt.\r\n\r\n",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.107a.png",
+    "UpdateDay": "20200623091749",
+    "IsDelete": 0
+  },
+  {
+    "ID": 47,
+    "Type_ID": 1,
+    "Name": "Biển số P.107b \"Cấm xe ôtô taxi\"",
+    "NameEN": "Bien so P.107b \"Cam xe oto taxi\"",
+    "Detail": "Để báo đường cấm xe ôtô taxi đi lại. Trường hợp cấm xe ôtô taxi theo giờ thì đặt biển phụ ghi giờ cấm.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.107b.png",
+    "UpdateDay": "20200622095117",
+    "IsDelete": 0
+  },
+  {
+    "ID": 48,
+    "Type_ID": 1,
+    "Name": "Biển số P.108 \" Cấm xe kéo rơ-moóc\"",
+    "NameEN": "Bien so P.108 \" Cam xe keo ro-mooc\"",
+    "Detail": "Để báo đường cấm các loại xe cơ giới kéo theo rơ-moóc kể cả xe máy, máy kéo, ôtô khách kéo theo rơ-moóc đi lại, trừ loại ôtô sơ-mi rơ-moóc và các xe được ưu tiên (có kéo theo rơ-moóc) theo quy định.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.108.png",
+    "UpdateDay": "20200622095616",
+    "IsDelete": 0
+  },
+  {
+    "ID": 49,
+    "Type_ID": 1,
+    "Name": "Biển số P.108a \"Cấm xe sơ-mi rơ-moóc\"",
+    "NameEN": "Bien so P.108a \"Cam xe so-mi ro-mooc\"",
+    "Detail": "Để báo đường cấm các loại xe sơ-mi rơ-moóc và các xe kéo rơ- moóc trừ các xe được ưu tiên (có dạng xe sơ-mi rơ-moóc hoặc có kéo theo rơ-moóc) theo quy định.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.108a.png",
+    "UpdateDay": "20200622101440",
+    "IsDelete": 0
+  },
+  {
+    "ID": 50,
+    "Type_ID": 1,
+    "Name": "Biển số P.109 \"Cấm máy kéo\"",
+    "NameEN": "Bien so P.109 \"Cam may keo\"",
+    "Detail": "Để báo đường cấm các loại máy kéo, kể cả máy kéo bánh hơi và bánh xích đi qua.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.109.png",
+    "UpdateDay": "20200622101730",
+    "IsDelete": 0
+  },
+  {
+    "ID": 51,
+    "Type_ID": 1,
+    "Name": "Biển số P.110a \"Cấm xe đạp\" ",
+    "NameEN": "Bien so P.110a \"Cam xe dap\" ",
+    "Detail": "Để báo đường cấm xe đạp đi qua. Biển không có giá trị cấm những người dắt xe đạp.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.110a.png",
+    "UpdateDay": "20200622102007",
+    "IsDelete": 0
+  },
+  {
+    "ID": 52,
+    "Type_ID": 1,
+    "Name": "Biển số P.110b \"Cấm xe đạp thồ\"",
+    "NameEN": "Bien so P.110b \"Cam xe dap tho\"",
+    "Detail": "Để báo đường cấm xe đạp thồ đi qua. Biển này không cấm người dắt loại xe này.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.110b.png",
+    "UpdateDay": "20200622102046",
+    "IsDelete": 0
+  },
+  {
+    "ID": 53,
+    "Type_ID": 1,
+    "Name": "Biển số P.111a \"Cấm xe gắn máy\"",
+    "NameEN": "Bien so P.111a \"Cam xe gan may\"",
+    "Detail": "Để báo đường cấm xe gắn máy đi qua. Biển không có giá trị đối với xe đạp.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.111a.png",
+    "UpdateDay": "20200622102341",
+    "IsDelete": 0
+  },
+  {
+    "ID": 55,
+    "Type_ID": 1,
+    "Name": "Biển số P.111b \"Cấm xe ba bánh loại có động cơ\" ",
+    "NameEN": "Bien so P.111b \"Cam xe ba banh loai co dong co\" ",
+    "Detail": "Để báo đường cấm xe ba bánh loại có động cơ như xe lam, xe xích lô máy, xe lôi máy, v.v...",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.111b.png",
+    "UpdateDay": "20200622102505",
+    "IsDelete": 0
+  },
+  {
+    "ID": 56,
+    "Type_ID": 1,
+    "Name": "Biển số P.111d \"Cấm xe ba bánh loại không có động cơ\"",
+    "NameEN": "Bien so P.111d \"Cam xe ba banh loai khong co dong co\"",
+    "Detail": "Để báo đường cấm xe ba bánh loại không có động cơ như xe xích lô, xe lôi đạp, v.v...",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.111d.png",
+    "UpdateDay": "20200622103201",
+    "IsDelete": 0
+  },
+  {
+    "ID": 57,
+    "Type_ID": 1,
+    "Name": "Biển số P.112 \"Cấm người đi bộ\"",
+    "NameEN": "Bien so P.112 \"Cam nguoi di bo\"",
+    "Detail": "Để báo đường cấm người đi bộ qua lại.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.112.png",
+    "UpdateDay": "20200622103351",
+    "IsDelete": 0
+  },
+  {
+    "ID": 58,
+    "Type_ID": 2,
+    "Name": "Biển số R.122 \"Dừng lại\"",
+    "NameEN": "Bien so R.122 \"Dung lai\"",
+    "Detail": "Để báo các xe (cơ giới và thô sơ) dừng lại. Đây là biển hiệu lệnh dạng đặc biệt.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.122.png",
+    "UpdateDay": "20200623101056",
+    "IsDelete": 0
+  },
+  {
+    "ID": 59,
+    "Type_ID": 1,
+    "Name": "Biển số P.113 \"Cấm xe người kéo, đẩy\"",
+    "NameEN": "Bien so P.113 \"Cam xe nguoi keo, day\"",
+    "Detail": "Để báo đường cấm xe thô sơ, chuyển động do người kéo, đẩy đi qua. Biển không có giá trị cấm những xe nôi của trẻ em và phương tiện chuyên dùng để đi lại của những người tàn tật.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.113.png",
+    "UpdateDay": "20200622103502",
+    "IsDelete": 0
+  },
+  {
+    "ID": 60,
+    "Type_ID": 2,
+    "Name": "Biển số R.301a \"Hướng đi phải theo\"",
+    "NameEN": "Bien so R.301a \"Huong di phai theo\"",
+    "Detail": "Khi đặt biển số R.301a ở trước nơi đường giao nhau thì hiệu lực tác dụng của biển là ở phạm vi khu vực nơi đường giao nhau phía sau biển tức là cấm xe rẽ phải hay rẽ trái. Nếu biển này đặt ở sau nơi đường giao nhau (bắt đầu vào đoạn đường phố) thì hiệu lực tác dụng của biển là từ vị trí đặt biển đến nơi đường giao nhau. Trong trường hợp này cấm rẽ trái và quay đầu trong vùng tác dụng của biển, chỉ cho phép rẽ phải vào cổng nhà hoặc ngõ phố có trên đoạn đường từ nơi đường giao nhau đặt biển đến nơi đường giao nhau tiếp theo.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.301a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 61,
+    "Type_ID": 1,
+    "Name": "Biển số P.114 \"Cấm xe súc vật kéo\"",
+    "NameEN": "Bien so P.114 \"Cam xe suc vat keo\"",
+    "Detail": "Để báo đường cấm súc vật vận tải hàng hóa hoặc hành khách dù kéo xe hay chở trên lưng đi qua.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.114.png",
+    "UpdateDay": "20200622104009",
+    "IsDelete": 0
+  },
+  {
+    "ID": 62,
+    "Type_ID": 1,
+    "Name": "Biển số P.115 \"Hạn chế trọng tải toàn bộ xe\"",
+    "NameEN": "Bien so P.115 \"Han che trong tai toan bo xe\"",
+    "Detail": "Để báo đường cấm các xe (cơ giới và thô sơ) kể cả các xe được ưu tiên theo quy định, có trọng tải toàn bộ xe (trọng tải bản thân xe cộng với khối lượng người, hành lý và hàng hóa xếp trên xe) vượt quá trị số ghi trên biển đi qua.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.115.png",
+    "UpdateDay": "20200622104357",
+    "IsDelete": 0
+  },
+  {
+    "ID": 63,
+    "Type_ID": 2,
+    "Name": "Biển số R.301b \"Hướng đi phải theo\"",
+    "NameEN": "Bien so R.301b \"Huong di phai theo\"",
+    "Detail": "Nhằm chỉ hướng cho phép xe đi ngang qua nơi đường giao nhau và ngăn chặn hướng đi ngược chiều trên đường phố với đường một chiều. Biển bắt buộc người tham gia giao thông chỉ được phép rẽ phải ở phạm vi nơi đường giao nhau trước mặt biển.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.301b.png",
+    "UpdateDay": "20200622095212",
+    "IsDelete": 0
+  },
+  {
+    "ID": 64,
+    "Type_ID": 1,
+    "Name": "Biển số P.116 \"Hạn chế tải trọng trên trục xe\"",
+    "NameEN": "Bien so P.116 \"Han che tai trong tren truc xe\"",
+    "Detail": "Để báo đường cấm các xe (cơ giới và thô sơ) kể cả các xe được ưu tiên theo quy định, có trọng tải toàn bộ xe (cả xe và hàng) phân bổ trên một trục bất kỳ của xe (tải trọng trục xe) vượt quá trị số ghi trên biển đi qua.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.116.png",
+    "UpdateDay": "20200622104732",
+    "IsDelete": 0
+  },
+  {
+    "ID": 65,
+    "Type_ID": 2,
+    "Name": "Biển số R.301c \"Hướng đi phải theo\"",
+    "NameEN": "Bien so R.301c \"Huong di phai theo\"",
+    "Detail": "Nhằm chỉ hướng cho phép xe đi ngang qua nơi đường giao nhau và ngăn chặn hướng đi ngược chiều trên đường phố với đường một chiều. Biển bắt buộc người tham gia giao thông chỉ được phép  rẽ trái ở phạm vi nơi đường giao nhau trước mặt biển.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.301c.png",
+    "UpdateDay": "20200622095224",
+    "IsDelete": 0
+  },
+  {
+    "ID": 66,
+    "Type_ID": 1,
+    "Name": "Biển số P.117 \"Hạn chế chiều cao\"",
+    "NameEN": "Bien so P.117 \"Han che chieu cao\"",
+    "Detail": "Để báo hạn chế chiều cao của xe. Biển này có hiệu lực cấm các xe (cơ giới và thô sơ) có chiều cao vượt quá trị số ghi trên biển đi qua, kể cả các xe được ưu tiên theo quy định (chiều cao tính từ mặt đường, mặt cầu đến điểm cao nhất của xe hoặc hàng).\r\n\r\n",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.117.png",
+    "UpdateDay": "20200623085554",
+    "IsDelete": 0
+  },
+  {
+    "ID": 67,
+    "Type_ID": 2,
+    "Name": "Biển số R.301d \"Hướng đi phải theo\"",
+    "NameEN": "Bien so R.301d \"Huong di phai theo\"",
+    "Detail": "Biển bắt buộc người tham gia giao thông chỉ được phép rẽ phải  ở phạm vi nơi đường giao nhau đằng sau mặt biển.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.301d.png",
+    "UpdateDay": "20200622095431",
+    "IsDelete": 0
+  },
+  {
+    "ID": 68,
+    "Type_ID": 1,
+    "Name": "Biển số P.118 \"Hạn chế chiều ngang xe\"",
+    "NameEN": "Bien so P.118 \"Han che chieu ngang xe\"",
+    "Detail": "Để báo hạn chế chiều ngang của xe.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.118.png",
+    "UpdateDay": "20200623091842",
+    "IsDelete": 0
+  },
+  {
+    "ID": 69,
+    "Type_ID": 1,
+    "Name": "Biển số P.119 \"Hạn chế chiều dài xe\"",
+    "NameEN": "Bien so P.119 \"Han che chieu dai xe\"",
+    "Detail": "Để báo đường cấm các loại xe (cơ giới và thô sơ) kể cả các xe được ưu tiên theo quy định, có độ dài toàn bộ kể cả xe và hàng lớn hơn trị số ghi trên biển đi qua.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.119.png",
+    "UpdateDay": "20200622112617",
+    "IsDelete": 0
+  },
+  {
+    "ID": 70,
+    "Type_ID": 2,
+    "Name": "Biển số R.301e \" Hướng đi phải theo\"",
+    "NameEN": "Bien so R.301e \" Huong di phai theo\"",
+    "Detail": "Biển bắt buộc người tham gia giao thông chỉ được phép rẽ trái ở phạm vi nơi đường giao nhau đằng sau mặt biển.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.301e.png",
+    "UpdateDay": "20200622095446",
+    "IsDelete": 0
+  },
+  {
+    "ID": 71,
+    "Type_ID": 1,
+    "Name": "Biển số P.120 “Hạn chế chiều dài xe cơ giới kéo theo rơ-moóc hoặc sơ-mi rơ-moóc”",
+    "NameEN": "Bien so P.120 “Han che chieu dai xe co gioi keo theo ro-mooc hoac so-mi ro-mooc”",
+    "Detail": "Để báo đường cấm các loại xe cơ giới kéo theo moóc kể cả ôtô sơ-mi rơ-moóc và các loại xe được ưu tiên kéo moóc theo luật nhà nước quy định, có độ dài toàn bộ kể cả xe, moóc và hàng lớn hơn trị số ghi trên biển đi qua,",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.120.png",
+    "UpdateDay": "20200622113200",
+    "IsDelete": 0
+  },
+  {
+    "ID": 73,
+    "Type_ID": 2,
+    "Name": "Biển số R.301h \"Hướng đi phải theo\"",
+    "NameEN": "Bien so R.301h \"Huong di phai theo\"",
+    "Detail": "Biển bắt buộc người tham gia giao thông chỉ được phép rẽ trái, quay đầu hoặc rẽ phải ở phạm vi nơi đường giao nhau trước mặt biển.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.301i.png",
+    "UpdateDay": "20200622100330",
+    "IsDelete": 0
+  },
+  {
+    "ID": 74,
+    "Type_ID": 2,
+    "Name": "Biển số R.302a \"Hướng phải đi vòng chướng ngại vật\"",
+    "NameEN": "Bien so R.302a \"Huong phai di vong chuong ngai vat\"",
+    "Detail": "Để báo các loại xe (cơ giới và thô sơ) hướng đi để qua một chướng ngại vật. Chỉ được vòng sang phải\r\n",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.302a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 75,
+    "Type_ID": 2,
+    "Name": "Biển số R.302b \"Hướng phải đi vòng chướng ngại vật\"",
+    "NameEN": "Bien so R.302b \"Huong phai di vong chuong ngai vat\"",
+    "Detail": "Để báo các loại xe (cơ giới và thô sơ) hướng đi để qua một chướng ngại vật. Chỉ được vòng sang trái.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.302b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 76,
+    "Type_ID": 2,
+    "Name": "Biển số R.302c \"Hướng phải đi vòng chướng ngại vật\"",
+    "NameEN": "Bien so R.302c \"Huong phai di vong chuong ngai vat\"",
+    "Detail": "Để báo các loại xe (cơ giới và thô sơ) hướng đi để qua một chướng ngại vật. Phải vòng sang trái hoặc sang phải mà lựa chọn kiểu biển cho phù hợp.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.302c.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 77,
+    "Type_ID": 2,
+    "Name": "Biển số R.303 \"Nơi giao nhau chạy theo vòng xuyến\"",
+    "NameEN": "Bien so R.303 \"Noi giao nhau chay theo vong xuyen\"",
+    "Detail": "Để báo cho các loại xe (thô sơ và cơ giới) phải chạy vòng theo đảo an toàn ở nơi đường giao nhau. Biển có hiệu lực bắt buộc các loại xe muốn chuyển hướng phải chạy vòng theo đảo an toàn theo hướng mũi tên.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.303.png",
+    "UpdateDay": "20200623101349",
+    "IsDelete": 0
+  },
+  {
+    "ID": 78,
+    "Type_ID": 2,
+    "Name": "Biển số R.304 \" Đường dành cho xe thô sơ\"",
+    "NameEN": "Bien so R.304 \" Duong danh cho xe tho so\"",
+    "Detail": "Để báo đường dành cho xe thô sơ (kể cả xe của người tàn tật) và người đi bộ. Biển có hiệu lực bắt buộc các loại xe thô sơ (kể cả xe của người tàn tật) và người đi bộ phải dùng đường dành riêng này để đi và cấm các xe cơ giới kể cả xe gắn máy, các xe được ưu tiên theo quy định đi vào đường đã đặt biển này, trừ trường hợp đi cắt ngang qua nhưng phải đảm bảo tuyệt đối an toàn cho xe thô sơ và người đi bộ.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.304.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 79,
+    "Type_ID": 2,
+    "Name": "Biển số R.305 \"Đường dành cho người đi bộ\"",
+    "NameEN": "Bien so R.305 \"Duong danh cho nguoi di bo\"",
+    "Detail": "Để báo đường dành cho người đi bộ. Biển có hiệu lực bắt buộc người đi bộ phải dùng đường dành riêng này để đi. Các loại xe cơ giới và thô sơ (trừ xe đạp và xe lăn dành cho người tàn tật), kể cả các xe được ưu tiên theo quy định không được phép đi vào trên đường đã đặt biển này, trừ trường hợp đi cắt ngang qua nhưng phải đảm bảo tuyệt đối an toàn cho người đi bộ.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.305.png",
+    "UpdateDay": "20200622101158",
+    "IsDelete": 0
+  },
+  {
+    "ID": 80,
+    "Type_ID": 2,
+    "Name": "Biển số R.306 \"Tốc độ tối thiểu cho phép\"",
+    "NameEN": "Bien so R.306 \"Toc do toi thieu cho phep\"",
+    "Detail": "Để báo tốc độ tối thiểu cho phép các xe cơ giới chạy. Biển có hiệu lực bắt buộc các loại xe cơ giới vận hành với tốc độ không nhỏ hơn trị số ghi trên biển trong điều kiện giao thông thuận lợi và an toàn. Các loại xe có tốc độ tối đa theo quy định của nhà sản xuất không đạt tốc độ tối thiểu đã ghi trên biển không được phép đi vào đường này. Trị số ghi trên biển chỉ tốc độ tối thiểu cho phép tính bằng km/h và được quy định tùy theo tiêu chuẩn kỹ thuật của cầu đường và tổ chức giao thông, không được quy định trị số lớn hơn trị số tốc độ an toàn.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.306.png",
+    "UpdateDay": "20200623100433",
+    "IsDelete": 0
+  },
+  {
+    "ID": 81,
+    "Type_ID": 2,
+    "Name": "Biển số R.307 'Hết hạn chế tốc độ tối thiểu\"",
+    "NameEN": "Bien so R.307 'Het han che toc do toi thieu\"",
+    "Detail": "Biển có giá trị báo cho người tham gia giao thông biết hiệu lực của biển số R.306 hết tác dụng, kể từ biển này các xe được phép chạy chậm hơn trị số ghi trên biển nhưng không được gây cản trở các xe khác.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.307.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 82,
+    "Type_ID": 2,
+    "Name": "Biển số R.308a \"Tuyến đường cầu vượt cắt qua\"",
+    "NameEN": "Bien so R.308a \"Tuyen duong cau vuot cat qua\"",
+    "Detail": "Biểu thị phía trước có cầu vượt, xe có thể đi thẳng hoặc theo chỉ dẫn trên hình vẽ để rẽ trái.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.308a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 83,
+    "Type_ID": 2,
+    "Name": "Biển số R.308b \" Tuyến đường cầu vượt cắt qua\"",
+    "NameEN": "Bien so R.308b \" Tuyen duong cau vuot cat qua\"",
+    "Detail": "Biểu thị phía trước có cầu vượt, xe có thể đi thẳng hoặc theo chỉ dẫn trên hình vẽ để rẽ phải.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.308b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 84,
+    "Type_ID": 2,
+    "Name": "Biển số R.309 \" Ấn còi\"",
+    "NameEN": "Bien so R.309 \" An coi\"",
+    "Detail": "Biểu thị xe cộ đi đến vị trí cắm biển đó thì phải ấn còi. ",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.309.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 85,
+    "Type_ID": 2,
+    "Name": "Biển số R.310a \"Hướng đi phải theo cho các xe chở hàng nguy hiểm\"",
+    "NameEN": "Bien so R.310a \"Huong di phai theo cho cac xe cho hang nguy hiem\"",
+    "Detail": "Để báo cho các loại xe chở hàng nguy hiểm phải đi theo hướng quy định. Xe bắt buộc phải rẽ trái.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.310a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 86,
+    "Type_ID": 2,
+    "Name": "Biển số R.310b \" Hướng đi phải theo cho các xe chở hàng nguy hiểm\" ",
+    "NameEN": "Bien so R.310b \" Huong di phai theo cho cac xe cho hang nguy hiem\" ",
+    "Detail": "Để báo cho các loại xe chở hàng nguy hiểm phải đi theo hướng quy định. Xe bắt buộc đi thẳng.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.310b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 87,
+    "Type_ID": 2,
+    "Name": "Biển số R.310c \"Hướng đi phải theo cho các xe chở hàng nguy hiểm\"",
+    "NameEN": "Bien so R.310c \"Huong di phai theo cho cac xe cho hang nguy hiem\"",
+    "Detail": "Để báo cho các loại xe chở hàng nguy hiểm phải đi theo hướng quy định. Xe bắt buộc rẽ phải.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.310c.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 88,
+    "Type_ID": 1,
+    "Name": "Biển số P.121 \"Cự ly tối thiểu giữa hai xe\"",
+    "NameEN": "Bien so P.121 \"Cu ly toi thieu giua hai xe\"",
+    "Detail": "Để báo xe ôtô phải đi cách nhau một khoảng tối thiểu.\r\n\r\n",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.121.png",
+    "UpdateDay": "20200623092214",
+    "IsDelete": 0
+  },
+  {
+    "ID": 89,
+    "Type_ID": 2,
+    "Name": "Biển số R.403a \"Đường dành cho xe ôtô\"",
+    "NameEN": "Bien so R.403a \"Duong danh cho xe oto\"",
+    "Detail": "Để báo hiệu bắt đầu đường dành cho các loại ôtô đi lại.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.403a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 90,
+    "Type_ID": 2,
+    "Name": "Biển số R.403b \"Đường dành cho xe ôtô, xe máy\"",
+    "NameEN": "Bien so R.403b \"Duong danh cho xe oto, xe may\"",
+    "Detail": "Để báo hiệu bắt đầu đường dành cho các loại ôtô, xe máy đi lại.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.403b.png",
+    "UpdateDay": "20200622102343",
+    "IsDelete": 0
+  },
+  {
+    "ID": 91,
+    "Type_ID": 1,
+    "Name": "Biển số P.123a \"Cấm rẽ trái\"",
+    "NameEN": "Bien so P.123a \"Cam re trai\"",
+    "Detail": "Để báo cấm rẽ trái (theo hướng mũi tên chỉ) ở những vị trí đường giao nhau. Biển không có giá trị cấm quay đầu xe. \r\nBiển có hiệu lực cấm các loại xe (cơ giới và thô sơ) rẽ sang phía trái trừ các xe được ưu tiên theo quy định.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.123a.png",
+    "UpdateDay": "20200622135538",
+    "IsDelete": 0
+  },
+  {
+    "ID": 92,
+    "Type_ID": 1,
+    "Name": "Biển số P.123b \"Cấm rẽ phải\"",
+    "NameEN": "Bien so P.123b \"Cam re phai\"",
+    "Detail": "Để báo cấm rẽ phải (theo hướng mũi tên chỉ) ở những vị trí đường giao nhau. Biển không có giá trị cấm quay đầu xe. \r\nBiển có hiệu lực cấm các loại xe (cơ giới và thô sơ) rẽ sang phía phải trừ các xe được ưu tiên theo quy định.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.123b.png",
+    "UpdateDay": "20200622135526",
+    "IsDelete": 0
+  },
+  {
+    "ID": 93,
+    "Type_ID": 2,
+    "Name": "Biển số R.403c \"Đường dành cho xe buýt\"",
+    "NameEN": "Bien so R.403c \"Duong danh cho xe buyt\"",
+    "Detail": "Để báo hiệu bắt đầu đường dành cho xe buýt.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.403c.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 94,
+    "Type_ID": 1,
+    "Name": "Biển số P.124a \"Cấm quay đầu xe\"",
+    "NameEN": "Bien so P.124a \"Cam quay dau xe\"",
+    "Detail": "Để báo cấm các loại xe quay đầu (theo kiểu chữ U). Chiều mũi tên phù hợp với chiều cấm quay đầu xe.\r\nBiển này có hiệu lực cấm các loại xe (cơ giới và thô sơ) trừ các xe được ưu tiên theo quy định.\r\nBiển không có giá trị cấm rẽ trái để đi sang hướng đường khác.\r\n",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.124a1.png",
+    "UpdateDay": "20200623094006",
+    "IsDelete": 0
+  },
+  {
+    "ID": 95,
+    "Type_ID": 1,
+    "Name": "Biển số P.124b \"Cấm quay đầu xe\"",
+    "NameEN": "Bien so P.124b \"Cam quay dau xe\"",
+    "Detail": "Để báo cấm xe ôtô quay đầu (theo kiểu chữ U). Chiều mũi tên phù hợp với chiều cấm xe ô tô quay đầu.\r\nBiển này có hiệu lực cấm xe ôtô và xe máy 3 bánh (side car) quay đầu (theo kiểu chữ U) trừ các xe được ưu tiên theo quy định.\r\nBiển không có giá trị cấm rẽ trái để đi sang hướng đường khác.\r\n",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.124b1.png",
+    "UpdateDay": "20200623094120",
+    "IsDelete": 0
+  },
+  {
+    "ID": 96,
+    "Type_ID": 1,
+    "Name": "Biển số P.124c \"Cấm rẽ trái và quay đầu xe”",
+    "NameEN": "Bien so P.124c \"Cam re trai va quay dau xe”",
+    "Detail": "Để báo cấm các loại xe rẽ trái đồng thời cấm quay đầu.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.124c.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 97,
+    "Type_ID": 1,
+    "Name": "Biển số P.124d \"Cấm rẽ phải và quay đầu xe”",
+    "NameEN": "Bien so P.124d \"Cam re phai va quay dau xe”",
+    "Detail": "Để báo cấm các loại xe rẽ phải đồng thời cấm quay đầu.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.124d.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 98,
+    "Type_ID": 1,
+    "Name": "Biển số P.124e \"Cấm ô tô rẽ trái và quay đầu xe”",
+    "NameEN": "Bien so P.124e \"Cam o to re trai va quay dau xe”",
+    "Detail": "Để báo cấm xe ôtô rẽ trái và đồng thời cấm quay đầu.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.124e.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 99,
+    "Type_ID": 1,
+    "Name": "Biển số P.124f \"Cấm ô tô rẽ phải và quay đầu xe”",
+    "NameEN": "Bien so P.124f \"Cam o to re phai va quay dau xe”",
+    "Detail": "Để báo cấm xe ôtô rẽ phải và đồng thời cấm quay đầu.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.124f.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 100,
+    "Type_ID": 1,
+    "Name": "Biển số P.125 \"Cấm vượt\"",
+    "NameEN": "Bien so P.125 \"Cam vuot\"",
+    "Detail": "Để báo cấm các loại xe cơ giới vượt nhau.\r\nBiển có hiệu lực cấm tất cả các loại xe cơ giới vượt nhau (kể cả xe được ưu tiên theo quy định) nhưng được phép vượt xe máy 2 bánh, xe gắn máy.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.125.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 101,
+    "Type_ID": 1,
+    "Name": "Biển số P.126 \"Cấm ôtô tải vượt\"",
+    "NameEN": "Bien so P.126 \"Cam oto tai vuot\"",
+    "Detail": "Để báo cấm các loại ôtô tải vượt xe cơ giới khác.\r\nBiển có hiệu lực cấm các loại ôtô tải có khối lượng chuyên chở (theo Giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường phương tiện giao thông cơ giới đường bộ) lớn hơn 3.500 kg kể cả các xe được ưu tiên theo quy định vượt xe cơ giới khác. Được phép vượt xe máy 2 bánh, xe gắn máy.\r\nBiển không có giá trị cấm các loại xe cơ giới khác vượt nhau và vượt ôtô tải.\r\n\r\n",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.126.png",
+    "UpdateDay": "20200622150844",
+    "IsDelete": 0
+  },
+  {
+    "ID": 102,
+    "Type_ID": 2,
+    "Name": "Biển số R.403d \"Đường dành cho xe ôtô con\"",
+    "NameEN": "Bien so R.403d \"Duong danh cho xe oto con\"",
+    "Detail": "Để báo hiệu bắt đầu đường dành cho xe ôtô con.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.403d.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 103,
+    "Type_ID": 1,
+    "Name": "Biển số P.127 \"Tốc độ tối đa cho phép\"",
+    "NameEN": "Bien so P.127 \"Toc do toi da cho phep\"",
+    "Detail": "Để báo tốc độ tối đa cho phép các xe cơ giới chạy.\r\nBiển có hiệu lực cấm các loại xe cơ giới chạy với tốc độ tối đa vượt quá trị số ghi trên biển trừ các xe được ưu tiên theo quy định. Người điều khiển phương tiện căn cứ vào điều kiện cụ thể khác như khí hậu thời tiết tình trạng mặt đường, tình hình giao thông, phương tiện, điều kiện sức khỏe để điều khiển phương tiện với tốc độ phù hợp, an toàn và không quá giá trị ghi trên biển",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.127.png",
+    "UpdateDay": "20200622152723",
+    "IsDelete": 0
+  },
+  {
+    "ID": 104,
+    "Type_ID": 1,
+    "Name": "Biển số P.127a \"Tốc độ tối đa cho phép về ban đêm\"",
+    "NameEN": "Bien so P.127a \"Toc do toi da cho phep ve ban dem\"",
+    "Detail": "Khi cần phải quy định tốc độ tối đa về ban đêm cho các phương tiện. \r\nÁp dụng biển này cho một số trường hợp qua khu đông dân cư vào ban đêm nhằm mục đích nâng cao tốc độ vận hành khi đường ít xe chạy.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.127a.png",
+    "UpdateDay": "20200623094505",
+    "IsDelete": 0
+  },
+  {
+    "ID": 105,
+    "Type_ID": 2,
+    "Name": "Biển số R.403e \"Đường dành cho xe máy\"",
+    "NameEN": "Bien so R.403e \"Duong danh cho xe may\"",
+    "Detail": "Để báo hiệu bắt đầu đường dành cho xe máy.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.403e.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 106,
+    "Type_ID": 2,
+    "Name": "Biển số R.403f \"Đường dành cho xe máy và xe đạp\"",
+    "NameEN": "Bien so R.403f \"Duong danh cho xe may va xe dap\"",
+    "Detail": "Để báo hiệu bắt đầu đường dành cho xe máy (kể cả xe gắn máy) và xe đạp (kể cả xe thô sơ).",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.403f.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 107,
+    "Type_ID": 1,
+    "Name": "Biển số P.127b \"Biển ghép tốc độ tối đa cho phép trên từng làn đường\"",
+    "NameEN": "Bien so P.127b \"Bien ghep toc do toi da cho phep tren tung lan duong\"",
+    "Detail": "Khi quy định tốc độ tối đa cho phép trên từng làn đường, nếu chỉ sử dụng biển đặt bên đường hoặc trên cột cần vươn hay giá long môn. Xe chạy trên làn nào phải tuân thủ tốc độ tối đa cho phép trên làn đường đó.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.127b.png",
+    "UpdateDay": "20200623094534",
+    "IsDelete": 0
+  },
+  {
+    "ID": 108,
+    "Type_ID": 2,
+    "Name": "Biển số R.404a \"Hết đoạn đường dành cho xe ôtô\"",
+    "NameEN": "Bien so R.404a \"Het doan duong danh cho xe oto\"",
+    "Detail": "Báo hiệu hết đoạn đường dành cho xe ôtô.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.404a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 109,
+    "Type_ID": 2,
+    "Name": "Biển số R.404b \"Hết đoạn đường dành cho ôtô, xe máy\"",
+    "NameEN": "Bien so R.404b \"Het doan duong danh cho oto, xe may\"",
+    "Detail": "Báo hiệu hết đoạn đường dành cho ôtô, xe máy.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.404b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 110,
+    "Type_ID": 2,
+    "Name": "Biển số R.404c \"Hết đoạn đường dành cho xe buýt\"",
+    "NameEN": "Bien so R.404c \"Het doan duong danh cho xe buyt\"",
+    "Detail": "Báo hiệu hết đoạn đường dành cho xe buýt.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.404c.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 111,
+    "Type_ID": 2,
+    "Name": "Biển số R.404d \"Hết đoạn đường dành cho xe ôtô con\"",
+    "NameEN": "Bien so R.404d \"Het doan duong danh cho xe oto con\"",
+    "Detail": "Báo hiệu hết đoạn đường dành cho xe ôtô con.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.404d.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 112,
+    "Type_ID": 2,
+    "Name": "Biển số R.404e \"Hết đoạn đường dành cho xe máy\"",
+    "NameEN": "Bien so R.404e \"Het doan duong danh cho xe may\"",
+    "Detail": "Báo hiệu hết đoạn đường dành cho xe máy.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.404e.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 114,
+    "Type_ID": 2,
+    "Name": "Biển số R.404f \"Hết đoạn đường dành cho xe máy và xe đạp\"",
+    "NameEN": "Bien so R.404f \"Het doan duong danh cho xe may va xe dap\"",
+    "Detail": "Báo hiệu hết đoạn đường dành cho xe máy và xe đạp.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.404f.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 115,
+    "Type_ID": 2,
+    "Name": "Biển số R.411 \"Hướng đi trên mỗi làn đường phải theo\"",
+    "NameEN": "Bien so R.411 \"Huong di tren moi lan duong phai theo\"",
+    "Detail": "Để báo hiệu cho người tham gia giao thông biết số lượng làn đường trên mặt đường và hướng đi trên mỗi làn đường theo vạch kẻ đường. Biển có tác dụng bắt buộc người tham gia giao thông phải đi đúng làn đường đã được chỉ dẫn hướng phù hợp với hành trình của xe.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.411.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 117,
+    "Type_ID": 1,
+    "Name": "Biển số P.128 \"Cấm sử dụng còi\"",
+    "NameEN": "Bien so P.128 \"Cam su dung coi\"",
+    "Detail": "Để báo cấm các loại xe sử dụng còi.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.128.png",
+    "UpdateDay": "20200622164855",
+    "IsDelete": 0
+  },
+  {
+    "ID": 118,
+    "Type_ID": 1,
+    "Name": "Biển số P.129 \"Kiểm tra\"",
+    "NameEN": "Bien so P.129 \"Kiem tra\"",
+    "Detail": "Để báo nơi đặt trạm kiểm tra; các loại phương tiện vận tải qua đó phải dừng lại để làm thủ tục kiểm tra, kiểm soát theo quy định.\r\n",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.129.png",
+    "UpdateDay": "20200622165335",
+    "IsDelete": 0
+  },
+  {
+    "ID": 119,
+    "Type_ID": 1,
+    "Name": "Biển số P.130 \"Cấm dừng xe và đỗ xe\"",
+    "NameEN": "Bien so P.130 \"Cam dung xe va do xe\"",
+    "Detail": "Để báo nơi cấm dừng xe và đỗ xe.\r\nBiển có hiệu lực cấm các loại xe cơ giới dừng và đỗ ở phía đường có đặt biển trừ các xe được ưu tiên theo quy định. Đối với các loại xe ôtô buýt chạy theo hành trình quy định được hướng dẫn vị trí dừng thích hợp.\r\n",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.130.png",
+    "UpdateDay": "20200622165835",
+    "IsDelete": 0
+  },
+  {
+    "ID": 120,
+    "Type_ID": 1,
+    "Name": "Biển số P.131a \"Cấm đỗ xe\"",
+    "NameEN": "Bien so P.131a \"Cam do xe\"",
+    "Detail": "Để báo nơi cấm đỗ xe trừ các xe được ưu tiên theo quy định.\r\nBiển này có hiệu lực cấm các loại xe cơ giới đỗ ở phía đường có đặt biển.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.131a.png",
+    "UpdateDay": "20200623094606",
+    "IsDelete": 0
+  },
+  {
+    "ID": 121,
+    "Type_ID": 1,
+    "Name": "Biển số P.131b \"Cấm đỗ xe\"",
+    "NameEN": "Bien so P.131b \"Cam do xe\"",
+    "Detail": "Để báo nơi cấm đỗ xe trừ các xe được ưu tiên theo quy định.\r\nBiển này có hiệu lực cấm các loại xe cơ giới đỗ ở phía đường có đặt biển vào những ngày lẻ.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.131b.png",
+    "UpdateDay": "20200623094658",
+    "IsDelete": 0
+  },
+  {
+    "ID": 122,
+    "Type_ID": 1,
+    "Name": "Biển số P.131c \"Cấm đỗ xe\"",
+    "NameEN": "Bien so P.131c \"Cam do xe\"",
+    "Detail": "Để báo nơi cấm đỗ xe trừ các xe được ưu tiên theo quy định.\r\nBiển này có hiệu lực cấm các loại xe cơ giới đỗ ở phía đường có đặt biển vào những ngày chẵn.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.131c.png",
+    "UpdateDay": "20200623094714",
+    "IsDelete": 0
+  },
+  {
+    "ID": 123,
+    "Type_ID": 2,
+    "Name": "Biển số R.412a \"Làn đường dành cho xe ôtô khách\"",
+    "NameEN": "Bien so R.412a \"Lan duong danh cho xe oto khach\"",
+    "Detail": " Làn đường dành riêng cho ôtô khách (kể cả ôtô buýt). Trong trường hợp cần phân làn các loại xe khách theo số chỗ ngồi thì ghi số chỗ ngồi cho phép của xe khách lên thân xe trong hình vẽ của biển.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.412a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 124,
+    "Type_ID": 2,
+    "Name": "Biển số R.412b \"Làn đường dành cho xe ôtô con\"",
+    "NameEN": "Bien so R.412b \"Lan duong danh cho xe oto con\"",
+    "Detail": "Làn đường dành cho xe ôtô con.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.412b.png",
+    "UpdateDay": "20200623100446",
+    "IsDelete": 0
+  },
+  {
+    "ID": 125,
+    "Type_ID": 2,
+    "Name": "Biển số R.412c \"Làn đường dành cho xe ôtô tải\"",
+    "NameEN": "Bien so R.412c \"Lan duong danh cho xe oto tai\"",
+    "Detail": "Làn đường dành cho xe ôtô tải. Trong trường hợp cần phân làn các loại xe tải theo khối lượng chuyên chở cho phép thì thì ghi trị số khối lượng chuyên chở cho phép của xe tải lên thân xe trong hình vẽ của biển.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.412c.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 126,
+    "Type_ID": 2,
+    "Name": "Biển số R.412d \"Làn đường dành cho xe máy\"",
+    "NameEN": "Bien so R.412d \"Lan duong danh cho xe may\"",
+    "Detail": " Làn đường dành riêng cho xe máy và xe gắn máy.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.412d.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 127,
+    "Type_ID": 2,
+    "Name": "Biển số R.412e \"Làn đường dành cho xe buýt\"",
+    "NameEN": "Bien so R.412e \"Lan duong danh cho xe buyt\"",
+    "Detail": "Làn đường dành cho xe buýt.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.412e.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 128,
+    "Type_ID": 2,
+    "Name": "Biển số R.412f \"Làn đường dành cho xe ôtô",
+    "NameEN": "Bien so R.412f \"Lan duong danh cho xe oto",
+    "Detail": "Làn đường dành cho xe ôtô.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.412f.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 129,
+    "Type_ID": 2,
+    "Name": "Biển số R.412g \"Làn đường dành cho xe máy và xe đạp\"",
+    "NameEN": "Bien so R.412g \"Lan duong danh cho xe may va xe dap\"",
+    "Detail": "Làn đường dành riêng cho xe máy (kể cả xe gắn máy) và xe đạp (kể cả các loại xe thô sơ khác).",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.412g.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 130,
+    "Type_ID": 1,
+    "Name": "Biển số P.132 \"Nhường đường cho xe cơ giới đi ngược chiều qua đường hẹp\"",
+    "NameEN": "Bien so P.132 \"Nhuong duong cho xe co gioi di nguoc chieu qua duong hep\"",
+    "Detail": "Để báo các loại xe (cơ giới và thô sơ) kể cả các xe được ưu tiên theo quy định khi thấy biển này phải nhường đường cho các loại xe cơ giới đang đi theo hướng ngược lại qua các đoạn đường hẹp hoặc cầu hẹp.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.132.png",
+    "UpdateDay": "20200623094836",
+    "IsDelete": 0
+  },
+  {
+    "ID": 131,
+    "Type_ID": 2,
+    "Name": "Biển số R.412h \"Làn đường dành cho xe đạp\"",
+    "NameEN": "Bien so R.412h \"Lan duong danh cho xe dap\"",
+    "Detail": " Làn đường dành riêng cho xe đạp (kể cả các loại xe thô sơ khác).",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.412h.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 132,
+    "Type_ID": 4,
+    "Name": "Biển số W.201a \"Chỗ ngoặt nguy hiểm\"",
+    "NameEN": "Bien so W.201a \"Cho ngoat nguy hiem\"",
+    "Detail": "Báo trước sắp đến một chỗ ngoặt nguy hiểm vòng bên trái.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.201a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 133,
+    "Type_ID": 4,
+    "Name": "Biển số W.201b \"Chỗ ngoặt nguy hiểm\"",
+    "NameEN": "Bien so W.201b \"Cho ngoat nguy hiem\"",
+    "Detail": "Báo trước sắp đến một chỗ ngoặt nguy hiểm vòng bên phải.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.201b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 134,
+    "Type_ID": 4,
+    "Name": "Biển số W.201c \"Chỗ ngoặt nguy hiểm có nguy cơ lật xe\"",
+    "NameEN": "Bien so W.201c \"Cho ngoat nguy hiem co nguy co lat xe\"",
+    "Detail": "Báo trước sắp đến chỗ ngoặt nguy hiểm có khả năng gây lật các xe có trọng tâm cao và tải trọng lớn như xe tải, xe buýt giường nằm, xe chở chất lỏng, v.v... có nguy cơ lật xe bên phải khi đường cong vòng sang trái.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.201c.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 135,
+    "Type_ID": 4,
+    "Name": "Biển số W.201d \"Chỗ ngoặt nguy hiểm có nguy cơ lật xe\"",
+    "NameEN": "Bien so W.201d \"Cho ngoat nguy hiem co nguy co lat xe\"",
+    "Detail": "Báo trước sắp đến chỗ ngoặt nguy hiểm có khả năng gây lật các xe có trọng tâm cao và tải trọng lớn như xe tải, xe buýt giường nằm, xe chở chất lỏng, v.v... có nguy cơ lật xe bên trái khi đường cong vòng bên phải.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.201d.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 136,
+    "Type_ID": 4,
+    "Name": "Biển số W.202a \"Nhiều chỗ ngoặt nguy hiểm liên tiếp\"",
+    "NameEN": "Bien so W.202a \"Nhieu cho ngoat nguy hiem lien tiep\"",
+    "Detail": "Báo trước sắp đến hai chỗ ngoặt ngược chiều nhau liên tiếp, ở gần nhau trong đó có ít nhất một chỗ ngoặt nguy hiểm mà chỗ ngoặt đầu tiên hướng vòng bên trái.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.202a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 137,
+    "Type_ID": 4,
+    "Name": "Biển số W.202b \"Nhiều chỗ ngoặt nguy hiểm liên tiếp\"",
+    "NameEN": "Bien so W.202b \"Nhieu cho ngoat nguy hiem lien tiep\"",
+    "Detail": "Báo trước sắp đến hai chỗ ngoặt ngược chiều nhau liên tiếp, ở gần nhau trong đó có ít nhất một chỗ ngoặt nguy hiểm mà chỗ ngoặt đầu tiên hướng vòng bên phải.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.202b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 138,
+    "Type_ID": 4,
+    "Name": "Biển số W.203a \"Đường bị thu hẹp\"",
+    "NameEN": "Bien so W.203a \"Duong bi thu hep\"",
+    "Detail": "Báo trước sắp đến một đoạn đường bị thu hẹp cả hai bên.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.203a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 139,
+    "Type_ID": 4,
+    "Name": "Biển số W.203b \"Đường bị thu hẹp\"",
+    "NameEN": "Bien so W.203b \"Duong bi thu hep\"",
+    "Detail": "Báo trước sắp đến một đoạn đường bị thu hẹp về phía trái.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.203b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 140,
+    "Type_ID": 4,
+    "Name": "Biển số W.203c \"Đường bị thu hẹp\"",
+    "NameEN": "Bien so W.203c \"Duong bi thu hep\"",
+    "Detail": "Báo trước sắp đến một đoạn đường bị thu hẹp về phía phải.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.203c.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 142,
+    "Type_ID": 4,
+    "Name": "Biển số W.204 \"Đường hai chiều\"",
+    "NameEN": "Bien so W.204 \"Duong hai chieu\"",
+    "Detail": "Báo trước sắp đến đoạn đường do sửa chữa hoặc có trở ngại ở một phía đường mà phải tổ chức đi lại cho phương tiện cả hai chiều trên phía đường còn lại hoặc để báo trước đoạn đường đôi tạm thời hoặc đoạn đường có chiều xe đi và về đi chung.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.204.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 143,
+    "Type_ID": 1,
+    "Name": "Biển số DP.134 \"Hết hạn chế tốc độ tối đa\"",
+    "NameEN": "Bien so DP.134 \"Het han che toc do toi da\"",
+    "Detail": "Đến hết đoạn đường tốc độ tối đa. \r\nBiển có giá trị báo cho người tham gia giao thông biết hiệu lực của biển số P.127 hết tác dụng. Kể từ biển này, các xe được phép chạy với tốc độ tối đa đã quy định trong Luật Giao thông đường bộ.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/DP.134.png",
+    "UpdateDay": "20200623080532",
+    "IsDelete": 0
+  },
+  {
+    "ID": 144,
+    "Type_ID": 4,
+    "Name": "Biển số W.205a \"Đường giao nhau\"",
+    "NameEN": "Bien so W.205a \"Duong giao nhau\"",
+    "Detail": "Báo trước sắp đến nơi giao nhau cùng mức của các tuyến đường cùng cấp (không có đường nào ưu tiên) trên cùng một mặt bằng.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.205a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 145,
+    "Type_ID": 1,
+    "Name": "Biển số DP.135 \"Hết tất cả các lệnh cấm\"",
+    "NameEN": "Bien so DP.135 \"Het tat ca cac lenh cam\"",
+    "Detail": "Đến hết đoạn đường mà nhiều biển báo cấm cùng hết hiệu lực.\r\nBiển có giá trị báo cho người tham gia giao thông biết hiệu lực của biển số P.121 và nhiều biển cấm khác từ biển số P.125 đến biển số P.131(a,b,c) được đặt trước đó cùng hết tác dụng.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/DP.135.png",
+    "UpdateDay": "20200623080759",
+    "IsDelete": 0
+  },
+  {
+    "ID": 146,
+    "Type_ID": 4,
+    "Name": "Biển số W.205b \"Đường giao nhau\"",
+    "NameEN": "Bien so W.205b \"Duong giao nhau\"",
+    "Detail": "Báo trước sắp đến nơi giao nhau cùng mức của các tuyến đường cùng cấp (không có đường nào ưu tiên) trên cùng một mặt bằng.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.205b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 147,
+    "Type_ID": 1,
+    "Name": "Biển số P.136 \"Cấm đi thẳng\"",
+    "NameEN": "Bien so P.136 \"Cam di thang\"",
+    "Detail": "Đường ở phía trước cấm tất cả các loại xe (trừ xe ưu tiên theo quy định) đi thẳng",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.136.png",
+    "UpdateDay": "20200623081029",
+    "IsDelete": 0
+  },
+  {
+    "ID": 148,
+    "Type_ID": 1,
+    "Name": "Biển số P.137 \"Cấm rẽ trái, rẽ phải\"",
+    "NameEN": "Bien so P.137 \"Cam re trai, re phai\"",
+    "Detail": "Các ngả đường phía trước cấm tất cả các loại xe (trừ xe ưu tiên theo quy định) rẽ trái hay rẽ phải.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.137.png",
+    "UpdateDay": "20200623081306",
+    "IsDelete": 0
+  },
+  {
+    "ID": 149,
+    "Type_ID": 4,
+    "Name": "Biển số W.205c \"Đường giao nhau\"",
+    "NameEN": "Bien so W.205c \"Duong giao nhau\"",
+    "Detail": "Báo trước sắp đến nơi giao nhau cùng mức của các tuyến đường cùng cấp (không có đường nào ưu tiên) trên cùng một mặt bằng.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.205c.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 150,
+    "Type_ID": 1,
+    "Name": "Biển số P.138 \"Cấm đi thẳng, rẽ trái\"",
+    "NameEN": "Bien so P.138 \"Cam di thang, re trai\"",
+    "Detail": "Biểu thị đường qua nút giao cấm tất cả các loại xe (trừ xe ưu tiên theo quy định) đi thẳng, rẽ trái.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.138.png",
+    "UpdateDay": "20200623081445",
+    "IsDelete": 0
+  },
+  {
+    "ID": 151,
+    "Type_ID": 4,
+    "Name": "Biển số W.205d \"Đường giao nhau\"",
+    "NameEN": "Bien so W.205d \"Duong giao nhau\"",
+    "Detail": "Báo trước sắp đến nơi giao nhau cùng mức của các tuyến đường cùng cấp (không có đường nào ưu tiên) trên cùng một mặt bằng.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.205d.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 152,
+    "Type_ID": 1,
+    "Name": "Biển số P.139 \"Cấm đi thẳng, rẽ phải\"",
+    "NameEN": "Bien so P.139 \"Cam di thang, re phai\"",
+    "Detail": "Biểu thị đường qua nút giao cấm tất cả các loại xe (trừ xe ưu tiên theo quy định) đi thẳng, rẽ phải.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.139.png",
+    "UpdateDay": "20200623081551",
+    "IsDelete": 0
+  },
+  {
+    "ID": 153,
+    "Type_ID": 1,
+    "Name": "Biển số P.140 \"Cấm xe công nông và các loại xe tương tự\"",
+    "NameEN": "Bien so P.140 \"Cam xe cong nong va cac loai xe tuong tu\"",
+    "Detail": "Để báo đường cấm xe công nông.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.140.png",
+    "UpdateDay": "20200623081632",
+    "IsDelete": 0
+  },
+  {
+    "ID": 154,
+    "Type_ID": 4,
+    "Name": "Biển số W.205e \"Đường giao nhau\"",
+    "NameEN": "Bien so W.205e \"Duong giao nhau\"",
+    "Detail": "Báo trước sắp đến nơi giao nhau cùng mức của các tuyến đường cùng cấp (không có đường nào ưu tiên) trên cùng một mặt bằng.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.205e.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 155,
+    "Type_ID": 4,
+    "Name": "Biển số W.206 \"Giao nhau chạy theo vòng xuyến\"",
+    "NameEN": "Bien so W.206 \"Giao nhau chay theo vong xuyen\"",
+    "Detail": "Báo trước nơi giao nhau có bố trí đảo an toàn ở giữa nút giao, các loại xe qua nút giao phải đi vòng xuyến quanh đảo an toàn theo chiều mũi tên",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.206.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 156,
+    "Type_ID": 4,
+    "Name": "Biển số W.207a \"Giao nhau với đường không ưu tiên\"",
+    "NameEN": "Bien so W.207a \"Giao nhau voi duong khong uu tien\"",
+    "Detail": "Đặt trên đường ưu tiên, để báo trước sắp đến nơi giao nhau với đường không ưu tiên",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.207a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 157,
+    "Type_ID": 4,
+    "Name": "Biển số W.207b \"Giao nhau với đường không ưu tiên\"",
+    "NameEN": "Bien so W.207b \"Giao nhau voi duong khong uu tien\"",
+    "Detail": "Đặt trên đường ưu tiên, để báo trước sắp đến nơi giao nhau với đường không ưu tiên",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.207b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 158,
+    "Type_ID": 4,
+    "Name": "Biển số W.207c \"Giao nhau với đường không ưu tiên\"",
+    "NameEN": "Bien so W.207c \"Giao nhau voi duong khong uu tien\"",
+    "Detail": "Đặt trên đường ưu tiên, để báo trước sắp đến nơi giao nhau với đường không ưu tiên",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.207c.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 159,
+    "Type_ID": 4,
+    "Name": "Biển số W.207d \"Giao nhau với đường không ưu tiên\"",
+    "NameEN": "Bien so W.207d \"Giao nhau voi duong khong uu tien\"",
+    "Detail": "Đặt trên đường ưu tiên, để báo trước sắp đến nơi giao nhau với đường không ưu tiên.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.207d.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 160,
+    "Type_ID": 4,
+    "Name": "Biển số W.207e \"Giao nhau với đường không ưu tiên\"",
+    "NameEN": "Bien so W.207e \"Giao nhau voi duong khong uu tien\"",
+    "Detail": "Đặt trên đường ưu tiên, để báo trước sắp đến nơi giao nhau với đường không ưu tiên.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.207e.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 161,
+    "Type_ID": 4,
+    "Name": "Biển số W.207f \"Giao nhau với đường không ưu tiên\"",
+    "NameEN": "Bien so W.207f \"Giao nhau voi duong khong uu tien\"",
+    "Detail": "Đặt trên đường ưu tiên, để báo trước sắp đến nơi giao nhau với đường không ưu tiên.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.207f.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 162,
+    "Type_ID": 4,
+    "Name": "Biển số W.207g \"Giao nhau với đường không ưu tiên\"",
+    "NameEN": "Bien so W.207g \"Giao nhau voi duong khong uu tien\"",
+    "Detail": "Đặt trên đường ưu tiên, để báo trước sắp đến nơi giao nhau với đường không ưu tiên.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.207g.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 163,
+    "Type_ID": 4,
+    "Name": "Biển số W.207h \"Giao nhau với đường không ưu tiên\"",
+    "NameEN": "Bien so W.207h \"Giao nhau voi duong khong uu tien\"",
+    "Detail": "Đặt trên đường ưu tiên, để báo trước sắp đến nơi giao nhau với đường không ưu tiên.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.207h.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 164,
+    "Type_ID": 4,
+    "Name": "Biển số W.207i \"Giao nhau với đường không ưu tiên\"",
+    "NameEN": "Bien so W.207i \"Giao nhau voi duong khong uu tien\"",
+    "Detail": "Đặt trên đường ưu tiên, để báo trước sắp đến nơi giao nhau với đường không ưu tiên.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.207i.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 165,
+    "Type_ID": 2,
+    "Name": "Biển số R.412i \"Kết thúc làn đường dành cho xe ôtô khách\"",
+    "NameEN": "Bien so R.412i \"Ket thuc lan duong danh cho xe oto khach\"",
+    "Detail": "Báo hiệu kết thúc làn đường dành cho xe ôtô khách.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.412i.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 166,
+    "Type_ID": 2,
+    "Name": "Biển số R.412j \"Kết thúc làn đường dành cho xe ôtô con\"",
+    "NameEN": "Bien so R.412j \"Ket thuc lan duong danh cho xe oto con\"",
+    "Detail": "Báo hiệu kết thúc làn đường dành cho xe ôtô con.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.412j.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 167,
+    "Type_ID": 2,
+    "Name": "Biển số R.412k \"Kết thúc làn đường dành cho xe ôtô tải\"",
+    "NameEN": "Bien so R.412k \"Ket thuc lan duong danh cho xe oto tai\"",
+    "Detail": "Báo hiệu kết thúc làn đường dành cho xe ôtô tải.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.412k.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 168,
+    "Type_ID": 2,
+    "Name": "Biển số R.412l \"Kết thúc làn đường dành cho xe máy\"",
+    "NameEN": "Bien so R.412l \"Ket thuc lan duong danh cho xe may\"",
+    "Detail": "Báo hiệu kết thúc làn đường dành cho xe máy.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.412l.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 169,
+    "Type_ID": 2,
+    "Name": "Biển số R.412m \"Kết thúc làn đường dành cho xe buýt\"",
+    "NameEN": "Bien so R.412m \"Ket thuc lan duong danh cho xe buyt\"",
+    "Detail": "Báo hiệu kết thúc làn đường dành cho xe buýt.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.412m.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 170,
+    "Type_ID": 2,
+    "Name": "Biển số R.412n \"Kết thúc làn đường dành cho xe ôtô\"",
+    "NameEN": "Bien so R.412n \"Ket thuc lan duong danh cho xe oto\"",
+    "Detail": "Báo hiệu kết thúc làn đường dành cho xe ôtô.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.412n.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 171,
+    "Type_ID": 2,
+    "Name": "Biển số R.412o \"Kết thúc làn đường dành cho xe máy và xe đạp\"",
+    "NameEN": "Bien so R.412o \"Ket thuc lan duong danh cho xe may va xe dap\"",
+    "Detail": "Báo hiệu kết thúc làn đường dành cho xe máy và xe đạp.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.412o.png",
+    "UpdateDay": "20200622103312",
+    "IsDelete": 0
+  },
+  {
+    "ID": 172,
+    "Type_ID": 2,
+    "Name": "Biển số R.412p \"Kết thúc làn đường dành cho xe đạp\"",
+    "NameEN": "Bien so R.412p \"Ket thuc lan duong danh cho xe dap\"",
+    "Detail": "Báo hiệu kết thúc làn đường dành cho xe đạp.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.412p.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 173,
+    "Type_ID": 2,
+    "Name": "Biển số R.415a \"Biển gộp làn đường theo phương tiện\"",
+    "NameEN": "Bien so R.415a \"Bien gop lan duong theo phuong tien\"",
+    "Detail": "Để báo hiệu cho người tham gia giao thông biết số lượng làn đường và loại xe được phép lưu thông trên từng làn đường theo quy định. Biển không áp dụng với các xe chuyển làn để ra vào hoặc dừng đổ bên đường. ",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.415.png",
+    "UpdateDay": "20200622104122",
+    "IsDelete": 0
+  },
+  {
+    "ID": 174,
+    "Type_ID": 2,
+    "Name": "Biển số R.420 \"Bắt đầu khu đông dân cư\"",
+    "NameEN": "Bien so R.420 \"Bat dau khu dong dan cu\"",
+    "Detail": "Để báo hiệu bắt đầu đoạn đường vào phạm vi khu đông dân cư. Biển có tác dụng báo cho người tham gia giao thông biết phạm vi phải tuân theo những quy định đi đường được áp dụng ở khu đông dân cư.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.420.png",
+    "UpdateDay": "20200623100455",
+    "IsDelete": 0
+  },
+  {
+    "ID": 175,
+    "Type_ID": 4,
+    "Name": "Biển số W.207k \"Giao nhau với đường không ưu tiên\"",
+    "NameEN": "Bien so W.207k \"Giao nhau voi duong khong uu tien\"",
+    "Detail": "Đặt trên đường ưu tiên, để báo trước sắp đến nơi giao nhau với đường không ưu tiên.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.207k.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 176,
+    "Type_ID": 4,
+    "Name": "Biển số W.207l \"Giao nhau với đường không ưu tiên\"",
+    "NameEN": "Bien so W.207l \"Giao nhau voi duong khong uu tien\"",
+    "Detail": "Đặt trên đường ưu tiên, để báo trước sắp đến nơi giao nhau với đường không ưu tiên.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.207l.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 177,
+    "Type_ID": 4,
+    "Name": "Biển số W.208 \"Giao nhau với đường ưu tiên\"",
+    "NameEN": "Bien so W.208 \"Giao nhau voi duong uu tien\"",
+    "Detail": "Đặt trên đường không ưu tiên, để báo trước sắp đến nơi giao nhau với đường ưu tiên.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.208.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 178,
+    "Type_ID": 4,
+    "Name": "Biển số W.209 \"Giao nhau có tín hiệu đèn\"",
+    "NameEN": "Bien so W.209 \"Giao nhau co tin hieu den\"",
+    "Detail": "Báo trước nơi giao nhau có điều khiển giao thông bằng tín hiệu đèn trong trường hợp người tham gia giao thông khó quan sát thấy đèn để kịp thời xử lý.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.209.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 179,
+    "Type_ID": 2,
+    "Name": "Biển số R.421 \"Hết khu đông dân cư\"",
+    "NameEN": "Bien so R.421 \"Het khu dong dan cu\"",
+    "Detail": "Báo hiệu hết khu đông dân cư. Biển có tác dụng báo cho người tham gia giao thông biết phạm vi phải tuân theo những quy định đi đường được áp dụng ở khu đông dân cư đã hết hiệu lực.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.421.png",
+    "UpdateDay": "20200622104807",
+    "IsDelete": 0
+  },
+  {
+    "ID": 180,
+    "Type_ID": 2,
+    "Name": "Biển số R.E,9a \"Cấm đỗ xe trong khu vực\"",
+    "NameEN": "Bien so R.E,9a \"Cam do xe trong khu vuc\"",
+    "Detail": "Báo hiệu cấm đỗ xe trong khu vực.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.E,9a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 181,
+    "Type_ID": 4,
+    "Name": "Biển số W.210 \" Giao nhau với đường sắt có rào chắn\"",
+    "NameEN": "Bien so W.210 \" Giao nhau voi duong sat co rao chan\"",
+    "Detail": "Báo trước sắp đến chỗ giao nhau giữa đường bộ và đường sắt có rào chắn kín hay rào chắn nửa kín và có nhân viên ngành đường sắt điều khiển giao thông.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.210.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 182,
+    "Type_ID": 4,
+    "Name": "Biển số W.211a \"Giao nhau với đường sắt không có rào chắn\"",
+    "NameEN": "Bien so W.211a \"Giao nhau voi duong sat khong co rao chan\"",
+    "Detail": "Báo trước sắp đến chỗ giao nhau giữa đường bộ và đường sắt không có rào chắn, không có người điều khiển giao thông.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.211a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 183,
+    "Type_ID": 2,
+    "Name": "Biển số R.E,9b \"Cấm đỗ xe theo giờ trong khu vực\"",
+    "NameEN": "Bien so R.E,9b \"Cam do xe theo gio trong khu vuc\"",
+    "Detail": "Báo hiệu cấm đỗ xe theo giờ trong khu vực.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.E,9b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 184,
+    "Type_ID": 2,
+    "Name": "Biển số R.E,9c \"Khu vực đỗ xe\"",
+    "NameEN": "Bien so R.E,9c \"Khu vuc do xe\"",
+    "Detail": "Quy định khu vực đỗ xe",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.E,9c.png",
+    "UpdateDay": "20200622105134",
+    "IsDelete": 0
+  },
+  {
+    "ID": 185,
+    "Type_ID": 2,
+    "Name": "Biển số R.E,9d \"Hạn chế tốc độ tối đa trong khu vực\"",
+    "NameEN": "Bien so R.E,9d \"Han che toc do toi da trong khu vuc\"",
+    "Detail": "Quy định hạn chế tốc độ tối đa trong khu vực",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.E,9d.png",
+    "UpdateDay": "20200622105146",
+    "IsDelete": 0
+  },
+  {
+    "ID": 186,
+    "Type_ID": 2,
+    "Name": "Biển số R.E,10a \"Hết cấm đỗ xe trong khu vực\"",
+    "NameEN": "Bien so R.E,10a \"Het cam do xe trong khu vuc\"",
+    "Detail": "Báo hiệu hết cấm đỗ xe trong khu vực.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.E,10a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 187,
+    "Type_ID": 2,
+    "Name": "Biển số R.E,10b \"Hết cấm đỗ xe theo giờ trong khu vực\" ",
+    "NameEN": "Bien so R.E,10b \"Het cam do xe theo gio trong khu vuc\" ",
+    "Detail": "Báo hiệu hết cấm đỗ xe theo giờ trong khu vực.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.E,10b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 188,
+    "Type_ID": 2,
+    "Name": "Biển số R.E,10c \"Hết khu vực đỗ xe\"",
+    "NameEN": "Bien so R.E,10c \"Het khu vuc do xe\"",
+    "Detail": "Quy định hết khu vực đỗ xe.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.E,10c.png",
+    "UpdateDay": "20200622105206",
+    "IsDelete": 0
+  },
+  {
+    "ID": 189,
+    "Type_ID": 2,
+    "Name": "Biển số R.E,10d \"Hết hạn chế tốc độ tối đa trong khu vực\"",
+    "NameEN": "Bien so R.E,10d \"Het han che toc do toi da trong khu vuc\"",
+    "Detail": "Quy định hết hạn chế tốc độ tối đa trong khu vực",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.E,10d.png",
+    "UpdateDay": "20200622105223",
+    "IsDelete": 0
+  },
+  {
+    "ID": 190,
+    "Type_ID": 4,
+    "Name": "Biển số W.211b \"Giao nhau với đường tàu điện\"",
+    "NameEN": "Bien so W.211b \"Giao nhau voi duong tau dien\"",
+    "Detail": "Để chỉ nơi đường bộ giao nhau cùng mức với đường tàu điện.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.211b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 191,
+    "Type_ID": 2,
+    "Name": "Biển số R.E,11a \"Đường hầm\"",
+    "NameEN": "Bien so R.E,11a \"Duong ham\"",
+    "Detail": "Báo hiệu bắt đầu Đường hầm.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.E,11a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 192,
+    "Type_ID": 2,
+    "Name": "Biển số R.E,11b \"Kết thúc đường hầm",
+    "NameEN": "Bien so R.E,11b \"Ket thuc duong ham",
+    "Detail": "Báo hiệu kết thúc đường hầm.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.E,11b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 193,
+    "Type_ID": 4,
+    "Name": "Biển số W.212 \"Cầu hẹp\"",
+    "NameEN": "Bien so W.212 \"Cau hep\"",
+    "Detail": "Báo trước sắp đến cầu hẹp là loại cầu có chiều rộng phần xe chạy nhỏ hơn hoặc bằng 4,50 m.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.212.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 194,
+    "Type_ID": 4,
+    "Name": "Biển số W.213 \"Cầu tạm\"",
+    "NameEN": "Bien so W.213 \"Cau tam\"",
+    "Detail": "Báo trước sắp đến cầu tạm là loại cầu được làm để sử dụng tạm thời cho xe cộ qua lại.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.213.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 195,
+    "Type_ID": 4,
+    "Name": "Biển số W.214 \"Cầu quay - cầu cất\"",
+    "NameEN": "Bien so W.214 \"Cau quay - cau cat\"",
+    "Detail": "Báo phía trước gặp cầu quay, cầu cất là loại cầu trong từng thời gian có cắt giao thông đường bộ bằng cách quay hoặc nâng nhịp thông thuyền để cho tàu thuyền qua lại.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.214.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 196,
+    "Type_ID": 4,
+    "Name": "Biển số W.215a \"Kè, vực sâu phía trước”",
+    "NameEN": "Bien so W.215a \"Ke, vuc sau phia truoc”",
+    "Detail": "Báo trước sắp tới những vị trí có kè chắn vực sâu hoặc sông suối ở phía trước hoặc đi sát đường, cần đề phòng tình huống nguy hiểm rơi xuống vực sâu hoặc sông suối (thường có ở những chỗ ngoặt nguy hiểm).",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.215a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 197,
+    "Type_ID": 4,
+    "Name": "Biển số W.215b “Kè, vực sâu bên đường phía bên phải”",
+    "NameEN": "Bien so W.215b “Ke, vuc sau ben duong phia ben phai”",
+    "Detail": "Báo trước sắp tới những vị trí có kè chắn vực sâu hoặc sông suối ở bên đường phía bên phải hoặc đi sát đường, cần đề phòng tình huống nguy hiểm rơi xuống vực sâu hoặc sông suối (thường có ở những chỗ ngoặt nguy hiểm).",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.215b.png",
+    "UpdateDay": "20200623084209",
+    "IsDelete": 0
+  },
+  {
+    "ID": 198,
+    "Type_ID": 4,
+    "Name": "Biển số W.215c “Kè, vực sâu bên đường phía bên trái”",
+    "NameEN": "Bien so W.215c “Ke, vuc sau ben duong phia ben trai”",
+    "Detail": "Báo trước sắp tới những vị trí có kè chắn vực sâu hoặc sông suối ở bên đường phía bên trái hoặc đi sát đường, cần đề phòng tình huống nguy hiểm rơi xuống vực sâu hoặc sông suối (thường có ở những chỗ ngoặt nguy hiểm).",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.215c.png",
+    "UpdateDay": "20200623084232",
+    "IsDelete": 0
+  },
+  {
+    "ID": 199,
+    "Type_ID": 2,
+    "Name": "Biển số R.301f \"Hướng đi phải theo\"",
+    "NameEN": "Bien so R.301f \"Huong di phai theo\"",
+    "Detail": "Biển bắt buộc người tham gia giao thông chỉ được phép đi thẳng hay rẽ phải ở phạm vi nơi đường giao nhau đằng sau mặt biển.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.301f.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 200,
+    "Type_ID": 4,
+    "Name": "Biển số W.216a \"Đường ngầm\"",
+    "NameEN": "Bien so W.216a \"Duong ngam\"",
+    "Detail": "Báo trước những vị trí có đường ngầm (đường tràn).",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.216a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 201,
+    "Type_ID": 4,
+    "Name": "Biển số W.216b “Đường ngầm có nguy cơ lũ quét”",
+    "NameEN": "Bien so W.216b “Duong ngam co nguy co lu quet”",
+    "Detail": "Báo trước những vị trí có đường ngầm (đường tràn) có nguy cơ lũ quét.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.216b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 202,
+    "Type_ID": 4,
+    "Name": "Biển số W.217 \"Bến phà\"",
+    "NameEN": "Bien so W.217 \"Ben pha\"",
+    "Detail": "Báo trước sắp đến bến phà",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.217.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 203,
+    "Type_ID": 4,
+    "Name": "Biển số W.218 \"Cửa chui\"",
+    "NameEN": "Bien so W.218 \"Cua chui\"",
+    "Detail": "Báo trước sắp đến đường có cổng chắn ngang, kiểu cổng như đường hầm, cổng thành, cầu vượt đường bộ dạng cầu vòm, v.v... mà có ảnh hưởng đến giao thông",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.218.png",
+    "UpdateDay": "20200622100251",
+    "IsDelete": 0
+  },
+  {
+    "ID": 204,
+    "Type_ID": 4,
+    "Name": "Biển số W.219 \"Dốc xuống nguy hiểm\"",
+    "NameEN": "Bien so W.219 \"Doc xuong nguy hiem\"",
+    "Detail": "Báo trước sắp tới đoạn đường xuống dốc nguy hiểm.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.219.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 205,
+    "Type_ID": 4,
+    "Name": "Biển số W.220 \"Dốc lên nguy hiểm\"",
+    "NameEN": "Bien so W.220 \"Doc len nguy hiem\"",
+    "Detail": "Báo trước sắp tới đoạn đường lên dốc nguy hiểm.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.220.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 206,
+    "Type_ID": 4,
+    "Name": "Biển số W.221a \"Đường không bằng phẳng\"",
+    "NameEN": "Bien so W.221a \"Duong khong bang phang\"",
+    "Detail": "Báo trước sắp tới đoạn đường có mặt đường không bằng phẳng, lồi lõm gập ghềnh, ổ gà, lượn sóng.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.221a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 207,
+    "Type_ID": 4,
+    "Name": "Biển số W.221b \"Đường không bằng phẳng\"",
+    "NameEN": "Bien so W.221b \"Duong khong bang phang\"",
+    "Detail": "Báo hiệu đoạn \"Đường có gồ giảm tốc\" để cảnh báo xe đi chậm trước khi qua những điểm có gồ giảm tốc phía trước hoặc những vị trí tiếp giáp với đầu cầu, cống bị lún, võng.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.221b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 208,
+    "Type_ID": 4,
+    "Name": "Biển số W.222a \"Đường trơn\"",
+    "NameEN": "Bien so W.222a \"Duong tron\"",
+    "Detail": "Báo trước sắp tới đoạn đường có thể xảy ra trơn trượt đặc biệt là khi thời tiết xấu, mưa phùn.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.222a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 209,
+    "Type_ID": 4,
+    "Name": "Biển số W.222b \"Lề đường nguy hiểm\"",
+    "NameEN": "Bien so W.222b \"Le duong nguy hiem\"",
+    "Detail": "Báo những nơi lề đường không ổn định, khi xe đi vào dễ gây văng đất đá hoặc bánh xe quay tại chỗ.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.222b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 210,
+    "Type_ID": 4,
+    "Name": "Biển số W.223a \"Vách núi nguy hiểm\"",
+    "NameEN": "Bien so W.223a \"Vach nui nguy hiem\"",
+    "Detail": "Báo hiệu đường đi sát vách núi ở bên trái đường để báo nguy hiểm cho người tham gia giao thông phải cẩn thận.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.223a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 211,
+    "Type_ID": 4,
+    "Name": "Biển số W.223b \"Vách núi nguy hiểm\"",
+    "NameEN": "Bien so W.223b \"Vach nui nguy hiem\"",
+    "Detail": "Báo hiệu đường đi sát vách núi ở bên phải đường để báo nguy hiểm cho người tham gia giao thông phải cẩn thận.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.223b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 212,
+    "Type_ID": 4,
+    "Name": "Biển số W.224 \"Đường người đi bộ cắt ngang\"",
+    "NameEN": "Bien so W.224 \"Duong nguoi di bo cat ngang\"",
+    "Detail": "Báo trước sắp tới phần đường dành cho người đi bộ sang qua đường. Gặp biển này các xe phải giảm tốc độ, nhường ưu tiên cho người đi bộ và chỉ được chạy xe khi không gây nguy hiểm cho người đi bộ.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.224.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 213,
+    "Type_ID": 4,
+    "Name": "Biển số W.225 \"Trẻ em\"",
+    "NameEN": "Bien so W.225 \"Tre em\"",
+    "Detail": "Báo trước là gần đến đoạn đường thường có trẻ em đi ngang qua hoặc tụ tập trên đường như ở vườn trẻ, trường học, câu lạc bộ.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.225.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 214,
+    "Type_ID": 4,
+    "Name": "Biển số W.226 \"Đường người đi xe đạp cắt ngang\"",
+    "NameEN": "Bien so W.226 \"Duong nguoi di xe dap cat ngang\"",
+    "Detail": "Báo trước là gần tới vị trí thường có người đi xe đạp từ những đường nhỏ cắt ngang qua hoặc từ đường dành cho xe đạp đi nhập vào đường ôtô.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.226.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 215,
+    "Type_ID": 4,
+    "Name": "Biển số W.227 \"Công trường\"",
+    "NameEN": "Bien so W.227 \"Cong truong\"",
+    "Detail": "Báo trước gần tới đoạn đường đang tiến hành thi công sửa chữa, cải tạo, nâng cấp có người và máy móc đang làm việc trên mặt đường. Khi gặp biển báo này tốc độ xe chạy phải giảm cho thích hợp, không gây nguy hiểm cho người và máy móc trên đoạn đường đó.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.227.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 216,
+    "Type_ID": 4,
+    "Name": "Biển số W.228a \"Đá lở\"",
+    "NameEN": "Bien so W.228a \"Da lo\"",
+    "Detail": "Báo trước gần tới đoạn đường có hiện tượng đất đá từ trên ta luy dương sụt lở bất ngờ gây nguy hiểm cho xe cộ và người đi đường, đặc biệt là ở những đoạn đường miền núi.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.228a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 217,
+    "Type_ID": 4,
+    "Name": "Biển số W.228b \"Đá lở\"",
+    "NameEN": "Bien so W.228b \"Da lo\"",
+    "Detail": "Báo trước gần tới đoạn đường có hiện tượng đất đá từ trên ta luy dương sụt lở bất ngờ gây nguy hiểm cho xe cộ và người đi đường, đặc biệt là ở những đoạn đường miền núi.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.228b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 218,
+    "Type_ID": 4,
+    "Name": "Biển số W.228c \"Sỏi đá bắn lên\"",
+    "NameEN": "Bien so W.228c \"Soi da ban len\"",
+    "Detail": "Báo trước nơi có kết cấu mặt đường rời rạc, khi phương tiện đi qua, làm cho các viên đá, sỏi băng lên gây nguy hiểm và mất an toàn cho người và phương tiện tham gia giao thông.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.228c.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 219,
+    "Type_ID": 4,
+    "Name": "Biển số W.228d \"Nền đường yếu\"",
+    "NameEN": "Bien so W.228d \"Nen duong yeu\"",
+    "Detail": "Cảnh báo những đoạn nền đường yếu, đoạn đường đang theo dõi lún mà việc vận hành xe ở tốc độ cao có thể gây nguy hiểm.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.228d.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 220,
+    "Type_ID": 4,
+    "Name": "Biển số W.229 \"Dải máy bay lên xuống\"",
+    "NameEN": "Bien so W.229 \"Dai may bay len xuong\"",
+    "Detail": "Báo trước đoạn đường ở vùng sát đường băng sân bay và cắt ngang qua hướng máy bay lên xuống ở độ cao không lớn.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.229.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 221,
+    "Type_ID": 4,
+    "Name": "Biển số W.230 \"Gia súc\"",
+    "NameEN": "Bien so W.230 \"Gia suc\"",
+    "Detail": "Báo trước gần tới đoạn đường thường có gia súc thả rông hoặc lùa qua ngang đường, đường ở vùng đồng cỏ của nông trường chăn nuôi, vùng thảo nguyên. Người tham gia giao thông có trách nhiệm đi chậm, quan sát và dừng lại bảo đảm cho gia súc có thể qua đường không bị nguy hiểm.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.230.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 222,
+    "Type_ID": 4,
+    "Name": "Biển số W.231 \"Thú rừng vượt qua đường\"",
+    "NameEN": "Bien so W.231 \"Thu rung vuot qua duong\"",
+    "Detail": "Báo trước gần tới đoạn đường thường có thú rừng qua đường như đường đi qua rừng hay khu vực bảo tồn thiên nhiên cấm săn bắn, người tham gia giao thông phải đi chậm, chú ý quan sát hai bên đường và thận trọng đề phòng tai nạn.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.231.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 223,
+    "Type_ID": 4,
+    "Name": "Biển số W.232 \"Gió ngang\"",
+    "NameEN": "Bien so W.232 \"Gio ngang\"",
+    "Detail": "Báo trước gần tới đoạn đường thường có gió ngang thổi mạnh gây nguy hiểm. Người tham gia giao thông cần phải điều chỉnh tốc độ xe chạy cho thích hợp, đề phòng gió thổi mạnh gây lật xe.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.232.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 224,
+    "Type_ID": 4,
+    "Name": "Biển số W.233 \"Nguy hiểm khác\"",
+    "NameEN": "Bien so W.233 \"Nguy hiem khac\"",
+    "Detail": "Cảnh báo những nguy hiểm khác.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.233.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 225,
+    "Type_ID": 4,
+    "Name": "Biển số W.234 \"Giao nhau với đường hai chiều\"",
+    "NameEN": "Bien so W.234 \"Giao nhau voi duong hai chieu\"",
+    "Detail": "Trên đường một chiều, để báo trước sắp đến vị trí giao nhau với đường hai chiều.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.234.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 226,
+    "Type_ID": 4,
+    "Name": "Biển số W.235 \"Đường đôi\"",
+    "NameEN": "Bien so W.235 \"Duong doi\"",
+    "Detail": "Báo trước sắp đến đoạn đường có chiều đi và chiều về phân biệt bằng dải phân cách cứng.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.235.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 227,
+    "Type_ID": 4,
+    "Name": "Biển số W.236 \" Kết thúc đường đôi\"",
+    "NameEN": "Bien so W.236 \" Ket thuc duong doi\"",
+    "Detail": "Báo trước sắp kết thúc đoạn đường có chiều đi và chiều về phân biệt bằng dải phân cách cứng.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.236.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 228,
+    "Type_ID": 4,
+    "Name": "Biển số W.237 \"Cầu vồng\"",
+    "NameEN": "Bien so W.237 \"Cau vong\"",
+    "Detail": "Dùng để nhắc nhở lái xe phải thận trọng. Biển đặt ở trên đoạn đường sắp đến công trình có độ vồng lớn ảnh hưởng tới tầm nhìn.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.237.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 229,
+    "Type_ID": 4,
+    "Name": "Biển số W.238 \"Đường cao tốc phía trước\"",
+    "NameEN": "Bien so W.238 \"Duong cao toc phia truoc\"",
+    "Detail": "Đặt trên đường nhánh nhập vào đường cao tốc để báo cho các phương tiện đi trên đường này biết có \"Đường cao tốc phía trước\".",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.238.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 230,
+    "Type_ID": 4,
+    "Name": "Biển số W.239a \"Đường cáp điện ở phía trên\"",
+    "NameEN": "Bien so W.239a \"Duong cap dien o phia tren\"",
+    "Detail": "Báo hiệu nơi có đường dây điện cắt ngang phía trên tuyến đường.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.239.png",
+    "UpdateDay": "20200622105634",
+    "IsDelete": 0
+  },
+  {
+    "ID": 231,
+    "Type_ID": 4,
+    "Name": "Biển báo W.240 \"Đường hầm\"",
+    "NameEN": "Bien bao W.240 \"Duong ham\"",
+    "Detail": "Để nhắc lái xe chú ý chuẩn bị đi vào hầm đường bộ.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.240.png",
+    "UpdateDay": "20200622105926",
+    "IsDelete": 0
+  },
+  {
+    "ID": 232,
+    "Type_ID": 4,
+    "Name": "Biển số W.241 \"Ùn tắc giao thông\"",
+    "NameEN": "Bien so W.241 \"Un tac giao thong\"",
+    "Detail": "Báo đoạn đường hay xảy ra ùn tắc giao thông.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.241.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 233,
+    "Type_ID": 4,
+    "Name": "Biển số W.242a \"Nơi đường sắt giao vuông góc với đường bộ\"",
+    "NameEN": "Bien so W.242a \"Noi duong sat giao vuong goc voi duong bo\"",
+    "Detail": "Để chỉ chỗ đường sắt giao vuông góc đường bộ. Và tại chỗ giao nhau, đường sắt chỉ có một cặp đường ray cắt ngang đường bộ.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.242a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 234,
+    "Type_ID": 4,
+    "Name": "Biển số W.242b \"Nơi đường sắt giao vuông góc với đường bộ\"",
+    "NameEN": "Bien so W.242b \"Noi duong sat giao vuong goc voi duong bo\"",
+    "Detail": "Để chỉ chỗ đường sắt giao vuông góc đường bộ. Và tại chỗ giao nhau, đường sắt có từ hai cặp đường ray trở lên cắt ngang đường bộ.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.242b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 235,
+    "Type_ID": 4,
+    "Name": "Biển báo số W.243a \"Nơi đường sắt giao không vuông góc với đường bộ\"",
+    "NameEN": "Bien bao so W.243a \"Noi duong sat giao khong vuong goc voi duong bo\"",
+    "Detail": "Được đặt ở nơi cách ray gần nhất nơi giao đường sắt 50 m để báo trước sắp đến vị trí giao cắt đường bộ với đường sắt cùng mức, không vuông góc và không có người gác, không có rào chắn.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.243a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 236,
+    "Type_ID": 4,
+    "Name": "Biển báo số W.243b \"Nơi đường sắt giao không vuông góc với đường bộ\"",
+    "NameEN": "Bien bao so W.243b \"Noi duong sat giao khong vuong goc voi duong bo\"",
+    "Detail": "Được đặt ở nơi cách ray gần nhất nơi giao đường sắt 100 m để báo trước sắp đến vị trí giao cắt đường bộ với đường sắt cùng mức, không vuông góc và không có người gác, không có rào chắn.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.243b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 237,
+    "Type_ID": 4,
+    "Name": "Biển báo số W.243c \"Nơi đường sắt giao không vuông góc với đường bộ\"",
+    "NameEN": "Bien bao so W.243c \"Noi duong sat giao khong vuong goc voi duong bo\"",
+    "Detail": "Được đặt ở nơi cách ray gần nhất nơi giao đường sắt 150 m để báo trước sắp đến vị trí giao cắt đường bộ với đường sắt cùng mức, không vuông góc và không có người gác, không có rào chắn.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.243c.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 238,
+    "Type_ID": 4,
+    "Name": "Biển số W.244 \"Đoạn đường hay xảy ra tai nạn\"",
+    "NameEN": "Bien so W.244 \"Doan duong hay xay ra tai nan\"",
+    "Detail": "Dùng để cảnh báo nguy hiểm đoạn đường phía trước thường xảy ra tai nạn để lái xe cần đặc biệt chú ý.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.244.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 239,
+    "Type_ID": 4,
+    "Name": "Biển số W.245a \"Đi chậm\"",
+    "NameEN": "Bien so W.245a \"Di cham\"",
+    "Detail": "Dùng để nhắc lái xe giảm tốc độ đi chậm.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.245a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 240,
+    "Type_ID": 4,
+    "Name": "Biển số W.245b \"Đi chậm\"",
+    "NameEN": "Bien so W.245b \"Di cham\"",
+    "Detail": "Dùng để nhắc lái xe giảm tốc độ đi chậm. Đối với các tuyến đường đối ngoại.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.245b.png",
+    "UpdateDay": "20200622110446",
+    "IsDelete": 0
+  },
+  {
+    "ID": 241,
+    "Type_ID": 4,
+    "Name": "Biển số W.246a \"Chú ý chướng ngại vật\"",
+    "NameEN": "Bien so W.246a \"Chu y chuong ngai vat\"",
+    "Detail": "Báo trước cho lái xe biết phía trước có chướng ngại vật, xe cần giảm tốc độ và đi theo chỉ dẫn trên biển báo. Vòng tránh ra hai bên.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.246a.png",
+    "UpdateDay": "20200622110624",
+    "IsDelete": 0
+  },
+  {
+    "ID": 242,
+    "Type_ID": 4,
+    "Name": "Biển số W.246b \"Chú ý chướng ngại vật\"",
+    "NameEN": "Bien so W.246b \"Chu y chuong ngai vat\"",
+    "Detail": "Báo trước cho lái xe biết phía trước có chướng ngại vật, xe cần giảm tốc độ và đi theo chỉ dẫn trên biển báo. Vòng tránh sang bên trái.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.246b.png",
+    "UpdateDay": "20200622110652",
+    "IsDelete": 0
+  },
+  {
+    "ID": 243,
+    "Type_ID": 4,
+    "Name": "Biển số W.246c \"Chú ý chướng ngại vật\"",
+    "NameEN": "Bien so W.246c \"Chu y chuong ngai vat\"",
+    "Detail": "Báo trước cho lái xe biết phía trước có chướng ngại vật, xe cần giảm tốc độ và đi theo chỉ dẫn trên biển báo. Vòng tránh sang bên phải.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.246c.png",
+    "UpdateDay": "20200622110726",
+    "IsDelete": 0
+  },
+  {
+    "ID": 244,
+    "Type_ID": 4,
+    "Name": "Biển số W.247 \"Chú ý xe đỗ\"",
+    "NameEN": "Bien so W.247 \"Chu y xe do\"",
+    "Detail": "Để cảnh báo có các loại xe ôtô, máy kéo, rơ-moóc hoặc sơ-mi rơ-moóc được kéo bởi xe ôtô hoặc ôtô đầu kéo, xe máy chuyên dùng đang đỗ chiếm một phần đường xe chạy.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.247.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 245,
+    "Type_ID": 3,
+    "Name": "Biển số I.401 \"Bắt đầu đường ưu tiên\"",
+    "NameEN": "Bien so I.401 \"Bat dau duong uu tien\"",
+    "Detail": "Biểu thị ưu tiên cho các phương tiện trên đường có đặt biển này được đi trước.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.401.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 246,
+    "Type_ID": 3,
+    "Name": "Biển số I.402 \"Hết đoạn đường ưu tiên\"",
+    "NameEN": "Bien so I.402 \"Het doan duong uu tien\"",
+    "Detail": "Biểu thị hết đoạn đường quy định là ưu tiên.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.402.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 247,
+    "Type_ID": 3,
+    "Name": "Biển số I.405a \"Đường cụt\"",
+    "NameEN": "Bien so I.405a \"Duong cut\"",
+    "Detail": "Chỉ lối rẽ vào đường cụt.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.405a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 248,
+    "Type_ID": 3,
+    "Name": "Biển số I.405b \"Đường cụt\"",
+    "NameEN": "Bien so I.405b \"Duong cut\"",
+    "Detail": "Chỉ lối rẽ vào đường cụt.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.405b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 249,
+    "Type_ID": 3,
+    "Name": "Biển số I.405c \"Đường cụt\"",
+    "NameEN": "Bien so I.405c \"Duong cut\"",
+    "Detail": "Chỉ dẫn phía trước là đường cụt.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.405c.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 250,
+    "Type_ID": 3,
+    "Name": "Biển số I.406 \"Được ưu tiên qua đường hẹp\"",
+    "NameEN": "Bien so I.406 \"Duoc uu tien qua duong hep\"",
+    "Detail": "Chỉ dẫn cho người tham gia giao thông cơ giới biết mình được quyền ưu tiên đi trước trên đoạn đường hẹp.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.406.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 251,
+    "Type_ID": 3,
+    "Name": "Biển số I.407a \"Đường một chiều\"",
+    "NameEN": "Bien so I.407a \"Duong mot chieu\"",
+    "Detail": "Chỉ dẫn những đoạn đường chạy một chiều.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.407a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 252,
+    "Type_ID": 3,
+    "Name": "Biển số I.407b \"Đường một chiều\"",
+    "NameEN": "Bien so I.407b \"Duong mot chieu\"",
+    "Detail": "Chỉ dẫn những đoạn đường chạy một chiều.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.407b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 253,
+    "Type_ID": 3,
+    "Name": "Biển số I.407c \"Đường một chiều\"",
+    "NameEN": "Bien so I.407c \"Duong mot chieu\"",
+    "Detail": "Chỉ dẫn những đoạn đường chạy một chiều.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.407c.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 254,
+    "Type_ID": 3,
+    "Name": "Biển số I.408 \"Nơi đỗ xe\"",
+    "NameEN": "Bien so I.408 \"Noi do xe\"",
+    "Detail": "Chỉ dẫn những nơi được phép đỗ xe, những bãi đỗ xe, bến xe, v.v...",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.408.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 255,
+    "Type_ID": 3,
+    "Name": "Biển số I.408a \"Nơi đỗ xe một phần trên hè phố\"",
+    "NameEN": "Bien so I.408a \"Noi do xe mot phan tren he pho\"",
+    "Detail": "Chỉ dẫn những nơi được phép đỗ xe một phần trên hè phố rộng. Xe phải đỗ sao cho các bánh phía ghế phụ trên hè phố.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.408a.png",
+    "UpdateDay": "20200623092431",
+    "IsDelete": 0
+  },
+  {
+    "ID": 256,
+    "Type_ID": 3,
+    "Name": "Biển số I.409 \"Chỗ quay xe\"",
+    "NameEN": "Bien so I.409 \"Cho quay xe\"",
+    "Detail": "Chỉ dẫn vị trí được phép quay đầu xe.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.409.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 257,
+    "Type_ID": 3,
+    "Name": "Biển số I.410 \"Khu vực quay xe\"",
+    "NameEN": "Bien so I.410 \"Khu vuc quay xe\"",
+    "Detail": "Chỉ dẫn khu vực được phép quay đầu xe.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.410.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 258,
+    "Type_ID": 3,
+    "Name": "Biển số I.413a \"Đường phía trước có làn đường dành cho ôtô khách\"",
+    "NameEN": "Bien so I.413a \"Duong phia truoc co lan duong danh cho oto khach\"",
+    "Detail": "Chỉ dẫn cho người tham gia giao thông biết đường phía trước có làn đường dành riêng cho ôtô khách theo chiều ngược lại.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.413a.png",
+    "UpdateDay": "20200623093959",
+    "IsDelete": 0
+  },
+  {
+    "ID": 259,
+    "Type_ID": 3,
+    "Name": "Biển số I.413b \"Rẽ ra đường có làn đường dành cho ôtô khách\"",
+    "NameEN": "Bien so I.413b \"Re ra duong co lan duong danh cho oto khach\"",
+    "Detail": "Chỉ dẫn cho người tham gia giao thông biết ở nơi đường giao nhau rẽ phải là rẽ ra đường có làn đường dành riêng cho ôtô khách.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.413b.png",
+    "UpdateDay": "20200623094239",
+    "IsDelete": 0
+  },
+  {
+    "ID": 260,
+    "Type_ID": 3,
+    "Name": "Biển số I.413c \"Rẽ ra đường có làn đường dành cho ô tô khách \"",
+    "NameEN": "Bien so I.413c \"Re ra duong co lan duong danh cho o to khach \"",
+    "Detail": "Chỉ dẫn cho người tham gia giao thông biết ở nơi đường giao nhau rẽ trái là rẽ ra đường có làn đường dành riêng cho ô tô khách.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.413c.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 261,
+    "Type_ID": 3,
+    "Name": "Biển số I.414a \"Chỉ hướng đường\"",
+    "NameEN": "Bien so I.414a \"Chi huong duong\"",
+    "Detail": "Chỉ dẫn hướng đường đến các địa danh, khu dân cư.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.414a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 262,
+    "Type_ID": 3,
+    "Name": "Biển số I.414b \"Chỉ hướng đường\"",
+    "NameEN": "Bien so I.414b \"Chi huong duong\"",
+    "Detail": "Chỉ dẫn hướng đường đến các địa danh, khu dân cư.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.414b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 263,
+    "Type_ID": 3,
+    "Name": "Biển số I.414c \"Chỉ hướng đường\"",
+    "NameEN": "Bien so I.414c \"Chi huong duong\"",
+    "Detail": "Chỉ dẫn hướng đường đến các địa danh, khu dân cư.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.414c.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 264,
+    "Type_ID": 3,
+    "Name": "Biển số I.414d \"Chỉ hướng đường\"",
+    "NameEN": "Bien so I.414d \"Chi huong duong\"",
+    "Detail": "Chỉ dẫn hướng đường đến các địa danh, khu dân cư.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.414d.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 265,
+    "Type_ID": 3,
+    "Name": "Biển số I.415 \"Mũi tên chỉ hướng đi\"",
+    "NameEN": "Bien so I.415 \"Mui ten chi huong di\"",
+    "Detail": "Chỉ dẫn hướng đi đến một địa danh lân cận tiếp theo và khoảng cách (làm tròn đến km) đến nơi đó.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/l.415.png",
+    "UpdateDay": "20200622140524",
+    "IsDelete": 0
+  },
+  {
+    "ID": 266,
+    "Type_ID": 3,
+    "Name": "Biển số I.416 \"Đường tránh\"",
+    "NameEN": "Bien so I.416 \"Duong tranh\"",
+    "Detail": "Chỉ dẫn lối đi đường tránh, đường vòng trong trường hợp đường cấm vì lý do đường, cầu bị tắc hoặc thi công và cấm một số loại xe đi qua.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.416.png",
+    "UpdateDay": "20200623095026",
+    "IsDelete": 0
+  },
+  {
+    "ID": 267,
+    "Type_ID": 3,
+    "Name": "Biển số I.417a \"Chỉ hướng đường phải đi cho từng loại xe\"",
+    "NameEN": "Bien so I.417a \"Chi huong duong phai di cho tung loai xe\"",
+    "Detail": "Chỉ hướng đường phải đi cho từng loại xe ghi trên biển đến một khu dân cư tiếp theo.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.417a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 268,
+    "Type_ID": 3,
+    "Name": "Biển số I.417b \"Chỉ hướng đường phải đi cho từng loại xe\"",
+    "NameEN": "Bien so I.417b \"Chi huong duong phai di cho tung loai xe\"",
+    "Detail": "Chỉ hướng đường phải đi cho từng loại xe ghi trên biển đến một khu dân cư tiếp theo.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.417b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 269,
+    "Type_ID": 3,
+    "Name": "Biển số I.417c \"Chỉ hướng đường phải đi cho từng loại xe\"",
+    "NameEN": "Bien so I.417c \"Chi huong duong phai di cho tung loai xe\"",
+    "Detail": "Chỉ hướng đường phải đi cho từng loại xe ghi trên biển đến một khu dân cư tiếp theo.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.417c.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 270,
+    "Type_ID": 3,
+    "Name": "Biển số I.418 \"Lối đi ở những vị trí cấm rẽ\"",
+    "NameEN": "Bien so I.418 \"Loi di o nhung vi tri cam re\"",
+    "Detail": "Chỉ lối đi ở các nơi đường giao nhau bị cấm rẽ.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.418.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 271,
+    "Type_ID": 3,
+    "Name": "Biển số I.419a \"Chỉ dẫn địa giới\"",
+    "NameEN": "Bien so I.419a \"Chi dan dia gioi\"",
+    "Detail": "Chỉ dẫn địa giới hành chính giữa các thành phố, tỉnh, huyện. ",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.419a.png",
+    "UpdateDay": "20200623103009",
+    "IsDelete": 0
+  },
+  {
+    "ID": 272,
+    "Type_ID": 3,
+    "Name": "Biển số I.419b \"Chỉ dẫn địa giới\"",
+    "NameEN": "Bien so I.419b \"Chi dan dia gioi\"",
+    "Detail": "Chỉ dẫn địa giới hành chính giữa các thành phố, tỉnh, huyện. ",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.419b.png",
+    "UpdateDay": "20200623102944",
+    "IsDelete": 0
+  },
+  {
+    "ID": 273,
+    "Type_ID": 3,
+    "Name": "Biển số I.422a \"Di tích lịch sử\"",
+    "NameEN": "Bien so I.422a \"Di tich lich su\"",
+    "Detail": "Chỉ dẫn những nơi có di tích lịch sử hoặc những nơi có danh lam thắng cảnh, những nơi có thể tham quan v.v... ở hai ven đường.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.422a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 274,
+    "Type_ID": 3,
+    "Name": "Biển số I.422b \"Di tích lịch sử\"",
+    "NameEN": "Bien so I.422b \"Di tich lich su\"",
+    "Detail": "Chỉ dẫn những nơi có di tích lịch sử hoặc những nơi có danh lam thắng cảnh, những nơi có thể tham quan v.v... ở hai ven đường",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.422b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 275,
+    "Type_ID": 3,
+    "Name": "Biển số I.423a  \"Vị trí người đi bộ sang ngang\"",
+    "NameEN": "Bien so I.423a  \"Vi tri nguoi di bo sang ngang\"",
+    "Detail": "Chỉ dẫn người đi bộ và người tham gia giao thông biết vị trí dành cho người đi bộ sang ngang.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.423a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 276,
+    "Type_ID": 3,
+    "Name": "Biển số I.423b  \"Vị trí người đi bộ sang ngang\"",
+    "NameEN": "Bien so I.423b  \"Vi tri nguoi di bo sang ngang\"",
+    "Detail": "Chỉ dẫn người đi bộ và người tham gia giao thông biết vị trí dành cho người đi bộ sang ngang.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.423b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 277,
+    "Type_ID": 3,
+    "Name": "Biển số I.423c “Điểm bắt đầu đường đi bộ” (biển F,9 theo Hiệp định GMS)",
+    "NameEN": "Bien so I.423c “Diem bat dau duong di bo” (bien F,9 theo Hiep dinh GMS)",
+    "Detail": "Chỉ dẫn cho người đi bộ và người lái xe biết nơi bắt đầu đoạn đường dành cho người đi bộ.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.423c.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 278,
+    "Type_ID": 3,
+    "Name": "Biển số I.424a \"Cầu vượt qua đường cho người đi bộ\"",
+    "NameEN": "Bien so I.424a \"Cau vuot qua duong cho nguoi di bo\"",
+    "Detail": "Chỉ dẫn cho người đi bộ sử dụng cầu vượt qua đường.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.424a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 279,
+    "Type_ID": 3,
+    "Name": "Biển số I.424b \"Cầu vượt qua đường cho người đi bộ\"",
+    "NameEN": "Bien so I.424b \"Cau vuot qua duong cho nguoi di bo\"",
+    "Detail": "Chỉ dẫn cho người đi bộ sử dụng cầu vượt qua đường.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.424b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 280,
+    "Type_ID": 3,
+    "Name": "Biển số I.424c \"Hầm chui qua đường cho người đi bộ\"",
+    "NameEN": "Bien so I.424c \"Ham chui qua duong cho nguoi di bo\"",
+    "Detail": "Chỉ dẫn cho người đi bộ sử dụng hầm chui qua đường.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.424c.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 281,
+    "Type_ID": 3,
+    "Name": "Biển số I.424d \"Hầm chui qua đường cho người đi bộ\"",
+    "NameEN": "Bien so I.424d \"Ham chui qua duong cho nguoi di bo\"",
+    "Detail": "Chỉ dẫn cho người đi bộ sử dụng hầm chui qua đường.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.424d.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 282,
+    "Type_ID": 3,
+    "Name": "Biển số I.425 \"Bệnh viện\"",
+    "NameEN": "Bien so I.425 \"Benh vien\"",
+    "Detail": "Chỉ dẫn sắp đến cơ sở điều trị bệnh ở gần đường như bệnh viện, bệnh xá, trạm xá v.v... \r\nGặp biển này người tham gia giao thông đi chậm, chú ý quan sát và không sử dụng còi.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.425.png",
+    "UpdateDay": "20200623104805",
+    "IsDelete": 0
+  },
+  {
+    "ID": 283,
+    "Type_ID": 3,
+    "Name": "Biển số I.426 \"Trạm cấp cứu\"",
+    "NameEN": "Bien so I.426 \"Tram cap cuu\"",
+    "Detail": "Chỉ dẫn nơi có trạm cấp cứu y tế ở gần đường.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.426.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 284,
+    "Type_ID": 3,
+    "Name": "Biển số I.427a \"Trạm sửa chữa\"",
+    "NameEN": "Bien so I.427a \"Tram sua chua\"",
+    "Detail": "Chỉ dẫn nơi đặt xưởng, trạm chuyên phục vụ sửa chữa ôtô, xe máy hỏng trên đường.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.427a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 285,
+    "Type_ID": 3,
+    "Name": "Biển số I.427b “Trạm kiểm tra tải trọng xe”",
+    "NameEN": "Bien so I.427b “Tram kiem tra tai trong xe”",
+    "Detail": "Chỉ dẫn nơi đặt trạm kiểm tra tải trọng xe.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.427b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 286,
+    "Type_ID": 3,
+    "Name": "Biển số I.428 \"Cửa hàng xăng dầu\"",
+    "NameEN": "Bien so I.428 \"Cua hang xang dau\"",
+    "Detail": "Chỉ dẫn những nơi có đặt cửa hàng xăng, dầu hoặc nạp điện phục vụ cho phương tiện giao thông đi trên đường.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.428.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 287,
+    "Type_ID": 3,
+    "Name": "Biển số I.429 \"Nơi rửa xe\"",
+    "NameEN": "Bien so I.429 \"Noi rua xe\"",
+    "Detail": "Chỉ dẫn những nơi có bố trí rửa xe.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.429.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 288,
+    "Type_ID": 3,
+    "Name": "Biển số I.430 \"Điện thoại\"",
+    "NameEN": "Bien so I.430 \"Dien thoai\"",
+    "Detail": "Chỉ dẫn những nơi có đặt trạm điện thoại công cộng chuyên phục vụ khách đi đường.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.430.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 289,
+    "Type_ID": 3,
+    "Name": "Biển số I.431 \"Trạm dừng nghỉ\"",
+    "NameEN": "Bien so I.431 \"Tram dung nghi\"",
+    "Detail": "Chỉ dẫn những nơi có các dịch vụ phục vụ khách đi đường (ăn uống nghỉ ngơi, cung cấp nhiên liệu…).",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.431.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 290,
+    "Type_ID": 3,
+    "Name": "Biển số I.432 \"Khách sạn\"",
+    "NameEN": "Bien so I.432 \"Khach san\"",
+    "Detail": "Chỉ dẫn nơi có khách sạn phục vụ khách đi đường.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.432.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 291,
+    "Type_ID": 3,
+    "Name": "Biển số I.433a \"Nơi nghỉ mát\"",
+    "NameEN": "Bien so I.433a \"Noi nghi mat\"",
+    "Detail": "Chỉ dẫn nơi nghỉ mát.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.433a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 292,
+    "Type_ID": 3,
+    "Name": "Biển số I.433b \"Nơi cắm trại\"",
+    "NameEN": "Bien so I.433b \"Noi cam trai\"",
+    "Detail": "Chỉ dẫn sắp đến nơi có vị trí cắm trại.\r\n",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.433b.png",
+    "UpdateDay": "20200623105319",
+    "IsDelete": 0
+  },
+  {
+    "ID": 293,
+    "Type_ID": 3,
+    "Name": "Biển số I.433c \"Nơi dành cho nhà lưu động\"",
+    "NameEN": "Bien so I.433c \"Noi danh cho nha luu dong\"",
+    "Detail": "Chỉ dẫn sắp đến nơi tập kết nhà lưu động.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.433c.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 294,
+    "Type_ID": 3,
+    "Name": "Biển số I.433d \"Nơi cắm trại và nhà lưu động\"",
+    "NameEN": "Bien so I.433d \"Noi cam trai va nha luu dong\"",
+    "Detail": "Chỉ dẫn sắp đến nơi có vị trí cắm trại, nơi tập kết nhà lưu động.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.433d.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 295,
+    "Type_ID": 3,
+    "Name": "Biển số I.433e - Báo hiệu nhà trọ (Youth Hostel)",
+    "NameEN": "Bien so I.433e - Bao hieu nha tro (Youth Hostel)",
+    "Detail": "Chỉ dẫn sắp đến nơi có nhà trọ.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.433e.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 296,
+    "Type_ID": 3,
+    "Name": "Biển số I.434a \"Bến xe buýt\"",
+    "NameEN": "Bien so I.434a \"Ben xe buyt\"",
+    "Detail": "Chỉ dẫn chỗ dừng đỗ xe buýt cho khách lên xuống.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.434a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 297,
+    "Type_ID": 3,
+    "Name": "Biển số I.434b \"Bến xe tải\"",
+    "NameEN": "Bien so I.434b \"Ben xe tai\"",
+    "Detail": "Chỉ dẫn khu vực đỗ xe tải để nhận và trả hàng hoá.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.434b.png",
+    "UpdateDay": "20200623105818",
+    "IsDelete": 0
+  },
+  {
+    "ID": 298,
+    "Type_ID": 3,
+    "Name": "Biển số I.435 \"Bến xe điện\"",
+    "NameEN": "Bien so I.435 \"Ben xe dien\"",
+    "Detail": "Chỉ dẫn chỗ dừng đỗ xe điện cho khách lên xuống.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.435.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 299,
+    "Type_ID": 3,
+    "Name": "Biển số I.436 \"Trạm cảnh sát giao thông\"",
+    "NameEN": "Bien so I.436 \"Tram canh sat giao thong\"",
+    "Detail": "Chỉ dẫn nơi đặt trạm cảnh sát giao thông. Các phương tiện phải giảm tốc độ đến mức an toàn và không được vượt khi đi qua khu vực này.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.436.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 300,
+    "Type_ID": 3,
+    "Name": "Biển số I.439 \"Tên cầu\"",
+    "NameEN": "Bien so I.439 \"Ten cau\"",
+    "Detail": "Chỉ các thông tin về một cầu.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.439.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 301,
+    "Type_ID": 3,
+    "Name": "Biển số I.440 \"Đường đang thi công\"",
+    "NameEN": "Bien so I.440 \"Duong dang thi cong\"",
+    "Detail": "Chỉ dẫn những đoạn đường đang thi công sửa chữa hoặc nâng cấp cải tạo.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.440.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 302,
+    "Type_ID": 3,
+    "Name": "Biển số I.441a \"Báo hiệu phía trước có công trường thi công\"",
+    "NameEN": "Bien so I.441a \"Bao hieu phia truoc co cong truong thi cong\"",
+    "Detail": "Báo cho người tham gia giao thông biết phía trước cách 500m có công trường thi công, sửa chữa hoặc nâng cấp.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.441a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 303,
+    "Type_ID": 3,
+    "Name": "Biển số I.441b \"Báo hiệu phía trước có công trường thi công\"",
+    "NameEN": "Bien so I.441b \"Bao hieu phia truoc co cong truong thi cong\"",
+    "Detail": "Báo cho người tham gia giao thông biết phía trước cách 100m có công trường thi công, sửa chữa hoặc nâng cấp.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.441b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 304,
+    "Type_ID": 3,
+    "Name": "Biển số I.441c \"Báo hiệu phía trước có công trường thi công\"",
+    "NameEN": "Bien so I.441c \"Bao hieu phia truoc co cong truong thi cong\"",
+    "Detail": "Báo cho người tham gia giao thông biết phía trước cách 50m có công trường thi công, sửa chữa hoặc nâng cấp.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.441c.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 305,
+    "Type_ID": 3,
+    "Name": "Biển số I.442 \"Chợ\"",
+    "NameEN": "Bien so I.442 \"Cho\"",
+    "Detail": "Báo sắp đến khu vực có chợ gần đường. Xe cơ giới qua lại khu vực này phải chú ý quan sát, giảm tốc độ.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.442.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 306,
+    "Type_ID": 3,
+    "Name": "Biển số I.443 “Xe kéo rơ-moóc”",
+    "NameEN": "Bien so I.443 “Xe keo ro-mooc”",
+    "Detail": "Báo hiệu xe có kéo moóc hoặc xe kéo xe.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.443.png",
+    "UpdateDay": "20200623110917",
+    "IsDelete": 0
+  },
+  {
+    "ID": 307,
+    "Type_ID": 3,
+    "Name": "Biển số I.444a \"Biển báo chỉ dẫn địa điểm\"",
+    "NameEN": "Bien so I.444a \"Bien bao chi dan dia diem\"",
+    "Detail": "Chỉ dẫn cho người đi đường biết hướng vào ga xe lửa.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.444a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 308,
+    "Type_ID": 3,
+    "Name": "Biển số I.444b \"Biển báo chỉ dẫn địa điểm\"",
+    "NameEN": "Bien so I.444b \"Bien bao chi dan dia diem\"",
+    "Detail": "Chỉ dẫn cho người đi đường biết hướng vào sân bay.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.444b.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 309,
+    "Type_ID": 3,
+    "Name": "Biển số I.444c \"Biển báo chỉ dẫn địa điểm\"",
+    "NameEN": "Bien so I.444c \"Bien bao chi dan dia diem\"",
+    "Detail": "Chỉ dẫn cho người đi đường biết hướng vào bãi đậu xe.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.444c.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 310,
+    "Type_ID": 3,
+    "Name": "Biển số I.444d \"Biển báo chỉ dẫn địa điểm\"",
+    "NameEN": "Bien so I.444d \"Bien bao chi dan dia diem\"",
+    "Detail": "Chỉ dẫn cho người đi đường biết hướng vào bến xe khách đường dài.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.444d.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 311,
+    "Type_ID": 3,
+    "Name": "Biển số I.444e \"Biển báo chỉ dẫn địa điểm\"",
+    "NameEN": "Bien so I.444e \"Bien bao chi dan dia diem\"",
+    "Detail": "Chỉ dẫn cho người đi đường biết hướng vào bệnh viện và trạm cấp cứu.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.444e.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 312,
+    "Type_ID": 3,
+    "Name": "Biển số I.444f \"Biển báo chỉ dẫn địa điểm\"",
+    "NameEN": "Bien so I.444f \"Bien bao chi dan dia diem\"",
+    "Detail": "Chỉ dẫn cho người đi đường biết hướng vào bến tàu khách.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.444f.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 313,
+    "Type_ID": 3,
+    "Name": "Biển số I.444g \"Biển báo chỉ dẫn địa điểm\"",
+    "NameEN": "Bien so I.444g \"Bien bao chi dan dia diem\"",
+    "Detail": "Chỉ dẫn cho người đi đường biết hướng vào khu danh thắng và du lịch.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.444g.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 314,
+    "Type_ID": 3,
+    "Name": "Biển số I.444h \"Biển báo chỉ dẫn địa điểm\"",
+    "NameEN": "Bien so I.444h \"Bien bao chi dan dia diem\"",
+    "Detail": "Chỉ dẫn cho người đi đường biết hướng vào trạm bán xăng dầu.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.444h.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 315,
+    "Type_ID": 3,
+    "Name": "Biển số I.444i \"Biển báo chỉ dẫn địa điểm\"",
+    "NameEN": "Bien so I.444i \"Bien bao chi dan dia diem\"",
+    "Detail": "Chỉ dẫn cho người đi đường biết hướng vào trạm phục vụ rửa xe.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.444i.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 316,
+    "Type_ID": 3,
+    "Name": "Biển số I.444j \"Biển báo chỉ dẫn địa điểm\"",
+    "NameEN": "Bien so I.444j \"Bien bao chi dan dia diem\"",
+    "Detail": "Chỉ dẫn cho người đi đường biết hướng ra bến phà.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.444j.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 317,
+    "Type_ID": 3,
+    "Name": "Biển số I.444k \"Biển báo chỉ dẫn địa điểm\"",
+    "NameEN": "Bien so I.444k \"Bien bao chi dan dia diem\"",
+    "Detail": "Chỉ dẫn cho người đi đường biết hướng vào ga tàu điện ngầm.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.444k.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 318,
+    "Type_ID": 3,
+    "Name": "Biển số I.444l \"Biển báo chỉ dẫn địa điểm\"",
+    "NameEN": "Bien so I.444l \"Bien bao chi dan dia diem\"",
+    "Detail": "Chỉ dẫn cho người đi đường biết hướng vào trạm dừng nghỉ.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.444l.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 319,
+    "Type_ID": 3,
+    "Name": "Biển số I.444m \"Biển báo chỉ dẫn địa điểm\"",
+    "NameEN": "Bien so I.444m \"Bien bao chi dan dia diem\"",
+    "Detail": "Chỉ dẫn cho người đi đường biết hướng vào trạm sửa chữa xe trong khu dịch vụ.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.444m.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 320,
+    "Type_ID": 3,
+    "Name": "Biển số I.445a \"Đường trơn phải chạy chậm”",
+    "NameEN": "Bien so I.445a \"Duong tron phai chay cham”",
+    "Detail": "Chỉ dẫn đoạn đường trơn trượt, phải đi chậm.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.445a.png",
+    "UpdateDay": "20200623112144",
+    "IsDelete": 0
+  },
+  {
+    "ID": 321,
+    "Type_ID": 3,
+    "Name": "Biển số I.445b \"Đường dốc phải đi chậm”",
+    "NameEN": "Bien so I.445b \"Duong doc phai di cham”",
+    "Detail": "Chỉ dẫn đoạn đường dốc phải đi chậm, lái xe phải cẩn thận.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.445b.png",
+    "UpdateDay": "20200623112202",
+    "IsDelete": 0
+  },
+  {
+    "ID": 322,
+    "Type_ID": 3,
+    "Name": "Biển số I.445c \"Đoạn đường nhiều sương mù”",
+    "NameEN": "Bien so I.445c \"Doan duong nhieu suong mu”",
+    "Detail": "Chỉ dẫn đoạn đường sương mù, tầm nhìn hạn chế phải đi chậm, tập trung quan sát.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.445c.png",
+    "UpdateDay": "20200623112334",
+    "IsDelete": 0
+  },
+  {
+    "ID": 323,
+    "Type_ID": 3,
+    "Name": "Biển số I.445d \"Nền đường yếu”",
+    "NameEN": "Bien so I.445d \"Nen duong yeu”",
+    "Detail": "Chỉ dẫn đoạn đường có nền đường yếu, nhắc nhở lái xe đi chậm và cẩn thận.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.445d.png",
+    "UpdateDay": "20200623112327",
+    "IsDelete": 0
+  },
+  {
+    "ID": 324,
+    "Type_ID": 3,
+    "Name": "Biển số I.445e “Xe lớn hoặc quá khổ đi sát về bên phải”",
+    "NameEN": "Bien so I.445e “Xe lon hoac qua kho di sat ve ben phai”",
+    "Detail": "Chỉ dẫn xe lớn hoặc quá khổ đi sát về bên phải, hướng dẫn cho lái xe lớn hoặc quá khổ phải đi tốc độ thấp không được chiếm làn đường của các loại xe khác.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.445e.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 325,
+    "Type_ID": 3,
+    "Name": "Biển số I.445f “Chú ý gió ngang”",
+    "NameEN": "Bien so I.445f “Chu y gio ngang”",
+    "Detail": "Chỉ dẫn người đi đường chú ý khu vực có gió ngang mạnh.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.445f.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 326,
+    "Type_ID": 3,
+    "Name": "Biển số I.445g “Đoạn đường hay xảy ra tai nạn”",
+    "NameEN": "Bien so I.445g “Doan duong hay xay ra tai nan”",
+    "Detail": "Chỉ dẫn đoạn đường hay xảy ra tai nạn.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.445g.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 327,
+    "Type_ID": 3,
+    "Name": "Biển số I.445h “Xuống dốc liên tục”",
+    "NameEN": "Bien so I.445h “Xuong doc lien tuc”",
+    "Detail": "Chỉ dẫn sắp vào đoạn đường xuống dốc liên tục, nhằm nhắc nhở lái xe phải đi chậm, đi sát bên phải.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.445h.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 328,
+    "Type_ID": 3,
+    "Name": "Biển số I.446 \"Nơi đỗ xe dành cho người khuyết tật\"",
+    "NameEN": "Bien so I.446 \"Noi do xe danh cho nguoi khuyet tat\"",
+    "Detail": "Báo hiệu nơi đỗ xe dành cho người khuyết tật.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.446.png",
+    "UpdateDay": "20200623113330",
+    "IsDelete": 0
+  },
+  {
+    "ID": 329,
+    "Type_ID": 3,
+    "Name": "Biển số I.447a “Cầu vượt liên thông”",
+    "NameEN": "Bien so I.447a “Cau vuot lien thong”",
+    "Detail": "Chỉ dẫn sắp vào cầu vượt có tổ chức giao thông liên thông giữa các tuyến.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.447a.png",
+    "UpdateDay": "20200623113625",
+    "IsDelete": 0
+  },
+  {
+    "ID": 330,
+    "Type_ID": 3,
+    "Name": "Biển số I.447b “Cầu vượt liên thông”",
+    "NameEN": "Bien so I.447b “Cau vuot lien thong”",
+    "Detail": "Chỉ dẫn sắp vào cầu vượt có tổ chức giao thông liên thông giữa các tuyến.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.447b.png",
+    "UpdateDay": "20200623113746",
+    "IsDelete": 0
+  },
+  {
+    "ID": 331,
+    "Type_ID": 3,
+    "Name": "Biển số I.447c “Cầu vượt liên thông”",
+    "NameEN": "Bien so I.447c “Cau vuot lien thong”",
+    "Detail": "Chỉ dẫn sắp vào cầu vượt có tổ chức giao thông liên thông giữa các tuyến.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.447c.png",
+    "UpdateDay": "20200623113752",
+    "IsDelete": 0
+  },
+  {
+    "ID": 332,
+    "Type_ID": 3,
+    "Name": "Biển số I.447d “Cầu vượt liên thông”",
+    "NameEN": "Bien so I.447d “Cau vuot lien thong”",
+    "Detail": "Chỉ dẫn sắp vào cầu vượt có tổ chức giao thông liên thông giữa các tuyến.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.447d.png",
+    "UpdateDay": "20200623113757",
+    "IsDelete": 0
+  },
+  {
+    "ID": 333,
+    "Type_ID": 3,
+    "Name": "Biển số I.448 \"Làn đường cứu nạn hay làn thoát xe khẩn cấp\"",
+    "NameEN": "Bien so I.448 \"Lan duong cuu nan hay lan thoat xe khan cap\"",
+    "Detail": "Chỉ dẫn cho người tham gia giao thông biết vị trí và khoảng cách có làn cứu nạn.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/l.448.png",
+    "UpdateDay": "20200623115248",
+    "IsDelete": 0
+  },
+  {
+    "ID": 334,
+    "Type_ID": 3,
+    "Name": "Biển số I.449 \"Biển tên đường\"",
+    "NameEN": "Bien so I.449 \"Bien ten duong\"",
+    "Detail": "Báo tên đường cho các tuyến đường đối ngoại.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/I.449.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 335,
+    "Type_ID": 5,
+    "Name": "Biển số S.H,3a \"Hướng tác dụng của biển\"",
+    "NameEN": "Bien so S.H,3a \"Huong tac dung cua bien\"",
+    "Detail": "Để chỉ hướng tác dụng của biển là hướng vuông góc với chiều đi. Trên các tuyến đường đối ngoại và các tuyến đường có nhiều người đi lại.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.H,3a.png",
+    "UpdateDay": "20200523152042",
+    "IsDelete": 0
+  },
+  {
+    "ID": 336,
+    "Type_ID": 5,
+    "Name": "Biển số S.H,3b \"Hướng tác dụng của biển\"",
+    "NameEN": "Bien so S.H,3b \"Huong tac dung cua bien\"",
+    "Detail": "Để chỉ đồng thời hai hướng tác dụng (trái và phải) của biển là hướng vuông góc với chiều đi. Trên các tuyến đường đối ngoại và các tuyến đường có nhiều người đi lại.\r\n",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.H,3b.png",
+    "UpdateDay": "20200622112445",
+    "IsDelete": 0
+  },
+  {
+    "ID": 337,
+    "Type_ID": 2,
+    "Name": "Biển số R.301g \"Hướng đi phải theo\"",
+    "NameEN": "Bien so R.301g \"Huong di phai theo\"",
+    "Detail": "Biển bắt buộc người tham gia giao thông chỉ được phép đi thẳng hay rẽ trái và được phép quay đầu xe để đi theo hướng ngược lại.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.301g.png",
+    "UpdateDay": "20200622094600",
+    "IsDelete": 0
+  },
+  {
+    "ID": 338,
+    "Type_ID": 1,
+    "Name": "Biển số P.111c “Cấm xe ba bánh loại có động cơ” ",
+    "NameEN": "Bien so P.111c “Cam xe ba banh loai co dong co” ",
+    "Detail": "Để báo đường cấm xe ba bánh loại có động cơ như xe lam, xe xích lô máy, xe lôi máy, v.v...",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.111c.png",
+    "UpdateDay": "20200622103024",
+    "IsDelete": 0
+  },
+  {
+    "ID": 339,
+    "Type_ID": 2,
+    "Name": "Biển số R.415b “Kết thúc làn đường theo phương tiện”",
+    "NameEN": "Bien so R.415b “Ket thuc lan duong theo phuong tien”",
+    "Detail": "Để chỉ dẫn hểt đoạn đường lưu thông trên từng làn đường theo quy định.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/R.415b.png",
+    "UpdateDay": "20200622104604",
+    "IsDelete": 0
+  },
+  {
+    "ID": 340,
+    "Type_ID": 5,
+    "Name": "Biển số S.510b “Chú ý đường sắt”",
+    "NameEN": "Bien so S.510b “Chu y duong sat”",
+    "Detail": "Để cảnh báo khi rẽ vào đường nhánh sẽ có giao cắt với đường sắt (khoảng cách giữa đường sắt vào đoạn đường đặt biển dưới 100 m).",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/S.510b.png",
+    "UpdateDay": "20200622113413",
+    "IsDelete": 0
+  },
+  {
+    "ID": 341,
+    "Type_ID": 4,
+    "Name": "Biển số W.239b “Chiều cao tĩnh không thực tế”",
+    "NameEN": "Bien so W.239b “Chieu cao tinh khong thuc te”",
+    "Detail": "Để báo chiều cao tĩnh không thực tế của các vị trí có khoảng cách từ điểm cao nhất của mặt đường đến điểm thấp nhất của chướng ngại vật bị giới hạn.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/W.239b.png",
+    "UpdateDay": "20200622105552",
+    "IsDelete": 0
+  },
+  {
+    "ID": 342,
+    "Type_ID": 3,
+    "Name": "Biển số l.437 \"Bắt đầu đường cao tốc\"",
+    "NameEN": "Bien so l.437 \"Bat dau duong cao toc\"",
+    "Detail": "Để chỉ dẫn bắt đầu đường cao tốc.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/l.437.png",
+    "UpdateDay": "20200623154215",
+    "IsDelete": 0
+  },
+  {
+    "ID": 344,
+    "Type_ID": 3,
+    "Name": "lE.450b \"Sơ đồ và khoảng cách đến nút giao với đường dẫn vào đường cao tốc\"",
+    "NameEN": "lE.450b \"So do va khoang cach den nut giao voi duong dan vao duong cao toc\"",
+    "Detail": "Chỉ dẫn sơ đồ đến đường dẫn vào đường cao tốc ",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.450b.png",
+    "UpdateDay": "20200623154302",
+    "IsDelete": 0
+  },
+  {
+    "ID": 345,
+    "Type_ID": 3,
+    "Name": "lE.451a \"Lối vào và khoảng cách đến lối vào đường cao tốc\"",
+    "NameEN": "lE.451a \"Loi vao va khoang cach den loi vao duong cao toc\"",
+    "Detail": "Chỉ dẫn khoảng cách đến lối vào đường cao tốc, được đặt trên đường dẫn vào đường cao tốc; dùng để báo trước khoảng cách đến lối vào đường cao tốc; tùy theo chiều dài của đường dẫn vào đường cao tốc mà xác định vị trí đặt biển đến lối vào đường cao tốc cho phù hợp.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.451a.png",
+    "UpdateDay": "20200623154404",
+    "IsDelete": 0
+  },
+  {
+    "ID": 346,
+    "Type_ID": 3,
+    "Name": "lE.451b \"Lối vào và khoảng cách đến lối vào đường cao tốc\"",
+    "NameEN": "lE.451b \"Loi vao va khoang cach den loi vao duong cao toc\"",
+    "Detail": "Chỉ dẫn lối vào đường cao tốc. Biển này đặt ở vị trí cuối đường dẫn vào đường cao tốc.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.451b.png",
+    "UpdateDay": "20200623154420",
+    "IsDelete": 0
+  },
+  {
+    "ID": 347,
+    "Type_ID": 3,
+    "Name": "Biển số IE.452 \"Bắt đầu đường cao tốc\"",
+    "NameEN": "Bien so IE.452 \"Bat dau duong cao toc\"",
+    "Detail": "Chỉ dẫn bắt đầu đường cao tốc.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.452.png",
+    "UpdateDay": "20200623145119",
+    "IsDelete": 0
+  },
+  {
+    "ID": 348,
+    "Type_ID": 3,
+    "Name": "lE.453a \" Kết thúc đường cao tốc\"",
+    "NameEN": "lE.453a \" Ket thuc duong cao toc\"",
+    "Detail": "Chỉ dẫn khoảng cách đến điểm kết thúc đường cao tốc.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.453a (Lệ).png",
+    "UpdateDay": "20200623154437",
+    "IsDelete": 0
+  },
+  {
+    "ID": 349,
+    "Type_ID": 3,
+    "Name": "Biển số IE.453b \"Kết thúc đường cao tốc\"",
+    "NameEN": "Bien so IE.453b \"Ket thuc duong cao toc\"",
+    "Detail": "Chỉ dẫn điểm kết thúc đường cao tốc.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.453b (Lệ).png",
+    "UpdateDay": "20200623145110",
+    "IsDelete": 0
+  },
+  {
+    "ID": 350,
+    "Type_ID": 3,
+    "Name": "Biển số lE.453c \"Hết đường cao tốc\"",
+    "NameEN": "Bien so lE.453c \"Het duong cao toc\"",
+    "Detail": "Để chỉ dẫn hết đường cao tốc",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.453c.png",
+    "UpdateDay": "20200623142226",
+    "IsDelete": 0
+  },
+  {
+    "ID": 351,
+    "Type_ID": 3,
+    "Name": "Biển số IE.454 \"Khoảng cách đến lối ra phía trước\"",
+    "NameEN": "Bien so IE.454 \"Khoang cach den loi ra phia truoc\"",
+    "Detail": "Chỉ dẫn khoảng cách đến lối ra phía trước.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.454 (Lệ).png",
+    "UpdateDay": "20200623154855",
+    "IsDelete": 0
+  },
+  {
+    "ID": 352,
+    "Type_ID": 3,
+    "Name": "Biển số IE.464b \"Địa điểm và phương hướng\"",
+    "NameEN": "Bien so IE.464b \"Dia diem va phuong huong\"",
+    "Detail": "Chỉ dẫn hướng ra tại lối ra",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.464b.png",
+    "UpdateDay": "20200623153859",
+    "IsDelete": 0
+  },
+  {
+    "ID": 353,
+    "Type_ID": 1,
+    "Name": "Biển số P.127c “Biển ghép tốc độ tối đa cho phép theo phương tiện, trên từng làn đường”",
+    "NameEN": "Bien so P.127c “Bien ghep toc do toi da cho phep theo phuong tien, tren tung lan duong”",
+    "Detail": "Khi quy định tốc độ tối đa cho phép theo phương tiện trên từng làn đường. Các loại phương tiện phải đi đúng làn đường và tuân thủ tốc độ tối đa cho phép trên làn đường đó.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/P.127c.png",
+    "UpdateDay": "20200623094544",
+    "IsDelete": 0
+  },
+  {
+    "ID": 354,
+    "Type_ID": 3,
+    "Name": "Biển số lE.455 \"Khoảng cách đến các lối ra tiếp theo\"",
+    "NameEN": "Bien so lE.455 \"Khoang cach den cac loi ra tiep theo\"",
+    "Detail": "Chỉ dẫn khoảng cách đến các lối ra tiếp theo để báo trước khi qua khu vực phía trước có nhiều nút giao. Thông thường, biển chỉ dẫn khoảng cách đến các lối ra tiếp theo chỉ thể hiện cho hai hoặc ba nút giao liên tiếp trên đường cao tốc.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.455.png",
+    "UpdateDay": "20200623154223",
+    "IsDelete": 0
+  },
+  {
+    "ID": 356,
+    "Type_ID": 1,
+    "Name": "Biển số DP.127 “Biển hết tốc độ tối đa cho phép theo biển ghép”",
+    "NameEN": "Bien so DP.127 “Bien het toc do toi da cho phep theo bien ghep”",
+    "Detail": "Đến hết đoạn đường tốc độ tối đa cho phép theo biển ghép P.127b, P.127c, đặt biển số dP.127 “Biển hết tốc độ tối đa cho phép theo biển ghép” tương ứng với các phương án tổ chức giao thông. Trường hợp “Hết tất cả các lệnh cấm” đặt biển số dP.135.\r\nBiển có giá trị báo cho người tham gia giao thông biết hiệu lực của biển số dP.127(b,c) hết tác dụng. Kể từ biển này, các xe được phép chạy với tốc độ tối đa đã quy định trong Luật Giao thông đường bộ.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/DP.127.png",
+    "UpdateDay": "20200622163657",
+    "IsDelete": 0
+  },
+  {
+    "ID": 358,
+    "Type_ID": 1,
+    "Name": "Biển số DP.133 “Hết cấm vượt”",
+    "NameEN": "Bien so DP.133 “Het cam vuot”",
+    "Detail": "Để báo hết đoạn đường cấm vượt. \r\nBiển có tác dụng báo cho người tham gia giao thông biết hiệu lực của các biển số P.125 và biển số P.126 hết tác dụng. Các xe cơ giới được phép vượt nhau nhưng phải theo quy định về điều kiện cho phép vượt nhau.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/DP.133.png",
+    "UpdateDay": "20200623080055",
+    "IsDelete": 0
+  },
+  {
+    "ID": 359,
+    "Type_ID": 3,
+    "Name": "Biển số lE.456a \"Trạm dừng nghỉ và khoảng cách đến trạm dừng nghỉ\"",
+    "NameEN": "Bien so lE.456a \"Tram dung nghi va khoang cach den tram dung nghi\"",
+    "Detail": "Thông báo khoảng cách đến trạm dừng nghỉ.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.456a.png",
+    "UpdateDay": "20200623151405",
+    "IsDelete": 0
+  },
+  {
+    "ID": 360,
+    "Type_ID": 3,
+    "Name": "Biển số IE.456b \"Trạm dừng nghỉ và khoảng cách đến trạm dừng nghỉ\"",
+    "NameEN": "Bien so IE.456b \"Tram dung nghi va khoang cach den tram dung nghi\"",
+    "Detail": "Chỉ dẫn hướng rẽ vào trạm dừng nghỉ.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.456b.png",
+    "UpdateDay": "20200623151449",
+    "IsDelete": 0
+  },
+  {
+    "ID": 361,
+    "Type_ID": 3,
+    "Name": "Biển số IE.456c \"Trạm dừng nghỉ và khoảng cách đến trạm dừng nghỉ\"",
+    "NameEN": "Bien so IE.456c \"Tram dung nghi va khoang cach den tram dung nghi\"",
+    "Detail": "Chỉ dẫn lối vào trạm dừng nghỉ, đặt ngay trước lối vào trạm dừng nghỉ ",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.456c.png",
+    "UpdateDay": "20200623151501",
+    "IsDelete": 0
+  },
+  {
+    "ID": 362,
+    "Type_ID": 3,
+    "Name": "Biển số IE.457a \"Nơi đỗ xe trong trạm dừng nghỉ\"",
+    "NameEN": "Bien so IE.457a \"Noi do xe trong tram dung nghi\"",
+    "Detail": "Chỉ dẫn khoảng cách đến nơi đỗ xe trong trạm dừng nghỉ  được lắp đặt cùng với biển chỉ dẫn đến trạm dừng nghỉ",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.457a.png",
+    "UpdateDay": "20200623154820",
+    "IsDelete": 0
+  },
+  {
+    "ID": 363,
+    "Type_ID": 3,
+    "Name": "Biển số IE.457b \"Chỉ dẫn nơi đỗ xe trong trạm dừng nghỉ\"",
+    "NameEN": "Bien so IE.457b \"Chi dan noi do xe trong tram dung nghi\"",
+    "Detail": "Chỉ dẫn hướng rẽ đến vị trí bãi đỗ xe trong trạm dừng nghỉ.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.457b.png",
+    "UpdateDay": "20200623151940",
+    "IsDelete": 0
+  },
+  {
+    "ID": 364,
+    "Type_ID": 3,
+    "Name": "Biển số IE.458 \"Khoảng cách đến trạm dừng nghỉ tiếp theo\"",
+    "NameEN": "Bien so IE.458 \"Khoang cach den tram dung nghi tiep theo\"",
+    "Detail": "Chỉ dẫn khoảng cách đến các trạm dừng nghỉ tiếp theo. ",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.458.png",
+    "UpdateDay": "20200623154808",
+    "IsDelete": 0
+  },
+  {
+    "ID": 365,
+    "Type_ID": 3,
+    "Name": "Biển số IE.459a \"Khoảng cách đến khu tham quan, du lịch\"",
+    "NameEN": "Bien so IE.459a \"Khoang cach den khu tham quan, du lich\"",
+    "Detail": "Thông báo khoảng cách đến khu tham quan, du lịch.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.459a.png",
+    "UpdateDay": "20200623154749",
+    "IsDelete": 0
+  },
+  {
+    "ID": 366,
+    "Type_ID": 3,
+    "Name": "Biển số IE.459b \"Khoảng cách đến khu tham quan, du lịch\"",
+    "NameEN": "Bien so IE.459b \"Khoang cach den khu tham quan, du lich\"",
+    "Detail": "Chỉ dẫn hướng rẽ vào khu tham quan, du lịch.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.459b.png",
+    "UpdateDay": "20200623154757",
+    "IsDelete": 0
+  },
+  {
+    "ID": 367,
+    "Type_ID": 3,
+    "Name": "Biển số IE.460 \"Cột lý trình kilômét\"",
+    "NameEN": "Bien so IE.460 \"Cot ly trinh kilomet\"",
+    "Detail": "Chỉ dẫn cột kilômét trên đường cao tốc.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.460.png",
+    "UpdateDay": "20200623154640",
+    "IsDelete": 0
+  },
+  {
+    "ID": 368,
+    "Type_ID": 3,
+    "Name": "Biển số IE.461 \"Khu dịch vụ công cộng và giải trí\"",
+    "NameEN": "Bien so IE.461 \"Khu dich vu cong cong va giai tri\"",
+    "Detail": "Chỉ dẫn khoảng cách và hướng đến khu dịch vụ công cộng, giải trí",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.461.png",
+    "UpdateDay": "20200623154656",
+    "IsDelete": 0
+  },
+  {
+    "ID": 369,
+    "Type_ID": 3,
+    "Name": "Biển số IE.462 \"Tần số trên sóng radio\"",
+    "NameEN": "Bien so IE.462 \"Tan so tren song radio\"",
+    "Detail": "Chỉ dẫn tần số trên sóng radio được sử dụng ở những khu vực thời tiết hay thay đổi ảnh hưởng tới lưu thông của các phương tiện hoặc khu vực có điều kiện đi lại đặc biệt hoặc những vị trí cần thiết khác trên đường cao tốc. Biển chỉ dẫn thể hiện tần số sóng radio để phát thông tin thời tiết và các thông tin tiện ích liên quan đến giao thông trên đường cao tốc.",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.462.png",
+    "UpdateDay": "20200623154455",
+    "IsDelete": 0
+  },
+  {
+    "ID": 370,
+    "Type_ID": 3,
+    "Name": "Biển số IE.463a \"Trạm kiểm tra tải trọng xe\"",
+    "NameEN": "Bien so IE.463a \"Tram kiem tra tai trong xe\"",
+    "Detail": "Chỉ dẫn khoảng cách đến trạm kiểm tra tải trọng xe",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.463a.png",
+    "UpdateDay": "20200623153753",
+    "IsDelete": 0
+  },
+  {
+    "ID": 371,
+    "Type_ID": 3,
+    "Name": "Biển số Ie.463b \"Trạm kiểm tra tải trọng xe\"",
+    "NameEN": "Bien so Ie.463b \"Tram kiem tra tai trong xe\"",
+    "Detail": "Chỉ dẫn hướng rẽ vào nơi đặt trạm kiểm tra tải trọng xe",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.463b.png",
+    "UpdateDay": "20200623153803",
+    "IsDelete": 0
+  },
+  {
+    "ID": 372,
+    "Type_ID": 3,
+    "Name": "Biển số Ie.463c \"Trạm kiểm tra tải trọng xe\"",
+    "NameEN": "Bien so Ie.463c \"Tram kiem tra tai trong xe\"",
+    "Detail": "Chỉ dẫn lối vào trạm kiểm tra tải trọng xe",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.463c.png",
+    "UpdateDay": "20200623153814",
+    "IsDelete": 0
+  },
+  {
+    "ID": 373,
+    "Type_ID": 3,
+    "Name": "Biển số Ie.464a \"Địa điểm và phương hướng\"",
+    "NameEN": "Bien so Ie.464a \"Dia diem va phuong huong\"",
+    "Detail": "Chỉ dẫn địa điểm và phương hướng dùng để chỉ dẫn địa danh nơi đến và mũi trên cho một làn xe chạy cụ thể, bao gồm tên địa danh nơi đến và mũi tên chỉ xuống làn xe chạy",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.464a.png",
+    "UpdateDay": "20200623153839",
+    "IsDelete": 0
+  },
+  {
+    "ID": 374,
+    "Type_ID": 3,
+    "Name": "Biển số Ie.465 \"Địa điểm và khoảng cách\"",
+    "NameEN": "Bien so Ie.465 \"Dia diem va khoang cach\"",
+    "Detail": "Chỉ dẫn địa điểm và khoảng cách, bao gồm hai hoặc ba dòng mang tên của đích đến và khoảng cách tới đích đó tính bằng kilômét. dòng thứ nhất (dòng trên cùng) xác định vị trí nút giao đến địa danh gần nhất. dòng thứ hai (nếu có) xác định khoảng cách đến khu du lịch giải trí hoặc đầu mối giao thông lớn. dòng thứ ba (dòng cuối cùng) chỉ dẫn khoảng cách đến thành phố lớn (cấp cao nhất) mà tuyến đường đi qua. ",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.465.png",
+    "UpdateDay": "20200623153921",
+    "IsDelete": 0
+  },
+  {
+    "ID": 375,
+    "Type_ID": 3,
+    "Name": "Biển số Ie.466 \"Sơ đồ lối ra một chiều\"",
+    "NameEN": "Bien so Ie.466 \"So do loi ra mot chieu\"",
+    "Detail": "Chỉ dẫn sơ đồ lối ra một chiều tại tất cả các nút giao trên đường cao tốc, được bố trí ở trên giá long môn",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.466.png",
+    "UpdateDay": "20200623154007",
+    "IsDelete": 0
+  },
+  {
+    "ID": 376,
+    "Type_ID": 3,
+    "Name": "Biển số Ie.467a \"Nhập làn\"",
+    "NameEN": "Bien so Ie.467a \"Nhap lan\"",
+    "Detail": "Chỉ dẫn vị trí nhập làn xe tại các vị trí nút giao thông có lưu lượng xe lớn. ",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.467a.png",
+    "UpdateDay": "20200623154025",
+    "IsDelete": 0
+  },
+  {
+    "ID": 377,
+    "Type_ID": 3,
+    "Name": "Biển số Ie.467b \"Nhập làn\"",
+    "NameEN": "Bien so Ie.467b \"Nhap lan\"",
+    "Detail": "Để chỉ dẫn cho người điều kiển phương tiện giao thông biết trước sắp đến vị trí nhập làn xe ",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.467b.png",
+    "UpdateDay": "20200623154031",
+    "IsDelete": 0
+  },
+  {
+    "ID": 378,
+    "Type_ID": 3,
+    "Name": "Biển số Ie.468a \"Chướng ngại vật phía trước\"",
+    "NameEN": "Bien so Ie.468a \"Chuong ngai vat phia truoc\"",
+    "Detail": "Chỉ dẫn đi theo hướng bên trái",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.468a.png",
+    "UpdateDay": "20200623154046",
+    "IsDelete": 0
+  },
+  {
+    "ID": 379,
+    "Type_ID": 3,
+    "Name": "Biển số Ie.468b \"Chướng ngại vật phía trước\"",
+    "NameEN": "Bien so Ie.468b \"Chuong ngai vat phia truoc\"",
+    "Detail": "Chỉ dẫn đi được cả hai hướng",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.468b.png",
+    "UpdateDay": "20200623154054",
+    "IsDelete": 0
+  },
+  {
+    "ID": 380,
+    "Type_ID": 3,
+    "Name": "Biển số Ie.468c \"Chướng ngại vật phía trước\"",
+    "NameEN": "Bien so Ie.468c \"Chuong ngai vat phia truoc\"",
+    "Detail": "Chỉ dẫn đi theo hướng bên phải",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.468c.png",
+    "UpdateDay": "20200623154102",
+    "IsDelete": 0
+  },
+  {
+    "ID": 381,
+    "Type_ID": 3,
+    "Name": "Biển số Ie.469 \"Hướng rẽ\"",
+    "NameEN": "Bien so Ie.469 \"Huong re\"",
+    "Detail": "Chỉ dẫn hướng rẽ để nhắc người điều khiển phương tiện chuẩn bị đổi hướng đi khi sắp vào đường cong nguy hiểm",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.469.png",
+    "UpdateDay": "20200623154116",
+    "IsDelete": 0
+  },
+  {
+    "ID": 382,
+    "Type_ID": 3,
+    "Name": "Biển số Ie.470 \"Số điện thoại khẩn cấp\"",
+    "NameEN": "Bien so Ie.470 \"So dien thoai khan cap\"",
+    "Detail": "Sử dụng chữ màu trắng trên nền màu xanh lá cây, cung cấp số điện thoại khẩn cấp cho người điều khiện phương tiện giao thông trong trường hợp khẩn cấp, xảy ra sự cố, tai nạn trên đường cao tốc ",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.470.png",
+    "UpdateDay": "20200623154127",
+    "IsDelete": 0
+  },
+  {
+    "ID": 383,
+    "Type_ID": 3,
+    "Name": "Biển số Ie.471 \"Giữ khoảng cách lái xe an toàn\"",
+    "NameEN": "Bien so Ie.471 \"Giu khoang cach lai xe an toan\"",
+    "Detail": "Biển này thông báo cho người điều khiển phương tiện biết để giữ khoảng cách lái xe an toàn khi lưu thông trên đường cao tốc",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.471.png",
+    "UpdateDay": "20200623154137",
+    "IsDelete": 0
+  },
+  {
+    "ID": 384,
+    "Type_ID": 3,
+    "Name": "Biển số Ie.472 \"Khoảng cách đến trạm thu phí\"",
+    "NameEN": "Bien so Ie.472 \"Khoang cach den tram thu phi\"",
+    "Detail": "Sử dụng chữ màu trắng trên nền màu xanh lá cây, được đặt cách trạm thu phí với một khoảng cách phù hợp nhằm thông báo cho người điều khiển phương tiện biết trước chuẩn bị đến trạm thu phí",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.472.png",
+    "UpdateDay": "20200623154147",
+    "IsDelete": 0
+  },
+  {
+    "ID": 385,
+    "Type_ID": 3,
+    "Name": "Biển số Ie.473 \"Giảm tốc độ\"",
+    "NameEN": "Bien so Ie.473 \"Giam toc do\"",
+    "Detail": "Cảnh báo cho người điều khiển phương tiện chú ý lái xe và giảm tốc độ tại khu vực có nguy cơ mất an toàn giao thông ",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.473.png",
+    "UpdateDay": "20200623154154",
+    "IsDelete": 0
+  },
+  {
+    "ID": 386,
+    "Type_ID": 3,
+    "Name": "Biển số Ie.474 \"Lối ra\"",
+    "NameEN": "Bien so Ie.474 \"Loi ra\"",
+    "Detail": "Chỉ dẫn lối ra đường cao tốc",
+    "Icon": "https://ithong01.thuvienphapluat.vn/uploads/bienbao/lE.474.png",
+    "UpdateDay": "20200623154207",
+    "IsDelete": 0
+  }
+]

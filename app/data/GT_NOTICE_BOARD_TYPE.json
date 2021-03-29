@@ -1,0 +1,38 @@
+[
+  {
+    "Type_ID": 0,
+    "Type_Name": "Toàn bộ",
+    "Icon": "https://imgithong.thuvienphapluat.vn",
+    "IsDelete": 0
+  },
+  {
+    "Type_ID": 1,
+    "Type_Name": "Biển báo cấm",
+    "Icon": "https://imgithong.thuvienphapluat.vn",
+    "IsDelete": 0
+  },
+  {
+    "Type_ID": 2,
+    "Type_Name": "Biển hiệu lệnh",
+    "Icon": "https://imgithong.thuvienphapluat.vn",
+    "IsDelete": 0
+  },
+  {
+    "Type_ID": 3,
+    "Type_Name": "Biển chỉ dẫn",
+    "Icon": "https://imgithong.thuvienphapluat.vn",
+    "IsDelete": 0
+  },
+  {
+    "Type_ID": 4,
+    "Type_Name": "Biển báo nguy hiểm và cảnh báo",
+    "Icon": "https://imgithong.thuvienphapluat.vn",
+    "IsDelete": 0
+  },
+  {
+    "Type_ID": 5,
+    "Type_Name": "Biển phụ",
+    "Icon": "https://imgithong.thuvienphapluat.vn",
+    "IsDelete": 0
+  }
+]

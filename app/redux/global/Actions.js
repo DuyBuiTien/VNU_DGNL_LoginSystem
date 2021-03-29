@@ -1,5 +1,3 @@
-import {Base64} from 'js-base64';
-
 import * as requestFromServer from './Crud';
 import {globalSlice, callTypes} from './Slice';
 import store from '../store';
@@ -47,6 +45,8 @@ export const login = (username, password) => (dispatch) => {
     .Login(dataService.CD_URL, username, password)
     .then((response) => {
       if (response.data.data) {
+        requestFromServer.LoginDichVu(dataService.BOOKMARK_URL, username, password);
+
         let tmp = {...response.data.data};
         tmp.username = username;
         tmp.password = password;
@@ -138,4 +138,8 @@ export const uploadAvatar = (body) => (dispatch) => {
 
 export const setMenuFavor = (menus) => (dispatch) => {
   return dispatch(actions.setMenuCaNhan(menus));
+};
+
+export const setRandom = () => (dispatch) => {
+  dispatch(actions.setRandom());
 };

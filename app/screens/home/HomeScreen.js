@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import {
   StyleSheet,
   View,
@@ -7,22 +7,23 @@ import {
   ScrollView,
   RefreshControl,
   FlatList,
-  Image,
+  Linking,
   StatusBar,
   Dimensions,
+  Platform,
 } from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {Text, Button, Icon, Divider, Badge} from 'react-native-elements';
-import FontAwesome from 'react-native-vector-icons/FontAwesome5';
+import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
-import {TT_URL} from '../../config/server';
 import {requestPOST, requestGET} from '../../services/Api';
 
 import {ThoiTietHome} from '../../components/lichaqi';
 import {CovidItem} from '../../components/covid';
 import {HeaderList} from '../../components/common';
+import {SliderBox} from '../../modules/react-native-image-slider-box';
 
 import images from '../../themes/Images';
 const _w = Dimensions.get('screen').width < 500 ? 50 : 70;
@@ -30,6 +31,8 @@ const _h = Dimensions.get('screen').width < 500 ? 50 : 70;
 const _b = Dimensions.get('screen').width < 500 ? 25 : 30;
 
 const {height, width} = Dimensions.get('window');
+
+const PHONE = '0228 363 1116';
 
 import moment from 'moment';
 moment.locale('vi');
@@ -86,6 +89,46 @@ const HomeScreen = () => {
   const dataMenuCaNhan = useSelector((state) => state.global.dataMenuCaNhan);
   const dataMenu = useSelector((state) => state.global.dataMenu);
   const dataService = useSelector((state) => state.global.dataService);
+
+  /* const imgs = [
+    require('../../Images/congthongtinnd.jpeg'),
+    require('../../Images/slider.jpeg'), // Local image
+  ]; */
+  const [imgs, setImgs] = useState([]);
+
+  const IMAGEHOME = [
+    {
+      Id: 0,
+      Image: require('../../Images/congthongtinnd.jpeg'),
+      IpagePad: null,
+      Url: 'https://namdinh.gov.vn',
+      Title: 'Cổng thông tin Nam Định',
+    },
+    {
+      Id: 1,
+      Image: require('../../Images/slider.jpeg'),
+      IpagePad: null,
+      Url: 'https://bluezone.gov.vn',
+      Title: 'Bluzone',
+    },
+  ];
+
+  useEffect(() => {
+    let arr_image = [];
+    IMAGEHOME.map((item) => {
+      arr_image.push(item.Image);
+    });
+    setImgs(arr_image);
+    return () => {};
+  }, []);
+
+  const handlePressURL = async (url) => {
+    const supported = await Linking.canOpenURL(url);
+    if (supported) {
+      await Linking.openURL(url);
+    } else {
+    }
+  };
 
   let datamenus = [];
 
@@ -146,15 +189,29 @@ const HomeScreen = () => {
     );
   };
 
+  const handlePhoneCall = (number) => {
+    let phoneNumber = '';
+    if (Platform.OS === 'android') {
+      phoneNumber = `tel:${number}`;
+    } else {
+      phoneNumber = `telprompt:${number}`;
+    }
+    Linking.openURL(phoneNumber);
+  };
+
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="#00000000" barStyle="light-content" translucent={true} />
 
       <ImageBackground source={images.background.tet2} style={{flex: 1 / 6}}>
-        <View style={{paddingTop: 40, padding: 10, flexDirection: 'row'}}>
+        <TouchableOpacity
+          style={{paddingTop: 40, padding: 10, flexDirection: 'row'}}
+          onPress={() => {
+            navigation.navigate('ProfileScreen');
+          }}>
           <Text style={styles.title1}> Xin chào, </Text>
           <Text style={styles.title2}>{fullName}</Text>
-        </View>
+        </TouchableOpacity>
       </ImageBackground>
       <View style={{marginTop: -50, backgroundColor: 'transparent', flex: 1}}>
         <View style={{flex: 1}}>
@@ -174,6 +231,40 @@ const HomeScreen = () => {
               numColumns={4}
             />
 
+            <SliderBox
+              images={imgs}
+              sliderBoxHeight={160}
+              onCurrentImagePressed={(index) => {
+                handlePressURL(IMAGEHOME[index].Url);
+              }}
+              dotColor="#FFEE58"
+              inactiveDotColor="#90A4AE"
+              paginationBoxVerticalPadding={20}
+              autoplay
+              circleLoop
+              resizeMethod={'resize'}
+              resizeMode={'cover'}
+              paginationBoxStyle={{
+                position: 'absolute',
+                bottom: 0,
+                padding: 0,
+                alignItems: 'center',
+                alignSelf: 'center',
+                justifyContent: 'center',
+                paddingVertical: 10,
+              }}
+              dotStyle={{
+                width: 10,
+                height: 10,
+                borderRadius: 5,
+                marginHorizontal: 0,
+                padding: 0,
+                margin: 0,
+                backgroundColor: '#FFF',
+              }}
+              ImageComponentStyle={{borderRadius: 15, width: '97%', marginTop: 5}}
+              imageLoadingColor="#2196F3"
+            />
             <HeaderList
               title="Thống kê COVID"
               onPress={() =>
@@ -216,6 +307,24 @@ const HomeScreen = () => {
                 renderItem={({item, index}) => <_renderItem6 item={item} index={index} navigation={navigation} />}
               />
             </View>
+
+            <View style={{marginHorizontal: 10}}>
+              <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                <FontAwesome name={'headset'} size={18} style={{marginEnd: 10, color: '#d50000'}} />
+                <Text style={styles.textHeaderTitle}>Hỗ trợ nóng</Text>
+              </View>
+              <TouchableOpacity
+                style={{flexDirection: 'row', backgroundColor: '#1D89A3', padding: 20, borderRadius: 10, marginVertical: 10}}
+                onPress={() => {
+                  handlePhoneCall(PHONE);
+                }}>
+                <View style={{flex: 1}}>
+                  <Text style={{color: '#FFF', fontSize: 20, fontWeight: 'normal'}}>Tổng đài hỗ trợ</Text>
+                  <Text style={{color: '#FFF', fontSize: 22, fontWeight: 'bold', marginTop: 5}}>{PHONE}</Text>
+                </View>
+                <FontAwesome name={'phone-volume'} size={55} style={{marginEnd: 10, color: '#59ABBC'}} />
+              </TouchableOpacity>
+            </View>
           </ScrollView>
         </View>
       </View>
@@ -256,7 +365,7 @@ const styles = StyleSheet.create({
     borderLeftWidth: 2,
     borderLeftColor: '#f44336',
   },
-  textHeaderTitle: {fontSize: 18, color: '#3D4458', fontWeight: '500'},
+  textHeaderTitle: {fontSize: 18, color: '#3D4458', fontWeight: 'bold'},
   textHeaderAll: {color: '#90caf9', fontStyle: 'italic', marginHorizontal: 10},
   viewIcon: {
     marginHorizontal: 10,
