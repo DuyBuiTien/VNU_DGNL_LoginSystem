@@ -44,7 +44,7 @@ const Images = {
     dgn_bg: require('../Images/dgn_bg.jpg'),
     pharmacy: require('../Images/pharmacy.png'),
     bg_top: require('../Images/bg_top.jpg'),
-    tet2: require('../Images/tet2.jpg'),
+    tet2: require('../Images/hoanghon.jpeg'),
     responsive: require('../Images/responsive.png'),
     service: require('../Images/service.png'),
     box: require('../Images/box.png'),
