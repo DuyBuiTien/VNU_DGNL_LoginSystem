@@ -25,6 +25,7 @@ export const requestPOST = async (URL, data) => {
       return response.data;
     })
     .catch(function (error) {
+      console.log(error)
       return {data: []};
     });
 };

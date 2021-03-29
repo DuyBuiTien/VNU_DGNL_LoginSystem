@@ -5,6 +5,10 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 const {width} = Dimensions.get('window');
 
+import moment from 'moment';
+import 'moment/locale/vi';
+moment.locale('vi')
+
 const ItemSanPhamVertical = (props) => {
   const {data, navigation} = props;
 
@@ -25,7 +29,7 @@ const ItemSanPhamVertical = (props) => {
       <View style={{flexDirection: 'row', alignItems: 'center', paddingTop: 10}}>
         <FontAwesome name="calendar-alt" size={13} color="#9e9e9e" />
         <Text style={{marginStart: 5, fontSize: 12, color: '#9e9e9e'}} numberOfLines={1}>
-          {data.FromDate}
+          {moment(data.FromDate).format('L')}
         </Text>
       </View>
       <View style={{flexDirection: 'row', alignItems: 'center', paddingTop: 10}}>

@@ -60,7 +60,6 @@ const KNCC_DanhMucScreen = (props) => {
                 showsHorizontalScrollIndicator={false}
                 data={dataDanhMuc}
                 renderItem={({ item, index }) => <ItemDanhMuc item={item} index={index} navigation={navigation} />}
-                ListEmptyComponent={() => <Text style={{ textAlign: 'center', color: '#50565B', margin: 10 }}>Không có kết quả</Text>}
               />
             </View>
             <Divider style={{height: 8, backgroundColor: '#eeeeee'}} />
