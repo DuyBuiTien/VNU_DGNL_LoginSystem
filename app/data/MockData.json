@@ -21,7 +21,7 @@
     "CD_URL": "https://qldcapi.tandan.com.vn/_layouts/15/TD.QLDC.Service/WCFService.svc",
     "ATTP_URL": "https://dieuhanh.namdinh.gov.vn/_layouts/15/TD.VSATTP.Service/WCFService.svc",
     "MT_URL": "https://dieuhanh.namdinh.gov.vn/_layouts/15/TD.MT.Service/WCFService.svc",
-    "DL_URL": "https://qldl.tandan.com.vn/_layouts/15/TD.QLDL.Service/WCFService.svc",
+    "DL_URL": "https://qldl.namdinh.gov.vn/_layouts/15/TD.QLDL.Service/WCFService.svc",
     "GD_URL": "https://slldt.namdinh.gov.vn/_layouts/15/TD.QLGD.Service/WCFService.svc",
     "QLDB_URL": "https://qldv.hanhchinhcong.net/_vti_bin/TD.XaThongMinh.DiaBan.WCF/XtmDiaBanService.svc",
     "HOST_YT": "https://qldv.hanhchinhcong.net",
@@ -34,7 +34,8 @@
     "NN_URL": "https://qldv.hanhchinhcong.net/_vti_bin/XtmNnService.svc/nnapi",
     "TDTM_HOST": "https://qldv.hanhchinhcong.net",
     "BOOKMARK_URL": "http://demo.tandan.com.vn:8084",
-    "KNCC_URL": "http://knccapi.hanhchinhcong.net/v1"
+    "KNCC_URL": "http://knccapi.hanhchinhcong.net/v1",
+    "DICHUNGXE_URL": "http://dichungxe.hanhchinhcong.net"
   },
   "dataMenu": [
     {
@@ -64,7 +65,7 @@
       "navigate": "GD_MainScreen",
       "count": 0,
       "icon": "graduation-cap",
-      "color": "#0271FE",
+      "color": "#00695c",
       "datamenu": []
     },
     {
@@ -179,6 +180,24 @@
       "count": 0,
       "icon": "building",
       "color": "#1565c0",
+      "datamenu": []
+    },
+    {
+      "appid": "42",
+      "name": "Tiện ích",
+      "navigate": "TienIch_MainScreen",
+      "count": 0,
+      "icon": "tools",
+      "color": "#dd2c00",
+      "datamenu": []
+    },
+    {
+      "appid": "43",
+      "name": "Người yếu thế",
+      "navigate": "NguoiYeuThe_MainScreen",
+      "count": 0,
+      "icon": "heartbeat",
+      "color": "#c62828",
       "datamenu": []
     }
   ]

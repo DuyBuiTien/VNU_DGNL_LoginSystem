@@ -1,26 +1,86 @@
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable react-native/no-inline-styles */
 import React, {useRef, useState, useEffect} from 'react';
-import {StyleSheet, Text, View, ScrollView, ImageBackground, Dimensions, Platform, Image, TextInput} from 'react-native';
+import {StyleSheet, Text, View, ScrollView, FlatList, ImageBackground, TextInput, ActivityIndicator} from 'react-native';
 import {useNavigation, useRoute} from '@react-navigation/native';
+import {useSelector, useDispatch} from 'react-redux';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {Header, Icon} from 'react-native-elements';
-import {Divider} from 'react-native-elements';
 import {Button} from 'react-native-elements';
 import {showMessage} from 'react-native-flash-message';
+import axios from 'axios';
+import moment from 'moment';
+
+const RenderItem = (props) => {
+  const {data, onPress, url} = props;
+  return (
+    <TouchableOpacity
+      style={{
+        margin: 5,
+        borderRadius: 8,
+        flexDirection: 'row',
+        backgroundColor: '#FFF',
+        shadowColor: '#000',
+        shadowOffset: {width: 0, height: 2},
+        shadowOpacity: 0.2,
+        borderColor: '#abb4bd65',
+        shadowRadius: 2,
+        elevation: 2,
+      }}
+      onPress={() => onPress(data)}>
+      <ImageBackground
+        resizeMethod="resize"
+        imageStyle={{borderBottomLeftRadius: 8, borderTopLeftRadius: 8}}
+        style={{height: 120, width: 120, resizeMode: 'cover', aspectRatio: 1}}
+        source={{uri: url + data.DuongDanhHinhAnhViPham}}
+      />
+      <View style={{flex: 1, padding: 10}}>
+        <Text style={{fontSize: 12, color: '#bdbdbd'}}>{data.DonViPhatHien}</Text>
+        <Text style={{fontWeight: 'bold', marginTop: 5, color: '#455a64'}} numberOfLines={2}>
+          {data.HanhViViPham}
+        </Text>
+        <View style={{flexDirection: 'row', marginTop: 5, alignItems: 'center'}}>
+          <FontAwesome name={'clock'} size={12} color={'#F26946'} />
+          <Text style={{marginStart: 5, fontSize: 12, color: '#F26946'}}>
+            {data.ThoiGianViPham ? `${moment(new Date(data.ThoiGianViPham)).format('DD/MM/YYYY')}` : 'Đang cập nhật'}
+          </Text>
+        </View>
+        <View style={{flexDirection: 'row', marginTop: 5, alignItems: 'center'}}>
+          <FontAwesome name={'map-marker-alt'} size={12} color={'#F26946'} />
+          <Text style={{marginStart: 5, fontSize: 12, color: '#455a64'}} numberOfLines={1}>
+            {data.DiaDiemViPham}
+          </Text>
+        </View>
+        <View style={{flexDirection: 'row', marginTop: 5, alignItems: 'center'}}>
+          <FontAwesome name={'money-bill'} size={12} color={'#F26946'} />
+          <Text style={{marginStart: 5, fontSize: 12, color: '#455a64'}} numberOfLines={1}>
+            {data.SoTien.toLocaleString('it-IT', {style: 'currency', currency: 'VND'})}
+          </Text>
+        </View>
+        <View style={{flexDirection: 'row', marginTop: 5, alignItems: 'center'}}>
+          <FontAwesome name={'cctv'} size={12} color={'#F26946'} />
+          <Text style={{marginStart: 5, fontSize: 12, color: '#455a64'}} numberOfLines={1}>
+            {data.ThietBiPhatHien}
+          </Text>
+        </View>
+      </View>
+    </TouchableOpacity>
+  );
+};
 
 const MainScreen = () => {
   const navigation = useNavigation();
   const route = useRoute();
-  const data = route.params?.data ?? {};
 
   const [isLoading, setIsLoading] = useState(false);
   const [inputValue, setInputValue] = useState('');
+  const dataService = useSelector((state) => state.global.dataService);
 
   const [noidung, setNoidung] = useState('');
+  const [data, setData] = useState([]);
 
-  const TimKiem = () => {
+  const TimKiem = async () => {
     if (inputValue.length < 7) {
       showMessage({
         message: 'Lỗi!',
@@ -28,13 +88,23 @@ const MainScreen = () => {
         type: 'danger',
         duration: 3000,
       });
+
       setNoidung('');
     } else {
-      setTimeout(() => {
-        setNoidung(`Xe ${inputValue} không có phạt nguội nào`);
-      }, 1000);
+      setIsLoading(true);
+      let response = await axios({
+        method: 'get',
+        url: `${dataService.TDTM_HOST}/_vti_bin/XtmNnService.svc/gtapi/PhatNguois?id=${inputValue}`,
+      });
+      if (response.data) {
+        setData(response.data);
+      }
+
+      setIsLoading(false);
     }
   };
+
+  const onPress = (item) => {};
 
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
@@ -56,11 +126,11 @@ const MainScreen = () => {
           text: 'Kiểm tra phạt nguội',
           style: {color: '#2E2E2E', fontSize: 16, fontWeight: 'bold'},
         }}
-        rightComponent={
+        /* rightComponent={
           <View style={{flexDirection: 'row'}}>
             <FontAwesome name={'share-alt'} color="#2E2E2E" containerStyle={{paddingStart: 0}} onPress={() => {}} size={20} />
           </View>
-        }
+        } */
         containerStyle={{backgroundColor: 'transparent', justifyContent: 'space-around'}}
         centerContainerStyle={{justifyContent: 'center'}}
       />
@@ -93,21 +163,40 @@ const MainScreen = () => {
               keyboardType={'web-search'}
             />
           </View>
-          <Text style={{marginHorizontal: 10, fontStyle: 'italic', color: '#bf360c', fontSize: 12, fontWeight: '200'}}>
+          <Text
+            style={{
+              marginHorizontal: 10,
+              fontStyle: 'italic',
+              color: '#bf360c',
+              fontSize: 12,
+              fontWeight: '200',
+              marginBottom: 20,
+            }}>
             Ghi chú: Nhập biển số xe không dấu "-" hoặc ".". VD 30A38931, 29C11771...
           </Text>
 
-          <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', padding: 10}}>
+          {/* <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', padding: 10}}>
             <FontAwesome name={'info-circle'} color={'#2196f3'} />
             <Text style={{color: '#2196f3', marginStart: 5}}>LÝ DO KHÔNG TRA ĐƯỢC PHẠT NGUỘI</Text>
-          </View>
-          {noidung.length > 5 ? (
-            <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', marginTop: 200}}>
-              <Text style={{fontSize: 18, fontWeight: '600', color: '#37474f'}}>Chúc mừng bạn</Text>
-              <Text style={{color: '#607d8b'}}>{noidung}</Text>
-            </View>
+          </View> */}
+          {isLoading ? (
+            <ActivityIndicator size="large" color="#fb8c00" style={{flex: 1, justifyContent: 'center'}} />
           ) : (
-            <></>
+            <FlatList
+              showsVerticalScrollIndicator={false}
+              contentContainerStyle={{flexGrow: 1}}
+              data={data}
+              renderItem={(item_) => (
+                <RenderItem data={item_.item} navigation={navigation} onPress={onPress} url={`${dataService.TDTM_HOST}`} />
+              )}
+              keyExtractor={(item_) => item_.Id}
+              ListEmptyComponent={() => (
+                <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', marginTop: 200}}>
+                  <Text style={{fontSize: 18, fontWeight: '600', color: '#37474f'}}>Chúc mừng bạn</Text>
+                  <Text style={{color: '#607d8b'}}>{`Xe không có phạt nguội nào!`}</Text>
+                </View>
+              )}
+            />
           )}
         </ScrollView>
       </View>

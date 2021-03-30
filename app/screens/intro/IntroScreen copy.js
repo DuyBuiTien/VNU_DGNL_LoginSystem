@@ -3,8 +3,7 @@ import React from 'react';
 import {StatusBar, View, Image, StyleSheet, ImageBackground, Text} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import AppIntroSlider from 'react-native-app-intro-slider';
-import Icon from 'react-native-vector-icons/FontAwesome5Pro';
-import LinearGradient from 'react-native-linear-gradient';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import {Colors, Images} from '../../themes';
 import * as actions from '../../redux/global/Actions';
@@ -12,8 +11,8 @@ import * as actions from '../../redux/global/Actions';
 const Screen = (props) => {
   const dispatch = useDispatch();
   const _renderItem = ({item, dimensions}) => (
-    <View style={{flex: 1, alignItems: 'center', padding: 20, marginTop: 80}}>
-      <Image source={item.image} style={styles.image} resizeMode="contain" />
+    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', padding: 20}}>
+      <Image source={item.image} style={{height: 100, width: 100}} />
       <Text style={styles.title}>{item.title}</Text>
       <Text style={styles.text}>{item.text}</Text>
     </View>
@@ -21,32 +20,16 @@ const Screen = (props) => {
 
   const _renderNextButton = () => {
     return (
-      <LinearGradient
-        start={{x: 0, y: 0}}
-        end={{x: 1, y: 0}}
-        colors={['#00CEE0', '#00A0C4']}
-        style={{flexDirection: 'row', alignItems: 'center', padding: 8, borderRadius: 50}}>
-        <Text style={{marginEnd: 10, fontWeight: 'bold', color: '#FFF'}}>Tiếp tục</Text>
-        <Icon name="chevron-right" color="#FFF" size={16} />
-      </LinearGradient>
-    );
-  };
-  const _renderBackButton = () => {
-    return (
-      <View style={{flexDirection: 'row', alignItems: 'center', padding: 8, borderRadius: 50}}>
-        <Icon name="chevron-left" color="#00A0C4" size={16} />
+      <View style={styles.buttonCircle}>
+        <Icon name="md-arrow-round-forward" color="rgba(255, 255, 255, .9)" size={24} />
       </View>
     );
   };
   const _renderDoneButton = () => {
     return (
-      <LinearGradient
-        start={{x: 0, y: 0}}
-        end={{x: 1, y: 0}}
-        colors={['#00CEE0', '#00A0C4']}
-        style={{flexDirection: 'row', alignItems: 'center', padding: 8, borderRadius: 50}}>
-        <Text style={{marginEnd: 10, fontWeight: 'bold', color: '#FFF'}}>Bắt đầu khám phá</Text>
-      </LinearGradient>
+      <View style={styles.buttonCircle}>
+        <Icon name="md-checkmark" color="rgba(255, 255, 255, .9)" size={24} />
+      </View>
     );
   };
 
@@ -82,42 +65,46 @@ const Screen = (props) => {
   ];
 
   return (
-    <View style={styles.mainContent}>
-      <StatusBar backgroundColor="transparent" barStyle="light-content" translucent={true} />
-      <AppIntroSlider
-        data={slides}
-        renderItem={_renderItem}
-        showPrevButton
-        buttonTextStyle={{color: '#2196F3', fontSize: 14}}
-        onDone={() => navigateToApp()}
-        onSkip={() => navigateToApp()}
-        renderDoneButton={_renderDoneButton}
-        renderNextButton={_renderNextButton}
-        renderPrevButton={_renderBackButton}
-        dotStyle={{color: 'transparent'}}
-        activeDotStyle={{color: 'transparent'}}
-        dotClickEnabled={false}
-      />
-    </View>
+    <ImageBackground source={Images.backgrounds.intro} style={styles.mainContent}>
+      <StatusBar backgroundColor="#00000000" barStyle="light-content" translucent={true} />
+
+      <View style={{paddingBottom: 20}}>
+        <AppIntroSlider
+          data={slides}
+          renderItem={_renderItem}
+          activeDotStyle={{backgroundColor: '#2196F3'}}
+          showSkipButton
+          skipLabel="Bỏ qua"
+          doneLabel="Trải nghiệm"
+          nextLabel="Tiếp theo"
+          buttonTextStyle={{color: '#2196F3', fontSize: 14}}
+          onDone={() => navigateToApp()}
+          onSkip={() => navigateToApp()}
+          renderDoneButton={_renderDoneButton}
+          renderNextButton={_renderNextButton}
+        />
+      </View>
+    </ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
-  mainContent: {flex: 1},
+  mainContent: {flex: 1, alignItems: 'center', justifyContent: 'center'},
   image: {
-    width: 300,
-    height: 250,
+    width: 320,
+    height: 320,
   },
   text: {
-    color: '#49535B',
+    textAlign: 'center',
+    paddingHorizontal: 16,
     lineHeight: 20,
-    marginTop: 20,
   },
   title: {
-    marginTop: 30,
-    fontSize: 20,
+    fontSize: 22,
+    textAlign: 'center',
+    padding: 20,
     fontWeight: 'bold',
-    color: '#49535B',
+    color: '#2196F3',
   },
 });
 export default Screen;

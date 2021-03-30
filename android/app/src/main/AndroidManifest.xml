@@ -42,6 +42,10 @@
         android:value="AIzaSyDS875fQaHDZUcmAkYqzrsj9IG-SfBScVM"/>
       <uses-library android:name="org.apache.http.legacy" android:required="false"/>
 
+      <meta-data
+        android:name="com.google.firebase.ml.vision.DEPENDENCIES"
+        android:value="ocr, face" />
+
     </application>
 
 </manifest>

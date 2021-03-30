@@ -92,17 +92,18 @@ const DVC_TKHS_Detail = () => {
       <View style={{margin: 10}}>
         <Text
           style={{
-            fontWeight: '400',
+            fontWeight: 'bold',
             paddingRight: 10,
             color: '#A6A8A7',
             textTransform: 'uppercase',
-            fontSize: 16,
+            fontSize: 15,
           }}>
           {dataThuTuc.linhvuc}
         </Text>
         <Text style={{color: '#343F46', fontWeight: 'bold', marginVertical: 10, fontSize: 16, marginTop: 15}} numberOfLines={4}>
           {data.name}
         </Text>
+        <ImageBackground resizeMode="cover" style={{height: 110, margin: 10}} source={require('../../Images/ic_hcs.png')} />
       </View>
       <View style={{flex: 1}}>
         <ScrollableTabView
@@ -275,4 +276,5 @@ export default DVC_TKHS_Detail;
 
 const styles = StyleSheet.create({
   text1: {color: '#757575', fontSize: 15, marginTop: 10, fontWeight: 'bold'},
+  p: {textAlign: 'justify'},
 });

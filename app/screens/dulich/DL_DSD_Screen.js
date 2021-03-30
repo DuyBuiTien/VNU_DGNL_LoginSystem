@@ -32,7 +32,7 @@ const RenderItem = (props) => {
           uri:
             data.AnhDaiDien && data.AnhDaiDien.length > 5
               ? data.AnhDaiDien
-              : 'https://vnn-imgs-f.vgcloud.vn/2020/01/10/14/ninh-thuan-thi-truong-day-hua-hen-cua-gioi-dau-tu-bds.jpg',
+              : 'https://vnphoto.vn/wp-content/uploads/2018/08/3785602_Anh_-18.jpg',
         }}
       />
       <View style={{flex: 1, marginStart: 10}}>
@@ -62,8 +62,12 @@ const MainScreen = () => {
     setIsLoading(true);
 
     const res = await requestPOST(`${dataService.DL_URL}/LayDanhSachDuongPho`, {
+      token: 'Gaz9jR6ZMg+0qi+7XiRH6g==',
+      keyword: '',
+      huyen: '',
+      xa: '',
       skip: 0,
-      top: 100,
+      top: 10,
       orderby: '',
     });
     setIsLoading(false);

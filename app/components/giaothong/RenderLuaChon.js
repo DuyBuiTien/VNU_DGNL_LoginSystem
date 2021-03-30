@@ -38,7 +38,6 @@ const RenderItem = (props) => {
 };
 
 const ChonDonVi = (props) => {
-  const [inputValue, setInputValue] = useState('');
   const {data, handleDongY, actionSheetRef, ModalHide, title} = props;
 
   return (
@@ -58,9 +57,16 @@ const ChonDonVi = (props) => {
           }}>
           <Icon name={'times'} size={20} color={'#161616'} />
         </TouchableOpacity>
-        <Text style={{flex: 1, textAlign: 'center', fontWeight: '600', fontSize: 16, color: '#161616'}}>
+        <Text style={{flex: 1, textAlign: 'center', fontWeight: 'bold', fontSize: 16, color: '#161616'}}>
           {title ? title : 'Lựa chọn'}
         </Text>
+
+        <TouchableOpacity
+          onPress={() => {
+            handleDongY({Name: ''});
+          }}>
+          <Text style={{fontWeight: '300', fontSize: 14, color: '#161616'}}>{'Đặt lại'}</Text>
+        </TouchableOpacity>
       </View>
 
       <ScrollView

@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {StyleSheet, Text, View, ActivityIndicator, TextInput, Keyboard, FlatList} from 'react-native';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {useSelector, useDispatch} from 'react-redux';
@@ -68,11 +68,18 @@ const RenderItem = (props) => {
 const DVC_TKHS_SearchScreen = () => {
   const navigation = useNavigation();
   const dataService = useSelector((state) => state.global.dataService);
+  const route = useRoute();
+  const code = route.params?.code ?? '';
 
   const [listHS, setListHS] = useState([]);
 
   const [isLoading, setIsLoading] = useState(false);
   const [inputValue, setInputValue] = useState('');
+
+  useEffect(() => {
+    setInputValue(code);
+    return () => {};
+  }, [code]);
 
   const TimKiemHoSo = async () => {
     Keyboard.dismiss();

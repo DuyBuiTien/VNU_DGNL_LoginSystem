@@ -1,16 +1,56 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState, useEffect, useRef} from 'react';
-import {StyleSheet, Text, View, ActivityIndicator, FlatList} from 'react-native';
+import {StyleSheet, Text, View, ActivityIndicator, FlatList, ScrollView} from 'react-native';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {useSelector, useDispatch} from 'react-redux';
-import ScrollableTabView, {ScrollableTabBar} from 'react-native-scrollable-tab-view';
 import {Button} from 'react-native-elements';
+import axios from 'axios';
 
 import {Header} from '../../components';
 import {BlockLogin} from '../../components/common';
 import {RenderItemDiChung} from '../../components/giaothong';
 import {SearchComponent} from '../../components/common';
-import axios from 'axios';
+import {FilterBar} from '../../components/giaothong';
+
+const DATAVAITRO = [
+  {Id: 0, Name: 'Hành khách'},
+  {Id: 1, Name: 'Chủ xe'},
+];
+
+const DATAGIOITINH = [
+  {Id: 0, Name: 'Nam'},
+  {Id: 1, Name: 'Nữ'},
+  {Id: 2, Name: 'Khác'},
+];
+
+const PHUONGTIEN = [
+  {Id: 0, Name: 'Ô tô 4 chỗ'},
+  {Id: 1, Name: 'Ô tô 7 chỗ'},
+  {Id: 2, Name: 'Ô tô 16 chỗ'},
+  {Id: 3, Name: 'Ô tô 24 chỗ'},
+  {Id: 4, Name: 'Ô tô 45 chỗ'},
+  {Id: 5, Name: 'Xe máy'},
+  {Id: 6, Name: 'Khác'},
+];
+
+const MUCDICH = [
+  {Id: 0, Name: 'Đi học'},
+  {Id: 1, Name: 'Đi làm'},
+  {Id: 2, Name: 'Về quê'},
+  {Id: 3, Name: 'Du lịch'},
+  {Id: 4, Name: 'Đến sự kiện'},
+  {Id: 5, Name: 'Đi sân bay'},
+  {Id: 6, Name: 'Chở hàng'},
+  {Id: 7, Name: 'Khác'},
+];
+
+const DATATANSUAT = [
+  {Id: 0, Name: 'Một lần'},
+  {Id: 1, Name: 'Hàng ngày'},
+  {Id: 2, Name: 'Hàng tuần'},
+  {Id: 3, Name: 'Luôn có'},
+];
 
 const DVC_MainScreen = () => {
   const navigation = useNavigation();
@@ -26,12 +66,25 @@ const DVC_MainScreen = () => {
   const [dataDiChung, setDataDiChung] = useState([]);
   const [refreshing, setRefreshing] = React.useState(false);
 
+  const [DiemDi, setDiemDi] = useState('');
+  const [DiemDen, setDiemDen] = useState('');
+  const [MucDich, setMucDich] = useState('');
+  const [HanhLy, setHanhLy] = useState('');
+  const [MuonDiCung, setMuonDiCung] = useState('');
+  const [GhiChu, setGhiChu] = useState('');
+  const [LoaiPhuongTien, setLoaiPhuongTien] = useState('');
+  const [VaiTro, setVaiTro] = useState('');
+  const [TanSuat, setTanSuat] = useState('');
+  const [NgayDi, setNgayDi] = useState('');
+  const [NgayVe, setNgayVe] = useState('');
+  const [GioDi, setGioDi] = useState('');
+
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
       let response = await axios({
         method: 'get',
-        url: `${dataService.BOOKMARK_URL}/v1/dichungxe/tinmoi?page=0&perpage=1000&TrangThai=1&q=${inputValue}`,
+        url: `${dataService.BOOKMARK_URL}/v1/dichungxe/tinmoi?page=0&perpage=1000&TrangThai=1&q=${inputValue}&LoaiPhuongTien=${LoaiPhuongTien}&TanSuat=${TanSuat}&VaiTro=${VaiTro}&MucDich=${MucDich}`,
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
@@ -45,7 +98,7 @@ const DVC_MainScreen = () => {
     };
     fetchData();
     return () => {};
-  }, [refreshing, active, inputValue, random, dataService.BOOKMARK_URL, user.token]);
+  }, [refreshing, active, inputValue, random, dataService.BOOKMARK_URL, user.token, LoaiPhuongTien, TanSuat, VaiTro, MucDich]);
 
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
@@ -56,6 +109,24 @@ const DVC_MainScreen = () => {
       ) : (
         <View style={{flex: 1}}>
           <SearchComponent value={inputValue} onChangeText={setInputValue} />
+          <View>
+            <ScrollView
+              horizontal
+              style={{marginBottom: 10, flexDirection: 'row'}}
+              showsHorizontalScrollIndicator={false}
+              style={{marginBottom: 10}}>
+              <FilterBar value={VaiTro} title={'Vai Trò'} data={DATAVAITRO} setValue={setVaiTro} isImportant={true} />
+              <FilterBar value={MucDich} title={'Mục đích'} data={MUCDICH} setValue={setMucDich} isImportant={true} />
+              <FilterBar
+                value={LoaiPhuongTien}
+                title={'Loại phương tiện'}
+                data={PHUONGTIEN}
+                setValue={setLoaiPhuongTien}
+                isImportant={true}
+              />
+              <FilterBar value={TanSuat} title={'Tần suất'} data={DATATANSUAT} setValue={setTanSuat} isImportant={true} />
+            </ScrollView>
+          </View>
 
           <View style={{flex: 1}}>
             {isLoading ? (

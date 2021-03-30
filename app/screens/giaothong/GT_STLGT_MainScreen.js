@@ -39,11 +39,11 @@ const MainScreen = () => {
           text: 'Kiểm tra phạt nguội',
           style: {color: '#2E2E2E', fontSize: 16, fontWeight: 'bold'},
         }}
-        rightComponent={
+        /* rightComponent={
           <View style={{flexDirection: 'row'}}>
             <FontAwesome name={'share-alt'} color="#2E2E2E" containerStyle={{paddingStart: 0}} onPress={() => {}} size={20} />
           </View>
-        }
+        } */
         containerStyle={{backgroundColor: 'transparent', justifyContent: 'space-around'}}
         centerContainerStyle={{justifyContent: 'center'}}
       />

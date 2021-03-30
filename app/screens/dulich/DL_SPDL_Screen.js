@@ -62,8 +62,12 @@ const MainScreen = () => {
     setIsLoading(true);
 
     const res = await requestPOST(`${dataService.DL_URL}/LayDanhSachSanPham`, {
+      token: 'Gaz9jR6ZMg+0qi+7XiRH6g==',
+      keyword: '',
+      huyen: '',
       skip: 0,
-      top: 100,
+      top: 10,
+      orderby: '',
     });
     setIsLoading(false);
     setData(res.data ? res.data : []);
