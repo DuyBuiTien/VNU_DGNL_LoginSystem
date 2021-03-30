@@ -31,6 +31,13 @@ export function LoginDichVu(urlService, user, pass) {
   });
 }
 
+export function LoginCungCau(urlService, user, pass) {
+  return axios.post(urlService + '/auth/login', {
+    Username: user,
+    Password: pass,
+  });
+}
+
 export function getDataDonVi(URL) {
   return axios.get(`${URL}`);
 }

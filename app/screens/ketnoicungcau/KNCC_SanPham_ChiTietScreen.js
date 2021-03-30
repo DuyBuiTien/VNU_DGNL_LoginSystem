@@ -9,11 +9,24 @@ import {Header, Icon} from 'react-native-elements';
 import {Divider} from 'react-native-elements';
 import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 import Clipboard from '@react-native-clipboard/clipboard';
+import { requestGET } from '../../services/Api';
+import { useSelector, useDispatch } from 'react-redux';
 
 const MainScreen = () => {
   const navigation = useNavigation();
   const route = useRoute();
   const data = route.params?.data ?? {};
+  const dataService = useSelector((state) => state.global.dataService);
+
+  const fetchData = async () => {
+    var data3 = await requestGET(`${dataService.KNCC_URL}/SupplyDemand/ViewCount/${data.Id}`)
+    console.log(data3)
+  };
+
+  useEffect(() => {
+    fetchData();
+    return () => { };
+  }, []);
 
   const handlePhoneCall = (number) => {
     let phoneNumber = '';
