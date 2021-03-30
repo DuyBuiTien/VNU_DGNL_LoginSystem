@@ -25,6 +25,38 @@ export const requestPOST = async (URL, data) => {
       return response.data;
     })
     .catch(function (error) {
+      return {data: []};
+    });
+};
+
+export const requestPATCH = async (URL, data) => {
+  return await axios({
+    method: 'PATCH',
+    url: URL,
+    data: data,
+    timeout: 15000,
+  })
+    .then(function (response) {
+      return response.data;
+    })
+    .catch(function (error) {
+      console.log(error)
+      return {data: []};
+    });
+};
+
+export const requestPOST_CC = async (URL, data, token) => {
+  return await axios({
+    method: 'POST',
+    headers: {Authorization: `Bearer ${token}`, 'Content-Type': 'application/json'},
+    url: URL,
+    data: data,
+    timeout: 15000,
+  })
+    .then(function (response) {
+      return response.data;
+    })
+    .catch(function (error) {
       console.log(error)
       return {data: []};
     });

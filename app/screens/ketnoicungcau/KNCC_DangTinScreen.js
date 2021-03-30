@@ -15,10 +15,14 @@ import { Header } from '../../components';
 import { SearchComponent } from '../../components/common';
 import { ItemSanPhamHorizontal } from '../../components/ketnoicungcau';
 import { CB_Data } from '../../data/TMDT_Data';
-import { requestGET, requestPOST } from '../../services/Api';
+import { requestGET, requestPOST_CC } from '../../services/Api';
 import { BlockLogin } from '../../components/common';
 import { RenderChonDonVi, RenderChonMucDo, RenderChonLinhVuc } from '../../components/dvc';
 import { showMessage } from 'react-native-flash-message';
+
+import moment from 'moment';
+import 'moment/locale/vi';
+moment.locale('vi')
 
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
 
@@ -47,7 +51,7 @@ const KNCC_CB_MainScreen = () => {
   const user = useSelector((state) => state.global.user);
   const dataService = useSelector((state) => state.global.dataService);
 
-  const AccessToken = state.global.AccessToken;
+  const AccessToken = useSelector((state) => state.global.AccessToken);
 
   const [dataLoai, setDataLoai] = useState([
     {
@@ -77,8 +81,6 @@ const KNCC_CB_MainScreen = () => {
   const [toDate, setToDate] = useState('');
   const [images, setimages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
-  const [imageUrl, setimageUrl] = useState('');
 
   const [typeDialog, setTypeDialog] = useState('');
 
@@ -297,15 +299,17 @@ const KNCC_CB_MainScreen = () => {
     setTypeDialog('');
   };
 
-  const checkContetn = async () => {
+  const checkContetn = () => {
     if (!type|| !title || !content || !address || !phone || !fromDate || !toDate || !danhmucsp.code || !quocgia.code) {
       showMessage("Vui lòng điền đầy đủ thông tin")
     }
     else {
       if (images.length > 0) {
-        await postImage()
+        postImage()
       }
-      postData()
+      else{
+        postData('')
+      }
     }
   }
 
@@ -317,33 +321,35 @@ const KNCC_CB_MainScreen = () => {
         name: i.uri,
         type: i.type
       })
-      var data = await requestPOST(`${dataService.KNCC_URL}/file/photoWithoutAttachment`, form)
-      setimageUrl(data.url?data.url:'')
+      var data = await requestPOST_CC(`${dataService.KNCC_URL}/file/photoWithoutAttachment`, form, AccessToken)
+      if(data){
+        postData(data.url)
+      }
     })
   }
 
-  const postData = async () => {
+  const postData = async (imageUrl) => {
     var obj = {
       TypeInformation: type,
       Title: title,
       Content: content,
       Address: address,
       Phone: phone,
-      FromDate: fromDate,
-      ToDate: toDate,
-      CategoryId: danhmucsp.code,
-      SubCategoryId: loaisp.code,
+      FromDate: moment(fromDate, 'DD/MM/YYYY').format('YYYY-MM-DD') + "T00:00:00.000Z",
+      ToDate: moment(toDate, 'DD/MM/YYYY').format('YYYY-MM-DD') + "T00:00:00.000Z",
+      CategoryId: danhmucsp.code?danhmucsp.code:null,
+      SubCategoryId: loaisp.code?loaisp.code:null,
       ViewCount: 0,
       Images: imageUrl,
-      CountryId: quocgia.code,
-      ProvinceId: tinh.code,
-      DistrictId: huyen.code,
-      CommuneId: xa.code,
+      CountryId: quocgia.code?quocgia.code:null,
+      ProvinceId: tinh.code?tinh.code:null,
+      DistrictId: huyen.code?huyen.code:null,
+      CommuneId: xa.code?xa.code:null,
       Status: 0,
-      Token: AccessToken
+      Token: AccessToken,
+      Slug: ''
     }
-    var data = await requestPOST(`${dataService.KNCC_URL}/SupplyDemand`, obj)
-    console.log(data)
+    var data = await requestPOST_CC(`${dataService.KNCC_URL}/SupplyDemand`, obj, AccessToken)
     if(data){
       showMessage({
         message: "Đăng tin thành công",

@@ -10,13 +10,13 @@ import { Header } from '../../components';
 import { SearchComponent } from '../../components/common';
 import { ItemSanPhamHorizontal } from '../../components/ketnoicungcau';
 import { CB_Data } from '../../data/TMDT_Data';
-import { requestGET } from '../../services/Api';
-import {BlockLogin} from '../../components/common';
+import { requestPOST_CC } from '../../services/Api';
 
-const KNCC_CB_MainScreen = () => {
+const KNCC_CaNhanScreen = () => {
   const navigation = useNavigation();
   const user = useSelector((state) => state.global.user);
   const dataService = useSelector((state) => state.global.dataService);
+  const AccessToken = useSelector((state) => state.global.AccessToken);
 
   const [data, setData] = useState([]);
   const [inputValue, setInputValue] = useState('');
@@ -28,14 +28,16 @@ const KNCC_CB_MainScreen = () => {
 
   const fetchData = async () => {
     setIsLoading(true);
-    var data3 = await requestGET(`${dataService.KNCC_URL}/SupplyDemand?q=`)
-    var data4 = data3.data ? data3.data : []
+    var obj = { Token: AccessToken }
+    var data3 = await requestPOST_CC(`${dataService.KNCC_URL}/SupplyDemand/token`, obj, AccessToken)
+    console.log(AccessToken)
+    var data4 = data3 ? data3 : []
     setData(data4)
     setIsLoading(false);
   };
 
   useEffect(() => {
-    //fetchData();
+    fetchData();
     return () => { };
   }, []);
 
@@ -43,11 +45,7 @@ const KNCC_CB_MainScreen = () => {
 
   return (
     <View style={{ flex: 1, backgroundColor: 'white' }}>
-      <Header title="Tin của tôi" isStack={true} />
-      {!user ? (
-        <BlockLogin name="Tin của tôi" loginScreen={'LoginScreen'} registerScreen={'RegisterScreen'} />
-      ) : (
-      <>
+      <Header title="Danh sách sản phẩm" isStack={true} />
       {isLoading ? (
         <ActivityIndicator size="large" color="#fb8c00" style={{ flex: 1, justifyContent: 'center' }} />
       ) : (
@@ -105,12 +103,11 @@ const KNCC_CB_MainScreen = () => {
               ListEmptyComponent={() => <Text style={{ textAlign: 'center', color: '#50565B', marginTop: 10 }}>Không có kết quả</Text>}
             />
           </View>
-        )}</>
-      )}
+        )}
     </View>
   );
 };
 
-export default KNCC_CB_MainScreen;
+export default KNCC_CaNhanScreen;
 
 const styles = StyleSheet.create({});

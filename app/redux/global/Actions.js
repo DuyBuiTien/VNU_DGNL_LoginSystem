@@ -46,6 +46,7 @@ export const login = (username, password) => (dispatch) => {
     .then((response) => {
       if (response.data.data) {
         requestFromServer.LoginDichVu(dataService.BOOKMARK_URL, username, password);
+        requestFromServer.LoginCungCau(dataService.KNCC_URL, username, password);
 
         let tmp = {...response.data.data};
         tmp.username = username;
