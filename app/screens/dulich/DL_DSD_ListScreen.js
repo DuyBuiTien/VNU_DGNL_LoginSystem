@@ -37,7 +37,7 @@ const RenderItem = (props) => {
       <ImageBackground
         imageStyle={{borderRadius: 5}}
         resizeMode="cover"
-        style={{width: 100, height: '100%'}}
+        style={{width: 100, height: 80}}
         source={{
           uri:
             data.AnhDaiDien && data.AnhDaiDien.length > 5
@@ -49,12 +49,14 @@ const RenderItem = (props) => {
         <Text numberOfLines={2} style={{fontWeight: 'bold', color: '#455a64'}}>
           {data.Ten}
         </Text>
-        <View style={{flexDirection: 'row', alignItems: 'center', padding: 5}}>
-          <FontAwesome name="star" color="#f44336" size={16} />
-          <Text style={{color: '#757575', fontSize: 12, paddingStart: 10, flex: 1}} numberOfLines={2}>
-            {`${data.XepHang && data.XepHang.Name ? data.XepHang.Name : ''}`}
-          </Text>
-        </View>
+        {data.XepHang && (
+          <View style={{flexDirection: 'row', alignItems: 'center', padding: 5}}>
+            <FontAwesome name="star" color="#f44336" size={16} />
+            <Text style={{color: '#757575', fontSize: 12, paddingStart: 10, flex: 1}} numberOfLines={2}>
+              {`${data.XepHang && data.XepHang ? data.XepHang : ''}`}
+            </Text>
+          </View>
+        )}
 
         <View style={{flexDirection: 'row', alignItems: 'center', padding: 5}}>
           <FontAwesome name="map-marker-alt" color="#f44336" size={16} />
