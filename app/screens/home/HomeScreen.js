@@ -233,7 +233,7 @@ const HomeScreen = () => {
 
             <SliderBox
               images={imgs}
-              sliderBoxHeight={160}
+              sliderBoxHeight={120}
               onCurrentImagePressed={(index) => {
                 handlePressURL(IMAGEHOME[index].Url);
               }}
@@ -254,15 +254,15 @@ const HomeScreen = () => {
                 paddingVertical: 10,
               }}
               dotStyle={{
-                width: 10,
-                height: 10,
+                width: 6,
+                height: 6,
                 borderRadius: 5,
                 marginHorizontal: 0,
                 padding: 0,
                 margin: 0,
                 backgroundColor: '#FFF',
               }}
-              ImageComponentStyle={{borderRadius: 15, width: '97%', marginTop: 5}}
+              ImageComponentStyle={{borderRadius: 8, width: '97%', marginTop: 5}}
               imageLoadingColor="#2196F3"
             />
             <HeaderList

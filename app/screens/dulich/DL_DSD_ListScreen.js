@@ -1,13 +1,23 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, Text, View, ScrollView, TouchableOpacity, ImageBackground, Image, TextInput, FlatList} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  TouchableOpacity,
+  ImageBackground,
+  ActivityIndicator,
+  TextInput,
+  FlatList,
+} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 import {useNavigation, useRoute} from '@react-navigation/native';
 
 import {SearchComponent} from '../../components/common';
 import {Header} from '../../components';
-import {requestGET} from '../../services/Api';
+import {requestGET, requestPOST} from '../../services/Api';
 
 const RenderItem = (props) => {
   const navigation = useNavigation();
@@ -31,8 +41,8 @@ const RenderItem = (props) => {
         source={{
           uri:
             data.AnhDaiDien && data.AnhDaiDien.length > 5
-              ? data.AnhDaiDien
-              : 'https://vnn-imgs-f.vgcloud.vn/2020/01/10/14/ninh-thuan-thi-truong-day-hua-hen-cua-gioi-dau-tu-bds.jpg',
+              ? `https://qldl.namdinh.gov.vn${data.AnhDaiDien.split(',')[0]}`
+              : 'https://list.vn/wp-content/uploads/2020/11/kinh-nghiem-cho-be-di-du-lich-thai-lan-2.jpg',
         }}
       />
       <View style={{flex: 1, marginStart: 10}}>
@@ -66,9 +76,21 @@ const MainScreen = () => {
 
   const [inputValue, setInputValue] = useState('');
   const [datafinal, setDatafinal] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchData = async () => {
-    const res = await requestGET(`${dataService.DL_URL}/GetDiemDuLichs?loaidulichids=${data.id}`);
+    setIsLoading(true);
+
+    const res = await requestPOST(`${dataService.DL_URL}/DiemDuLichs`, {
+      token: 'Gaz9jR6ZMg+0qi+7XiRH6g==',
+      tukhoa: '',
+      skip: 0,
+      top: 10,
+      orderby: '',
+      loaidulichs: `${data.id}`,
+    });
+    setIsLoading(false);
+
     setDatafinal(res.data ? res.data : []);
   };
 
@@ -81,20 +103,26 @@ const MainScreen = () => {
     <View style={{flex: 1, backgroundColor: 'white'}}>
       <Header title={`${data.name}`} isStack={true} />
       <SearchComponent value={inputValue} onChangeText={setInputValue} keyboardType={'web-search'} />
-      <View style={{flex: 1}}>
-        <FlatList
-          contentContainerStyle={{flexGrow: 1}}
-          showsVerticalScrollIndicator={false}
-          showsHorizontalScrollIndicator={false}
-          data={datafinal.filter((item) => {
-            const name = item.Ten.toUpperCase();
-            return name.indexOf(inputValue.toUpperCase()) > -1;
-          })}
-          renderItem={({item, index}) => <RenderItem data={item} index={index} navigation={navigation} histories={[]} />}
-          keyExtractor={(item, index) => index.toString()}
-          ListEmptyComponent={() => <Text style={{textAlign: 'center', color: '#50565B', marginTop: 10}}>Không có kết quả</Text>}
-        />
-      </View>
+      {isLoading ? (
+        <ActivityIndicator size="large" color="#fb8c00" style={{flex: 1, justifyContent: 'center'}} />
+      ) : (
+        <View style={{flex: 1}}>
+          <FlatList
+            contentContainerStyle={{flexGrow: 1}}
+            showsVerticalScrollIndicator={false}
+            showsHorizontalScrollIndicator={false}
+            data={datafinal.filter((item) => {
+              const name = item.Ten.toUpperCase();
+              return name.indexOf(inputValue.toUpperCase()) > -1;
+            })}
+            renderItem={({item, index}) => <RenderItem data={item} index={index} navigation={navigation} histories={[]} />}
+            keyExtractor={(item, index) => index.toString()}
+            ListEmptyComponent={() => (
+              <Text style={{textAlign: 'center', color: '#50565B', marginTop: 10}}>Không có kết quả</Text>
+            )}
+          />
+        </View>
+      )}
     </View>
   );
 };

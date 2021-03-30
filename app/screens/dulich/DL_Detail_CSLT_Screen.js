@@ -48,7 +48,7 @@ const MainScreen = () => {
             source={{
               uri:
                 data.AnhDaiDien && data.AnhDaiDien.length > 5
-                  ? data.AnhDaiDien
+                  ? `https://qldl.namdinh.gov.vn${data.AnhDaiDien.split(',')[0]}`
                   : 'https://vnn-imgs-f.vgcloud.vn/2020/01/10/14/ninh-thuan-thi-truong-day-hua-hen-cua-gioi-dau-tu-bds.jpg',
             }}
           />

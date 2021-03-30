@@ -1,6 +1,16 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, Text, View, ScrollView, TouchableOpacity, ImageBackground, Image, TextInput, FlatList} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  TouchableOpacity,
+  ImageBackground,
+  Image,
+  ActivityIndicator,
+  FlatList,
+} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5Pro';
 import {useNavigation, useRoute} from '@react-navigation/native';
@@ -8,7 +18,7 @@ import {useNavigation, useRoute} from '@react-navigation/native';
 import {SearchComponent} from '../../components/common';
 
 import {Header} from '../../components';
-import {requestGET} from '../../services/Api';
+import {requestGET, requestPOST} from '../../services/Api';
 
 const RenderItem = (props) => {
   const navigation = useNavigation();
@@ -49,13 +59,13 @@ const RenderItem = (props) => {
         <View style={{flexDirection: 'row', alignItems: 'center', padding: 5}}>
           <FontAwesome name="phone" color="#f44336" size={16} />
           <Text style={{color: '#757575', fontSize: 12, paddingStart: 10, flex: 1}} numberOfLines={2}>
-            {`${data.DienThoai}`}
+            {`${data?.DienThoai ?? 'Đang cập nhật'}`}
           </Text>
         </View>
         <View style={{flexDirection: 'row', alignItems: 'center', padding: 5}}>
           <FontAwesome name="map-marker-alt" color="#f44336" size={16} />
           <Text style={{color: '#757575', fontSize: 12, paddingStart: 10, flex: 1}} numberOfLines={2}>
-            {`${data.DiaChi}`}
+            {`${data?.DiaChi ?? 'Đang cập nhật'}`}
           </Text>
         </View>
       </View>
@@ -69,19 +79,27 @@ const MainScreen = () => {
 
   const [inputValue, setInputValue] = useState('');
   const [data, setData] = useState([]);
-  const [datafinal, setDatafinal] = useState([]);
-
-  const fetchData = async () => {
-    const res = await requestGET(`${dataService.DL_URL}/GetCoSoLuuTrus?skip=0&top=100`);
-
-    setData(res.data ? res.data : []);
-    setDatafinal(res.data ? res.data : []);
-  };
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    const fetchData = async () => {
+      setIsLoading(true);
+
+      const res = await requestPOST(`${dataService.DL_URL}/CoSoLuuTrus`, {
+        token: 'Gaz9jR6ZMg+0qi+7XiRH6g==',
+        skip: 0,
+        top: 100,
+        tukhoa: '',
+        orderby: '',
+      });
+      setIsLoading(false);
+
+      setData(res.data ? res.data : []);
+    };
+
     fetchData();
     return () => {};
-  }, []);
+  }, [dataService.DL_URL]);
 
   //return await axios.get(`${dataService.PAHT_URL}/GetByStatus?limit=20&status=${status}`)
 
@@ -89,20 +107,26 @@ const MainScreen = () => {
     <View style={{flex: 1, backgroundColor: 'white'}}>
       <Header title="Cơ sở lưu trú" isStack={true} />
       <SearchComponent value={inputValue} onChangeText={setInputValue} keyboardType={'web-search'} />
-      <View style={{flex: 1}}>
-        <FlatList
-          contentContainerStyle={{flexGrow: 1}}
-          showsVerticalScrollIndicator={false}
-          showsHorizontalScrollIndicator={false}
-          data={data.filter((item) => {
-            const name = item.Ten.toUpperCase();
-            return name.indexOf(inputValue.toUpperCase()) > -1;
-          })}
-          renderItem={({item, index}) => <RenderItem data={item} index={index} navigation={navigation} histories={[]} />}
-          keyExtractor={(item, index) => index.toString()}
-          ListEmptyComponent={() => <Text style={{textAlign: 'center', color: '#50565B', marginTop: 10}}>Không có kết quả</Text>}
-        />
-      </View>
+      {isLoading ? (
+        <ActivityIndicator size="large" color="#fb8c00" style={{flex: 1, justifyContent: 'center'}} />
+      ) : (
+        <View style={{flex: 1}}>
+          <FlatList
+            contentContainerStyle={{flexGrow: 1}}
+            showsVerticalScrollIndicator={false}
+            showsHorizontalScrollIndicator={false}
+            data={data.filter((item) => {
+              const name = item.Ten.toUpperCase();
+              return name.indexOf(inputValue.toUpperCase()) > -1;
+            })}
+            renderItem={({item, index}) => <RenderItem data={item} index={index} navigation={navigation} histories={[]} />}
+            keyExtractor={(item, index) => index.toString()}
+            ListEmptyComponent={() => (
+              <Text style={{textAlign: 'center', color: '#50565B', marginTop: 10}}>Không có kết quả</Text>
+            )}
+          />
+        </View>
+      )}
     </View>
   );
 };
